@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "process_name": [
+        "curl",
+        "curl.exe",
+        "wget",
+        "wget.exe",
+        "git",
+        "git-remote-http",
+        "python",
+        "python.exe",
+        "python3",
+        "ruby",
+        "powershell",
+        "powershell.exe",
+        "Applite",
+        "Texifier",
+        "OrbStack Helper",
+        "SkyrimSE.exe",
+        "ModOrganizer.exe",
+        "Wabbajack.exe"
+      ]
+    }
+  ]
+}

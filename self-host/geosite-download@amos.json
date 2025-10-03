@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+          "download-cdn.jetbrains.com", 
+          "huggingface.co",
+          "psv4.userapi.com",
+          "s3-eu-west-1.amazonaws.com",
+          "canonical-lgw01.cdn.snapcraftcontent.com",
+          "us.nomaba.top",
+          "installer.teams.static.microsoft",
+          "autoupdate.termius.com",
+          "dl.google.com",
+          "desktop.docker.com",
+          "production.cloudflare.docker.com",
+          "ftp.gnu.org",
+          "kityune.imput.net",
+          "cobalt.371052.xyz",
+          "dln1.ncdn.ec"
+      ]
+    },
+    {
+      "domain_suffix": [
+        ".pinterest.com",
+        ".nexus-cdn.com",
+        ".sharepoint.com",
+        ".mediafire.com",
+        ".escapefromtarkov.com",
+        ".content-storage-upload.googleapis.com",
+        ".pixeldrain.com",
+        ".pytorch.org",
+        ".wallhaven.cc",
+        ".snapcraftcontent.com",
+        ".googleapis.cn",
+        ".iva-api.com",
+        ".doubledouble.top"
+    ]
+    }
+  ]
+}
