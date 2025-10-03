@@ -1,0 +1,42 @@
+{
+    "version": 1,
+    "rules": [
+        {
+            "process_name": [
+                "qbittorrent",
+                "fdm.exe",
+                "fdm",
+                "uTorrent.exe",
+                "DownloadService.exe",
+                "aria2c",
+                "Thunder",
+                "Folx.exe",
+                "DownloadService",
+                "Thunder.exe",
+                "NetTransport.exe",
+                "Transmission.exe",
+                "BitComet",
+                "WebTorrent",
+                "WebTorrentHelper",
+                "BitComet_x64.exe",
+                "baidunetdisk.exe",
+                "WebTorrentHelper.exe",
+                "uTorrent",
+                "qbittorrent.exe",
+                "Weiyun.exe",
+                "Transmission",
+                "NetTransport",
+                "aria2c.exe",
+                "WebTorrent.exe",
+                "BitComet.exe",
+                "Folx",
+                "Weiyun"
+            ]
+        },
+        {
+            "domain_suffix": [
+                "qbittorrent.org"
+            ]
+        }
+    ]
+}
