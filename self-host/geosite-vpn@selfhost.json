@@ -3,15 +3,16 @@
   "rules": [
     {
       "domain": [
-
         "v3.paddleapi.com",
         "www.google.com",
-        "scholar.google.com"
+        "scholar.google.com",
+        "steamcommunity.com"
         
       ]
     },
     {
       "domain_suffix": [
+        ".steamserver.net",
         ".greencloudvps.com",
         ".googleapis.cn"
 
