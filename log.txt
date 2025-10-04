@@ -149,7 +149,7 @@ domain 被过滤掉的条目数量: 464
   process_name 条目数: 0
   domain_regex 条目数: 149
 --------------------------------------------------
-2025-10-04 01:30:40,441 - INFO - blocker-rejectApp@amos 规则整理完成:
+2025-10-04 01:30:40,441 - INFO - blocker-rejectApp@selfhost 规则整理完成:
 2025-10-04 01:30:40,441 - INFO - 类型: process
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 28
@@ -403,7 +403,7 @@ domain 被过滤掉的条目数量: 33084
 2025-10-04 01:31:01,072 - INFO - 转换完成: ./rule/singbox/process-filter-browser.json → ./rule/surge/process-filter-browser.list, ./rule/shadowrocket/process-filter-browser.list
 2025-10-04 01:31:01,072 - INFO - 转换完成: ./rule/singbox/geosite-category-communication@!cn.json → ./rule/surge/geosite-category-communication@!cn.list, ./rule/shadowrocket/geosite-category-communication@!cn.list
 2025-10-04 01:31:01,072 - INFO - 转换完成: ./rule/singbox/geosite-filter-antip@direct.json → ./rule/surge/geosite-filter-antip@direct.list, ./rule/shadowrocket/geosite-filter-antip@direct.list
-2025-10-04 01:31:01,073 - INFO - 转换完成: ./rule/singbox/process-blocker-rejectApp@amos.json → ./rule/surge/process-blocker-rejectApp@amos.list, ./rule/shadowrocket/process-blocker-rejectApp@amos.list
+2025-10-04 01:31:01,073 - INFO - 转换完成: ./rule/singbox/process-blocker-rejectApp@selfhost.json → ./rule/surge/process-blocker-rejectApp@selfhost.list, ./rule/shadowrocket/process-blocker-rejectApp@selfhost.list
 2025-10-04 01:31:01,073 - INFO - 转换完成: ./rule/singbox/geoip-category-download@!cn.json → ./rule/surge/geoip-category-download@!cn.list, ./rule/shadowrocket/geoip-category-download@!cn.list
 2025-10-04 01:31:01,074 - INFO - 转换完成: ./rule/singbox/geoip-category-vpn@!cn.json → ./rule/surge/geoip-category-vpn@!cn.list, ./rule/shadowrocket/geoip-category-vpn@!cn.list
 2025-10-04 01:31:01,074 - INFO - 转换完成: ./rule/singbox/process-filter-communicationApp@!cn.json → ./rule/surge/process-filter-communicationApp@!cn.list, ./rule/shadowrocket/process-filter-communicationApp@!cn.list
