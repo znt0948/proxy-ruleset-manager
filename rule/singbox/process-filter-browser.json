@@ -1,4 +1,18 @@
 {
     "version": 1,
-    "rules": []
+    "rules": [
+        {
+            "process_name": [
+                "wBlock Filters",
+                "Firefox",
+                "com.apple.WebKit.Networking",
+                "Google Chrome Helper",
+                "firefox.exe",
+                "AdGuard for Safari",
+                "Safari",
+                "Chrome",
+                "chrome.exe"
+            ]
+        }
+    ]
 }
