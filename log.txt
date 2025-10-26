@@ -1,5 +1,5 @@
-2025-10-26 10:50:43,195 - INFO - filter-fakeip 规则整理完成:
-2025-10-26 10:50:43,195 - INFO - 类型: geosite
+2025-10-26 13:05:29,846 - INFO - filter-fakeip 规则整理完成:
+2025-10-26 13:05:29,846 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 92
 规则分析:
@@ -9,8 +9,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 6
 --------------------------------------------------
-2025-10-26 10:50:45,904 - INFO - filter-communicationApp@!cn 规则整理完成:
-2025-10-26 10:50:45,904 - INFO - 类型: process
+2025-10-26 13:05:33,033 - INFO - filter-communicationApp@!cn 规则整理完成:
+2025-10-26 13:05:33,033 - INFO - 类型: process
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 2
 规则分析:
@@ -20,8 +20,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 2
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:50:48,225 - INFO - filter-directApp 规则整理完成:
-2025-10-26 10:50:48,225 - INFO - 类型: process
+2025-10-26 13:05:35,274 - INFO - filter-directApp 规则整理完成:
+2025-10-26 13:05:35,274 - INFO - 类型: process
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 51
 规则分析:
@@ -31,8 +31,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 50
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:50:49,316 - INFO - category-video@!cn 规则整理完成:
-2025-10-26 10:50:49,316 - INFO - 类型: geosite
+2025-10-26 13:05:36,157 - INFO - category-video@!cn 规则整理完成:
+2025-10-26 13:05:36,157 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 1
 剩余规则总数: 465
 规则分析:
@@ -42,7 +42,7 @@ domain 被过滤掉的条目数量: 1
   process_name 条目数: 0
   domain_regex 条目数: 5
 --------------------------------------------------
-2025-10-26 10:50:49,316 - INFO - 类型: geoip
+2025-10-26 13:05:36,157 - INFO - 类型: geoip
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 1120
 规则分析:
@@ -52,8 +52,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:50:49,743 - INFO - category-game@cn 规则整理完成:
-2025-10-26 10:50:49,743 - INFO - 类型: geosite
+2025-10-26 13:05:36,513 - INFO - category-game@cn 规则整理完成:
+2025-10-26 13:05:36,513 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 4
 剩余规则总数: 279
 规则分析:
@@ -63,8 +63,8 @@ domain 被过滤掉的条目数量: 4
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:50:49,853 - INFO - filter-browser 规则整理完成:
-2025-10-26 10:50:49,854 - INFO - 类型: process
+2025-10-26 13:05:36,601 - INFO - filter-browser 规则整理完成:
+2025-10-26 13:05:36,601 - INFO - 类型: process
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 9
 规则分析:
@@ -74,8 +74,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 9
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:50:50,784 - INFO - category-communication@!cn 规则整理完成:
-2025-10-26 10:50:50,784 - INFO - 类型: geosite
+2025-10-26 13:05:37,321 - INFO - category-communication@!cn 规则整理完成:
+2025-10-26 13:05:37,321 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 104
 规则分析:
@@ -85,7 +85,7 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:50:50,784 - INFO - 类型: geoip
+2025-10-26 13:05:37,321 - INFO - 类型: geoip
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 12
 规则分析:
@@ -95,8 +95,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:50:52,159 - INFO - category-vpn@!cn 规则整理完成:
-2025-10-26 10:50:52,159 - INFO - 类型: geosite
+2025-10-26 13:05:38,587 - INFO - category-vpn@!cn 规则整理完成:
+2025-10-26 13:05:38,587 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 1
 剩余规则总数: 711
 规则分析:
@@ -106,7 +106,7 @@ domain 被过滤掉的条目数量: 1
   process_name 条目数: 0
   domain_regex 条目数: 6
 --------------------------------------------------
-2025-10-26 10:50:52,159 - INFO - 类型: geoip
+2025-10-26 13:05:38,587 - INFO - 类型: geoip
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 1120
 规则分析:
@@ -116,8 +116,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:50:52,251 - INFO - filter-downloadApp@!cn 规则整理完成:
-2025-10-26 10:50:52,251 - INFO - 类型: process
+2025-10-26 13:05:38,695 - INFO - filter-downloadApp@!cn 规则整理完成:
+2025-10-26 13:05:38,695 - INFO - 类型: process
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 18
 规则分析:
@@ -127,8 +127,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 18
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:50:52,562 - INFO - category-media@!cn 规则整理完成:
-2025-10-26 10:50:52,562 - INFO - 类型: geosite
+2025-10-26 13:05:38,909 - INFO - category-media@!cn 规则整理完成:
+2025-10-26 13:05:38,909 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 578
 规则分析:
@@ -138,8 +138,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:50:53,090 - INFO - geolocation-!cn 规则整理完成:
-2025-10-26 10:50:53,090 - INFO - 类型: geosite
+2025-10-26 13:05:39,418 - INFO - geolocation-!cn 规则整理完成:
+2025-10-26 13:05:39,418 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 468
 剩余规则总数: 26791
 规则分析:
@@ -149,8 +149,8 @@ domain 被过滤掉的条目数量: 468
   process_name 条目数: 0
   domain_regex 条目数: 150
 --------------------------------------------------
-2025-10-26 10:50:53,200 - INFO - blocker-rejectApp@amos 规则整理完成:
-2025-10-26 10:50:53,200 - INFO - 类型: process
+2025-10-26 13:05:39,517 - INFO - blocker-rejectApp@amos 规则整理完成:
+2025-10-26 13:05:39,517 - INFO - 类型: process
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 28
 规则分析:
@@ -160,8 +160,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 28
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:50:53,318 - INFO - category-media 规则整理完成:
-2025-10-26 10:50:53,318 - INFO - 类型: geosite
+2025-10-26 13:05:39,610 - INFO - category-media 规则整理完成:
+2025-10-26 13:05:39,610 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 1401
 规则分析:
@@ -171,8 +171,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:50:57,801 - INFO - category-game 规则整理完成:
-2025-10-26 10:50:57,801 - INFO - 类型: geosite
+2025-10-26 13:05:43,464 - INFO - category-game 规则整理完成:
+2025-10-26 13:05:43,464 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 1
 剩余规则总数: 565
 规则分析:
@@ -182,7 +182,7 @@ domain 被过滤掉的条目数量: 1
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:50:57,801 - INFO - 类型: geoip
+2025-10-26 13:05:43,464 - INFO - 类型: geoip
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 47
 规则分析:
@@ -192,8 +192,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:50:57,904 - INFO - category-media@cn 规则整理完成:
-2025-10-26 10:50:57,904 - INFO - 类型: geosite
+2025-10-26 13:05:43,556 - INFO - category-media@cn 规则整理完成:
+2025-10-26 13:05:43,556 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 2
 剩余规则总数: 217
 规则分析:
@@ -203,8 +203,8 @@ domain 被过滤掉的条目数量: 2
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:50:58,116 - INFO - category-nsfw@!cn 规则整理完成:
-2025-10-26 10:50:58,116 - INFO - 类型: geosite
+2025-10-26 13:05:43,714 - INFO - category-nsfw@!cn 规则整理完成:
+2025-10-26 13:05:43,714 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 6532
 规则分析:
@@ -214,8 +214,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 137
 --------------------------------------------------
-2025-10-26 10:50:58,213 - INFO - filter-antip@proxy 规则整理完成:
-2025-10-26 10:50:58,213 - INFO - 类型: geosite
+2025-10-26 13:05:43,804 - INFO - filter-antip@proxy 规则整理完成:
+2025-10-26 13:05:43,804 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 2
 剩余规则总数: 173
 规则分析:
@@ -225,8 +225,8 @@ domain 被过滤掉的条目数量: 2
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:51:00,540 - INFO - geolocation-jp 规则整理完成:
-2025-10-26 10:51:00,540 - INFO - 类型: geosite
+2025-10-26 13:05:46,147 - INFO - geolocation-jp 规则整理完成:
+2025-10-26 13:05:46,148 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 0
 规则分析:
@@ -236,7 +236,7 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:51:00,540 - INFO - 类型: geoip
+2025-10-26 13:05:46,148 - INFO - 类型: geoip
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 2
 规则分析:
@@ -246,8 +246,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:51:07,319 - INFO - category-direct 规则整理完成:
-2025-10-26 10:51:07,319 - INFO - 类型: geosite
+2025-10-26 13:05:53,442 - INFO - category-direct 规则整理完成:
+2025-10-26 13:05:53,442 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 134
 剩余规则总数: 119357
 规则分析:
@@ -257,7 +257,7 @@ domain 被过滤掉的条目数量: 134
   process_name 条目数: 0
   domain_regex 条目数: 26
 --------------------------------------------------
-2025-10-26 10:51:07,319 - INFO - 类型: geoip
+2025-10-26 13:05:53,442 - INFO - 类型: geoip
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 17974
 规则分析:
@@ -267,8 +267,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:51:07,415 - INFO - geolocation-eu 规则整理完成:
-2025-10-26 10:51:07,415 - INFO - 类型: geoip
+2025-10-26 13:05:53,521 - INFO - geolocation-eu 规则整理完成:
+2025-10-26 13:05:53,521 - INFO - 类型: geoip
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 3
 规则分析:
@@ -278,8 +278,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:51:07,513 - INFO - filter-vpnAPP@!cn 规则整理完成:
-2025-10-26 10:51:07,513 - INFO - 类型: process
+2025-10-26 13:05:53,607 - INFO - filter-vpnAPP@!cn 规则整理完成:
+2025-10-26 13:05:53,607 - INFO - 类型: process
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 1
 规则分析:
@@ -289,8 +289,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 1
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:51:09,610 - INFO - filter-antip@reject 规则整理完成:
-2025-10-26 10:51:09,610 - INFO - 类型: geosite
+2025-10-26 13:05:55,629 - INFO - filter-antip@reject 规则整理完成:
+2025-10-26 13:05:55,629 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 19
 规则分析:
@@ -300,8 +300,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:51:09,717 - INFO - category-proxy@dns 规则整理完成:
-2025-10-26 10:51:09,717 - INFO - 类型: geosite
+2025-10-26 13:05:55,712 - INFO - category-proxy@dns 规则整理完成:
+2025-10-26 13:05:55,712 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 1
 规则分析:
@@ -311,8 +311,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:51:11,108 - INFO - category-download@!cn 规则整理完成:
-2025-10-26 10:51:11,108 - INFO - 类型: geosite
+2025-10-26 13:05:56,912 - INFO - category-download@!cn 规则整理完成:
+2025-10-26 13:05:56,913 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 3
 剩余规则总数: 226
 规则分析:
@@ -322,7 +322,7 @@ domain 被过滤掉的条目数量: 3
   process_name 条目数: 0
   domain_regex 条目数: 3
 --------------------------------------------------
-2025-10-26 10:51:11,108 - INFO - 类型: geoip
+2025-10-26 13:05:56,913 - INFO - 类型: geoip
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 1
 规则分析:
@@ -332,8 +332,8 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:51:11,172 - INFO - filter-antip@direct 规则整理完成:
-2025-10-26 10:51:11,172 - INFO - 类型: geosite
+2025-10-26 13:05:56,964 - INFO - filter-antip@direct 规则整理完成:
+2025-10-26 13:05:56,964 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 23
 规则分析:
@@ -343,102 +343,102 @@ domain 被过滤掉的条目数量: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:51:12,413 - INFO - blocker-trash 规则整理完成:
-2025-10-26 10:51:12,413 - INFO - 类型: geosite
-domain 被过滤掉的条目数量: 32456
-剩余规则总数: 75221
+2025-10-26 13:05:58,381 - INFO - blocker-trash 规则整理完成:
+2025-10-26 13:05:58,382 - INFO - 类型: geosite
+domain 被过滤掉的条目数量: 42710
+剩余规则总数: 96656
 规则分析:
-  domain 条目数: 47646
-  domain_suffix 条目数: 27575
+  domain 条目数: 58511
+  domain_suffix 条目数: 38145
   ip_cidr 条目数: 0
   process_name 条目数: 0
   domain_regex 条目数: 0
 --------------------------------------------------
-2025-10-26 10:51:12,413 - INFO - 处理类别：geoip-category-video
-2025-10-26 10:51:12,414 - INFO - 跳过处理 geoip-category-video，因为没有全体文件
-2025-10-26 10:51:12,414 - INFO - 处理类别：geosite-category-media
-2025-10-26 10:51:12,436 - INFO - 处理类别：geosite-category-proxy
-2025-10-26 10:51:12,436 - INFO - 跳过处理 geosite-category-proxy，因为没有全体文件
-2025-10-26 10:51:12,436 - INFO - 处理类别：geosite-category-direct
-2025-10-26 10:51:12,446 - INFO - 跳过处理 geosite-category-direct，因为没有 @cn 或 @!cn 文件
-2025-10-26 10:51:12,448 - INFO - 处理类别：geosite-category-vpn
-2025-10-26 10:51:12,448 - INFO - 跳过处理 geosite-category-vpn，因为没有全体文件
-2025-10-26 10:51:12,448 - INFO - 处理类别：geosite-category-game
-2025-10-26 10:51:12,455 - INFO - 处理类别：geosite-category-nsfw
-2025-10-26 10:51:12,455 - INFO - 跳过处理 geosite-category-nsfw，因为没有全体文件
-2025-10-26 10:51:12,455 - INFO - 处理类别：geosite-category-communication
-2025-10-26 10:51:12,455 - INFO - 跳过处理 geosite-category-communication，因为没有全体文件
-2025-10-26 10:51:12,455 - INFO - 处理类别：geoip-category-download
-2025-10-26 10:51:12,455 - INFO - 跳过处理 geoip-category-download，因为没有全体文件
-2025-10-26 10:51:12,455 - INFO - 处理类别：geoip-category-vpn
-2025-10-26 10:51:12,455 - INFO - 跳过处理 geoip-category-vpn，因为没有全体文件
-2025-10-26 10:51:12,455 - INFO - 处理类别：geoip-category-direct
-2025-10-26 10:51:12,456 - INFO - 跳过处理 geoip-category-direct，因为没有 @cn 或 @!cn 文件
-2025-10-26 10:51:12,457 - INFO - 处理类别：geosite-category-download
-2025-10-26 10:51:12,457 - INFO - 跳过处理 geosite-category-download，因为没有全体文件
-2025-10-26 10:51:12,457 - INFO - 处理类别：geoip-category-communication
-2025-10-26 10:51:12,457 - INFO - 跳过处理 geoip-category-communication，因为没有全体文件
-2025-10-26 10:51:12,457 - INFO - 处理类别：geoip-category-game
-2025-10-26 10:51:12,457 - INFO - 跳过处理 geoip-category-game，因为没有 @cn 或 @!cn 文件
-2025-10-26 10:51:12,457 - INFO - 处理类别：geosite-category-video
-2025-10-26 10:51:12,457 - INFO - 跳过处理 geosite-category-video，因为没有全体文件
-2025-10-26 10:51:14,492 - INFO - 转换完成: ./rule/singbox/geoip-category-video@!cn.json → ./rule/surge/geoip-category-video@!cn.list, ./rule/shadowrocket/geoip-category-video@!cn.list
-2025-10-26 10:51:14,493 - INFO - 转换完成: ./rule/singbox/geoip-geolocation-eu.json → ./rule/surge/geoip-geolocation-eu.list, ./rule/shadowrocket/geoip-geolocation-eu.list
-2025-10-26 10:51:14,493 - INFO - 转换完成: ./rule/singbox/geosite-category-game@!cn.json → ./rule/surge/geosite-category-game@!cn.list, ./rule/shadowrocket/geosite-category-game@!cn.list
-2025-10-26 10:51:14,494 - INFO - 转换完成: ./rule/singbox/geosite-category-media@cn.json → ./rule/surge/geosite-category-media@cn.list, ./rule/shadowrocket/geosite-category-media@cn.list
-2025-10-26 10:51:14,494 - INFO - 转换完成: ./rule/singbox/geosite-category-proxy@dns.json → ./rule/surge/geosite-category-proxy@dns.list, ./rule/shadowrocket/geosite-category-proxy@dns.list
-2025-10-26 10:51:14,494 - INFO - 转换完成: ./rule/singbox/geosite-filter-fakeip.json → ./rule/surge/geosite-filter-fakeip.list, ./rule/shadowrocket/geosite-filter-fakeip.list
-2025-10-26 10:51:14,494 - INFO - 转换完成: ./rule/singbox/process-filter-vpnAPP@!cn.json → ./rule/surge/process-filter-vpnAPP@!cn.list, ./rule/shadowrocket/process-filter-vpnAPP@!cn.list
-2025-10-26 10:51:14,547 - INFO - 转换完成: ./rule/singbox/geosite-category-direct.json → ./rule/surge/geosite-category-direct.list, ./rule/shadowrocket/geosite-category-direct.list
-2025-10-26 10:51:14,552 - INFO - 转换完成: ./rule/singbox/geosite-category-vpn@!cn.json → ./rule/surge/geosite-category-vpn@!cn.list, ./rule/shadowrocket/geosite-category-vpn@!cn.list
-2025-10-26 10:51:14,554 - INFO - 转换完成: ./rule/singbox/geosite-category-media@!cn.json → ./rule/surge/geosite-category-media@!cn.list, ./rule/shadowrocket/geosite-category-media@!cn.list
-2025-10-26 10:51:14,554 - INFO - 转换完成: ./rule/singbox/geosite-category-game@cn.json → ./rule/surge/geosite-category-game@cn.list, ./rule/shadowrocket/geosite-category-game@cn.list
-2025-10-26 10:51:14,554 - INFO - 转换完成: ./rule/singbox/geosite-filter-antip@reject.json → ./rule/surge/geosite-filter-antip@reject.list, ./rule/shadowrocket/geosite-filter-antip@reject.list
-2025-10-26 10:51:14,566 - INFO - 转换完成: ./rule/singbox/geosite-geolocation-!cn.json → ./rule/surge/geosite-geolocation-!cn.list, ./rule/shadowrocket/geosite-geolocation-!cn.list
-2025-10-26 10:51:14,567 - INFO - 转换完成: ./rule/singbox/process-filter-directApp.json → ./rule/surge/process-filter-directApp.list, ./rule/shadowrocket/process-filter-directApp.list
-2025-10-26 10:51:14,570 - INFO - 转换完成: ./rule/singbox/geosite-category-nsfw@!cn.json → ./rule/surge/geosite-category-nsfw@!cn.list, ./rule/shadowrocket/geosite-category-nsfw@!cn.list
-2025-10-26 10:51:14,571 - INFO - 转换完成: ./rule/singbox/geosite-geolocation-jp.json → ./rule/surge/geosite-geolocation-jp.list, ./rule/shadowrocket/geosite-geolocation-jp.list
-2025-10-26 10:51:14,571 - INFO - 转换完成: ./rule/singbox/geosite-filter-antip@proxy.json → ./rule/surge/geosite-filter-antip@proxy.list, ./rule/shadowrocket/geosite-filter-antip@proxy.list
-2025-10-26 10:51:14,604 - INFO - 转换完成: ./rule/singbox/geosite-blocker-trash.json → ./rule/surge/geosite-blocker-trash.list, ./rule/shadowrocket/geosite-blocker-trash.list
-2025-10-26 10:51:14,607 - INFO - 转换完成: ./rule/singbox/process-filter-browser.json → ./rule/surge/process-filter-browser.list, ./rule/shadowrocket/process-filter-browser.list
-2025-10-26 10:51:14,608 - INFO - 转换完成: ./rule/singbox/geosite-category-communication@!cn.json → ./rule/surge/geosite-category-communication@!cn.list, ./rule/shadowrocket/geosite-category-communication@!cn.list
-2025-10-26 10:51:14,608 - INFO - 转换完成: ./rule/singbox/geosite-filter-antip@direct.json → ./rule/surge/geosite-filter-antip@direct.list, ./rule/shadowrocket/geosite-filter-antip@direct.list
-2025-10-26 10:51:14,608 - INFO - 转换完成: ./rule/singbox/process-blocker-rejectApp@amos.json → ./rule/surge/process-blocker-rejectApp@amos.list, ./rule/shadowrocket/process-blocker-rejectApp@amos.list
-2025-10-26 10:51:14,608 - INFO - 转换完成: ./rule/singbox/geoip-category-download@!cn.json → ./rule/surge/geoip-category-download@!cn.list, ./rule/shadowrocket/geoip-category-download@!cn.list
-2025-10-26 10:51:14,609 - INFO - 转换完成: ./rule/singbox/geoip-category-vpn@!cn.json → ./rule/surge/geoip-category-vpn@!cn.list, ./rule/shadowrocket/geoip-category-vpn@!cn.list
-2025-10-26 10:51:14,609 - INFO - 转换完成: ./rule/singbox/process-filter-communicationApp@!cn.json → ./rule/surge/process-filter-communicationApp@!cn.list, ./rule/shadowrocket/process-filter-communicationApp@!cn.list
-2025-10-26 10:51:14,617 - INFO - 转换完成: ./rule/singbox/geoip-category-direct.json → ./rule/surge/geoip-category-direct.list, ./rule/shadowrocket/geoip-category-direct.list
-2025-10-26 10:51:14,618 - INFO - 转换完成: ./rule/singbox/geosite-category-download@!cn.json → ./rule/surge/geosite-category-download@!cn.list, ./rule/shadowrocket/geosite-category-download@!cn.list
-2025-10-26 10:51:14,619 - INFO - 转换完成: ./rule/singbox/process-filter-downloadApp@!cn.json → ./rule/surge/process-filter-downloadApp@!cn.list, ./rule/shadowrocket/process-filter-downloadApp@!cn.list
-2025-10-26 10:51:14,619 - INFO - 转换完成: ./rule/singbox/geoip-geolocation-jp.json → ./rule/surge/geoip-geolocation-jp.list, ./rule/shadowrocket/geoip-geolocation-jp.list
-2025-10-26 10:51:14,619 - INFO - 转换完成: ./rule/singbox/geoip-category-communication@!cn.json → ./rule/surge/geoip-category-communication@!cn.list, ./rule/shadowrocket/geoip-category-communication@!cn.list
-2025-10-26 10:51:14,619 - INFO - 转换完成: ./rule/singbox/geoip-category-game.json → ./rule/surge/geoip-category-game.list, ./rule/shadowrocket/geoip-category-game.list
-2025-10-26 10:51:14,620 - INFO - 转换完成: ./rule/singbox/geosite-category-video@!cn.json → ./rule/surge/geosite-category-video@!cn.list, ./rule/shadowrocket/geosite-category-video@!cn.list
-2025-10-26 10:51:16,281 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-category-direct.mrs
-2025-10-26 10:51:16,356 - INFO - 成功生成 MRS 文件: ./rule/clash/geoip-category-video@!cn.mrs
-2025-10-26 10:51:16,447 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-category-media@!cn.mrs
-2025-10-26 10:51:16,458 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-geolocation-jp.mrs
-2025-10-26 10:51:16,524 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-category-communication@!cn.mrs
-2025-10-26 10:51:16,661 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-category-nsfw@!cn.mrs
-2025-10-26 10:51:16,723 - INFO - 成功生成 MRS 文件: ./rule/clash/geoip-category-communication@!cn.mrs
-2025-10-26 10:51:16,786 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-filter-antip@reject.mrs
-2025-10-26 10:51:16,848 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-category-proxy@dns.mrs
-2025-10-26 10:51:16,916 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-category-download@!cn.mrs
-2025-10-26 10:51:16,980 - INFO - 成功生成 MRS 文件: ./rule/clash/geoip-category-game.mrs
-2025-10-26 10:51:17,049 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-filter-antip@proxy.mrs
-2025-10-26 10:51:17,119 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-category-game@!cn.mrs
-2025-10-26 10:51:17,978 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-blocker-trash.mrs
-2025-10-26 10:51:18,053 - INFO - 成功生成 MRS 文件: ./rule/clash/geoip-category-vpn@!cn.mrs
-2025-10-26 10:51:18,121 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-category-video@!cn.mrs
-2025-10-26 10:51:18,185 - INFO - 成功生成 MRS 文件: ./rule/clash/geoip-geolocation-jp.mrs
-2025-10-26 10:51:18,251 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-category-game@cn.mrs
-2025-10-26 10:51:18,426 - INFO - 成功生成 MRS 文件: ./rule/clash/geoip-category-direct.mrs
-2025-10-26 10:51:18,488 - INFO - 成功生成 MRS 文件: ./rule/clash/geoip-category-download@!cn.mrs
-2025-10-26 10:51:18,552 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-filter-antip@direct.mrs
-2025-10-26 10:51:18,902 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-geolocation-!cn.mrs
-2025-10-26 10:51:18,977 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-category-vpn@!cn.mrs
-2025-10-26 10:51:19,043 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-filter-fakeip.mrs
-2025-10-26 10:51:19,109 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-category-media@cn.mrs
-2025-10-26 10:51:19,171 - INFO - 成功生成 MRS 文件: ./rule/clash/geoip-geolocation-eu.mrs
-2025-10-26 10:51:19,191 - INFO - ✅ sing-box 配置合并成功
-2025-10-26 10:51:19,191 - INFO - ✅ 已将配置文件移动至: /home/runner/work/proxy-ruleset-manager/proxy-ruleset-manager/template/singbox/config.json
+2025-10-26 13:05:58,382 - INFO - 处理类别：geoip-category-video
+2025-10-26 13:05:58,382 - INFO - 跳过处理 geoip-category-video，因为没有全体文件
+2025-10-26 13:05:58,382 - INFO - 处理类别：geosite-category-media
+2025-10-26 13:05:58,435 - INFO - 处理类别：geosite-category-proxy
+2025-10-26 13:05:58,435 - INFO - 跳过处理 geosite-category-proxy，因为没有全体文件
+2025-10-26 13:05:58,435 - INFO - 处理类别：geosite-category-direct
+2025-10-26 13:05:58,444 - INFO - 跳过处理 geosite-category-direct，因为没有 @cn 或 @!cn 文件
+2025-10-26 13:05:58,446 - INFO - 处理类别：geosite-category-vpn
+2025-10-26 13:05:58,446 - INFO - 跳过处理 geosite-category-vpn，因为没有全体文件
+2025-10-26 13:05:58,446 - INFO - 处理类别：geosite-category-game
+2025-10-26 13:05:58,453 - INFO - 处理类别：geosite-category-nsfw
+2025-10-26 13:05:58,453 - INFO - 跳过处理 geosite-category-nsfw，因为没有全体文件
+2025-10-26 13:05:58,453 - INFO - 处理类别：geosite-category-communication
+2025-10-26 13:05:58,453 - INFO - 跳过处理 geosite-category-communication，因为没有全体文件
+2025-10-26 13:05:58,453 - INFO - 处理类别：geoip-category-download
+2025-10-26 13:05:58,453 - INFO - 跳过处理 geoip-category-download，因为没有全体文件
+2025-10-26 13:05:58,453 - INFO - 处理类别：geoip-category-vpn
+2025-10-26 13:05:58,453 - INFO - 跳过处理 geoip-category-vpn，因为没有全体文件
+2025-10-26 13:05:58,453 - INFO - 处理类别：geoip-category-direct
+2025-10-26 13:05:58,455 - INFO - 跳过处理 geoip-category-direct，因为没有 @cn 或 @!cn 文件
+2025-10-26 13:05:58,455 - INFO - 处理类别：geosite-category-download
+2025-10-26 13:05:58,455 - INFO - 跳过处理 geosite-category-download，因为没有全体文件
+2025-10-26 13:05:58,455 - INFO - 处理类别：geoip-category-communication
+2025-10-26 13:05:58,455 - INFO - 跳过处理 geoip-category-communication，因为没有全体文件
+2025-10-26 13:05:58,455 - INFO - 处理类别：geoip-category-game
+2025-10-26 13:05:58,455 - INFO - 跳过处理 geoip-category-game，因为没有 @cn 或 @!cn 文件
+2025-10-26 13:05:58,455 - INFO - 处理类别：geosite-category-video
+2025-10-26 13:05:58,456 - INFO - 跳过处理 geosite-category-video，因为没有全体文件
+2025-10-26 13:06:00,591 - INFO - 转换完成: ./rule/singbox/geoip-category-video@!cn.json → ./rule/surge/geoip-category-video@!cn.list, ./rule/shadowrocket/geoip-category-video@!cn.list
+2025-10-26 13:06:00,591 - INFO - 转换完成: ./rule/singbox/geoip-geolocation-eu.json → ./rule/surge/geoip-geolocation-eu.list, ./rule/shadowrocket/geoip-geolocation-eu.list
+2025-10-26 13:06:00,592 - INFO - 转换完成: ./rule/singbox/geosite-category-game@!cn.json → ./rule/surge/geosite-category-game@!cn.list, ./rule/shadowrocket/geosite-category-game@!cn.list
+2025-10-26 13:06:00,592 - INFO - 转换完成: ./rule/singbox/geosite-category-media@cn.json → ./rule/surge/geosite-category-media@cn.list, ./rule/shadowrocket/geosite-category-media@cn.list
+2025-10-26 13:06:00,592 - INFO - 转换完成: ./rule/singbox/geosite-category-proxy@dns.json → ./rule/surge/geosite-category-proxy@dns.list, ./rule/shadowrocket/geosite-category-proxy@dns.list
+2025-10-26 13:06:00,592 - INFO - 转换完成: ./rule/singbox/geosite-filter-fakeip.json → ./rule/surge/geosite-filter-fakeip.list, ./rule/shadowrocket/geosite-filter-fakeip.list
+2025-10-26 13:06:00,593 - INFO - 转换完成: ./rule/singbox/process-filter-vpnAPP@!cn.json → ./rule/surge/process-filter-vpnAPP@!cn.list, ./rule/shadowrocket/process-filter-vpnAPP@!cn.list
+2025-10-26 13:06:00,642 - INFO - 转换完成: ./rule/singbox/geosite-category-direct.json → ./rule/surge/geosite-category-direct.list, ./rule/shadowrocket/geosite-category-direct.list
+2025-10-26 13:06:00,646 - INFO - 转换完成: ./rule/singbox/geosite-category-vpn@!cn.json → ./rule/surge/geosite-category-vpn@!cn.list, ./rule/shadowrocket/geosite-category-vpn@!cn.list
+2025-10-26 13:06:00,648 - INFO - 转换完成: ./rule/singbox/geosite-category-media@!cn.json → ./rule/surge/geosite-category-media@!cn.list, ./rule/shadowrocket/geosite-category-media@!cn.list
+2025-10-26 13:06:00,648 - INFO - 转换完成: ./rule/singbox/geosite-category-game@cn.json → ./rule/surge/geosite-category-game@cn.list, ./rule/shadowrocket/geosite-category-game@cn.list
+2025-10-26 13:06:00,648 - INFO - 转换完成: ./rule/singbox/geosite-filter-antip@reject.json → ./rule/surge/geosite-filter-antip@reject.list, ./rule/shadowrocket/geosite-filter-antip@reject.list
+2025-10-26 13:06:00,661 - INFO - 转换完成: ./rule/singbox/geosite-geolocation-!cn.json → ./rule/surge/geosite-geolocation-!cn.list, ./rule/shadowrocket/geosite-geolocation-!cn.list
+2025-10-26 13:06:00,662 - INFO - 转换完成: ./rule/singbox/process-filter-directApp.json → ./rule/surge/process-filter-directApp.list, ./rule/shadowrocket/process-filter-directApp.list
+2025-10-26 13:06:00,665 - INFO - 转换完成: ./rule/singbox/geosite-category-nsfw@!cn.json → ./rule/surge/geosite-category-nsfw@!cn.list, ./rule/shadowrocket/geosite-category-nsfw@!cn.list
+2025-10-26 13:06:00,665 - INFO - 转换完成: ./rule/singbox/geosite-geolocation-jp.json → ./rule/surge/geosite-geolocation-jp.list, ./rule/shadowrocket/geosite-geolocation-jp.list
+2025-10-26 13:06:00,665 - INFO - 转换完成: ./rule/singbox/geosite-filter-antip@proxy.json → ./rule/surge/geosite-filter-antip@proxy.list, ./rule/shadowrocket/geosite-filter-antip@proxy.list
+2025-10-26 13:06:00,707 - INFO - 转换完成: ./rule/singbox/geosite-blocker-trash.json → ./rule/surge/geosite-blocker-trash.list, ./rule/shadowrocket/geosite-blocker-trash.list
+2025-10-26 13:06:00,710 - INFO - 转换完成: ./rule/singbox/process-filter-browser.json → ./rule/surge/process-filter-browser.list, ./rule/shadowrocket/process-filter-browser.list
+2025-10-26 13:06:00,711 - INFO - 转换完成: ./rule/singbox/geosite-category-communication@!cn.json → ./rule/surge/geosite-category-communication@!cn.list, ./rule/shadowrocket/geosite-category-communication@!cn.list
+2025-10-26 13:06:00,711 - INFO - 转换完成: ./rule/singbox/geosite-filter-antip@direct.json → ./rule/surge/geosite-filter-antip@direct.list, ./rule/shadowrocket/geosite-filter-antip@direct.list
+2025-10-26 13:06:00,711 - INFO - 转换完成: ./rule/singbox/process-blocker-rejectApp@amos.json → ./rule/surge/process-blocker-rejectApp@amos.list, ./rule/shadowrocket/process-blocker-rejectApp@amos.list
+2025-10-26 13:06:00,711 - INFO - 转换完成: ./rule/singbox/geoip-category-download@!cn.json → ./rule/surge/geoip-category-download@!cn.list, ./rule/shadowrocket/geoip-category-download@!cn.list
+2025-10-26 13:06:00,712 - INFO - 转换完成: ./rule/singbox/geoip-category-vpn@!cn.json → ./rule/surge/geoip-category-vpn@!cn.list, ./rule/shadowrocket/geoip-category-vpn@!cn.list
+2025-10-26 13:06:00,712 - INFO - 转换完成: ./rule/singbox/process-filter-communicationApp@!cn.json → ./rule/surge/process-filter-communicationApp@!cn.list, ./rule/shadowrocket/process-filter-communicationApp@!cn.list
+2025-10-26 13:06:00,720 - INFO - 转换完成: ./rule/singbox/geoip-category-direct.json → ./rule/surge/geoip-category-direct.list, ./rule/shadowrocket/geoip-category-direct.list
+2025-10-26 13:06:00,721 - INFO - 转换完成: ./rule/singbox/geosite-category-download@!cn.json → ./rule/surge/geosite-category-download@!cn.list, ./rule/shadowrocket/geosite-category-download@!cn.list
+2025-10-26 13:06:00,722 - INFO - 转换完成: ./rule/singbox/process-filter-downloadApp@!cn.json → ./rule/surge/process-filter-downloadApp@!cn.list, ./rule/shadowrocket/process-filter-downloadApp@!cn.list
+2025-10-26 13:06:00,722 - INFO - 转换完成: ./rule/singbox/geoip-geolocation-jp.json → ./rule/surge/geoip-geolocation-jp.list, ./rule/shadowrocket/geoip-geolocation-jp.list
+2025-10-26 13:06:00,722 - INFO - 转换完成: ./rule/singbox/geoip-category-communication@!cn.json → ./rule/surge/geoip-category-communication@!cn.list, ./rule/shadowrocket/geoip-category-communication@!cn.list
+2025-10-26 13:06:00,722 - INFO - 转换完成: ./rule/singbox/geoip-category-game.json → ./rule/surge/geoip-category-game.list, ./rule/shadowrocket/geoip-category-game.list
+2025-10-26 13:06:00,723 - INFO - 转换完成: ./rule/singbox/geosite-category-video@!cn.json → ./rule/surge/geosite-category-video@!cn.list, ./rule/shadowrocket/geosite-category-video@!cn.list
+2025-10-26 13:06:02,173 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-category-direct.mrs
+2025-10-26 13:06:02,214 - INFO - 成功生成 MRS 文件: ./rule/clash/geoip-category-video@!cn.mrs
+2025-10-26 13:06:02,270 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-category-media@!cn.mrs
+2025-10-26 13:06:02,281 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-geolocation-jp.mrs
+2025-10-26 13:06:02,310 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-category-communication@!cn.mrs
+2025-10-26 13:06:02,406 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-category-nsfw@!cn.mrs
+2025-10-26 13:06:02,435 - INFO - 成功生成 MRS 文件: ./rule/clash/geoip-category-communication@!cn.mrs
+2025-10-26 13:06:02,465 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-filter-antip@reject.mrs
+2025-10-26 13:06:02,493 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-category-proxy@dns.mrs
+2025-10-26 13:06:02,523 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-category-download@!cn.mrs
+2025-10-26 13:06:02,552 - INFO - 成功生成 MRS 文件: ./rule/clash/geoip-category-game.mrs
+2025-10-26 13:06:02,584 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-filter-antip@proxy.mrs
+2025-10-26 13:06:02,621 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-category-game@!cn.mrs
+2025-10-26 13:06:03,636 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-blocker-trash.mrs
+2025-10-26 13:06:03,677 - INFO - 成功生成 MRS 文件: ./rule/clash/geoip-category-vpn@!cn.mrs
+2025-10-26 13:06:03,714 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-category-video@!cn.mrs
+2025-10-26 13:06:03,742 - INFO - 成功生成 MRS 文件: ./rule/clash/geoip-geolocation-jp.mrs
+2025-10-26 13:06:03,776 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-category-game@cn.mrs
+2025-10-26 13:06:03,944 - INFO - 成功生成 MRS 文件: ./rule/clash/geoip-category-direct.mrs
+2025-10-26 13:06:03,974 - INFO - 成功生成 MRS 文件: ./rule/clash/geoip-category-download@!cn.mrs
+2025-10-26 13:06:04,002 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-filter-antip@direct.mrs
+2025-10-26 13:06:04,294 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-geolocation-!cn.mrs
+2025-10-26 13:06:04,332 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-category-vpn@!cn.mrs
+2025-10-26 13:06:04,362 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-filter-fakeip.mrs
+2025-10-26 13:06:04,393 - INFO - 成功生成 MRS 文件: ./rule/clash/geosite-category-media@cn.mrs
+2025-10-26 13:06:04,422 - INFO - 成功生成 MRS 文件: ./rule/clash/geoip-geolocation-eu.mrs
+2025-10-26 13:06:04,440 - INFO - ✅ sing-box 配置合并成功
+2025-10-26 13:06:04,441 - INFO - ✅ 已将配置文件移动至: /home/runner/work/proxy-ruleset-manager/proxy-ruleset-manager/template/singbox/config.json
