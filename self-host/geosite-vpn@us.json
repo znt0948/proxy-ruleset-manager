@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "v3.paddleapi.com",
+        "www.google.com",
+        "scholar.google.com",
+        "steamcommunity.com",
+        "api.steampowered.com",
+        "accounts.google.com"
+      ]
+    },
+    {
+      "domain_suffix": [
+        ".steamserver.net",
+        ".greencloudvps.com",
+        ".googleapis.cn"
+      ]
+    }
+  ]
+}
