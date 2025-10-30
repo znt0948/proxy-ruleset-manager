@@ -633,6 +633,13 @@
       },
       {
         "type": "remote",
+        "tag": "geosite-category-vpn@us",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-category-vpn@us.srs",
+        "download_detour": "下载 (海外服务)"
+      },
+      {
+        "type": "remote",
         "tag": "geosite-category-game@cn",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-category-game@cn.srs",
