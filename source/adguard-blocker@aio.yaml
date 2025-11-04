@@ -1,5 +1,6 @@
 adguard:
   # AIO
-  - "https://adrules.top/dns.txt"  # 第一个 geosite 链接
-  - "https://big.oisd.nl/"  # 第一个 geosite 链接
-  - "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.plus.txt"  # 第一个 geosite 链接
+  - "https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt"   # AdGuard DNS Filter
+  - "https://adguardteam.github.io/HostlistsRegistry/assets/filter_29.txt"  # CHN: AdRules DNS List
+  - "https://adguardteam.github.io/HostlistsRegistry/assets/filter_27.txt"  # OISD Blocklist Big
+  - "https://adguardteam.github.io/HostlistsRegistry/assets/filter_51.txt"  # HaGeZi's Pro++ Blocklist
