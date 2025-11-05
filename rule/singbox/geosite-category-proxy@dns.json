@@ -2,6 +2,11 @@
     "version": 1,
     "rules": [
         {
+            "domain": [
+                "www.gstatic.com"
+            ]
+        },
+        {
             "domain_suffix": [
                 ".googleapis.cn"
             ]
