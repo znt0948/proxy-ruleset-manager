@@ -1,16 +1,5 @@
 adguard:
+  - "https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt"   # AdGuard DNS Filter
+  - "https://adguardteam.github.io/HostlistsRegistry/assets/filter_5.txt"   # OISD Blocklist Small
+  - "https://adguardteam.github.io/HostlistsRegistry/assets/filter_34.txt"  # HaGeZi's Normal Blocklist
   - "https://adguardteam.github.io/HostlistsRegistry/assets/filter_29.txt"  # CHN: AdRules DNS List
-  - "https://easylist.to/easylist/easyprivacy.txt"
-  - "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt"
-  - "https://secure.fanboy.co.nz/fanboy-cookiemonster.txt"
-  - "https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt"
-  - "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt"
-  - "https://v.firebog.net/hosts/Easyprivacy.txt"
-  - "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/tracking_servers.txt"
-  - "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/tracking_servers_firstparty.txt"
-  - "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
-  - "https://raw.githubusercontent.com/easylist/easylist/master/easyprivacy/easyprivacy_trackingservers.txt"
-  - "https://raw.githubusercontent.com/easylist/easylist/master/easyprivacy/easyprivacy_thirdparty.txt"
-  - "https://raw.githubusercontent.com/easylist/easylist/master/easyprivacy/easyprivacy_trackingservers_international.txt"
-  - "https://raw.githubusercontent.com/easylist/easylist/master/easyprivacy/easyprivacy_thirdparty_international.txt"
-
