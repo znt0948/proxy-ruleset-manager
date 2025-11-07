@@ -1,82 +1,82 @@
 payload:
-  - PROCESS-NAME,orb-compose
+  - PROCESS-NAME,yum
   - PROCESS-NAME,git.exe
-  - PROCESS-NAME,pip3
-  - PROCESS-NAME,python3
+  - PROCESS-NAME,svn
+  - PROCESS-NAME,sparkle
   - PROCESS-NAME,syncthing
-  - PROCESS-NAME,Fallout4.exe
-  - PROCESS-NAME,docker.exe
-  - PROCESS-NAME,axel
-  - PROCESS-NAME,apt-get
-  - PROCESS-NAME,composer.exe
+  - PROCESS-NAME,dnf
+  - PROCESS-NAME,Applite
+  - PROCESS-NAME,apk
   - PROCESS-NAME,yarn
-  - PROCESS-NAME,pnpm
-  - PROCESS-NAME,wget.exe
+  - PROCESS-NAME,qBittorrent.exe
+  - PROCESS-NAME,docker
+  - PROCESS-NAME,wget
+  - PROCESS-NAME,GoogleDriveFS.exe
+  - PROCESS-NAME,ModOrganizer.exe
+  - PROCESS-NAME,rustup
+  - PROCESS-NAME,conda
+  - PROCESS-NAME,OrbStack Helper
+  - PROCESS-NAME,ctr
+  - PROCESS-NAME,composer.exe
+  - PROCESS-NAME,apt
+  - PROCESS-NAME,hg
+  - PROCESS-NAME,gem.exe
+  - PROCESS-NAME,apt-get
+  - PROCESS-NAME,flatpak
+  - PROCESS-NAME,uget
+  - PROCESS-NAME,containerd
+  - PROCESS-NAME,onedrive.exe
+  - PROCESS-NAME,python.exe
+  - PROCESS-NAME,Motrix
+  - PROCESS-NAME,wget2
+  - PROCESS-NAME,zypper
+  - PROCESS-NAME,curl.exe
+  - PROCESS-NAME,python
+  - PROCESS-NAME,megasync.exe
+  - PROCESS-NAME,Motrix.exe
+  - PROCESS-NAME,brew
   - PROCESS-NAME,pacman
   - PROCESS-NAME,powershell.exe
-  - PROCESS-NAME,ctr
-  - PROCESS-NAME,uget-gtk
-  - PROCESS-NAME,dnf
-  - PROCESS-NAME,SkyrimSE.exe
-  - PROCESS-NAME,composer
-  - PROCESS-NAME,Motrix
-  - PROCESS-NAME,apk
-  - PROCESS-NAME,hg
-  - PROCESS-NAME,conda
-  - PROCESS-NAME,cargo
-  - PROCESS-NAME,go
-  - PROCESS-NAME,idm.exe
-  - PROCESS-NAME,git-lfs
-  - PROCESS-NAME,sparkle
-  - PROCESS-NAME,syncthing.exe
-  - PROCESS-NAME,Texifier
-  - PROCESS-NAME,GoogleDriveFS.exe
+  - PROCESS-NAME,pnpm
+  - PROCESS-NAME,gem
+  - PROCESS-NAME,docker.exe
+  - PROCESS-NAME,Fallout4.exe
+  - PROCESS-NAME,aria2c
+  - PROCESS-NAME,Transmission-gtk
+  - PROCESS-NAME,pip3
+  - PROCESS-NAME,snap
+  - PROCESS-NAME,Transmission
   - PROCESS-NAME,Dropbox.exe
-  - PROCESS-NAME,containerd
+  - PROCESS-NAME,python3
+  - PROCESS-NAME,pip
+  - PROCESS-NAME,curl
   - PROCESS-NAME,git-remote-http
   - PROCESS-NAME,mamba
-  - PROCESS-NAME,docker
-  - PROCESS-NAME,rclone
-  - PROCESS-NAME,uget
-  - PROCESS-NAME,Transmission-gtk
-  - PROCESS-NAME,curl
-  - PROCESS-NAME,JDownloader2.exe
-  - PROCESS-NAME,wget2
-  - PROCESS-NAME,flatpak
-  - PROCESS-NAME,Internet Download Manager.exe
-  - PROCESS-NAME,onedrive.exe
-  - PROCESS-NAME,aria2c.exe
-  - PROCESS-NAME,gem
-  - PROCESS-NAME,conda.exe
-  - PROCESS-NAME,Transmission
-  - PROCESS-NAME,wget
-  - PROCESS-NAME,svn
-  - PROCESS-NAME,zypper
-  - PROCESS-NAME,rclone.exe
-  - PROCESS-NAME,python.exe
-  - PROCESS-NAME,pip
-  - PROCESS-NAME,Vortex.exe
-  - PROCESS-NAME,podman
-  - PROCESS-NAME,brew.exe
-  - PROCESS-NAME,Motrix.exe
-  - PROCESS-NAME,megasync.exe
-  - PROCESS-NAME,apt
-  - PROCESS-NAME,python
-  - PROCESS-NAME,gem.exe
-  - PROCESS-NAME,orbctl
-  - PROCESS-NAME,snap
-  - PROCESS-NAME,Wabbajack.exe
-  - PROCESS-NAME,winget.exe
-  - PROCESS-NAME,ModOrganizer.exe
-  - PROCESS-NAME,Applite
-  - PROCESS-NAME,rustup
-  - PROCESS-NAME,qBittorrent.exe
   - PROCESS-NAME,winget
-  - PROCESS-NAME,curl.exe
-  - PROCESS-NAME,powershell
-  - PROCESS-NAME,npm
-  - PROCESS-NAME,brew
-  - PROCESS-NAME,aria2c
+  - PROCESS-NAME,idm.exe
+  - PROCESS-NAME,Internet Download Manager.exe
+  - PROCESS-NAME,axel
+  - PROCESS-NAME,aria2c.exe
   - PROCESS-NAME,git
-  - PROCESS-NAME,OrbStack Helper
-  - PROCESS-NAME,yum
+  - PROCESS-NAME,SkyrimSE.exe
+  - PROCESS-NAME,JDownloader2.exe
+  - PROCESS-NAME,syncthing.exe
+  - PROCESS-NAME,orbctl
+  - PROCESS-NAME,uget-gtk
+  - PROCESS-NAME,composer
+  - PROCESS-NAME,wget.exe
+  - PROCESS-NAME,git-lfs
+  - PROCESS-NAME,npm
+  - PROCESS-NAME,go
+  - PROCESS-NAME,Vortex.exe
+  - PROCESS-NAME,orb-compose
+  - PROCESS-NAME,podman
+  - PROCESS-NAME,Wabbajack.exe
+  - PROCESS-NAME,Texifier
+  - PROCESS-NAME,cargo
+  - PROCESS-NAME,conda.exe
+  - PROCESS-NAME,winget.exe
+  - PROCESS-NAME,rclone
+  - PROCESS-NAME,powershell
+  - PROCESS-NAME,rclone.exe
+  - PROCESS-NAME,brew.exe

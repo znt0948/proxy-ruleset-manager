@@ -563,6 +563,13 @@
       },
       {
         "type": "remote",
+        "tag": "geosite-category-vpn@tw",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-category-vpn@tw.srs",
+        "download_detour": "下载 (海外服务)"
+      },
+      {
+        "type": "remote",
         "tag": "geosite-category-media@cn",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-category-media@cn.srs",
