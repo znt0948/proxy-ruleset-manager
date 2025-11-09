@@ -2,13 +2,9 @@
     "version": 1,
     "rules": [
         {
-            "domain": [
-                "fonts.googleapis.com"
-            ]
-        },
-        {
             "domain_suffix": [
-                "googleapis.cn"
+                "googleapis.cn",
+                "googleapis.com"
             ]
         }
     ]
