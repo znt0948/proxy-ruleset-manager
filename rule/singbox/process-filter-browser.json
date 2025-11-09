@@ -3,15 +3,15 @@
     "rules": [
         {
             "process_name": [
-                "chrome.exe",
                 "AdGuard for Safari",
-                "Safari",
-                "Google Chrome Helper",
-                "com.apple.WebKit.Networking",
+                "Firefox",
+                "Chrome",
+                "chrome.exe",
                 "firefox.exe",
                 "wBlock Filters",
-                "Chrome",
-                "Firefox"
+                "Google Chrome Helper",
+                "Safari",
+                "com.apple.WebKit.Networking"
             ]
         }
     ]
