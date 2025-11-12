@@ -3,8 +3,12 @@
     "rules": [
         {
             "domain": [
-                "fonts.gstatic.com",
                 "fonts.googleapis.com"
+            ]
+        },
+        {
+            "domain_suffix": [
+                "gstatic.com"
             ]
         }
     ]
