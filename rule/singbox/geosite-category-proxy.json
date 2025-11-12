@@ -2,9 +2,9 @@
     "version": 1,
     "rules": [
         {
-            "domain_suffix": [
-                "googleapis.com",
-                "gstatic.com"
+            "domain": [
+                "fonts.gstatic.com",
+                "fonts.googleapis.com"
             ]
         }
     ]
