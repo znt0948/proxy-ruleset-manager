@@ -1,14 +1,5 @@
 adguard:
-  - "https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt" #AdGuard DNS Filter
-  - "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/tracking_servers.txt" # Privacy
-  - "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/tracking_servers_firstparty.txt" # Privacy
-  - "https://easylist.to/easylist/easyprivacy.txt" # Privacy
-  - "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt" # Privacy
-  - "https://secure.fanboy.co.nz/fanboy-cookiemonster.txt" # Privacy
-  - "https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt" # Privacy
-  - "https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt" # Privacy
-  - "https://v.firebog.net/hosts/Easyprivacy.txt" # Privacy
-  - "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/SpywareFilter/sections/mobile.txt"  # Mobile
-  - "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/MobileFilter/sections/specific_app.txt"  # Mobile
-  - "https://adrules.top/dns.txt"  # CN Region
-
+  - "https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt"   # AdGuard DNS Filter
+  - "https://adguardteam.github.io/HostlistsRegistry/assets/filter_27.txt"  # OISD Blocklist Big
+  - "https://adguardteam.github.io/HostlistsRegistry/assets/filter_51.txt"  # HaGeZi's Pro++ Blocklist
+  - "https://adguardteam.github.io/HostlistsRegistry/assets/filter_29.txt"  # CHN: AdRules DNS List

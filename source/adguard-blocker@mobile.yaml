@@ -1,9 +1,6 @@
 adguard:
-  - "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/refs/heads/master/SpywareFilter/sections/mobile.txt"  # 第一个 geosite 链接
-  - "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/MobileFilter/sections/specific_app.txt"  # 第一个 geosite 链接
-  - "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/tracking_servers.txt"
-  - "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/tracking_servers_firstparty.txt"
-  - "https://easylist.to/easylist/easyprivacy.txt"
+  - "https://adguardteam.github.io/HostlistsRegistry/assets/filter_5.txt"   # OISD Blocklist Small
+  - "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/light.txt"  # HaGeZi's Light Blocklist
   - "https://adguardteam.github.io/HostlistsRegistry/assets/filter_29.txt"  # CHN: AdRules DNS List
 
 
