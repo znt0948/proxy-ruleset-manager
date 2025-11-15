@@ -382,13 +382,6 @@
         "download_detour":"下载 (海外服务)"
       },
       {
-        "tag":"adguard-blocker@aio",
-        "type":"remote",
-        "format":"binary",
-        "url":"https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/adguard-blocker@aio.srs",
-        "download_detour":"下载 (海外服务)"
-      },
-      {
         "tag":"geosite-filter-antip@direct",
         "type":"remote",
         "format":"binary",
@@ -435,6 +428,13 @@
         "type":"remote",
         "format":"binary",
         "url":"https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-category-proxy@dns.srs",
+        "download_detour":"下载 (海外服务)"
+      },
+      {
+        "tag":"adguard-blocker@laptop",
+        "type":"remote",
+        "format":"binary",
+        "url":"https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/adguard-blocker@laptop.srs",
         "download_detour":"下载 (海外服务)"
       },
       {
