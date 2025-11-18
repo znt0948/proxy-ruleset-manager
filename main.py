@@ -327,7 +327,8 @@ class RuleParser:
             "domain": set(),
             "domain_suffix": set(),
             "ip_cidr": set(),
-            "domain_regex": set()
+            "domain_regex": set(),
+            "domain_keyword": set()
         }
 
         # 第一轮合并与去重
