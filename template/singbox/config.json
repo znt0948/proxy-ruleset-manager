@@ -528,6 +528,13 @@
       },
       {
         "type": "remote",
+        "tag": "geosite-filter-downloadKeywords@!cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-filter-downloadKeywords@!cn.srs",
+        "download_detour": "下载 (海外服务)"
+      },
+      {
+        "type": "remote",
         "tag": "geosite-category-proxy",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-category-proxy.srs",
