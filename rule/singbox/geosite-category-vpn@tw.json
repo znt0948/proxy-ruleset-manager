@@ -3,25 +3,25 @@
     "rules": [
         {
             "domain": [
-                "gamer2-cds.cdn.hinet.net",
-                "gamer-cds.cdn.hinet.net"
+                "gamer-cds.cdn.hinet.net",
+                "gamer2-cds.cdn.hinet.net"
             ]
         },
         {
             "domain_suffix": [
-                "apple-relay.fastly-edge.com",
-                "apple-relay.mask.apple-dns.net",
-                "bahamut.akamaized.net",
-                "apple-relay.apple.com",
-                "cp4.cloudflare.com",
-                "smoot.apple.com",
-                "bahamut.com.tw",
-                "gateway.icloud.com",
-                "gspe1-ssl.ls.apple.com",
-                "gamer.com.tw",
                 "apple-relay.cloudflare.com",
+                "apple-relay.mask.apple-dns.net",
+                "gamer.com.tw",
+                "gspe1-ssl.ls.apple.com",
+                "apple-relay.apple.com",
+                "bahamut.akamaized.net",
+                "gateway.icloud.com",
                 "apple-relay.akamaized.net",
-                "guzzoni.apple.com"
+                "guzzoni.apple.com",
+                "apple-relay.fastly-edge.com",
+                "bahamut.com.tw",
+                "smoot.apple.com",
+                "cp4.cloudflare.com"
             ]
         }
     ]
