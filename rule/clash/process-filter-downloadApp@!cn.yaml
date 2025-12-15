@@ -1,51 +1,51 @@
 payload:
+  - PROCESS-NAME,docker
+  - PROCESS-NAME,python3
   - PROCESS-NAME,python.exe
+  - PROCESS-NAME,composer.exe
   - PROCESS-NAME,SkyrimSE.exe
-  - PROCESS-NAME,git
-  - PROCESS-NAME,Fallout4.exe
-  - PROCESS-NAME,rclone.exe
-  - PROCESS-NAME,brew.exe
-  - PROCESS-NAME,Applite
-  - PROCESS-NAME,powershell
-  - PROCESS-NAME,curl.exe
-  - PROCESS-NAME,GoogleDriveFS.exe
-  - PROCESS-NAME,git-remote-http
   - PROCESS-NAME,rclone
-  - PROCESS-NAME,wget2
-  - PROCESS-NAME,sparkle
-  - PROCESS-NAME,Texifier
-  - PROCESS-NAME,aria2c
-  - PROCESS-NAME,winget
-  - PROCESS-NAME,composer
-  - PROCESS-NAME,snap
+  - PROCESS-NAME,Applite
+  - PROCESS-NAME,git.exe
+  - PROCESS-NAME,git-lfs
+  - PROCESS-NAME,git-remote-http
   - PROCESS-NAME,python
-  - PROCESS-NAME,winget.exe
-  - PROCESS-NAME,pip
-  - PROCESS-NAME,conda.exe
-  - PROCESS-NAME,wget.exe
-  - PROCESS-NAME,docker.exe
-  - PROCESS-NAME,ModOrganizer.exe
-  - PROCESS-NAME,brew
+  - PROCESS-NAME,apt
+  - PROCESS-NAME,sparkle
+  - PROCESS-NAME,winget
+  - PROCESS-NAME,aria2c
+  - PROCESS-NAME,powershell.exe
+  - PROCESS-NAME,snap
+  - PROCESS-NAME,git
+  - PROCESS-NAME,wget2
+  - PROCESS-NAME,npm
+  - PROCESS-NAME,yum
+  - PROCESS-NAME,megasync.exe
+  - PROCESS-NAME,Wabbajack.exe
+  - PROCESS-NAME,GoogleDriveFS.exe
   - PROCESS-NAME,onedrive.exe
-  - PROCESS-NAME,go
+  - PROCESS-NAME,conda
+  - PROCESS-NAME,winget.exe
   - PROCESS-NAME,apt-get
   - PROCESS-NAME,OrbStack Helper
-  - PROCESS-NAME,npm
-  - PROCESS-NAME,orb-compose
-  - PROCESS-NAME,Vortex.exe
-  - PROCESS-NAME,python3
-  - PROCESS-NAME,megasync.exe
-  - PROCESS-NAME,apt
-  - PROCESS-NAME,git-lfs
-  - PROCESS-NAME,yum
-  - PROCESS-NAME,curl
-  - PROCESS-NAME,git.exe
-  - PROCESS-NAME,Dropbox.exe
-  - PROCESS-NAME,composer.exe
-  - PROCESS-NAME,powershell.exe
-  - PROCESS-NAME,conda
-  - PROCESS-NAME,orbctl
-  - PROCESS-NAME,docker
-  - PROCESS-NAME,pip3
-  - PROCESS-NAME,Wabbajack.exe
+  - PROCESS-NAME,rclone.exe
+  - PROCESS-NAME,docker.exe
   - PROCESS-NAME,wget
+  - PROCESS-NAME,orbctl
+  - PROCESS-NAME,Fallout4.exe
+  - PROCESS-NAME,ModOrganizer.exe
+  - PROCESS-NAME,Dropbox.exe
+  - PROCESS-NAME,curl.exe
+  - PROCESS-NAME,wget.exe
+  - PROCESS-NAME,orb-compose
+  - PROCESS-NAME,Texifier
+  - PROCESS-NAME,conda.exe
+  - PROCESS-NAME,Vortex.exe
+  - PROCESS-NAME,curl
+  - PROCESS-NAME,composer
+  - PROCESS-NAME,pip3
+  - PROCESS-NAME,powershell
+  - PROCESS-NAME,brew.exe
+  - PROCESS-NAME,pip
+  - PROCESS-NAME,brew
+  - PROCESS-NAME,go
