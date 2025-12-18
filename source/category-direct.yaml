@@ -10,7 +10,6 @@ geosite:
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-meituan.srs"
   - "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-direct@selfhost.json"
   - "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt"
-  - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs"
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-private.srs"
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-game-platforms-download@cn.srs"
@@ -20,9 +19,9 @@ geosite:
   - "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/games-cn.srs"
   - "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
   - "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/WeChat/WeChat_OCD_Domain.yaml"
-
-
-
+  - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-springer.srs"
+  - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-elsevier.srs"
+  - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-ieee.srs"
 geoip:
   - "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geoip-direct@selfhost.json"
   - "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
