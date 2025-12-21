@@ -1,0 +1,65 @@
+{
+    "version": 1,
+    "rules": [
+        {
+            "domain": [
+                "roovza.inapps.appsflyersdk.com",
+                "production-openaicom-storage.azureedge.net",
+                "p16-tiktokcdn-com.akamaized.net",
+                "openaiapi-site.azureedge.net",
+                "openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net",
+                "roovza-launches.appsflyersdk.com",
+                "o33249.ingest.sentry.io",
+                "roovza.launches.appsflyersdk.com",
+                "browser-intake-datadoghq.com",
+                "roovza.skadsdk.appsflyersdk.com",
+                "openaicomproductionae4b.blob.core.windows.net",
+                "openaicom.imgix.net"
+            ]
+        },
+        {
+            "domain_suffix": [
+                "muscdn.com",
+                "tik-tokapi.com",
+                "sora.com",
+                "tiktokcdn-eu.com",
+                "tiktok-minis.com",
+                "tiktokglobalshopv.com",
+                "tiktokv.eu",
+                "byteoversea.com",
+                "tiktokv.com",
+                "musical.ly",
+                "tiktokw.eu",
+                "openai.com",
+                "oaiusercontent.com",
+                "tiktokv.us",
+                "chat.com",
+                "ttwstatic.com",
+                "tiktokrow-cdn.com",
+                "tiktokw.us",
+                "tiktok-row.net",
+                "tiktokcdn.com",
+                "tiktokd.net",
+                "chatgpt.livekit.cloud",
+                "tiktokminis.us",
+                "turn.livekit.cloud",
+                "tiktokcdn-us.com",
+                "ttlivecdn.com",
+                "tiktokd.org",
+                "openai.com.cdn.cloudflare.net",
+                "tiktok.com",
+                "ttoverseaus.net",
+                "host.livekit.cloud",
+                "oaistatic.com",
+                "bytedapm.com",
+                "tiktokeu-cdn.com",
+                "chatgpt.com"
+            ]
+        },
+        {
+            "domain_regex": [
+                "^chatgpt-async-webps-prod-\\S+-\\d+\\.webpubsub\\.azure\\.com$"
+            ]
+        }
+    ]
+}
