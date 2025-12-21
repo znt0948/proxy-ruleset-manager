@@ -4,11 +4,9 @@ geosite:
   - "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleNews/AppleNews.yaml"
   - "https://raw.githubusercontent.com/ddgksf2013/Filter/refs/heads/master/AppleIntelligence.list"
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-tiktok@!cn.srs"
-  - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ai-!cn.srs"
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-reddit.srs"
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-vpnservices.srs"
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-ctrip@!cn.srs"
-  - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google.srs"
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-primevideo.srs"
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-netflix.srs"
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-disney.srs"
@@ -18,7 +16,6 @@ geosite:
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-bilibili@!cn.srs"
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-twitter.srs"
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ip-geo-detect.srs"
-  - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ai-!cn.srs"
 
 geoip:
   - "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/netflixip.srs"  # 第一个 geosip 链接
