@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "process_name": [
+        "QQ", "QQ.exe", "TIM", "TIM.exe",
+        "WeChat", "WeChat.exe", "WeChatWin.exe", "WeChatAppEx", "WeChatAppEx Helper",
+        "WXWork", "WXWork.exe",
+        "DingTalk", "DingTalk.exe", "DingTalkLauncher.exe",
+        "Feishu", "Feishu.exe",
+        "wemeetapp.exe", "Wemeet.exe", "TencentMeeting",
+        "AliIM.exe", "WangWang.exe",
+
+        "cloud-drive-daemon", "cloud-drive-daemon.exe",
+        "cloud-drive-connect", "cloud-drive-connect.exe",
+        "cloud-drive-ui", "cloud-drive-ui.exe",
+
+        "BaiduNetdisk", "BaiduNetdisk.exe", "BaiduNetdisk_host.exe",
+        "115chrome.exe", "115Browser.exe", "115Client.exe", "115Client",
+        "Thunder.exe", "Thunder", "XLServicePlatform.exe", "vodudhelper.exe",
+        "Xunlei", "ThunderLiveUD.exe",
+
+        "qBittorrent", "qbittorrent.exe",
+        "BitComet", "BitComet.exe",
+        "Transmission", "transmission-qt", "transmission-gtk",
+        "Motrix", "Motrix.exe",
+
+        "WeGame.exe", "wegame.exe", "tgp_daemon.exe",
+        "TCLS.exe", "GameLoader.exe", "Cross.exe",
+        "YuanShen.exe", "GenshinImpact.exe", "launcher.exe",
+        "StarRail.exe", "collapse.exe",
+        "HonkaiImpact3rd.exe", "nap.exe", "zzz.exe",
+        "DNF.exe", "tenprotect.exe",
+
+        "cloudmusic.exe", "Netease", "MuMuPlayer",
+        "PerfectWorldEsports.exe",
+
+        "ToDesk.exe", "ToDesk_Service.exe",
+        "SunloginClient.exe", "oray.exe",
+        "frpc.exe", "frps.exe","frpc","frps",
+        "ZeroTier One.exe", "tailscaled.exe"
+      ]
+    }
+  ]
+}
