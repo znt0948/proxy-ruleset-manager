@@ -19,6 +19,7 @@ geosite:
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-bilibili@!cn.srs"
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-twitter.srs"
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ip-geo-detect.srs"
+  - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ai-!cn.srs"
 
 geoip:
   - "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/netflixip.srs"  # 第一个 geosip 链接
