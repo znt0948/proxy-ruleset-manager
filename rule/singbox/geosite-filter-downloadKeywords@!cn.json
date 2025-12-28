@@ -1,0 +1,15 @@
+{
+    "version": 1,
+    "rules": [
+        {
+            "domain_regex": [
+                "^dl\\..+"
+            ]
+        },
+        {
+            "domain_keyword": [
+                "download"
+            ]
+        }
+    ]
+}
