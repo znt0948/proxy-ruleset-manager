@@ -18,8 +18,9 @@ geosite:
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ip-geo-detect.srs"
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ai-chat-!cn.srs"
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google.srs"
+  - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-telegram.srs"
 
 geoip:
   - "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/netflixip.srs"  # 第一个 geosip 链接
-
+  - "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/telegramip.srs"
 
