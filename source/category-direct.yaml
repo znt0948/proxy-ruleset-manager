@@ -23,6 +23,7 @@ geosite:
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-springer.srs"
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-elsevier.srs"
   - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-ieee.srs"
+  - "https://static-file-global.353355.xyz/rules/cn-additional-list-clash.yaml"
 geoip:
   - "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geoip-direct@selfhost.json"
   - "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
