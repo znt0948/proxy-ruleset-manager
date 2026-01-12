@@ -139,6 +139,13 @@
       },
       {
         "type": "remote",
+        "tag": "geoip-blocker-httpdns",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geoip-blocker-httpdns.srs",
+        "download_detour": "下载 (海外服务)"
+      },
+      {
+        "type": "remote",
         "tag": "geosite-filter-downloadKeywords@!cn",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-filter-downloadKeywords@!cn.srs",
@@ -226,6 +233,13 @@
         "tag": "adguard-blocker@router",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/adguard-blocker@router.srs",
+        "download_detour": "下载 (海外服务)"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-blocker-httpdns",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-blocker-httpdns.srs",
         "download_detour": "下载 (海外服务)"
       },
       {
