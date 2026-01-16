@@ -3,27 +3,27 @@
     "rules": [
         {
             "domain": [
-                "openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net",
-                "browser-intake-datadoghq.com",
-                "openaicomproductionae4b.blob.core.windows.net",
                 "openaicom.imgix.net",
-                "o33249.ingest.sentry.io",
+                "browser-intake-datadoghq.com",
                 "openaiapi-site.azureedge.net",
-                "production-openaicom-storage.azureedge.net"
+                "o33249.ingest.sentry.io",
+                "production-openaicom-storage.azureedge.net",
+                "openaicomproductionae4b.blob.core.windows.net",
+                "openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net"
             ]
         },
         {
             "domain_suffix": [
-                "host.livekit.cloud",
-                "chat.com",
-                "sora.com",
                 "oaiusercontent.com",
-                "chatgpt.com",
-                "openai.com",
+                "chatgpt.livekit.cloud",
                 "turn.livekit.cloud",
+                "openai.com",
+                "chatgpt.com",
+                "chat.com",
                 "oaistatic.com",
+                "sora.com",
                 "openai.com.cdn.cloudflare.net",
-                "chatgpt.livekit.cloud"
+                "host.livekit.cloud"
             ]
         },
         {
