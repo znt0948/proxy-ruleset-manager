@@ -13,7 +13,8 @@
         "gateway.icloud.com",
         "gofile.io",
         "job.spdb.com",
-        "cp.okshk.com"
+        "cp.okshk.com",
+        "dswz.ncdn.ec"
       ]
     },
     {
@@ -38,9 +39,10 @@
         "steamserver.net"
       ]
     },
-    {"domain_regex":[
+    {
+      "domain_regex": [
         "^.*\\.fastly-edge\\.com$"
-    ]
+      ]
     }
   ]
 }
