@@ -139,6 +139,13 @@
       },
       {
         "type": "remote",
+        "tag": "geosite-blocker-trash@mobile",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-blocker-trash@mobile.srs",
+        "download_detour": "下载 (海外服务)"
+      },
+      {
+        "type": "remote",
         "tag": "adguard-blocker@default",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/adguard-blocker@default.srs",
