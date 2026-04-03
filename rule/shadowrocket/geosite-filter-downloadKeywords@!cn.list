@@ -1,2 +1,17 @@
+DOMAIN-REGEX,^pkg[-.].+
+DOMAIN-REGEX,^cdn-download[-.].+
+DOMAIN-REGEX,^archive[-.].+
 DOMAIN-REGEX,^dl[-.].+
+DOMAIN-REGEX,^upd[-.].+
+DOMAIN-REGEX,^files[-.].+
+DOMAIN-REGEX,^dist[-.].+
+DOMAIN-REGEX,^content-download[-.].+
+DOMAIN-REGEX,^cache[-.].+
+DOMAIN-REGEX,^mirror[-.].+
+DOMAIN-REGEX,^repo[-.].+
+DOMAIN-REGEX,^edgedl[-.].+
+DOMAIN-KEYWORD,update-binary
+DOMAIN-KEYWORD,mediafire
+DOMAIN-KEYWORD,pixeldrain
 DOMAIN-KEYWORD,download
+DOMAIN-KEYWORD,1fichier
