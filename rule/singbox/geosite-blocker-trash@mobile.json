@@ -3,48 +3,48 @@
     "rules": [
         {
             "domain": [
-                "tracking.india.miui.com",
-                "tracking.miui.com",
-                "tracking.intl.miui.com",
                 "api.installer.xiaomi.com",
+                "tracking.miui.com",
+                "tracking.india.miui.com",
+                "tracking.intl.miui.com",
                 "tracking.rus.miui.com"
             ]
         },
         {
             "domain_suffix": [
-                "i-bestmind.com",
-                "ifcert.cn",
-                "fhss.com.cn",
-                "ics-cert.org.cn",
-                "fanzha.org.cn",
-                "loongteam.com",
-                "certlab.org",
-                "cert.org.cn",
-                "china-bestmind.com",
-                "anva.org.cn",
-                "hicore-auth.com",
-                "ifcert.com",
-                "t-bestmind.com",
-                "himindtech.com",
-                "hei-tong.com",
+                "ifcert.org.cn",
                 "cnvd.org.cn",
-                "hailiangyun.cn",
-                "ifcert.org.cn"
+                "ics-cert.org.cn",
+                "ifcert.cn",
+                "hicore-auth.com",
+                "himindtech.com",
+                "china-bestmind.com",
+                "i-bestmind.com",
+                "loongteam.com",
+                "ifcert.com",
+                "certlab.org",
+                "fanzha.org.cn",
+                "hei-tong.com",
+                "t-bestmind.com",
+                "anva.org.cn",
+                "cert.org.cn",
+                "fhss.com.cn",
+                "hailiangyun.cn"
             ]
         },
         {
             "ip_cidr": [
-                "157.148.47.204/32",
-                "219.143.187.136/32"
+                "219.143.187.136/32",
+                "157.148.47.204/32"
             ]
         },
         {
             "domain_keyword": [
                 "ifcert.cn",
+                "fzlm",
                 "fqzpt",
                 "gjfzpt",
-                "chanct",
-                "fzlm"
+                "chanct"
             ]
         }
     ]
