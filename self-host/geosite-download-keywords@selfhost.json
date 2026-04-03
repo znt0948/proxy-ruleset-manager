@@ -3,10 +3,25 @@
   "rules": [
     {
       "domain_keyword": [
-        "download"
+        "download",
+        "update-binary",
+        "mediafire",
+        "pixeldrain",
+        "1fichier"
       ],
       "domain_regex": [
-        "^dl[-.].+"
+        "^dl[-.].+",
+        "^edgedl[-.].+",
+        "^upd[-.].+",
+        "^dist[-.].+",
+        "^pkg[-.].+",
+        "^archive[-.].+",
+        "^mirror[-.].+",
+        "^repo[-.].+",
+        "^files[-.].+",
+        "^cache[-.].+",
+        "^cdn-download[-.].+",
+        "^content-download[-.].+"
       ]
     }
   ]
