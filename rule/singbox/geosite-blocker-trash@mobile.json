@@ -3,33 +3,33 @@
     "rules": [
         {
             "domain": [
-                "tracking.rus.miui.com",
-                "api.installer.xiaomi.com",
+                "tracking.intl.miui.com",
                 "tracking.miui.com",
+                "tracking.rus.miui.com",
                 "tracking.india.miui.com",
-                "tracking.intl.miui.com"
+                "api.installer.xiaomi.com"
             ]
         },
         {
             "domain_suffix": [
-                "fanzha.org.cn",
-                "hicore-auth.com",
-                "himindtech.com",
-                "fhss.com.cn",
-                "t-bestmind.com",
-                "anva.org.cn",
-                "ifcert.cn",
-                "hei-tong.com",
-                "ifcert.com",
-                "cnvd.org.cn",
-                "ics-cert.org.cn",
-                "china-bestmind.com",
-                "i-bestmind.com",
                 "certlab.org",
+                "i-bestmind.com",
+                "cnvd.org.cn",
+                "hicore-auth.com",
                 "cert.org.cn",
-                "ifcert.org.cn",
+                "anva.org.cn",
                 "loongteam.com",
-                "hailiangyun.cn"
+                "himindtech.com",
+                "ifcert.org.cn",
+                "ifcert.com",
+                "hailiangyun.cn",
+                "ifcert.cn",
+                "t-bestmind.com",
+                "china-bestmind.com",
+                "ics-cert.org.cn",
+                "fanzha.org.cn",
+                "hei-tong.com",
+                "fhss.com.cn"
             ]
         },
         {
@@ -40,10 +40,10 @@
         },
         {
             "domain_keyword": [
-                "gjfzpt",
-                "fqzpt",
-                "ifcert.cn",
                 "fzlm",
+                "fqzpt",
+                "gjfzpt",
+                "ifcert.cn",
                 "chanct"
             ]
         }
