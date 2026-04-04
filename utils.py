@@ -522,7 +522,11 @@ def fix_domain_prefix(value):
 
 def convert_json_to_clash(input_dir):
     """
-    读取指定目录下的所有 JSON 规则文件，并将其转换为 Clash 规则格式。
+    将 Sing-box JSON 规则转换为 Clash (Mihomo) Payload 格式。
+    严格遵守：
+    1. 不写 DOMAIN-KEYWORD 等前缀，仅保留纯值。
+    2. 使用 '+.' 替代 DOMAIN-SUFFIX 以匹配多级子域。
+    3. 安全转换正则：使用通配符 '*' 限定开头，避免误伤。
     """
     output_dir = config.clash_output_directory
     os.makedirs(output_dir, exist_ok=True)
@@ -536,40 +540,58 @@ def convert_json_to_clash(input_dir):
                 with open(input_path, "r", encoding="utf-8") as f:
                     data = json.load(f)
 
-                clash_rules = []
+                clash_payload = []
                 for rule in data.get("rules", []):
                     for rule_type, values in rule.items():
-                        if rule_type in config.SINGBOX_TO_CLASH_MAP:
-                            clash_type = config.SINGBOX_TO_CLASH_MAP[rule_type]
-                            for value in (values if isinstance(values, list) else [values]):
-                                cleaned_value = clean_comment(value)
+                        val_list = values if isinstance(values, list) else [values]
+                        
+                        for value in val_list:
+                            cleaned_value = clean_comment(value)
+                            if not cleaned_value: continue
 
-                                if clash_type == "IP-CIDR":
-                                    clash_rules.append(f"'{cleaned_value}'")
+                            # --- 1. 处理正则 (Regex -> Wildcard) ---
+                            # 原则：宁愿漏掉，不可误伤 (Keep scope small)
+                            if rule_type == "domain_regex":
+                                if cleaned_value.startswith("^"):
+                                    # 提取前缀，例如 ^dl[-.].+ -> dl
+                                    prefix = cleaned_value.replace("^", "").split('[')[0].split('(')[0].rstrip('.-')
+                                    if prefix:
+                                        # 使用 * 匹配一级子域开头。虽然 * 不能跨级，
+                                        # 但相比关键词包含，它能保证必须是【开头】匹配。
+                                        clash_payload.append(f"'{prefix}.*'")
+                                        clash_payload.append(f"'{prefix}-*'")
+                                continue
 
-                                elif clash_type == "DOMAIN-SUFFIX":
-                                    # 添加 +. 前缀，确保同时匹配根域和子域
-                                    if cleaned_value.startswith('+'):
-                                        clash_rules.append(f"'{cleaned_value}'")
-                                    else:
-                                        domain_part = cleaned_value.lstrip('.')  # 去掉原有点
-                                        clash_rules.append(f"'+.{domain_part}'")
+                            # --- 2. 处理后缀 (DOMAIN-SUFFIX -> +.) ---
+                            elif rule_type == "domain_suffix":
+                                # 根据文档：+.baidu.com 匹配所有层级，且包含 baidu.com 本身
+                                domain_part = cleaned_value.lstrip('+').lstrip('.')
+                                clash_payload.append(f"'+.{domain_part}'")
 
-                                elif clash_type in {"DOMAIN", "DOMAIN-KEYWORD", "DOMAIN-REGEX"}:
-                                    clash_rules.append(f"'{cleaned_value}'")
+                            # --- 3. 处理全域名 (DOMAIN) ---
+                            elif rule_type == "domain":
+                                # Payload 中直接写域名，Clash 会进行精确/后缀匹配
+                                clash_payload.append(f"'{cleaned_value}'")
 
-                                else:
-                                    clash_rules.append(f"{clash_type},{cleaned_value}")
+                            # --- 4. 处理关键词 (DOMAIN-KEYWORD) ---
+                            elif rule_type == "domain_keyword":
+                                # 直接写入字符串，Clash 默认执行包含匹配
+                                clash_payload.append(f"'{cleaned_value}'")
 
-                # 手动写入 YAML，避免 yaml.dump 额外加引号
+                            # --- 5. 处理 IP CIDR ---
+                            elif rule_type == "ip_cidr":
+                                clash_payload.append(f"'{cleaned_value}'")
+
+                # 去重并排序，保持 YAML 简洁
+                unique_payload = sorted(list(set(clash_payload)))
+                
                 with open(output_path, "w", encoding="utf-8") as f:
                     f.write("payload:\n")
-                    for rule in clash_rules:
-                        f.write(f"  - {rule}\n")
+                    for entry in unique_payload:
+                        f.write(f"  - {entry}\n")
 
             except Exception as e:
                 logging.error(f"转换 {input_path} 到 Clash 规则时出错：{e}")
-
 
 def clean_comment(value):
     """ 去除规则中的注释内容（如果有）"""
