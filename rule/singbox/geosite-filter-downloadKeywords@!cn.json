@@ -3,27 +3,27 @@
     "rules": [
         {
             "domain_regex": [
-                "^content-download[-.].+",
-                "^cache[-.].+",
-                "^mirror[-.].+",
-                "^pkg[-.].+",
-                "^upd[-.].+",
                 "^edgedl[-.].+",
                 "^archive[-.].+",
+                "^upd[-.].+",
                 "^cdn-download[-.].+",
+                "^repo[-.].+",
+                "^content-download[-.].+",
                 "^dist[-.].+",
                 "^dl[-.].+",
-                "^repo[-.].+",
-                "^files[-.].+"
+                "^mirror[-.].+",
+                "^cache[-.].+",
+                "^files[-.].+",
+                "^pkg[-.].+"
             ]
         },
         {
             "domain_keyword": [
+                "1fichier",
                 "mediafire",
-                "pixeldrain",
                 "update-binary",
-                "download",
-                "1fichier"
+                "pixeldrain",
+                "download"
             ]
         }
     ]

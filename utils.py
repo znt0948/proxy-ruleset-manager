@@ -523,15 +523,16 @@ def fix_domain_prefix(value):
 def convert_json_to_clash(input_dir):
     """
     将 JSON 规则转换为 Clash Payload 格式。
-    包含分流过滤、正则安全降级及兜底机制 (Else)。
+    不再进行正则降级，直接按照 config.SINGBOX_TO_CLASH_MAP 进行映射。
     """
     output_dir = config.clash_output_directory
     os.makedirs(output_dir, exist_ok=True)
 
     for filename in os.listdir(input_dir):
-        if not filename.endswith(".json"): continue
+        if not filename.endswith(".json"):
+            continue
 
-        # 识别文件目标类型 (用于避免 MRS 编译报错)
+        # 识别文件目标类型，用于规避 MRS 编译时的跨类型报错
         is_ip_file = filename.startswith("geoip")
         input_path = os.path.join(input_dir, filename)
         output_path = os.path.join(output_dir, filename.replace(".json", ".yaml"))
@@ -543,61 +544,54 @@ def convert_json_to_clash(input_dir):
             clash_payload = []
             for rule in data.get("rules", []):
                 for rule_type, values in rule.items():
-                    # 统一转为列表处理
+                    # 获取映射后的 Clash 类型
+                    clash_type = config.SINGBOX_TO_CLASH_MAP.get(rule_type)
+                    if not clash_type:
+                        continue
+
                     val_list = values if isinstance(values, list) else [values]
 
                     for value in val_list:
                         cleaned_value = clean_comment(value)
-                        if not cleaned_value: continue
+                        if not cleaned_value:
+                            continue
 
-                        # 1. IP 文件处理逻辑 (目标: geoip .mrs)
+                        # --- 1. IP 文件处理逻辑 (仅保留 IP 相关) ---
                         if is_ip_file:
-                            if rule_type == "ip_cidr":
-                                # 补全 CIDR 格式防止编译器报错
+                            if clash_type == "IP-CIDR":
+                                # 修正补全 CIDR 格式
                                 if "/" not in cleaned_value:
                                     cleaned_value += "/128" if ":" in cleaned_value else "/32"
                                 clash_payload.append(f"'{cleaned_value}'")
-                            # IP 文件中直接忽略域名相关规则，防止 MRS 编译失败
+                            # 非 IP 规则在 geoip 文件中直接跳过
 
-                        # 2. 域名文件处理逻辑 (目标: geosite .mrs)
+                        # --- 2. 域名/其他文件处理逻辑 ---
                         else:
-                            # 2.1 常见的映射处理
-                            if rule_type == "domain":
-                                clash_payload.append(f"'{cleaned_value}'")
+                            # 如果是 IP 规则出现在域名文件里，跳过以防 MRS 报错
+                            if clash_type == "IP-CIDR":
+                                continue
 
-                            elif rule_type == "domain_suffix":
+                            if clash_type == "DOMAIN-SUFFIX":
+                                # 处理后缀逻辑，统一使用 +.
                                 d = cleaned_value.lstrip('+').lstrip('.')
                                 clash_payload.append(f"'+.{d}'")
 
-                            elif rule_type == "domain_regex":
-                                # 编译器不支持正则，安全降级为前缀通配符
-                                raw = cleaned_value.replace("(^|\\.)", "").replace("^", "").replace("\\", "")
-                                prefix = re.split(r'[\[\(\*\+\?\{\|\$]', raw)[0].rstrip('.-')
-                                if len(prefix) >= 3 and not prefix.isdigit():
-                                    clash_payload.append(f"'{prefix}.*'")
-                                    clash_payload.append(f"'{prefix}-*'")
-
-                            elif rule_type == "domain_keyword":
+                            elif clash_type == "DOMAIN":
                                 clash_payload.append(f"'{cleaned_value}'")
 
-                            # 2.2 兜底逻辑 (Else)
+                            # --- 3. 兜底 Else (处理 PROCESS-NAME 等其他类型) ---
                             else:
-                                if rule_type in config.SINGBOX_TO_CLASH_MAP:
-                                    # 如果在 Map 中有定义（如 PROCESS-NAME），按标准格式输出
-                                    clash_type = config.SINGBOX_TO_CLASH_MAP[rule_type]
-                                    clash_payload.append(f"{clash_type},{cleaned_value}")
-                                else:
-                                    # 完全未知的类型，尝试保留原始键值作为前缀（仅用于调试或高级扩展）
-                                    # 注意：在 payload 里如果类型不合法，MRS 编译仍可能报错
-                                    # 建议生产环境下记录 warning 或跳过
-                                    logging.warning(f"未知规则类型 {rule_type} 在文件 {filename} 中")
+                                clash_payload.append(f"{clash_type},'{cleaned_value}'")
 
             # 去重并写入
             unique_payload = sorted(list(set(clash_payload)))
             with open(output_path, "w", encoding="utf-8") as f:
                 f.write("payload:\n")
                 for entry in unique_payload:
+                    # 注意：entry 内部已经包含了必要的引号逻辑
                     f.write(f"  - {entry}\n")
+
+            logging.debug(f"已生成 Clash Payload: {output_path}")
 
         except Exception as e:
             logging.error(f"转换 {input_path} 出错：{e}")
