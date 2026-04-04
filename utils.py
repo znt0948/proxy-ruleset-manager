@@ -520,22 +520,10 @@ def fix_domain_prefix(value):
     return value.lstrip(".") if value.startswith(".") else value
 
 
-def is_safe_prefix(prefix):
-    """
-    安全性检查：防止从小范围变成大范围。
-    1. 长度太短（<3）的关键词不转换。
-    2. 包含常见系统级前缀的谨慎转换。
-    """
-    if not prefix or len(prefix) < 3:
-        return False
-    # 排除纯数字或极其常见的缩写
-    if prefix.isdigit() or prefix in ["api", "www", "img", "cdn"]:
-        return False
-    return True
-
 def convert_json_to_clash(input_dir):
     """
-    将 JSON 规则转换为 Clash Payload，增加正则安全过滤机制。
+    针对 Mihomo (Clash Meta) 优化的转换函数。
+    支持在 Payload 中直接使用 DOMAIN-REGEX。
     """
     output_dir = config.clash_output_directory
     os.makedirs(output_dir, exist_ok=True)
@@ -558,46 +546,40 @@ def convert_json_to_clash(input_dir):
                             cleaned_value = clean_comment(value)
                             if not cleaned_value: continue
 
-                            # --- 核心：正则安全转换机制 ---
+                            # --- 1. 处理正则 (Mihomo 格式) ---
                             if rule_type == "domain_regex":
-                                # 处理常见的两种安全模式：
-                                # 1. ^prefix...
-                                # 2. (^|\\.)prefix...
-                                prefix = None
-                                if cleaned_value.startswith("^"):
-                                    # 处理 (^|\\.) 情况
-                                    raw = cleaned_value.replace("(^|\\.)", "").replace("^", "").replace("\\", "")
-                                    # 提取第一个正则元字符前的文本
-                                    prefix = re.split(r'[\[\(\*\+\?\{\|\$]', raw)[0].rstrip('.-')
-                                
-                                # 只有通过安全性校验才添加
-                                if prefix and is_safe_prefix(prefix):
-                                    clash_payload.append(f"'{prefix}.*'")
-                                    clash_payload.append(f"'{prefix}-*'")
-                                else:
-                                    # 判定为不安全或太宽泛，跳过此条正则
-                                    # logging.debug(f"跳过不安全正则: {cleaned_value}")
-                                    continue
+                                # 在 payload 中，正则必须显式声明类型并用引号包裹
+                                clash_payload.append(f'DOMAIN-REGEX,"{cleaned_value}"')
 
+                            # --- 2. 处理后缀 ---
                             elif rule_type == "domain_suffix":
                                 domain_part = cleaned_value.lstrip('+').lstrip('.')
                                 clash_payload.append(f"'+.{domain_part}'")
 
+                            # --- 3. 处理全域名 ---
                             elif rule_type == "domain":
                                 clash_payload.append(f"'{cleaned_value}'")
 
+                            # --- 4. 处理关键词 ---
                             elif rule_type == "domain_keyword":
-                                clash_payload.append(f"'{cleaned_value}'")
+                                # 同样建议显式声明，防止歧义
+                                clash_payload.append(f"DOMAIN-KEYWORD,'{cleaned_value}'")
 
+                            # --- 5. 处理 IP CIDR ---
                             elif rule_type == "ip_cidr":
+                                # IP 段不需要引号也可以，但为了统一建议加上
                                 clash_payload.append(f"'{cleaned_value}'")
 
                 # 去重并写入
                 unique_payload = sorted(list(set(clash_payload)))
+                
                 with open(output_path, "w", encoding="utf-8") as f:
                     f.write("payload:\n")
                     for entry in unique_payload:
+                        # 注意：这里 entry 已经包含了引号处理
                         f.write(f"  - {entry}\n")
+
+                logging.info(f"Mihomo 转换完成: {output_path}")
 
             except Exception as e:
                 logging.error(f"转换 {input_path} 出错：{e}")
