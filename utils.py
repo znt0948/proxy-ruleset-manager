@@ -522,79 +522,66 @@ def fix_domain_prefix(value):
 
 def convert_json_to_clash(input_dir):
     """
-    将 JSON 规则转换为 Clash Payload 格式。
-    不再进行正则降级，直接按照 config.SINGBOX_TO_CLASH_MAP 进行映射。
+    读取指定目录下的所有 JSON 规则文件，并将其转换为 Clash 规则格式。
+    如果文件中没有有效规则（全部被跳过），则不生成对应的 YAML 文件。
     """
     output_dir = config.clash_output_directory
     os.makedirs(output_dir, exist_ok=True)
 
     for filename in os.listdir(input_dir):
-        if not filename.endswith(".json"):
-            continue
+        if filename.endswith(".json"):
+            input_path = os.path.join(input_dir, filename)
+            output_path = os.path.join(output_dir, filename.replace(".json", ".yaml"))
 
-        # 识别文件目标类型，用于规避 MRS 编译时的跨类型报错
-        is_ip_file = filename.startswith("geoip")
-        input_path = os.path.join(input_dir, filename)
-        output_path = os.path.join(output_dir, filename.replace(".json", ".yaml"))
+            try:
+                with open(input_path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
 
-        try:
-            with open(input_path, "r", encoding="utf-8") as f:
-                data = json.load(f)
+                clash_rules = []
+                for rule in data.get("rules", []):
+                    for rule_type, values in rule.items():
+                        if rule_type in config.SINGBOX_TO_CLASH_MAP:
+                            clash_type = config.SINGBOX_TO_CLASH_MAP[rule_type]
 
-            clash_payload = []
-            for rule in data.get("rules", []):
-                for rule_type, values in rule.items():
-                    # 获取映射后的 Clash 类型
-                    clash_type = config.SINGBOX_TO_CLASH_MAP.get(rule_type)
-                    if not clash_type:
-                        continue
+                            val_list = values if isinstance(values, list) else [values]
+                            for value in val_list:
+                                cleaned_value = clean_comment(value)
 
-                    val_list = values if isinstance(values, list) else [values]
+                                if clash_type == "IP-CIDR":
+                                    clash_rules.append(f"'{cleaned_value}'")
 
-                    for value in val_list:
-                        cleaned_value = clean_comment(value)
-                        if not cleaned_value:
-                            continue
+                                elif clash_type == "DOMAIN-SUFFIX":
+                                    if cleaned_value.startswith('+'):
+                                        clash_rules.append(f"'{cleaned_value}'")
+                                    else:
+                                        domain_part = cleaned_value.lstrip('.')
+                                        clash_rules.append(f"'+.{domain_part}'")
 
-                        # --- 1. IP 文件处理逻辑 (仅保留 IP 相关) ---
-                        if is_ip_file:
-                            if clash_type == "IP-CIDR":
-                                # 修正补全 CIDR 格式
-                                if "/" not in cleaned_value:
-                                    cleaned_value += "/128" if ":" in cleaned_value else "/32"
-                                clash_payload.append(f"'{cleaned_value}'")
-                            # 非 IP 规则在 geoip 文件中直接跳过
+                                elif clash_type == "DOMAIN":
+                                    clash_rules.append(f"'{cleaned_value}'")
 
-                        # --- 2. 域名/其他文件处理逻辑 ---
-                        else:
-                            # 如果是 IP 规则出现在域名文件里，跳过以防 MRS 报错
-                            if clash_type == "IP-CIDR":
-                                continue
+                                # 命中此分支会被跳过，不加入 clash_rules
+                                elif clash_type in {"DOMAIN-KEYWORD", "DOMAIN-REGEX"}:
+                                    continue
 
-                            if clash_type == "DOMAIN-SUFFIX":
-                                # 处理后缀逻辑，统一使用 +.
-                                d = cleaned_value.lstrip('+').lstrip('.')
-                                clash_payload.append(f"'+.{d}'")
+                                else:
+                                    clash_rules.append(f"{clash_type},{cleaned_value}")
 
-                            elif clash_type == "DOMAIN":
-                                clash_payload.append(f"'{cleaned_value}'")
+                # --- 关键修改点：判断是否有有效规则 ---
+                if not clash_rules:
+                    logging.info(f"跳过文件 {filename}: 没有有效的转换规则。")
+                    continue
 
-                            # --- 3. 兜底 Else (处理 PROCESS-NAME 等其他类型) ---
-                            else:
-                                clash_payload.append(f"{clash_type},'{cleaned_value}'")
+                    # 只有 clash_rules 不为空时，才会执行写入操作
+                with open(output_path, "w", encoding="utf-8") as f:
+                    f.write("payload:\n")
+                    for rule in clash_rules:
+                        f.write(f"  - {rule}\n")
 
-            # 去重并写入
-            unique_payload = sorted(list(set(clash_payload)))
-            with open(output_path, "w", encoding="utf-8") as f:
-                f.write("payload:\n")
-                for entry in unique_payload:
-                    # 注意：entry 内部已经包含了必要的引号逻辑
-                    f.write(f"  - {entry}\n")
+                logging.info(f"成功转换: {filename} -> {os.path.basename(output_path)}")
 
-            logging.debug(f"已生成 Clash Payload: {output_path}")
-
-        except Exception as e:
-            logging.error(f"转换 {input_path} 出错：{e}")
+            except Exception as e:
+                logging.error(f"转换 {input_path} 到 Clash 规则时出错：{e}")
 
 def clean_comment(value):
     """ 去除规则中的注释内容（如果有）"""
