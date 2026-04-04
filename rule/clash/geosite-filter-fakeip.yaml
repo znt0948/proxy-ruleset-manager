@@ -47,8 +47,6 @@ payload:
   - '+.wowsgame.cn'
   - '+.xiami.com'
   - '+.y.qq.com'
-  - 'MijiasCloud-*'
-  - 'MijiasCloud.*'
   - 'adguardteam.github.io'
   - 'adrules.top'
   - 'amobile.music.tc.qq.com'
@@ -63,8 +61,6 @@ payload:
   - 'joox.com'
   - 'lens.l.google.com'
   - 'local.adguard.org'
-  - 'localhost-*'
-  - 'localhost.*'
   - 'localhost.ptlogin2.qq.com'
   - 'localhost.sec.qq.com'
   - 'mesu.apple.com'
@@ -73,21 +69,25 @@ payload:
   - 'musicapi.taihe.com'
   - 'na.b.g-tun.com'
   - 'nikke-jp.com'
-  - 'ntp'
   - 'proxy.golang.org'
   - 'ps.res.netease.com'
   - 'shark007.net'
   - 'songsearch.kugou.com'
   - 'static.adtidy.org'
   - 'streamoc.music.tc.qq.com'
-  - 'stun'
   - 'swcdn.apple.com'
   - 'swdist.apple.com'
   - 'swdownload.apple.com'
   - 'swquery.apple.com'
   - 'swscan.apple.com'
-  - 'time'
   - 'trackercdn.kugou.com'
-  - 'xbox-*'
-  - 'xbox.*'
   - 'xnotify.xboxlive.com'
+  - DOMAIN-KEYWORD,'ntp'
+  - DOMAIN-KEYWORD,'stun'
+  - DOMAIN-KEYWORD,'time'
+  - DOMAIN-REGEX,"^Mijia\sCloud$"
+  - DOMAIN-REGEX,"^[^.]+$"
+  - DOMAIN-REGEX,"^[^.]+\.[^.]+\.xboxlive\.com$"
+  - DOMAIN-REGEX,"^localhost\.[^.]+\.weixin\.qq\.com$"
+  - DOMAIN-REGEX,"^xbox\.[^.]+\.[^.]+\.microsoft\.com$"
+  - DOMAIN-REGEX,"^xbox\.[^.]+\.microsoft\.com$"

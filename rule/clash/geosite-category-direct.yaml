@@ -150832,8 +150832,6 @@ payload:
   - 'c.pki.goog'
   - 'cache-management-prod.google.com'
   - 'cache.pack.google.com'
-  - 'cdn-akamai-*'
-  - 'cdn-akamai.*'
   - 'cdn-ali.content.steamchina.com'
   - 'cdn-cn.apple-mapkit.com'
   - 'cdn-cn1.apple-mapkit.com'
@@ -150850,8 +150848,6 @@ payload:
   - 'cdn2.apple-mapkit.com'
   - 'cdn3.apple-mapkit.com'
   - 'cdn4.apple-mapkit.com'
-  - 'cdnd-epicgames-d-*'
-  - 'cdnd-epicgames-d.*'
   - 'cds-cdn.v.aaplimg.com'
   - 'cds.apple.com'
   - 'cds.apple.com.akadns.net'
@@ -150945,8 +150941,6 @@ payload:
   - 'emmapplecodevice.googleapis.com'
   - 'emoi-cncdn.bing.com'
   - 'epicgames-download1-1251447533.file.myqcloud.com'
-  - 'epicgames-downloadd-d-*'
-  - 'epicgames-downloadd-d.*'
   - 'evan.im'
   - 'exodus.desync.com'
   - 'experiments.apple.com'
@@ -150973,9 +150967,7 @@ payload:
   - 'gbxgateway.dell.com'
   - 'go.corp.google.com'
   - 'gofile.io'
-  - 'gog-cdn-*'
   - 'gog-cdn-fastly.gog.com'
-  - 'gog-cdn.*'
   - 'gog-cdn.akamaized.net'
   - 'gogalaxy.gog-statics.com'
   - 'gonglchuangl.net'
@@ -151032,10 +151024,8 @@ payload:
   - 'icloud-cdn.icloud.com.akadns.net'
   - 'icloud.cdn-apple.com'
   - 'id6.me'
-  - 'images-*'
   - 'images-cn-8.ssl-images-amazon.com'
   - 'images-cn.ssl-images-amazon.com'
-  - 'images.*'
   - 'images.apple.com.edgekey.net.globalredir.akadns.net'
   - 'imasdk.googleapis.com'
   - 'inappcheck-cn.itunes-apple.com.akadns.net'
@@ -151126,8 +151116,6 @@ payload:
   - 'myapp.itunes.apple.com'
   - 'myvs.download.prss.microsoft.com'
   - 'nexus.dell.com'
-  - 'nis-*'
-  - 'nis.*'
   - 'node01.madtia.cc'
   - 'node01.torrentonline.cc'
   - 'node01.trackerstatus.live'
@@ -151425,3 +151413,16 @@ payload:
   - 'xp.apple.com'
   - 'xtratime.qcomgeo2.com'
   - 'yxvm.com'
+  - DOMAIN-REGEX,".+\.awsdns-cn-[0-9][0-9]\.(biz|com|net|top)$"
+  - DOMAIN-REGEX,".+\.awsdns-cn-[0-9][a-e0-9]\.cn$"
+  - DOMAIN-REGEX,"^.*\.fastly-edge\.com$"
+  - DOMAIN-REGEX,"^.+-mihayo\.akamaized\.net$"
+  - DOMAIN-REGEX,"^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$"
+  - DOMAIN-REGEX,"^cdn-akamai-.+\.gog-services\.com$"
+  - DOMAIN-REGEX,"^cdn\d-epicgames-\d+\.file\.myqcloud\.com$"
+  - DOMAIN-REGEX,"^epicgames-download\d-\d+\.file\.myqcloud\.com$"
+  - DOMAIN-REGEX,"^gog-cdn-.+\.footprint\.net$"
+  - DOMAIN-REGEX,"^images(-\d)?\.gog-statics\.com$"
+  - DOMAIN-REGEX,"^nis.+\.10010\.com$"
+  - DOMAIN-REGEX,"^r+[0-9]+(---|\.)sn-(2x3|ni5|j5o)\w{5}\.googlevideo\.com$"
+  - DOMAIN-REGEX,"^r+[0-9]+(---|\.)sn-(2x3|ni5|j5o)\w{5}\.xn--ngstr-lra8j\.com$"
