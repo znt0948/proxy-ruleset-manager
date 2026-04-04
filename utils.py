@@ -522,67 +522,85 @@ def fix_domain_prefix(value):
 
 def convert_json_to_clash(input_dir):
     """
-    针对 Mihomo (Clash Meta) 优化的转换函数。
-    支持在 Payload 中直接使用 DOMAIN-REGEX。
+    将 JSON 规则转换为 Clash Payload 格式。
+    包含分流过滤、正则安全降级及兜底机制 (Else)。
     """
     output_dir = config.clash_output_directory
     os.makedirs(output_dir, exist_ok=True)
 
     for filename in os.listdir(input_dir):
-        if filename.endswith(".json"):
-            input_path = os.path.join(input_dir, filename)
-            output_path = os.path.join(output_dir, filename.replace(".json", ".yaml"))
+        if not filename.endswith(".json"): continue
 
-            try:
-                with open(input_path, "r", encoding="utf-8") as f:
-                    data = json.load(f)
+        # 识别文件目标类型 (用于避免 MRS 编译报错)
+        is_ip_file = filename.startswith("geoip")
+        input_path = os.path.join(input_dir, filename)
+        output_path = os.path.join(output_dir, filename.replace(".json", ".yaml"))
 
-                clash_payload = []
-                for rule in data.get("rules", []):
-                    for rule_type, values in rule.items():
-                        val_list = values if isinstance(values, list) else [values]
-                        
-                        for value in val_list:
-                            cleaned_value = clean_comment(value)
-                            if not cleaned_value: continue
+        try:
+            with open(input_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
 
-                            # --- 1. 处理正则 (Mihomo 格式) ---
-                            if rule_type == "domain_regex":
-                                # 在 payload 中，正则必须显式声明类型并用引号包裹
-                                clash_payload.append(f'DOMAIN-REGEX,"{cleaned_value}"')
+            clash_payload = []
+            for rule in data.get("rules", []):
+                for rule_type, values in rule.items():
+                    # 统一转为列表处理
+                    val_list = values if isinstance(values, list) else [values]
 
-                            # --- 2. 处理后缀 ---
+                    for value in val_list:
+                        cleaned_value = clean_comment(value)
+                        if not cleaned_value: continue
+
+                        # 1. IP 文件处理逻辑 (目标: geoip .mrs)
+                        if is_ip_file:
+                            if rule_type == "ip_cidr":
+                                # 补全 CIDR 格式防止编译器报错
+                                if "/" not in cleaned_value:
+                                    cleaned_value += "/128" if ":" in cleaned_value else "/32"
+                                clash_payload.append(f"'{cleaned_value}'")
+                            # IP 文件中直接忽略域名相关规则，防止 MRS 编译失败
+
+                        # 2. 域名文件处理逻辑 (目标: geosite .mrs)
+                        else:
+                            # 2.1 常见的映射处理
+                            if rule_type == "domain":
+                                clash_payload.append(f"'{cleaned_value}'")
+
                             elif rule_type == "domain_suffix":
-                                domain_part = cleaned_value.lstrip('+').lstrip('.')
-                                clash_payload.append(f"'+.{domain_part}'")
+                                d = cleaned_value.lstrip('+').lstrip('.')
+                                clash_payload.append(f"'+.{d}'")
 
-                            # --- 3. 处理全域名 ---
-                            elif rule_type == "domain":
-                                clash_payload.append(f"'{cleaned_value}'")
+                            elif rule_type == "domain_regex":
+                                # 编译器不支持正则，安全降级为前缀通配符
+                                raw = cleaned_value.replace("(^|\\.)", "").replace("^", "").replace("\\", "")
+                                prefix = re.split(r'[\[\(\*\+\?\{\|\$]', raw)[0].rstrip('.-')
+                                if len(prefix) >= 3 and not prefix.isdigit():
+                                    clash_payload.append(f"'{prefix}.*'")
+                                    clash_payload.append(f"'{prefix}-*'")
 
-                            # --- 4. 处理关键词 ---
                             elif rule_type == "domain_keyword":
-                                # 同样建议显式声明，防止歧义
-                                clash_payload.append(f"DOMAIN-KEYWORD,'{cleaned_value}'")
-
-                            # --- 5. 处理 IP CIDR ---
-                            elif rule_type == "ip_cidr":
-                                # IP 段不需要引号也可以，但为了统一建议加上
                                 clash_payload.append(f"'{cleaned_value}'")
 
-                # 去重并写入
-                unique_payload = sorted(list(set(clash_payload)))
-                
-                with open(output_path, "w", encoding="utf-8") as f:
-                    f.write("payload:\n")
-                    for entry in unique_payload:
-                        # 注意：这里 entry 已经包含了引号处理
-                        f.write(f"  - {entry}\n")
+                            # 2.2 兜底逻辑 (Else)
+                            else:
+                                if rule_type in config.SINGBOX_TO_CLASH_MAP:
+                                    # 如果在 Map 中有定义（如 PROCESS-NAME），按标准格式输出
+                                    clash_type = config.SINGBOX_TO_CLASH_MAP[rule_type]
+                                    clash_payload.append(f"{clash_type},{cleaned_value}")
+                                else:
+                                    # 完全未知的类型，尝试保留原始键值作为前缀（仅用于调试或高级扩展）
+                                    # 注意：在 payload 里如果类型不合法，MRS 编译仍可能报错
+                                    # 建议生产环境下记录 warning 或跳过
+                                    logging.warning(f"未知规则类型 {rule_type} 在文件 {filename} 中")
 
-                logging.info(f"Mihomo 转换完成: {output_path}")
+            # 去重并写入
+            unique_payload = sorted(list(set(clash_payload)))
+            with open(output_path, "w", encoding="utf-8") as f:
+                f.write("payload:\n")
+                for entry in unique_payload:
+                    f.write(f"  - {entry}\n")
 
-            except Exception as e:
-                logging.error(f"转换 {input_path} 出错：{e}")
+        except Exception as e:
+            logging.error(f"转换 {input_path} 出错：{e}")
 
 def clean_comment(value):
     """ 去除规则中的注释内容（如果有）"""
