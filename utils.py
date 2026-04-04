@@ -520,13 +520,22 @@ def fix_domain_prefix(value):
     return value.lstrip(".") if value.startswith(".") else value
 
 
+def is_safe_prefix(prefix):
+    """
+    安全性检查：防止从小范围变成大范围。
+    1. 长度太短（<3）的关键词不转换。
+    2. 包含常见系统级前缀的谨慎转换。
+    """
+    if not prefix or len(prefix) < 3:
+        return False
+    # 排除纯数字或极其常见的缩写
+    if prefix.isdigit() or prefix in ["api", "www", "img", "cdn"]:
+        return False
+    return True
+
 def convert_json_to_clash(input_dir):
     """
-    将 Sing-box JSON 规则转换为 Clash (Mihomo) Payload 格式。
-    严格遵守：
-    1. 不写 DOMAIN-KEYWORD 等前缀，仅保留纯值。
-    2. 使用 '+.' 替代 DOMAIN-SUFFIX 以匹配多级子域。
-    3. 安全转换正则：使用通配符 '*' 限定开头，避免误伤。
+    将 JSON 规则转换为 Clash Payload，增加正则安全过滤机制。
     """
     output_dir = config.clash_output_directory
     os.makedirs(output_dir, exist_ok=True)
@@ -549,49 +558,49 @@ def convert_json_to_clash(input_dir):
                             cleaned_value = clean_comment(value)
                             if not cleaned_value: continue
 
-                            # --- 1. 处理正则 (Regex -> Wildcard) ---
-                            # 原则：宁愿漏掉，不可误伤 (Keep scope small)
+                            # --- 核心：正则安全转换机制 ---
                             if rule_type == "domain_regex":
+                                # 处理常见的两种安全模式：
+                                # 1. ^prefix...
+                                # 2. (^|\\.)prefix...
+                                prefix = None
                                 if cleaned_value.startswith("^"):
-                                    # 提取前缀，例如 ^dl[-.].+ -> dl
-                                    prefix = cleaned_value.replace("^", "").split('[')[0].split('(')[0].rstrip('.-')
-                                    if prefix:
-                                        # 使用 * 匹配一级子域开头。虽然 * 不能跨级，
-                                        # 但相比关键词包含，它能保证必须是【开头】匹配。
-                                        clash_payload.append(f"'{prefix}.*'")
-                                        clash_payload.append(f"'{prefix}-*'")
-                                continue
+                                    # 处理 (^|\\.) 情况
+                                    raw = cleaned_value.replace("(^|\\.)", "").replace("^", "").replace("\\", "")
+                                    # 提取第一个正则元字符前的文本
+                                    prefix = re.split(r'[\[\(\*\+\?\{\|\$]', raw)[0].rstrip('.-')
+                                
+                                # 只有通过安全性校验才添加
+                                if prefix and is_safe_prefix(prefix):
+                                    clash_payload.append(f"'{prefix}.*'")
+                                    clash_payload.append(f"'{prefix}-*'")
+                                else:
+                                    # 判定为不安全或太宽泛，跳过此条正则
+                                    # logging.debug(f"跳过不安全正则: {cleaned_value}")
+                                    continue
 
-                            # --- 2. 处理后缀 (DOMAIN-SUFFIX -> +.) ---
                             elif rule_type == "domain_suffix":
-                                # 根据文档：+.baidu.com 匹配所有层级，且包含 baidu.com 本身
                                 domain_part = cleaned_value.lstrip('+').lstrip('.')
                                 clash_payload.append(f"'+.{domain_part}'")
 
-                            # --- 3. 处理全域名 (DOMAIN) ---
                             elif rule_type == "domain":
-                                # Payload 中直接写域名，Clash 会进行精确/后缀匹配
                                 clash_payload.append(f"'{cleaned_value}'")
 
-                            # --- 4. 处理关键词 (DOMAIN-KEYWORD) ---
                             elif rule_type == "domain_keyword":
-                                # 直接写入字符串，Clash 默认执行包含匹配
                                 clash_payload.append(f"'{cleaned_value}'")
 
-                            # --- 5. 处理 IP CIDR ---
                             elif rule_type == "ip_cidr":
                                 clash_payload.append(f"'{cleaned_value}'")
 
-                # 去重并排序，保持 YAML 简洁
+                # 去重并写入
                 unique_payload = sorted(list(set(clash_payload)))
-                
                 with open(output_path, "w", encoding="utf-8") as f:
                     f.write("payload:\n")
                     for entry in unique_payload:
                         f.write(f"  - {entry}\n")
 
             except Exception as e:
-                logging.error(f"转换 {input_path} 到 Clash 规则时出错：{e}")
+                logging.error(f"转换 {input_path} 出错：{e}")
 
 def clean_comment(value):
     """ 去除规则中的注释内容（如果有）"""
