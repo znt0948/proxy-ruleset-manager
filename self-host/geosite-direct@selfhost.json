@@ -41,11 +41,7 @@
     },
     {
       "domain_regex": [
-        "^.*\\.fastly-edge\\.com$",
-        "^static-cn[-.].+",
-        "^cdn-cn[-.].+",
-        "^cn[-.].+",
-        "^china[-.].+"
+        "^.*\\.fastly-edge\\.com$"
       ]
     }
   ]
