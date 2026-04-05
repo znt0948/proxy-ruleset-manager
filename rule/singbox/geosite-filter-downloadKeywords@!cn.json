@@ -4,26 +4,26 @@
         {
             "domain_regex": [
                 "^cdn-download[-.].+",
-                "^files[-.].+",
-                "^cache[-.].+",
-                "^archive[-.].+",
                 "^upd[-.].+",
-                "^pkg[-.].+",
-                "^dl[-.].+",
-                "^mirror[-.].+",
-                "^edgedl[-.].+",
-                "^content-download[-.].+",
                 "^repo[-.].+",
-                "^dist[-.].+"
+                "^files[-.].+",
+                "^content-download[-.].+",
+                "^pkg[-.].+",
+                "^edgedl[-.].+",
+                "^dist[-.].+",
+                "^archive[-.].+",
+                "^cache[-.].+",
+                "^dl[-.].+",
+                "^mirror[-.].+"
             ]
         },
         {
             "domain_keyword": [
-                "download",
-                "pixeldrain",
                 "1fichier",
-                "update-binary",
-                "mediafire"
+                "download",
+                "mediafire",
+                "pixeldrain",
+                "update-binary"
             ]
         }
     ]
