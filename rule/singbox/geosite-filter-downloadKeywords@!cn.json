@@ -1,0 +1,28 @@
+{
+    "version": 1,
+    "rules": [
+        {
+            "domain_regex": [
+                "^dist[-.].+",
+                "^mirror[-.].+",
+                "^edgedl[-.].+",
+                "^archive[-.].+",
+                "^repo[-.].+",
+                "^files[-.].+",
+                "^cache[-.].+",
+                "^dl[-.].+",
+                "^upd[-.].+",
+                "^pkg[-.].+"
+            ]
+        },
+        {
+            "domain_keyword": [
+                "update-binary",
+                "pixeldrain",
+                "mediafire",
+                "download",
+                "1fichier"
+            ]
+        }
+    ]
+}
