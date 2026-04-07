@@ -3,48 +3,48 @@
     "rules": [
         {
             "domain": [
-                "tracking.miui.com",
-                "tracking.intl.miui.com",
-                "tracking.india.miui.com",
                 "api.installer.xiaomi.com",
-                "tracking.rus.miui.com"
+                "tracking.rus.miui.com",
+                "tracking.miui.com",
+                "tracking.india.miui.com",
+                "tracking.intl.miui.com"
             ]
         },
         {
             "domain_suffix": [
-                "cert.org.cn",
-                "fanzha.org.cn",
-                "anva.org.cn",
-                "certlab.org",
-                "t-bestmind.com",
-                "himindtech.com",
-                "ics-cert.org.cn",
-                "loongteam.com",
-                "ifcert.cn",
-                "i-bestmind.com",
-                "fhss.com.cn",
-                "ifcert.org.cn",
-                "hei-tong.com",
                 "china-bestmind.com",
+                "certlab.org",
+                "i-bestmind.com",
+                "t-bestmind.com",
+                "ics-cert.org.cn",
+                "anva.org.cn",
+                "fanzha.org.cn",
+                "cert.org.cn",
                 "cnvd.org.cn",
+                "himindtech.com",
+                "fhss.com.cn",
                 "hicore-auth.com",
                 "hailiangyun.cn",
-                "ifcert.com"
+                "ifcert.com",
+                "ifcert.org.cn",
+                "hei-tong.com",
+                "ifcert.cn",
+                "loongteam.com"
             ]
         },
         {
             "ip_cidr": [
-                "219.143.187.136/32",
-                "157.148.47.204/32"
+                "157.148.47.204/32",
+                "219.143.187.136/32"
             ]
         },
         {
             "domain_keyword": [
                 "gjfzpt",
-                "fqzpt",
-                "ifcert.cn",
                 "fzlm",
-                "chanct"
+                "fqzpt",
+                "chanct",
+                "ifcert.cn"
             ]
         }
     ]

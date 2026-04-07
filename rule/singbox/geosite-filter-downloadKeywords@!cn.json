@@ -4,24 +4,24 @@
         {
             "domain_regex": [
                 "^pkg[-.].+",
+                "^edgedl[-.].+",
                 "^archive[-.].+",
+                "^repo[-.].+",
+                "^files[-.].+",
                 "^cache[-.].+",
                 "^dl[-.].+",
+                "^upd[-.].+",
                 "^dist[-.].+",
-                "^repo[-.].+",
-                "^edgedl[-.].+",
-                "^files[-.].+",
-                "^mirror[-.].+",
-                "^upd[-.].+"
+                "^mirror[-.].+"
             ]
         },
         {
             "domain_keyword": [
                 "mediafire",
-                "update-binary",
-                "1fichier",
                 "pixeldrain",
-                "download"
+                "update-binary",
+                "download",
+                "1fichier"
             ]
         }
     ]
