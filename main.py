@@ -582,6 +582,132 @@ class RuleParser:
         except OSError as e:
             logging.error(f"删除全体文件 {general_files[0]} 失败: {e}")
 
+    def apply_blacklist_fix(self, json_data, blacklist_data):
+        """
+        根据 blacklist_data 对 json_data 中的规则进行排除处理。
+
+        排除逻辑：
+        - blacklist domain 精确匹配：从目标 json 的 domain 列表中删除完全相同的条目
+        - blacklist domain_suffix 后缀匹配：
+            1. 从目标 json 的 domain 列表中删除所有以该后缀结尾的条目
+               （例如 blacklist suffix="gstatic.com" 会删除 "foo.gstatic.com"、"gstatic.com" 等）
+            2. 从目标 json 的 domain_suffix 列表中删除完全相同的条目
+        - blacklist domain_suffix 同样对目标 json 的 domain_suffix 做精确排除
+        """
+        # 整理 blacklist 中的所有精确 domain 和 domain_suffix
+        bl_domains = set()
+        bl_suffixes = set()
+        for rule in blacklist_data.get("rules", []):
+            if isinstance(rule, dict):
+                for d in rule.get("domain", []):
+                    bl_domains.add(d.strip().lstrip("."))
+                for s in rule.get("domain_suffix", []):
+                    bl_suffixes.add(s.strip().lstrip("."))
+
+        if not bl_domains and not bl_suffixes:
+            return json_data  # blacklist 为空，直接返回
+
+        removed_domain = 0
+        removed_domain_suffix = 0
+
+        new_rules = []
+        for rule in json_data.get("rules", []):
+            if not isinstance(rule, dict):
+                new_rules.append(rule)
+                continue
+
+            new_rule = {}
+            for key, values in rule.items():
+                if not isinstance(values, list):
+                    new_rule[key] = values
+                    continue
+
+                if key == "domain":
+                    filtered = []
+                    for entry in values:
+                        entry_clean = entry.strip().lstrip(".")
+                        # 精确 domain 排除
+                        if entry_clean in bl_domains:
+                            removed_domain += 1
+                            continue
+                        # domain_suffix 后缀包含关系排除
+                        # entry 等于 suffix 本身，或者以 "." + suffix 结尾
+                        matched_suffix = False
+                        for suffix in bl_suffixes:
+                            if entry_clean == suffix or entry_clean.endswith("." + suffix):
+                                matched_suffix = True
+                                break
+                        if matched_suffix:
+                            removed_domain += 1
+                            continue
+                        filtered.append(entry)
+                    new_rule[key] = filtered
+
+                elif key == "domain_suffix":
+                    filtered = []
+                    for entry in values:
+                        entry_clean = entry.strip().lstrip(".")
+                        # 精确 domain_suffix 排除
+                        if entry_clean in bl_suffixes:
+                            removed_domain_suffix += 1
+                            continue
+                        # blacklist domain 精确排除 domain_suffix
+                        if entry_clean in bl_domains:
+                            removed_domain_suffix += 1
+                            continue
+                        filtered.append(entry)
+                    new_rule[key] = filtered
+
+                else:
+                    new_rule[key] = values
+
+            # 只保留非空 rule
+            if any(v for v in new_rule.values() if isinstance(v, list) and v) or \
+               any(v for v in new_rule.values() if not isinstance(v, list)):
+                new_rules.append(new_rule)
+
+        json_data["rules"] = new_rules
+        return json_data, removed_domain, removed_domain_suffix
+
+    def apply_blacklist_to_output(self, output_directory, blacklist_directory="blacklist"):
+        """
+        遍历 output_directory 中所有 JSON 文件，
+        若 blacklist_directory 中存在同名文件，则对其进行排除处理并回写。
+        """
+        if not os.path.isdir(blacklist_directory):
+            logging.debug(f"blacklist 目录不存在，跳过 blacklist 修复: {blacklist_directory}")
+            return
+
+        json_files = [f for f in os.listdir(output_directory) if f.endswith('.json')]
+        for json_file in json_files:
+            bl_path = os.path.join(blacklist_directory, json_file)
+            if not os.path.exists(bl_path):
+                continue  # 同名 blacklist 不存在，跳过
+
+            json_file_path = os.path.join(output_directory, json_file)
+            try:
+                with open(json_file_path, 'r', encoding='utf-8') as f:
+                    json_data = json.load(f)
+                with open(bl_path, 'r', encoding='utf-8') as f:
+                    blacklist_data = json.load(f)
+
+                result = self.apply_blacklist_fix(json_data, blacklist_data)
+                if isinstance(result, tuple):
+                    fixed_data, rm_domain, rm_suffix = result
+                else:
+                    fixed_data = result
+                    rm_domain = rm_suffix = 0
+
+                with open(json_file_path, 'w', encoding='utf-8') as f:
+                    json.dump(fixed_data, f, ensure_ascii=False, indent=4)
+
+                logging.info(
+                    f"[blacklist fix] {json_file}: "
+                    f"domain 删除 {rm_domain} 条，domain_suffix 删除 {rm_suffix} 条"
+                )
+            except Exception as e:
+                logging.error(f"[blacklist fix] 处理 {json_file} 时出错: {e}")
+
     def main(self):
         #### 解析规则，生成sing-box规则集
         source_directory = config.source_dir
@@ -599,10 +725,14 @@ class RuleParser:
             else:
                 self.parse_yaml_file(yaml_file_path, output_directory)
 
-        # 生成 SRS 文件
-        self.process_category_files(output_directory)  # 拆分!cn规则 与 cn规则
-        json_files = [f for f in os.listdir(output_directory) if f.endswith('.json')]
+        # 拆分 !cn 规则与 cn 规则
+        self.process_category_files(output_directory)
 
+        # ---- Blacklist Fix：在编译 srs 之前，先对 JSON 做排除处理 ----
+        self.apply_blacklist_to_output(output_directory, blacklist_directory="blacklist")
+
+        # 生成 SRS 文件
+        json_files = [f for f in os.listdir(output_directory) if f.endswith('.json')]
         for json_file in json_files:
             json_file_path = os.path.join(output_directory, json_file)
             srs_path = json_file_path.replace(".json", ".srs")
