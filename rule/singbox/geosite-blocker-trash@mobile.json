@@ -3,48 +3,48 @@
     "rules": [
         {
             "domain": [
+                "tracking.miui.com",
                 "api.installer.xiaomi.com",
                 "tracking.rus.miui.com",
-                "tracking.miui.com",
-                "tracking.india.miui.com",
-                "tracking.intl.miui.com"
+                "tracking.intl.miui.com",
+                "tracking.india.miui.com"
             ]
         },
         {
             "domain_suffix": [
-                "loongteam.com",
-                "fhss.com.cn",
                 "fanzha.org.cn",
-                "ifcert.org.cn",
-                "cnvd.org.cn",
-                "certlab.org",
-                "hei-tong.com",
-                "ics-cert.org.cn",
-                "ifcert.com",
-                "t-bestmind.com",
-                "hailiangyun.cn",
-                "china-bestmind.com",
-                "cert.org.cn",
-                "ifcert.cn",
                 "hicore-auth.com",
-                "i-bestmind.com",
+                "cnvd.org.cn",
+                "ifcert.cn",
+                "china-bestmind.com",
+                "ifcert.com",
+                "hei-tong.com",
+                "anva.org.cn",
+                "loongteam.com",
+                "cert.org.cn",
+                "fhss.com.cn",
+                "hailiangyun.cn",
+                "ics-cert.org.cn",
                 "himindtech.com",
-                "anva.org.cn"
+                "t-bestmind.com",
+                "certlab.org",
+                "ifcert.org.cn",
+                "i-bestmind.com"
             ]
         },
         {
             "ip_cidr": [
-                "157.148.47.204/32",
-                "219.143.187.136/32"
+                "219.143.187.136/32",
+                "157.148.47.204/32"
             ]
         },
         {
             "domain_keyword": [
-                "fqzpt",
-                "fzlm",
+                "ifcert.cn",
                 "gjfzpt",
+                "fzlm",
                 "chanct",
-                "ifcert.cn"
+                "fqzpt"
             ]
         }
     ]

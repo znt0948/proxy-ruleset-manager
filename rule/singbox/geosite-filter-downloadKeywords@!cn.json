@@ -3,25 +3,25 @@
     "rules": [
         {
             "domain_regex": [
-                "^repo[-.].+",
-                "^edgedl[-.].+",
                 "^dl[-.].+",
-                "^upd[-.].+",
-                "^mirror[-.].+",
-                "^dist[-.].+",
                 "^pkg[-.].+",
+                "^cache[-.].+",
+                "^upd[-.].+",
                 "^files[-.].+",
                 "^archive[-.].+",
-                "^cache[-.].+"
+                "^dist[-.].+",
+                "^repo[-.].+",
+                "^edgedl[-.].+",
+                "^mirror[-.].+"
             ]
         },
         {
             "domain_keyword": [
-                "download",
-                "update-binary",
                 "1fichier",
                 "mediafire",
-                "pixeldrain"
+                "download",
+                "pixeldrain",
+                "update-binary"
             ]
         }
     ]
