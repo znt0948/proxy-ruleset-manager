@@ -3,48 +3,48 @@
     "rules": [
         {
             "domain": [
+                "api.installer.xiaomi.com",
                 "tracking.india.miui.com",
                 "tracking.rus.miui.com",
-                "tracking.miui.com",
                 "tracking.intl.miui.com",
-                "api.installer.xiaomi.com"
+                "tracking.miui.com"
             ]
         },
         {
             "domain_suffix": [
-                "i-bestmind.com",
-                "ifcert.org.cn",
-                "ics-cert.org.cn",
-                "ifcert.com",
-                "anva.org.cn",
-                "certlab.org",
-                "hailiangyun.cn",
-                "hei-tong.com",
-                "loongteam.com",
-                "cnvd.org.cn",
-                "hicore-auth.com",
-                "ifcert.cn",
                 "himindtech.com",
-                "cert.org.cn",
-                "fhss.com.cn",
+                "ifcert.org.cn",
+                "i-bestmind.com",
+                "certlab.org",
+                "hicore-auth.com",
+                "hei-tong.com",
                 "t-bestmind.com",
+                "fhss.com.cn",
+                "hailiangyun.cn",
+                "china-bestmind.com",
+                "cnvd.org.cn",
+                "anva.org.cn",
+                "ifcert.com",
+                "loongteam.com",
                 "fanzha.org.cn",
-                "china-bestmind.com"
+                "ics-cert.org.cn",
+                "cert.org.cn",
+                "ifcert.cn"
             ]
         },
         {
             "ip_cidr": [
-                "157.148.47.204/32",
-                "219.143.187.136/32"
+                "219.143.187.136/32",
+                "157.148.47.204/32"
             ]
         },
         {
             "domain_keyword": [
+                "chanct",
+                "fzlm",
                 "gjfzpt",
                 "fqzpt",
-                "chanct",
-                "ifcert.cn",
-                "fzlm"
+                "ifcert.cn"
             ]
         }
     ]
