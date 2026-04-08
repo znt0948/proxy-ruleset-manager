@@ -19,7 +19,8 @@
         "^mirror[-.].+",
         "^repo[-.].+",
         "^files[-.].+",
-        "^cache[-.].+"
+        "^cache[-.].+",
+        "^p[0-9]+-content\\.icloud\\.com$"
       ]
     }
   ]
