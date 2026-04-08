@@ -3,16 +3,16 @@
     "rules": [
         {
             "domain_regex": [
-                "^edgedl[-.].+",
-                "^upd[-.].+",
-                "^dist[-.].+",
-                "^mirror[-.].+",
-                "^cache[-.].+",
                 "^pkg[-.].+",
-                "^repo[-.].+",
                 "^files[-.].+",
+                "^cache[-.].+",
+                "^dist[-.].+",
+                "^upd[-.].+",
                 "^p[0-9]+-content\\.icloud\\.com$",
                 "^dl[-.].+",
+                "^edgedl[-.].+",
+                "^repo[-.].+",
+                "^mirror[-.].+",
                 "^archive[-.].+"
             ]
         },
@@ -20,9 +20,9 @@
             "domain_keyword": [
                 "1fichier",
                 "mediafire",
+                "download",
                 "pixeldrain",
-                "update-binary",
-                "download"
+                "update-binary"
             ]
         }
     ]
