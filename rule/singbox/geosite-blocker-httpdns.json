@@ -3,48 +3,48 @@
     "rules": [
         {
             "domain": [
+                "httpdns-sc.aliyuncs.com",
+                "httpdns.alicdn.com",
+                "httpdns.music.163.com",
+                "lofter.httpdns.c.163.com",
+                "httpdns.bilivideo.com",
+                "httpdns.calorietech.com",
                 "httpdns.meituan.com",
-                "httpdns.push.oppomobile.com",
+                "dns.weixin.qq.com",
                 "dns.jd.com",
                 "httpdns.c.cdnhwc2.com",
-                "httpdns-sc.aliyuncs.com",
-                "httpdns-api.aliyuncs.com",
-                "httpdns.yunxindns.com",
-                "httpdns.music.163.com",
-                "dns.weixin.qq.com.cn",
+                "music.httpdns.c.163.com",
                 "dns.weibo.cn",
-                "httpdns.calorietech.com",
-                "httpdns.bilivideo.com",
                 "httpdns.volcengineapi.com",
-                "httpdns.n.netease.com",
-                "dns.weixin.qq.com",
-                "lofter.httpdns.c.163.com",
-                "httpdns.alicdn.com",
-                "music.httpdns.c.163.com"
+                "httpdns-api.aliyuncs.com",
+                "httpdns.push.oppomobile.com",
+                "httpdns.yunxindns.com",
+                "dns.weixin.qq.com.cn",
+                "httpdns.n.netease.com"
             ]
         },
         {
             "domain_suffix": [
-                "httpdns.baidu.com",
                 "httpsdns.baidu.com",
                 "httpdns.pro",
+                "httpdns.baidu.com",
                 "httpdns.baidubce.com"
             ]
         },
         {
             "domain_keyword": [
-                "httpsdns",
-                "http.dns",
+                "api-dns",
+                "https.dns",
+                "dns.api",
+                "api.dns",
                 "dns-api",
                 "apidns",
                 "dnsapi",
-                "dns.api",
-                "https-dns",
                 "httpdns",
-                "api.dns",
-                "api-dns",
-                "https.dns",
-                "http-dns"
+                "http-dns",
+                "https-dns",
+                "http.dns",
+                "httpsdns"
             ]
         }
     ]
