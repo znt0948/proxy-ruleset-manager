@@ -20,7 +20,8 @@
         "^repo[-.].+",
         "^files[-.].+",
         "^cache[-.].+",
-        "^p[0-9]+-content\\.icloud\\.com$"
+        "^p[0-9]+-content\\.icloud\\.com$",
+        "^.*\\.tiktokcdn-us\\.com$"
       ]
     }
   ]
