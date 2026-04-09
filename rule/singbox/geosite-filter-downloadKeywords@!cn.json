@@ -4,25 +4,24 @@
         {
             "domain_regex": [
                 "^p[0-9]+-content\\.icloud\\.com$",
-                "^mirror[-.].+",
-                "^files[-.].+",
-                "^.*\\.tiktokcdn-us\\.com$",
-                "^pkg[-.].+",
-                "^edgedl[-.].+",
-                "^dl[-.].+",
-                "^repo[-.].+",
+                "^upd[-.].+",
                 "^dist[-.].+",
-                "^archive[-.].+",
+                "^mirror[-.].+",
+                "^repo[-.].+",
+                "^files[-.].+",
                 "^cache[-.].+",
-                "^upd[-.].+"
+                "^archive[-.].+",
+                "^pkg[-.].+",
+                "^dl[-.].+",
+                "^edgedl[-.].+"
             ]
         },
         {
             "domain_keyword": [
-                "1fichier",
-                "mediafire",
-                "pixeldrain",
                 "download",
+                "mediafire",
+                "1fichier",
+                "pixeldrain",
                 "update-binary"
             ]
         }
