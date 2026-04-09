@@ -3,48 +3,48 @@
     "rules": [
         {
             "domain": [
-                "tracking.intl.miui.com",
+                "api.installer.xiaomi.com",
                 "tracking.rus.miui.com",
-                "tracking.india.miui.com",
                 "tracking.miui.com",
-                "api.installer.xiaomi.com"
+                "tracking.india.miui.com",
+                "tracking.intl.miui.com"
             ]
         },
         {
             "domain_suffix": [
-                "t-bestmind.com",
-                "fhss.com.cn",
-                "ifcert.com",
-                "cnvd.org.cn",
-                "ics-cert.org.cn",
-                "china-bestmind.com",
-                "certlab.org",
-                "anva.org.cn",
-                "himindtech.com",
-                "hailiangyun.cn",
                 "cert.org.cn",
-                "hei-tong.com",
-                "i-bestmind.com",
+                "ifcert.com",
                 "ifcert.cn",
-                "loongteam.com",
-                "hicore-auth.com",
+                "certlab.org",
                 "fanzha.org.cn",
-                "ifcert.org.cn"
+                "anva.org.cn",
+                "fhss.com.cn",
+                "china-bestmind.com",
+                "cnvd.org.cn",
+                "loongteam.com",
+                "t-bestmind.com",
+                "hei-tong.com",
+                "hicore-auth.com",
+                "ics-cert.org.cn",
+                "hailiangyun.cn",
+                "himindtech.com",
+                "ifcert.org.cn",
+                "i-bestmind.com"
             ]
         },
         {
             "ip_cidr": [
-                "157.148.47.204/32",
-                "219.143.187.136/32"
+                "219.143.187.136/32",
+                "157.148.47.204/32"
             ]
         },
         {
             "domain_keyword": [
                 "gjfzpt",
-                "fzlm",
                 "ifcert.cn",
                 "fqzpt",
-                "chanct"
+                "chanct",
+                "fzlm"
             ]
         }
     ]

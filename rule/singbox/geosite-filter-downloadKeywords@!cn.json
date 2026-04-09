@@ -3,25 +3,26 @@
     "rules": [
         {
             "domain_regex": [
-                "^pkg[-.].+",
-                "^files[-.].+",
-                "^cache[-.].+",
-                "^dist[-.].+",
-                "^upd[-.].+",
                 "^p[0-9]+-content\\.icloud\\.com$",
-                "^dl[-.].+",
-                "^edgedl[-.].+",
-                "^repo[-.].+",
                 "^mirror[-.].+",
-                "^archive[-.].+"
+                "^files[-.].+",
+                "^.*\\.tiktokcdn-us\\.com$",
+                "^pkg[-.].+",
+                "^edgedl[-.].+",
+                "^dl[-.].+",
+                "^repo[-.].+",
+                "^dist[-.].+",
+                "^archive[-.].+",
+                "^cache[-.].+",
+                "^upd[-.].+"
             ]
         },
         {
             "domain_keyword": [
                 "1fichier",
                 "mediafire",
-                "download",
                 "pixeldrain",
+                "download",
                 "update-binary"
             ]
         }
