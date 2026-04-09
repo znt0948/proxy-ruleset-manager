@@ -3,25 +3,25 @@
     "rules": [
         {
             "domain_regex": [
-                "^p[0-9]+-content\\.icloud\\.com$",
-                "^upd[-.].+",
-                "^dist[-.].+",
-                "^mirror[-.].+",
-                "^repo[-.].+",
-                "^files[-.].+",
-                "^cache[-.].+",
-                "^archive[-.].+",
-                "^pkg[-.].+",
                 "^dl[-.].+",
-                "^edgedl[-.].+"
+                "^mirror[-.].+",
+                "^files[-.].+",
+                "^pkg[-.].+",
+                "^edgedl[-.].+",
+                "^archive[-.].+",
+                "^dist[-.].+",
+                "^p[0-9]+-content\\.icloud\\.com$",
+                "^cache[-.].+",
+                "^repo[-.].+",
+                "^upd[-.].+"
             ]
         },
         {
             "domain_keyword": [
-                "download",
+                "pixeldrain",
                 "mediafire",
                 "1fichier",
-                "pixeldrain",
+                "download",
                 "update-binary"
             ]
         }
