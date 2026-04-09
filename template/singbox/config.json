@@ -46,6 +46,10 @@
         "outbound": "VPN (区域伪装)"
       },
       {
+        "rule_set": "geosite-category-nsfw@!cn",
+        "outbound": "成人 (过滤服务)"
+      },
+      {
         "rule_set": [
           "geoip-category-download@!cn",
           "geosite-category-download@!cn"
@@ -53,46 +57,35 @@
         "outbound": "下载 (海外服务)"
       },
       {
-        "rule_set": "geosite-category-nsfw@!cn",
-        "outbound": "成人 (过滤服务)"
+        "rule_set": "geoip-geolocation-jp",
+        "outbound": "日本线路"
       },
       {
         "rule_set": "geoip-geolocation-eu",
         "outbound": "欧洲线路"
       },
       {
-        "rule_set": "geoip-geolocation-jp",
-        "outbound": "日本线路"
-      },
-      {
         "rule_set": [
-          "geosite-category-direct",
-          "geoip-category-direct"
+          "geoip-category-direct",
+          "geosite-category-direct"
         ],
-        "outbound": "直连"
-      },
-      {
-        "rule_set": "process-filter-directApp",
         "outbound": "直连"
       },
       {
         "rule_set": "process-filter-downloadApp@!cn",
         "outbound": "下载 (海外服务)"
+      },
+      {
+        "rule_set": "process-filter-directApp",
+        "outbound": "直连"
       }
     ],
     "rule_set": [
       {
         "type": "remote",
-        "tag": "adguard-blocker@privacy",
+        "tag": "geosite-filter-fakeip",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/adguard-blocker@privacy.srs",
-        "download_detour": "下载 (海外服务)"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-category-direct",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-category-direct.srs",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-filter-fakeip.srs",
         "download_detour": "下载 (海外服务)"
       },
       {
@@ -104,9 +97,16 @@
       },
       {
         "type": "remote",
-        "tag": "adguard-blocker@pc",
+        "tag": "adguard-blocker@mobile",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/adguard-blocker@pc.srs",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/adguard-blocker@mobile.srs",
+        "download_detour": "下载 (海外服务)"
+      },
+      {
+        "type": "remote",
+        "tag": "geoip-geolocation-jp",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geoip-geolocation-jp.srs",
         "download_detour": "下载 (海外服务)"
       },
       {
@@ -125,16 +125,23 @@
       },
       {
         "type": "remote",
-        "tag": "geoip-category-direct",
+        "tag": "process-filter-downloadApp@!cn",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geoip-category-direct.srs",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/process-filter-downloadApp@!cn.srs",
         "download_detour": "下载 (海外服务)"
       },
       {
         "type": "remote",
-        "tag": "geosite-blocker-trash@mobile",
+        "tag": "adguard-blocker@laptop",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-blocker-trash@mobile.srs",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/adguard-blocker@laptop.srs",
+        "download_detour": "下载 (海外服务)"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-vpn@jp",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-category-vpn@jp.srs",
         "download_detour": "下载 (海外服务)"
       },
       {
@@ -146,16 +153,30 @@
       },
       {
         "type": "remote",
-        "tag": "geoip-geolocation-jp",
+        "tag": "geosite-geolocation-!cn",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geoip-geolocation-jp.srs",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-geolocation-!cn.srs",
         "download_detour": "下载 (海外服务)"
       },
       {
         "type": "remote",
-        "tag": "geosite-category-vpn@jp",
+        "tag": "adguard-blocker@router",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-category-vpn@jp.srs",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/adguard-blocker@router.srs",
+        "download_detour": "下载 (海外服务)"
+      },
+      {
+        "type": "remote",
+        "tag": "process-blocker-rejectApp@amos",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/process-blocker-rejectApp@amos.srs",
+        "download_detour": "下载 (海外服务)"
+      },
+      {
+        "type": "remote",
+        "tag": "geoip-category-direct",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geoip-category-direct.srs",
         "download_detour": "下载 (海外服务)"
       },
       {
@@ -174,100 +195,9 @@
       },
       {
         "type": "remote",
-        "tag": "geosite-category-vpn@!cn",
+        "tag": "geosite-category-direct",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-category-vpn@!cn.srs",
-        "download_detour": "下载 (海外服务)"
-      },
-      {
-        "type": "remote",
-        "tag": "geoip-category-download@!cn",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geoip-category-download@!cn.srs",
-        "download_detour": "下载 (海外服务)"
-      },
-      {
-        "type": "remote",
-        "tag": "adguard-blocker@mobile",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/adguard-blocker@mobile.srs",
-        "download_detour": "下载 (海外服务)"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-category-nsfw@!cn",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-category-nsfw@!cn.srs",
-        "download_detour": "下载 (海外服务)"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-filter-fakeip",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-filter-fakeip.srs",
-        "download_detour": "下载 (海外服务)"
-      },
-      {
-        "type": "remote",
-        "tag": "adguard-blocker@laptop",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/adguard-blocker@laptop.srs",
-        "download_detour": "下载 (海外服务)"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-category-vpn@hk",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-category-vpn@hk.srs",
-        "download_detour": "下载 (海外服务)"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-blocker-trash",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-blocker-trash.srs",
-        "download_detour": "下载 (海外服务)"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-category-download@!cn",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-category-download@!cn.srs",
-        "download_detour": "下载 (海外服务)"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-category-proxy",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-category-proxy.srs",
-        "download_detour": "下载 (海外服务)"
-      },
-      {
-        "type": "remote",
-        "tag": "process-blocker-rejectApp@amos",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/process-blocker-rejectApp@amos.srs",
-        "download_detour": "下载 (海外服务)"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-geolocation-!cn",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-geolocation-!cn.srs",
-        "download_detour": "下载 (海外服务)"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-geolocation-jp",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-geolocation-jp.srs",
-        "download_detour": "下载 (海外服务)"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-category-vpn@us",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-category-vpn@us.srs",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-category-direct.srs",
         "download_detour": "下载 (海外服务)"
       },
       {
@@ -279,16 +209,65 @@
       },
       {
         "type": "remote",
-        "tag": "process-filter-downloadApp@!cn",
+        "tag": "geosite-category-vpn@us",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/process-filter-downloadApp@!cn.srs",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-category-vpn@us.srs",
         "download_detour": "下载 (海外服务)"
       },
       {
         "type": "remote",
-        "tag": "adguard-blocker@router",
+        "tag": "geosite-blocker-trash",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/adguard-blocker@router.srs",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-blocker-trash.srs",
+        "download_detour": "下载 (海外服务)"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-vpn@hk",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-category-vpn@hk.srs",
+        "download_detour": "下载 (海外服务)"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-geolocation-jp",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-geolocation-jp.srs",
+        "download_detour": "下载 (海外服务)"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-proxy",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-category-proxy.srs",
+        "download_detour": "下载 (海外服务)"
+      },
+      {
+        "type": "remote",
+        "tag": "adguard-blocker@privacy",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/adguard-blocker@privacy.srs",
+        "download_detour": "下载 (海外服务)"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-nsfw@!cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-category-nsfw@!cn.srs",
+        "download_detour": "下载 (海外服务)"
+      },
+      {
+        "type": "remote",
+        "tag": "geoip-category-download@!cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geoip-category-download@!cn.srs",
+        "download_detour": "下载 (海外服务)"
+      },
+      {
+        "type": "remote",
+        "tag": "adguard-blocker@pc",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/adguard-blocker@pc.srs",
         "download_detour": "下载 (海外服务)"
       },
       {
@@ -303,6 +282,27 @@
         "tag": "geosite-blocker-httpdns",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-blocker-httpdns.srs",
+        "download_detour": "下载 (海外服务)"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-vpn@!cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-category-vpn@!cn.srs",
+        "download_detour": "下载 (海外服务)"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-blocker-trash@mobile",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-blocker-trash@mobile.srs",
+        "download_detour": "下载 (海外服务)"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-download@!cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/main/rule/singbox/geosite-category-download@!cn.srs",
         "download_detour": "下载 (海外服务)"
       }
     ],
