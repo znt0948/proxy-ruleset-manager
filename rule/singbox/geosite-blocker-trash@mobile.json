@@ -3,48 +3,48 @@
     "rules": [
         {
             "domain": [
-                "tracking.india.miui.com",
+                "api.installer.xiaomi.com",
                 "tracking.miui.com",
                 "tracking.rus.miui.com",
                 "tracking.intl.miui.com",
-                "api.installer.xiaomi.com"
+                "tracking.india.miui.com"
             ]
         },
         {
             "domain_suffix": [
-                "t-bestmind.com",
-                "anva.org.cn",
-                "i-bestmind.com",
-                "himindtech.com",
-                "ifcert.cn",
-                "ics-cert.org.cn",
-                "certlab.org",
-                "ifcert.org.cn",
-                "cnvd.org.cn",
-                "fhss.com.cn",
-                "loongteam.com",
-                "fanzha.org.cn",
-                "hicore-auth.com",
                 "cert.org.cn",
                 "china-bestmind.com",
+                "ifcert.com",
+                "certlab.org",
+                "loongteam.com",
+                "anva.org.cn",
+                "himindtech.com",
+                "fhss.com.cn",
+                "t-bestmind.com",
                 "hei-tong.com",
-                "hailiangyun.cn",
-                "ifcert.com"
+                "ifcert.org.cn",
+                "ics-cert.org.cn",
+                "i-bestmind.com",
+                "cnvd.org.cn",
+                "hicore-auth.com",
+                "fanzha.org.cn",
+                "ifcert.cn",
+                "hailiangyun.cn"
             ]
         },
         {
             "ip_cidr": [
-                "219.143.187.136/32",
-                "157.148.47.204/32"
+                "157.148.47.204/32",
+                "219.143.187.136/32"
             ]
         },
         {
             "domain_keyword": [
-                "fqzpt",
-                "chanct",
-                "ifcert.cn",
                 "gjfzpt",
-                "fzlm"
+                "fzlm",
+                "chanct",
+                "fqzpt",
+                "ifcert.cn"
             ]
         }
     ]
