@@ -3,48 +3,48 @@
     "rules": [
         {
             "domain": [
-                "tracking.rus.miui.com",
-                "tracking.intl.miui.com",
-                "tracking.miui.com",
                 "tracking.india.miui.com",
-                "api.installer.xiaomi.com"
+                "tracking.rus.miui.com",
+                "api.installer.xiaomi.com",
+                "tracking.miui.com",
+                "tracking.intl.miui.com"
             ]
         },
         {
             "domain_suffix": [
-                "anva.org.cn",
-                "certlab.org",
-                "ifcert.org.cn",
-                "hicore-auth.com",
-                "ifcert.cn",
-                "cert.org.cn",
-                "ifcert.com",
-                "cnvd.org.cn",
-                "t-bestmind.com",
-                "fhss.com.cn",
-                "hailiangyun.cn",
-                "himindtech.com",
                 "fanzha.org.cn",
+                "cnvd.org.cn",
+                "i-bestmind.com",
+                "fhss.com.cn",
                 "china-bestmind.com",
                 "loongteam.com",
+                "ifcert.org.cn",
+                "t-bestmind.com",
+                "ifcert.com",
+                "hailiangyun.cn",
                 "hei-tong.com",
                 "ics-cert.org.cn",
-                "i-bestmind.com"
+                "certlab.org",
+                "cert.org.cn",
+                "ifcert.cn",
+                "anva.org.cn",
+                "himindtech.com",
+                "hicore-auth.com"
             ]
         },
         {
             "ip_cidr": [
-                "219.143.187.136/32",
-                "157.148.47.204/32"
+                "157.148.47.204/32",
+                "219.143.187.136/32"
             ]
         },
         {
             "domain_keyword": [
-                "gjfzpt",
                 "chanct",
-                "ifcert.cn",
+                "fzlm",
                 "fqzpt",
-                "fzlm"
+                "gjfzpt",
+                "ifcert.cn"
             ]
         }
     ]
