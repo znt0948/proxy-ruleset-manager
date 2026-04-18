@@ -3,27 +3,28 @@
     "rules": [
         {
             "domain_regex": [
-                "^static[0-9]\\.squarespace\\.com$",
-                "^cache[-.].+",
-                "^pkg[-.].+",
-                "^files[-.].+",
                 "^dl[-.].+",
-                "^archive[-.].+",
+                "^edgedl[-.].+",
                 "^repo[-.].+",
-                "^dist[-.].+",
                 "^upd[-.].+",
+                "^cache[-.].+",
                 "^p[0-9]+-content\\.icloud\\.com$",
+                "^pkg[-.].+",
                 "^mirror[-.].+",
-                "^edgedl[-.].+"
+                "^[a-z]{3}[0-9]+\\.mirror\\.jellyfin\\.org$",
+                "^archive[-.].+",
+                "^dist[-.].+",
+                "^static[0-9]\\.squarespace\\.com$",
+                "^files[-.].+"
             ]
         },
         {
             "domain_keyword": [
-                "pixeldrain",
-                "update-binary",
+                "1fichier",
                 "mediafire",
                 "download",
-                "1fichier"
+                "update-binary",
+                "pixeldrain"
             ]
         }
     ]

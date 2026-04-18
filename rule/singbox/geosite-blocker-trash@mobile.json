@@ -3,48 +3,48 @@
     "rules": [
         {
             "domain": [
+                "tracking.intl.miui.com",
                 "tracking.india.miui.com",
-                "tracking.rus.miui.com",
-                "api.installer.xiaomi.com",
                 "tracking.miui.com",
-                "tracking.intl.miui.com"
+                "api.installer.xiaomi.com",
+                "tracking.rus.miui.com"
             ]
         },
         {
             "domain_suffix": [
-                "fanzha.org.cn",
-                "cnvd.org.cn",
-                "i-bestmind.com",
-                "fhss.com.cn",
-                "china-bestmind.com",
-                "loongteam.com",
-                "ifcert.org.cn",
-                "t-bestmind.com",
-                "ifcert.com",
-                "hailiangyun.cn",
-                "hei-tong.com",
-                "ics-cert.org.cn",
-                "certlab.org",
+                "hicore-auth.com",
                 "cert.org.cn",
-                "ifcert.cn",
                 "anva.org.cn",
                 "himindtech.com",
-                "hicore-auth.com"
+                "loongteam.com",
+                "china-bestmind.com",
+                "ifcert.com",
+                "fanzha.org.cn",
+                "ifcert.org.cn",
+                "ifcert.cn",
+                "cnvd.org.cn",
+                "hei-tong.com",
+                "i-bestmind.com",
+                "certlab.org",
+                "t-bestmind.com",
+                "fhss.com.cn",
+                "hailiangyun.cn",
+                "ics-cert.org.cn"
             ]
         },
         {
             "ip_cidr": [
-                "157.148.47.204/32",
-                "219.143.187.136/32"
+                "219.143.187.136/32",
+                "157.148.47.204/32"
             ]
         },
         {
             "domain_keyword": [
                 "chanct",
-                "fzlm",
-                "fqzpt",
                 "gjfzpt",
-                "ifcert.cn"
+                "fqzpt",
+                "ifcert.cn",
+                "fzlm"
             ]
         }
     ]
