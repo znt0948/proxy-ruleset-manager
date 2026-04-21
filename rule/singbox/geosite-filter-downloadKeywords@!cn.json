@@ -4,27 +4,27 @@
         {
             "domain_regex": [
                 "^upd[-.].+",
-                "^edgedl[-.].+",
-                "^cache[-.].+",
-                "^repo[-.].+",
+                "^dist[-.].+",
                 "^files[-.].+",
-                "^[a-z]{3}[0-9]+\\.mirror\\.jellyfin\\.org$",
-                "^mirror[-.].+",
-                "^dl[-.].+",
+                "^repo[-.].+",
+                "^edgedl[-.].+",
                 "^archive[-.].+",
+                "^mirror[-.].+",
+                "^pkg[-.].+",
+                "^[a-z]{3}[0-9]+\\.mirror\\.jellyfin\\.org$",
+                "^dl[-.].+",
                 "^p[0-9]+-content\\.icloud\\.com$",
                 "^static[0-9]\\.squarespace\\.com$",
-                "^dist[-.].+",
-                "^pkg[-.].+"
+                "^cache[-.].+"
             ]
         },
         {
             "domain_keyword": [
-                "1fichier",
                 "pixeldrain",
-                "download",
+                "update-binary",
+                "1fichier",
                 "mediafire",
-                "update-binary"
+                "download"
             ]
         }
     ]
