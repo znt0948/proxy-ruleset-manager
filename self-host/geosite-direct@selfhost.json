@@ -39,13 +39,12 @@
         "aoywatercm.com",
         "wawo.wiki",
         "fastly-edge.com",
-        "steamserver.net"
+        "steamserver.net",
+        "sciencedirect.com"
       ]
     },
     {
-      "domain_regex": [
-        "^.*\\.fastly-edge\\.com$"
-      ]
+      "domain_regex": ["^.*\\.fastly-edge\\.com$"]
     }
   ]
 }
