@@ -8,10 +8,23 @@ import pandas as pd
 import yaml
 import logging
 import os
+import subprocess
 
 from config import Config
 
 config = Config()
+
+
+def run_command(command, description):
+    """Run an external command and raise with useful logs on failure."""
+    logging.debug(f"{description}: {' '.join(command)}")
+    try:
+        return subprocess.run(command, capture_output=True, text=True, check=True)
+    except subprocess.CalledProcessError as e:
+        logging.error(f"{description}失败，错误码 {e.returncode}")
+        if e.stderr:
+            logging.error(e.stderr.strip())
+        raise
 
 
 def merge_rules(existing_data, new_data):
@@ -41,7 +54,7 @@ def merge_rules(existing_data, new_data):
 
 
 def read_yaml_from_url(url):
-    response = requests.get(url)
+    response = requests.get(url, timeout=config.request_timeout)
     response.raise_for_status()
     yaml_data = yaml.safe_load(response.text)
     # logging.info(f"成功读取 YAML 数据 {url}")
@@ -66,12 +79,12 @@ def read_list_from_url(url):
             pattern = ",".join(row.values.astype(str))
             components = re.findall(r'\((.*?)\)', pattern)
             for component in components:
-                for keyword in config.MAP_DICT.keys():
+                for keyword in config.map_dict.keys():
                     if keyword in component:
                         match = re.search(f'{keyword},(.*)', component)
                         if match:
                             value = match.group(1)
-                            rule["rules"].append({config.MAP_DICT[keyword]: value})
+                            rule["rules"].append({config.map_dict[keyword]: value})
             rules.append(rule)
     for index, row in df.iterrows():
         if 'AND' not in row['pattern']:
@@ -293,7 +306,7 @@ def deduplicate_json(data):
     final_rules = []
     for category, values in merged_rules.items():
         if values:
-            final_rules.append({category: list(values)})
+            final_rules.append({category: sorted(values)})
 
     return final_rules
 
@@ -403,7 +416,7 @@ def convert_json_to_surge(input_dir):
     os.makedirs(surge_output_dir, exist_ok=True)
     os.makedirs(shadowrocket_output_dir, exist_ok=True)
 
-    for filename in os.listdir(input_dir):
+    for filename in sorted(os.listdir(input_dir)):
         if filename.endswith(".json"):
             input_path = os.path.join(input_dir, filename)
             surge_output_path = os.path.join(surge_output_dir, filename.replace(".json", ".list"))
@@ -426,7 +439,7 @@ def convert_json_to_surge(input_dir):
                 with open(surge_output_path, "w", encoding="utf-8") as f1, \
                         open(shadowrocket_output_path, "w", encoding="utf-8") as f2:
                     # 直接写入每个规则
-                    for rule in surge_rules:
+                    for rule in sorted(surge_rules):
                         f1.write(f"{rule}\n")
                         f2.write(f"{rule}\n")
 
@@ -528,7 +541,7 @@ def convert_json_to_clash(input_dir):
     output_dir = config.clash_output_directory
     os.makedirs(output_dir, exist_ok=True)
 
-    for filename in os.listdir(input_dir):
+    for filename in sorted(os.listdir(input_dir)):
         if filename.endswith(".json"):
             input_path = os.path.join(input_dir, filename)
             output_path = os.path.join(output_dir, filename.replace(".json", ".yaml"))
@@ -575,7 +588,7 @@ def convert_json_to_clash(input_dir):
                     # 只有 clash_rules 不为空时，才会执行写入操作
                 with open(output_path, "w", encoding="utf-8") as f:
                     f.write("payload:\n")
-                    for rule in clash_rules:
+                    for rule in sorted(clash_rules):
                         f.write(f"  - {rule}\n")
 
                 logging.info(f"成功转换: {filename} -> {os.path.basename(output_path)}")
@@ -595,7 +608,7 @@ def convert_yaml_to_mrs(output_directory):
     - geoip 开头的文件使用 `mihomo convert-ruleset ipcidr yaml`
     生成对应的 .mrs 规则文件
     """
-    yaml_files = [f for f in os.listdir(output_directory) if f.endswith('.yaml')]
+    yaml_files = sorted(f for f in os.listdir(output_directory) if f.endswith('.yaml'))
 
     for yaml_file in yaml_files:
         yaml_file_path = os.path.join(output_directory, yaml_file)
@@ -603,13 +616,13 @@ def convert_yaml_to_mrs(output_directory):
 
         try:
             if yaml_file.startswith("geosite"):
-                command = f"mihomo convert-ruleset domain yaml {yaml_file_path} {mrs_path}"
+                command = ["mihomo", "convert-ruleset", "domain", "yaml", yaml_file_path, mrs_path]
             elif yaml_file.startswith("geoip"):
-                command = f"mihomo convert-ruleset ipcidr yaml {yaml_file_path} {mrs_path}"
+                command = ["mihomo", "convert-ruleset", "ipcidr", "yaml", yaml_file_path, mrs_path]
             else:
                 continue  # 跳过不符合规则的文件
 
-            os.system(command)
+            run_command(command, f"生成 MRS 文件 {mrs_path}")
             logging.info(f"成功生成 MRS 文件: {mrs_path}")
 
         except Exception as e:

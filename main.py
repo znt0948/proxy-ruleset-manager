@@ -1,14 +1,12 @@
-import configparser
 import os
 import json
 import logging
-import subprocess
 import time
 import yaml
 import re
 import concurrent.futures
 from utils import *
-from config import Config
+from config import Config, setup_logging
 from collections import defaultdict
 import tempfile
 import shutil
@@ -36,7 +34,7 @@ class RuleParser:
             # 遍历每个 AdGuard 规则文件链接，获取并处理数据
             for link in adg_links:
                 try:
-                    response = requests.get(link)
+                    response = requests.get(link, timeout=config.request_timeout)
                     response.raise_for_status()
                     raw_data = response.text
 
@@ -49,40 +47,26 @@ class RuleParser:
                 except requests.RequestException as e:
                     logging.error(f"获取链接 {link} 时出错: {e}")
 
-            # 创建临时目录和文件
-            tmp_dir = tempfile.mkdtemp()
-            logging.debug(f"创建临时目录: {tmp_dir}")
-            adguard_file_path = os.path.join(tmp_dir, "adguard_combined.txt")
+            with tempfile.TemporaryDirectory() as tmp_dir:
+                logging.debug(f"创建临时目录: {tmp_dir}")
+                adguard_file_path = os.path.join(tmp_dir, "adguard_combined.txt")
 
-            # 将去重后的行写入临时文件
-            with open(adguard_file_path, "w") as f:
-                f.write("\n".join(sorted(unique_lines)))  # 排序并写入文件
+                # 将去重后的行写入临时文件
+                with open(adguard_file_path, "w", encoding="utf-8") as f:
+                    f.write("\n".join(sorted(unique_lines)))  # 排序并写入文件
 
-            # 执行 sing-box 转换为 srs 格式
-            srs_file_path = os.path.join(output_directory, "{}.srs".format(rule_set_name))
-            conversion_command = [
-                "sing-box", "rule-set", "convert", "--type", "adguard",
-                "--output", srs_file_path, adguard_file_path
-            ]
-            logging.debug(f"执行转换命令: {' '.join(conversion_command)}")
+                # 执行 sing-box 转换为 srs 格式
+                srs_file_path = os.path.join(output_directory, "{}.srs".format(rule_set_name))
+                conversion_command = [
+                    "sing-box", "rule-set", "convert", "--type", "adguard",
+                    "--output", srs_file_path, adguard_file_path
+                ]
+                run_command(conversion_command, f"转换 AdGuard 规则 {rule_set_name}")
 
-            result = subprocess.run(conversion_command, capture_output=True, text=True)
-            if result.returncode != 0:
-                logging.error(f"转换命令失败，错误信息: {result.stderr}")
-                return None
-
-            # 确认 .srs 文件已经生成
-            if not os.path.exists(srs_file_path):
-                logging.error(f"转换失败，没有找到生成的 SRS 文件: {srs_file_path}")
-                return None
-
-            # 读取 AdGuard 规则并转换为 Surge/Shadowrocket
-            # convert_adguard_to_surge(adguard_file_path, rule_set_name)
-            # convert_adguard_to_clash(adguard_file_path, rule_set_name)
-
-            # 清理临时文件
-            os.remove(adguard_file_path)
-            os.rmdir(tmp_dir)  # 删除临时目录
+                # 确认 .srs 文件已经生成
+                if not os.path.exists(srs_file_path):
+                    logging.error(f"转换失败，没有找到生成的 SRS 文件: {srs_file_path}")
+                    return None
 
         except Exception as e:
             logging.error(f"处理 AdGuard 文件时出错: {e}")
@@ -97,7 +81,7 @@ class RuleParser:
 
             for attempt in range(retries):
                 try:
-                    response = requests.get(link)
+                    response = requests.get(link, timeout=config.request_timeout)
                     response.raise_for_status()  # 如果请求失败，抛出异常
                     break  # 请求成功，退出循环
                 except requests.exceptions.RequestException as e:
@@ -214,7 +198,7 @@ class RuleParser:
             srs_file_path = os.path.join(tmp_dir, os.path.basename(url))
 
             # 下载文件
-            response = requests.get(url)
+            response = requests.get(url, timeout=config.request_timeout)
             response.raise_for_status()  # 确保请求成功
             with open(srs_file_path, 'wb') as file:
                 file.write(response.content)
@@ -235,7 +219,7 @@ class RuleParser:
 
             # 创建临时文件用于存储下载的 JSON 文件
             with tempfile.NamedTemporaryFile(suffix=".json", delete=False) as tmp_file:
-                response = requests.get(json_file_url, stream=True)
+                response = requests.get(json_file_url, stream=True, timeout=config.request_timeout)
                 response.raise_for_status()  # 检查请求是否成功
                 for chunk in response.iter_content(chunk_size=8192):
                     tmp_file.write(chunk)
@@ -272,12 +256,27 @@ class RuleParser:
         json_file_list = []
         for link in unique_links:
             json_file = self.parse_link_file_to_json(link)
-            json_file_list.append(json_file)
+            if json_file:
+                json_file_list.append(json_file)
+            else:
+                logging.warning(f"跳过解析失败的链接: {link}")
+
+        if not json_file_list:
+            logging.warning(f"{rule_set_name} 没有可用规则，跳过生成: {output_file}")
+            return {
+                "filtered_count": 0,
+                "total_rules": 0,
+                "domain_count": 0,
+                "domain_suffix_count": 0,
+                "ip_cidr_count": 0,
+                "process_name_count": 0,
+                "domain_regex_count": 0,
+            }
 
         # 如果只有一个 JSON 文件，直接保存，不调用 merge_json
         if len(json_file_list) == 1 and config.trust_upstream:
             single_file_stats = json_file_list[0]
-            final_rules = single_file_stats
+            final_rules = single_file_stats.get("rules", [])
 
             # 如果 type 不是 'process'，则去除 process_name 条目 (debug)
             if type != 'process':
@@ -286,11 +285,11 @@ class RuleParser:
                     if 'process_name' not in rule
                 ]
             # 统计信息
-            domain_count = len(single_file_stats.get("domain", []))
-            domain_suffix_count = len(single_file_stats.get("domain_suffix", []))
-            ip_cidr_count = len(single_file_stats.get("ip_cidr", []))
-            process_name_count = len(single_file_stats.get("process_name", []))
-            domain_regex_count = len(single_file_stats.get("domain_regex", []))
+            domain_count = sum(len(rule.get("domain", [])) for rule in final_rules)
+            domain_suffix_count = sum(len(rule.get("domain_suffix", [])) for rule in final_rules)
+            ip_cidr_count = sum(len(rule.get("ip_cidr", [])) for rule in final_rules)
+            process_name_count = sum(len(rule.get("process_name", [])) for rule in final_rules)
+            domain_regex_count = sum(len(rule.get("domain_regex", [])) for rule in final_rules)
 
             # 顶层信息
             statistics = {
@@ -304,7 +303,7 @@ class RuleParser:
             }
             try:
                 with open(output_file, 'w', encoding='utf-8') as file:
-                    json.dump(final_rules, file, ensure_ascii=False, indent=4)
+                    json.dump({"version": 1, "rules": final_rules}, file, ensure_ascii=False, indent=4)
             except Exception as e:
                 logging.error(f"保存 JSON 文件时出错: {e}")
                 return {"error": str(e)}
@@ -365,7 +364,7 @@ class RuleParser:
 
         # 转换为最终规则列表
         final_rules = [
-            {category: list(values)}
+            {category: sorted(values)}
             for category, values in merged_rules.items()
             if values
         ]
@@ -408,7 +407,10 @@ class RuleParser:
 
             # 解编译 SRS 文件为 JSON
             output_json_path = srs_file.replace(".srs", ".json")
-            os.system(f"sing-box rule-set decompile --output {output_json_path} {srs_file}")
+            run_command(
+                ["sing-box", "rule-set", "decompile", "--output", output_json_path, srs_file],
+                f"解编译 SRS 文件 {srs_file_url}",
+            )
             # logging.info(f"成功将 SRS 文件 {srs_file} 解编译为 JSON 文件 {output_json_path}")
 
             # 读取解编译后的 JSON 文件并返回
@@ -420,10 +422,6 @@ class RuleParser:
             os.remove(output_json_path)
 
             return json_data
-
-        except Exception as e:
-            logging.error(f"处理 SRS 文件 {srs_file_url} 时出错: {e}")
-            return None
 
         except Exception as e:
             logging.error(f"处理 SRS 文件 {srs_file_url} 时出错: {e}")
@@ -715,7 +713,7 @@ class RuleParser:
         if os.path.exists(output_directory):
             shutil.rmtree(output_directory)
         os.makedirs(output_directory)
-        yaml_files = [f for f in os.listdir(source_directory) if f.endswith('.yaml')]
+        yaml_files = sorted(f for f in os.listdir(source_directory) if f.endswith('.yaml'))
         for yaml_file in yaml_files:
             print('正在处理{}'.format(yaml_file))
             yaml_file_path = os.path.join(source_directory, yaml_file)
@@ -732,11 +730,14 @@ class RuleParser:
         self.apply_blacklist_to_output(output_directory, blacklist_directory="blacklist")
 
         # 生成 SRS 文件
-        json_files = [f for f in os.listdir(output_directory) if f.endswith('.json')]
+        json_files = sorted(f for f in os.listdir(output_directory) if f.endswith('.json'))
         for json_file in json_files:
             json_file_path = os.path.join(output_directory, json_file)
             srs_path = json_file_path.replace(".json", ".srs")
-            os.system(f"sing-box rule-set compile --output {srs_path} {json_file_path}")
+            run_command(
+                ["sing-box", "rule-set", "compile", "--output", srs_path, json_file_path],
+                f"编译 SRS 文件 {json_file}",
+            )
             logging.debug(f"成功生成 SRS 文件 {srs_path}")
 
         #### 调用工具函数 将 sing-box 规则转化为 Surge/Shadowrocket 规则
@@ -765,7 +766,7 @@ class SB_ConfigParser:
         rules = []
         rule_set = []
 
-        for file in os.listdir('./rule/singbox'):
+        for file in sorted(os.listdir('./rule/singbox')):
             if file.endswith('.srs'):
                 tag = os.path.splitext(file)[0]
                 # 添加规则集
@@ -831,21 +832,16 @@ class SB_ConfigParser:
         logging.debug(f"生成 singbox 配置文件: {' '.join(conversion_command)}")
 
         # 运行命令
-        result = subprocess.run(conversion_command, capture_output=True, text=True)
-        # 检查执行结果
-        if result.returncode == 0:
+        try:
+            run_command(conversion_command, "合并 sing-box 配置")
             logging.info("✅ sing-box 配置合并成功")
-            try:
-                # 确保目标目录存在
-                os.makedirs(output_dir, exist_ok=True)
-                # 移动 config.json 文件
-                shutil.move(output_file, target_file)
-                logging.info(f"✅ 已将配置文件移动至: {target_file}")
-            except Exception as e:
-                logging.error(f"❌ 移动配置文件失败: {e}")
-        else:
-            logging.error(f"❌ sing-box 配置合并失败，错误码 {result.returncode}")
-            logging.error(f"stderr: {result.stderr}")
+            # 确保目标目录存在
+            os.makedirs(output_dir, exist_ok=True)
+            # 移动 config.json 文件
+            shutil.move(output_file, target_file)
+            logging.info(f"✅ 已将配置文件移动至: {target_file}")
+        except Exception as e:
+            logging.error(f"❌ sing-box 配置合并失败: {e}")
 
     def merge_geosite_geoip_rules(self, rules):
         """检查并合并 geosite 和 geoip 规则"""
@@ -948,6 +944,8 @@ class SB_ConfigParser:
 
 
 if __name__ == "__main__":
+    setup_logging(config.log_file)
+
     # 使用类的实例
     rule_parser = RuleParser()
     rule_parser.main()

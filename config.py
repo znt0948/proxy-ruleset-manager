@@ -1,15 +1,27 @@
 import logging
 import os
 
+
+LOG_FORMAT = '%(asctime)s - %(levelname)s - %(message)s'
+
+
+def setup_logging(log_file='log.txt', level=logging.INFO, truncate=True):
+    """Configure file logging explicitly from the application entrypoint."""
+    if truncate and os.path.exists(log_file):
+        open(log_file, 'w').close()
+
+    logging.basicConfig(
+        filename=log_file,
+        level=level,
+        format=LOG_FORMAT,
+        force=True,
+    )
+
+
 class Config:
     def __init__(self):
         # 日志设置
         self.log_file = 'log.txt'
-        if os.path.exists(self.log_file):
-            open(self.log_file, 'w').close()  # 清空旧的日志内容
-
-        logging.basicConfig(filename=self.log_file, level=logging.INFO,
-                            format='%(asctime)s - %(levelname)s - %(message)s')
 
         # 规则设置
         self.rule_dir = './rule'
@@ -22,7 +34,8 @@ class Config:
 
         self.trust_upstream = False
         self.ls_index = 1
-        self.enable_trie_filtering = [True, False][0] # 是否按照 domain_suffix 剔除重复的 domain
+        self.enable_trie_filtering = True # 是否按照 domain_suffix 剔除重复的 domain
+        self.request_timeout = 30
         self.ls_keyword = ["little-snitch", "adobe-blocklist"] # little snitch 链接关键字
         self.adg_keyword = ["adguard"] # adguard 链接关键字
         self.map_dict = {
@@ -57,4 +70,3 @@ class Config:
                     "source_port": "SRC-PORT",
                     "process_name": "PROCESS-NAME"
         }
-

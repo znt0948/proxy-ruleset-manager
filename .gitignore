@@ -5,4 +5,7 @@
 __pycache__/
 *.pyc
 *.pyo
-*.pyd.DS_Store
+*.pyd
+
+# 忽略 macOS 元数据
+.DS_Store
