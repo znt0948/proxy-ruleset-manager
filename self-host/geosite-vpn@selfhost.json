@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "v3.paddleapi.com",
+        "fonts.gstatic.com",
+        "api.steampowered.com",
+        "ipinfo.io",
+        "ippure.com",
+        "ping0.co",
+        "api.mac-stats.com"
+      ]
+    },
+    {
+      "domain_suffix": [
+        ".greencloudvps.com"
+      ]
+    }
+  ]
+}

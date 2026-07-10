@@ -1,0 +1,32 @@
+{
+    "version": 1,
+    "rules": [
+        {
+            "domain_keyword": [
+                "1fichier",
+                "download",
+                "mediafire",
+                "pixeldrain",
+                "update-binary"
+            ]
+        },
+        {
+            "domain_regex": [
+                "^[a-z]{3}[0-9]+\\.mirror\\.jellyfin\\.org$",
+                "^archive[-.].+",
+                "^cache[-.].+",
+                "^dist[-.].+",
+                "^dl[-.].+",
+                "^edgedl[-.].+",
+                "^egs-.*-chunks\\.epicgamescdn\\.com$",
+                "^files[-.].+",
+                "^mirror[-.].+",
+                "^p[0-9]+-content\\.icloud\\.com$",
+                "^pkg[-.].+",
+                "^repo[-.].+",
+                "^static[0-9]\\.squarespace\\.com$",
+                "^upd[-.].+"
+            ]
+        }
+    ]
+}
