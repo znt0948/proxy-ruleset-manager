@@ -52,6 +52,56 @@ CLASH_CLASSICAL_ONLY_FIELDS = {
 }
 
 
+def normalize_domain(value):
+    """Return a canonical exact domain without changing match scope."""
+    if not isinstance(value, str):
+        raise ValueError("domain must be a string")
+
+    normalized = value.strip().lower().rstrip(".")
+    if (
+        not normalized
+        or normalized.startswith((".", "+", "*"))
+        or ".." in normalized
+        or "/" in normalized
+    ):
+        raise ValueError(f"invalid domain: {value}")
+    return normalized
+
+
+def normalize_domain_keyword(value):
+    """Normalize a literal domain substring used by both rule engines."""
+    if not isinstance(value, str):
+        raise ValueError("domain_keyword must be a string")
+    normalized = value.strip().lower()
+    if not normalized:
+        raise ValueError("domain_keyword must not be empty")
+    return normalized
+
+
+def normalize_domain_suffix(value):
+    """Return the canonical root-and-subdomains representation for a suffix."""
+    if not isinstance(value, str):
+        raise ValueError("domain_suffix must be a string")
+
+    normalized = value.strip().lower()
+    if normalized.startswith("*."):
+        raise ValueError(f"wildcard domain is not a domain_suffix: {value}")
+    if normalized.startswith("+."):
+        normalized = normalized[2:]
+    elif normalized.startswith("."):
+        normalized = normalized[1:]
+
+    normalized = normalized.rstrip(".")
+    if (
+        not normalized
+        or normalized.startswith(".")
+        or ".." in normalized
+        or "/" in normalized
+    ):
+        raise ValueError(f"invalid domain_suffix: {value}")
+    return normalized
+
+
 def run_command(command, description):
     """Run an external command and raise with useful logs on failure."""
     logging.debug(f"{description}: {' '.join(command)}")
@@ -248,13 +298,13 @@ def clean_denied_domains(domains):
     }
 
     for domain in domains:
-        domain = domain.strip()  # 去除前后空格
+        domain = str(domain).split("#", 1)[0].strip().lower().rstrip(".")
         if domain:  # 确保域名不为空
             parts = domain.split('.')
             # 判断是否为没有子域名的域名
             if len(parts) == 2:  # 例如 "0512s.com"
                 cleaned_domains["domain"].append(domain)
-                cleaned_domains["domain_suffix"].append("." + domain)  # 将带点的形式添加到 domain_suffix
+                cleaned_domains["domain_suffix"].append(normalize_domain_suffix(domain))
             elif len(parts) > 2:  # 例如 "counter.packa2.cz"
                 cleaned_domains["domain"].append(domain)
 
@@ -274,11 +324,8 @@ def parse_and_convert_to_dataframe(link):
                     if is_ipv4_or_ipv6(item):
                         pattern = 'IP-CIDR'
                     else:
-                        if address.startswith('+') or address.startswith('.'):
+                        if address.startswith(('+.', '.', '*.')):
                             pattern = 'DOMAIN-SUFFIX'
-                            address = address[1:]
-                            if address.startswith('.'):
-                                address = address[1:]
                         else:
                             pattern = 'DOMAIN'
                 else:
@@ -337,9 +384,12 @@ def subtract_rules(base_data, subtract_data):
                 subtract_values[key].add(values)
 
     deduplicated_data = deduplicate_json(base_data)
-    subtract_suffixes = {value.strip().lstrip(".") for value in subtract_values["domain_suffix"]}
+    subtract_suffixes = {
+        normalize_domain_suffix(value)
+        for value in subtract_values["domain_suffix"]
+    }
     suffix_trie = build_suffix_trie(subtract_suffixes)
-    subtract_domains = {value.strip().lstrip(".") for value in subtract_values["domain"]}
+    subtract_domains = {value.strip().lower().rstrip(".") for value in subtract_values["domain"]}
 
     for item in deduplicated_data:
         if not isinstance(item, dict):
@@ -352,15 +402,15 @@ def subtract_rules(base_data, subtract_data):
             if key == "domain":
                 item[key] = [
                     val for val in values
-                    if val.strip().lstrip(".") not in subtract_domains
-                    and not suffix_trie.has_suffix(val.strip().lstrip("."))
+                    if val.strip().lower().rstrip(".") not in subtract_domains
+                    and not suffix_trie.has_suffix(val)
                 ]
             elif key == "domain_suffix":
                 item[key] = [
-                    val for val in values
-                    if val.strip().lstrip(".") not in subtract_domains
-                    and val.strip().lstrip(".") not in subtract_suffixes
-                    and not suffix_trie.has_suffix(val.strip().lstrip("."))
+                    normalized for val in values
+                    if (normalized := normalize_domain_suffix(val)) not in subtract_domains
+                    and normalized not in subtract_suffixes
+                    and not suffix_trie.has_suffix(normalized)
                 ]
             elif subtract_values[key]:
                 item[key] = [val for val in values if val not in subtract_values[key]]
@@ -388,18 +438,41 @@ def save_json(data, filepath):
         logging.error(f"保存 JSON 文件时出错: {e}")
 
 
-def deduplicate_json(data):
+def count_rule_entries(rules):
+    """Count scalar rule values; logical rules count as one semantic entry."""
+    count = 0
+    for rule in rules:
+        if not isinstance(rule, dict):
+            continue
+        if LOGICAL_RULE_KEYS.issubset(rule.keys()):
+            count += 1
+            continue
+        for field in RULE_VALUE_FIELDS:
+            values = rule.get(field, [])
+            if isinstance(values, list):
+                count += len(values)
+            elif isinstance(values, str) and values:
+                count += 1
+    return count
+
+
+def deduplicate_json(data, return_stats=False):
     """
     对输入的 JSON 数据进行三轮去重操作：
     1. 第一轮去重：检查 process_name, domain, domain_suffix, ip_cidr, domain_regex 中是否有完全一致的条目。
-    2. 第二轮去重：使用 domain_regex 清洗 domain 和 domain_suffix。
-    3. 第三轮去重：使用 domain_suffix 去重 domain，基于 Trie 进行去重。
+    2. 第二轮去重：使用 domain_suffix 去重 domain，基于 Trie 进行去重。
+
+    domain_regex 只做完全重复消除。不能使用 Python re 推断 sing-box
+    或 Mihomo 中的覆盖关系，因为三个正则引擎的语义并不完全相同。
     """
+
+    input_entry_count = count_rule_entries(data)
 
     # 第一轮去重：初始化合并规则
     merged_rules = {field: set() for field in RULE_VALUE_FIELDS}
     logical_rules = []
     seen_logical_rules = set()
+    exact_duplicate_count = 0
 
     # 遍历输入列表，逐一合并规则
     for rule in data:
@@ -409,41 +482,52 @@ def deduplicate_json(data):
                 if marker not in seen_logical_rules:
                     logical_rules.append(rule)
                     seen_logical_rules.add(marker)
+                else:
+                    exact_duplicate_count += 1
                 continue
             for category, values in rule.items():
                 if category in merged_rules:
-                    if isinstance(values, list):
-                        merged_rules[category].update(values)
-                    elif isinstance(values, str):
-                        merged_rules[category].add(values)
+                    raw_values = values if isinstance(values, list) else [values]
+                    if category in {"domain", "domain_suffix", "domain_keyword"}:
+                        for value in raw_values:
+                            if category == "domain":
+                                normalized = normalize_domain(value)
+                            elif category == "domain_suffix":
+                                normalized = normalize_domain_suffix(value)
+                            else:
+                                normalized = normalize_domain_keyword(value)
+                            if normalized in merged_rules[category]:
+                                exact_duplicate_count += 1
+                            merged_rules[category].add(normalized)
+                        continue
+                    for value in raw_values:
+                        if value in merged_rules[category]:
+                            exact_duplicate_count += 1
+                        merged_rules[category].add(value)
 
-    # 第二轮去重：使用 domain_regex 清洗 domain 和 domain_suffix
-    final_domains = merged_rules["domain"].copy()
-    domain_suffix = merged_rules["domain_suffix"]
-    domain_regex = merged_rules["domain_regex"]
+    # domain_keyword 只做规范化和完全重复去重。它的匹配范围过宽，
+    # 不用于推断或删除 domain/domain_suffix/其他 keyword。
+    merged_rules["domain"] = merged_rules["domain"].copy()
+    merged_rules["domain_suffix"] = merged_rules["domain_suffix"].copy()
 
-    compiled_regexes = compile_domain_regexes(domain_regex)
-
-    # 用 domain_regex 去重 domain 和 domain_suffix
-    if compiled_regexes:
-        # 清洗 domain
-        for regex in compiled_regexes:
-            final_domains = {domain for domain in final_domains if not regex.search(domain)}
-
-        # 清洗 domain_suffix
-        for regex in compiled_regexes:
-            domain_suffix = {suffix for suffix in domain_suffix if not regex.fullmatch(suffix)}
-
-    merged_rules["domain"] = final_domains
-    merged_rules["domain_suffix"] = domain_suffix
-
-    # 第三轮去重：使用 Trie 对 domain_suffix 自身去重，并清洗 domain
+    # 使用 Trie 对 domain_suffix 自身去重，并清洗 domain。
+    suffix_count_before_trie = len(merged_rules["domain_suffix"])
     merged_rules["domain_suffix"] = filter_domain_suffixes_with_trie(merged_rules["domain_suffix"])
-    final_domains, _ = filter_domains_with_trie(merged_rules["domain"], merged_rules["domain_suffix"])
+    suffix_covered_by_suffix_count = suffix_count_before_trie - len(merged_rules["domain_suffix"])
+    final_domains, domain_covered_by_suffix_count = filter_domains_with_trie(
+        merged_rules["domain"],
+        merged_rules["domain_suffix"],
+    )
     merged_rules["domain"] = final_domains
 
+    ip_cidr_count_before = len(merged_rules["ip_cidr"])
+    source_ip_cidr_count_before = len(merged_rules["source_ip_cidr"])
     merged_rules["ip_cidr"] = collapse_cidr_values(merged_rules["ip_cidr"], "ip_cidr")
     merged_rules["source_ip_cidr"] = collapse_cidr_values(merged_rules["source_ip_cidr"], "source_ip_cidr")
+    cidr_collapsed_count = (
+        ip_cidr_count_before - len(merged_rules["ip_cidr"])
+        + source_ip_cidr_count_before - len(merged_rules["source_ip_cidr"])
+    )
 
     # 构造最终的输出列表
     final_rules = []
@@ -451,7 +535,20 @@ def deduplicate_json(data):
         if values:
             final_rules.append({category: sorted(values)})
 
-    return logical_rules + final_rules
+    result = logical_rules + final_rules
+    output_entry_count = count_rule_entries(result)
+    stats = {
+        "input_entries": input_entry_count,
+        "output_entries": output_entry_count,
+        "removed_entries": input_entry_count - output_entry_count,
+        "exact_duplicates": exact_duplicate_count,
+        "domain_covered_by_suffix": domain_covered_by_suffix_count,
+        "suffix_covered_by_suffix": suffix_covered_by_suffix_count,
+        "cidr_collapsed": cidr_collapsed_count,
+    }
+    if return_stats:
+        return result, stats
+    return result
 
 
 def prune_empty_rules(rules):
@@ -514,13 +611,11 @@ def compile_domain_regexes(regexes):
 def collapse_cidr_values(values, field_name):
     ipv4_networks = []
     ipv6_networks = []
-    invalid_values = set()
 
     for value in values:
         try:
             network = ipaddress.ip_network(str(value).strip(), strict=False)
         except ValueError:
-            invalid_values.add(value)
             logging.warning(f"跳过无效 {field_name}: {value}")
             continue
 
@@ -532,7 +627,6 @@ def collapse_cidr_values(values, field_name):
     collapsed = set()
     collapsed.update(str(network) for network in ipaddress.collapse_addresses(ipv4_networks))
     collapsed.update(str(network) for network in ipaddress.collapse_addresses(ipv6_networks))
-    collapsed.update(invalid_values)
     return collapsed
 
 
@@ -548,8 +642,8 @@ class Trie:
         self.root = TrieNode()
 
     def insert(self, suffix):
-        """ 插入 domain_suffix，确保不包含前导 . """
-        suffix = suffix.lstrip('.')
+        """插入规范化后的 root-and-subdomains domain_suffix。"""
+        suffix = normalize_domain_suffix(suffix)
         node = self.root
         for char in reversed(suffix):  # 倒序插入，方便匹配后缀
             if char not in node.children:
@@ -560,6 +654,7 @@ class Trie:
     def has_suffix(self, domain):
         """ 检查 domain 是否匹配某个完整的 domain_suffix """
         node = self.root
+        domain = domain.strip().lower().rstrip('.')
         domain = '.' + domain  # 加入前导点进行后缀匹配
 
         # 从尾部倒序遍历 domain
@@ -587,16 +682,10 @@ def filter_domains_with_trie(domains, domain_suffixes):
     filtered_domains = set()
     filtered_count = 0
 
-    # 预处理：把所有后缀规范化为不含前导点的形式，放在集合里（便于快速比对）
-    clean_suffixes = {s.lstrip('.') for s in domain_suffixes}
-
     for domain in domains:
         if trie.has_suffix(domain):
-            # 如果 domain 恰好等于某个后缀（根域名），则保留
-            if domain in clean_suffixes:
-                filtered_domains.add(domain)
-            else:
-                filtered_count += 1
+            # domain_suffix 已覆盖根域名及其全部子域，精确 domain 是冗余项。
+            filtered_count += 1
         else:
             filtered_domains.add(domain)
 
@@ -614,7 +703,7 @@ def build_suffix_trie(domain_suffixes):
 def filter_domain_suffixes_with_trie(domain_suffixes):
     trie = Trie()
     filtered_suffixes = set()
-    clean_suffixes = {suffix.strip().lstrip(".") for suffix in domain_suffixes if suffix}
+    clean_suffixes = {normalize_domain_suffix(suffix) for suffix in domain_suffixes if suffix}
 
     for suffix in sorted(clean_suffixes, key=lambda value: (value.count("."), len(value), value)):
         if not trie.has_suffix(suffix):
@@ -746,8 +835,8 @@ def clean_comment(value):
 
 
 def fix_domain_prefix(value):
-    """ 如果是 DOMAIN 相关类型，去除开头的 `.` """
-    return value.lstrip(".") if value.startswith(".") else value
+    """Backward-compatible alias for canonical domain_suffix normalization."""
+    return normalize_domain_suffix(value)
 
 
 def clash_rule_provider_behavior(data, filename):
@@ -774,9 +863,7 @@ def clash_classical_rule(clash_type, value):
 
 def clash_domain_rule(clash_type, value):
     if clash_type == "DOMAIN-SUFFIX":
-        if value.startswith('+') or value.startswith('*.'):
-            return value
-        return f"+.{value.lstrip('.')}"
+        return f"+.{normalize_domain_suffix(value)}"
     return value
 
 

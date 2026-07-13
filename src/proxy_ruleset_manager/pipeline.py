@@ -7,6 +7,12 @@ import concurrent.futures
 import pandas as pd
 import requests
 from .config import Config
+from .contracts import validate_ruleset_rules
+from .quality import (
+    build_provenance,
+    count_entries_by_field,
+    summarize_provenance,
+)
 from collections import defaultdict
 import tempfile
 import shutil
@@ -19,12 +25,13 @@ from .utils import (
     convert_json_to_surge,
     convert_sets_to_lists,
     convert_yaml_to_mrs,
+    count_rule_entries,
     deduplicate_adguard_lines,
     deduplicate_json,
-    filter_domains_with_trie,
     load_json,
     make_hashable,
     merge_rules,
+    normalize_domain_suffix,
     parse_and_convert_to_dataframe,
     run_command,
     save_json,
@@ -37,6 +44,7 @@ config = Config()
 class RuleParser:
     def __init__(self):
         self.ls_index = 1
+        self.quality_reports = []
 
     def parse_adguard_file(self, yaml_file_path, output_directory):
         """
@@ -50,6 +58,7 @@ class RuleParser:
             rule_set_name = os.path.basename(yaml_file_path).split('.')[0]
             adg_links = data.get('adguard', [])
             raw_lines = []
+            failed_links = []
 
             # 遍历每个 AdGuard 规则文件链接，获取并处理数据
             for link in adg_links:
@@ -63,11 +72,20 @@ class RuleParser:
 
                 except requests.RequestException as e:
                     logging.error(f"获取链接 {link} 时出错: {e}")
+                    failed_links.append(link)
+
+            if failed_links:
+                logging.error(
+                    "%s 存在下载失败的必需 AdGuard 上游，不生成残缺规则集: %s",
+                    rule_set_name,
+                    ", ".join(failed_links),
+                )
+                return False
 
             adguard_rules = deduplicate_adguard_lines(raw_lines)
             if not adguard_rules:
                 logging.warning(f"{rule_set_name} 没有可用 AdGuard 规则，跳过生成")
-                return None
+                return False
 
             with tempfile.TemporaryDirectory() as tmp_dir:
                 logging.debug(f"创建临时目录: {tmp_dir}")
@@ -88,11 +106,13 @@ class RuleParser:
                 # 确认 .srs 文件已经生成
                 if not os.path.exists(srs_file_path):
                     logging.error(f"转换失败，没有找到生成的 SRS 文件: {srs_file_path}")
-                    return None
+                    return False
+
+            return True
 
         except Exception as e:
             logging.error(f"处理 AdGuard 文件时出错: {e}")
-            return None
+            return False
 
     def parse_littlesnitch_file(self, link, retries=3, delay=5):
         """
@@ -207,8 +227,13 @@ class RuleParser:
                 f"  ip_cidr 条目数: {result_data['ip_cidr_count']}\n"
                 f"  process_name 条目数: {result_data['process_name_count']}\n"
                 f"  domain_regex 条目数: {result_data['domain_regex_count']}\n"
+                f"  不支持的规则数: {result_data['unsupported_count']}\n"
+                f"  无效规则/值数量: {result_data['invalid_count']}\n"
+                f"  失败的必需上游数: {result_data['failed_source_count']}\n"
                 f"{'-' * 50}"
             )
+
+        return all(result_data.get("generated", False) for _, result_data in final_results)
 
     def download_srs_file(self, url):
         """
@@ -273,39 +298,110 @@ class RuleParser:
         生成合并后的 JSON 文件并返回处理统计信息。
         """
         # 去重链接
-        unique_links = list(set(links))
+        unique_links = list(dict.fromkeys(links))
 
         json_file_list = []
+        failed_links = []
+        unsupported_count = 0
+        invalid_count = 0
+        source_reports = []
+        source_records = []
         for link in unique_links:
             json_file = self.parse_link_file_to_json(link)
             if json_file:
-                json_file_list.append(json_file)
+                raw_entry_count = count_rule_entries(json_file.get("rules", []))
+                contract_result = validate_ruleset_rules(json_file.get("rules", []), type)
+                for issue in contract_result.issues:
+                    logging.warning(
+                        "[%s] %s rule[%s] from %s: %s",
+                        issue.kind,
+                        type,
+                        issue.rule_index,
+                        link,
+                        issue.message,
+                    )
+                unsupported_count += contract_result.unsupported_count
+                invalid_count += contract_result.invalid_count
+                normalized_entry_count = count_rule_entries(contract_result.rules)
+                cleaned_rules, source_deduplication = deduplicate_json(
+                    contract_result.rules,
+                    return_stats=True,
+                )
+                json_file_list.append({"version": 1, "rules": cleaned_rules})
+                source_records.append({"url": link, "rules": cleaned_rules})
+                source_reports.append({
+                    "url": link,
+                    "raw_entries": raw_entry_count,
+                    "normalized_entries": normalized_entry_count,
+                    "unsupported_rules": contract_result.unsupported_count,
+                    "invalid_rules_or_values": contract_result.invalid_count,
+                    "deduplication": source_deduplication,
+                })
             else:
                 logging.warning(f"跳过解析失败的链接: {link}")
 
-        if not json_file_list:
+                failed_links.append(link)
+                source_reports.append({
+                    "url": link,
+                    "download_or_parse_failed": True,
+                })
+
+        if failed_links:
+            logging.error(
+                "%s 存在解析失败的必需上游，不生成残缺规则集: %s",
+                rule_set_name,
+                ", ".join(failed_links),
+            )
+            return self.empty_statistics(
+                generated=False,
+                unsupported_count=unsupported_count,
+                invalid_count=invalid_count,
+                failed_source_count=len(failed_links),
+            )
+
+        if unsupported_count:
+            logging.error(
+                "%s 包含 %s 条不支持的规则，不生成可能改变语义的规则集",
+                rule_set_name,
+                unsupported_count,
+            )
+            return self.empty_statistics(
+                generated=False,
+                unsupported_count=unsupported_count,
+                invalid_count=invalid_count,
+            )
+
+        if invalid_count:
+            logging.error(
+                "%s 包含 %s 条无效规则或值，不生成可能漏匹配的规则集",
+                rule_set_name,
+                invalid_count,
+            )
+            return self.empty_statistics(
+                generated=False,
+                unsupported_count=unsupported_count,
+                invalid_count=invalid_count,
+            )
+
+        if not json_file_list or not any(item.get("rules") for item in json_file_list):
             logging.warning(f"{rule_set_name} 没有可用规则，跳过生成: {output_file}")
-            return {
-                "filtered_count": 0,
-                "total_rules": 0,
-                "domain_count": 0,
-                "domain_suffix_count": 0,
-                "ip_cidr_count": 0,
-                "process_name_count": 0,
-                "domain_regex_count": 0,
-            }
+            return self.empty_statistics(
+                generated=False,
+                unsupported_count=unsupported_count,
+                invalid_count=invalid_count,
+            )
 
         # 如果只有一个 JSON 文件，直接保存，不调用 merge_json
         if len(json_file_list) == 1 and config.trust_upstream:
             single_file_stats = json_file_list[0]
-            final_rules = single_file_stats.get("rules", [])
+            # Even trusted single-source inputs need canonicalization and
+            # coverage deduplication. A suffix already covers its root domain
+            # and every subdomain, so retaining those exact domains is wasteful.
+            final_rules, merge_deduplication = deduplicate_json(
+                single_file_stats.get("rules", []),
+                return_stats=True,
+            )
 
-            # 如果 type 不是 'process'，则去除 process_name 条目 (debug)
-            if type != 'process':
-                final_rules = [
-                    rule for rule in final_rules
-                    if 'process_name' not in rule
-                ]
             # 统计信息
             domain_count = sum(len(rule.get("domain", [])) for rule in final_rules)
             domain_suffix_count = sum(len(rule.get("domain_suffix", [])) for rule in final_rules)
@@ -315,25 +411,69 @@ class RuleParser:
 
             # 顶层信息
             statistics = {
-                "filtered_count": 0,
-                "total_rules": len(final_rules),
+                "generated": True,
+                "filtered_count": merge_deduplication["domain_covered_by_suffix"],
+                "total_rules": count_rule_entries(final_rules),
                 "domain_count": domain_count,
                 "domain_suffix_count": domain_suffix_count,
                 "ip_cidr_count": ip_cidr_count,
                 "process_name_count": process_name_count,
-                "domain_regex_count": domain_regex_count
+                "domain_regex_count": domain_regex_count,
+                "unsupported_count": unsupported_count,
+                "invalid_count": invalid_count,
+                "failed_source_count": 0,
+                "deduplication": merge_deduplication,
             }
-            try:
-                with open(output_file, 'w', encoding='utf-8') as file:
-                    json.dump({"version": 1, "rules": final_rules}, file, ensure_ascii=False, indent=4)
-            except Exception as e:
-                logging.error(f"保存 JSON 文件时出错: {e}")
-                return {"error": str(e)}
-            # 返回统计信息
-            return statistics
+            with open(output_file, 'w', encoding='utf-8') as file:
+                json.dump({"version": 1, "rules": final_rules}, file, ensure_ascii=False, indent=4)
         # 否则调用 merge_json
         else:
-            return self.merge_json(json_file_list, output_file, rule_set_name=rule_set_name, type=type)
+            statistics = self.merge_json(
+                json_file_list,
+                output_file,
+                rule_set_name=rule_set_name,
+                type=type,
+            )
+            statistics.update({
+                "unsupported_count": unsupported_count,
+                "invalid_count": invalid_count,
+                "failed_source_count": 0,
+            })
+
+        with open(output_file, 'r', encoding='utf-8') as file:
+            final_rules = json.load(file).get("rules", [])
+        provenance = build_provenance(source_records)
+        self.quality_reports.append({
+            "ruleset": os.path.basename(output_file).removesuffix(".json"),
+            "type": type,
+            "source_count": len(unique_links),
+            "sources": source_reports,
+            "merge_deduplication": statistics.get("deduplication", {}),
+            "output_entries_by_field": count_entries_by_field(final_rules),
+            "provenance": summarize_provenance(
+                provenance,
+                final_rules,
+                unique_links,
+            ),
+        })
+        return statistics
+
+    @staticmethod
+    def empty_statistics(generated=False, unsupported_count=0, invalid_count=0,
+                         failed_source_count=0):
+        return {
+            "generated": generated,
+            "filtered_count": 0,
+            "total_rules": 0,
+            "domain_count": 0,
+            "domain_suffix_count": 0,
+            "ip_cidr_count": 0,
+            "process_name_count": 0,
+            "domain_regex_count": 0,
+            "unsupported_count": unsupported_count,
+            "invalid_count": invalid_count,
+            "failed_source_count": failed_source_count,
+        }
 
     def merge_json(self, json_file_list, output_file, rule_set_name,
                    enable_trie_filtering=config.enable_trie_filtering, type='geosite'):
@@ -349,72 +489,57 @@ class RuleParser:
 
         # 第一轮合并与去重
         for json_file in json_file_list:
-            try:
-                for rule in json_file.get("rules", []):
-                    if isinstance(rule, dict):
-                        if LOGICAL_RULE_KEYS.issubset(rule.keys()):
-                            marker = make_hashable(rule)
-                            if marker not in seen_logical_rules:
-                                logical_rules.append(rule)
-                                seen_logical_rules.add(marker)
-                            continue
-                        for category, values in rule.items():
-                            if category in merged_rules and values:
-                                if isinstance(values, list):
-                                    merged_rules[category].update(values)
-                                elif isinstance(values, str):
-                                    merged_rules[category].add(values)
-            except Exception as e:
-                logging.error(f"解析 JSON 数据时出错: {e}")
+            for rule in json_file.get("rules", []):
+                if isinstance(rule, dict):
+                    if LOGICAL_RULE_KEYS.issubset(rule.keys()):
+                        marker = make_hashable(rule)
+                        if marker not in seen_logical_rules:
+                            logical_rules.append(rule)
+                            seen_logical_rules.add(marker)
+                        continue
+                    for category, values in rule.items():
+                        if category in merged_rules and values:
+                            if isinstance(values, list):
+                                merged_rules[category].update(values)
+                            elif isinstance(values, str):
+                                merged_rules[category].add(values)
 
-        # 基于 domain_suffix 的 Trie 去重
+        # 统一执行与单上游相同的规范化和覆盖去重。
         original_domain_count = len(merged_rules.get("domain", set()))
-        filtered_count = 0
-        final_domains = set()
-
-        if enable_trie_filtering and merged_rules.get("domain_suffix"):
-            if merged_rules.get("domain"):
-                final_domains, filtered_count = filter_domains_with_trie(
-                    merged_rules["domain"], merged_rules["domain_suffix"]
-                )
-            else:
-                final_domains = merged_rules.get("domain", set())
-        else:
-            final_domains = merged_rules.get("domain", set())
-
-        # 更新合并后的 domain 规则
-        merged_rules["domain"] = final_domains
-
-        # 转换为最终规则列表
-        final_rules = logical_rules + [
+        combined_rules = logical_rules + [
             {category: sorted(values)}
             for category, values in merged_rules.items()
             if values
         ]
+        final_rules, merge_deduplication = deduplicate_json(
+            combined_rules,
+            return_stats=True,
+        )
 
-        # 如果 type 不是 'process'，则去除 process_name 条目 (debug)
-        if type != 'process':
-            final_rules = [
-                rule for rule in final_rules
-                if 'process_name' not in rule
-            ]
+        counts = defaultdict(int)
+        for rule in final_rules:
+            if not isinstance(rule, dict) or LOGICAL_RULE_KEYS.issubset(rule.keys()):
+                continue
+            for category, values in rule.items():
+                if isinstance(values, list):
+                    counts[category] += len(values)
+        filtered_count = max(original_domain_count - counts["domain"], 0)
 
         # 保存结果
-        try:
-            with open(output_file, 'w', encoding='utf-8') as file:
-                json.dump({"version": 1, "rules": final_rules}, file, ensure_ascii=False, indent=4)
-        except Exception as e:
-            logging.error(f"保存 JSON 文件时出错: {e}")
+        with open(output_file, 'w', encoding='utf-8') as file:
+            json.dump({"version": 1, "rules": final_rules}, file, ensure_ascii=False, indent=4)
 
         # 返回统计信息
         return {
+            "generated": True,
             "filtered_count": filtered_count,
-            "total_rules": sum(len(values) for values in merged_rules.values()),
-            "domain_count": len(merged_rules["domain"]),
-            "domain_suffix_count": len(merged_rules["domain_suffix"]),
-            "ip_cidr_count": len(merged_rules["ip_cidr"]),
-            "process_name_count": len(merged_rules["process_name"]),
-            "domain_regex_count": len(merged_rules["domain_regex"])
+            "total_rules": sum(counts.values()),
+            "domain_count": counts["domain"],
+            "domain_suffix_count": counts["domain_suffix"],
+            "ip_cidr_count": counts["ip_cidr"],
+            "process_name_count": counts["process_name"],
+            "domain_regex_count": counts["domain_regex"],
+            "deduplication": merge_deduplication,
         }
 
     def decompile_srs_to_json(self, srs_file_url):
@@ -480,7 +605,6 @@ class RuleParser:
             if df.empty:
                 return {"version": 1, "rules": logical_rules} if logical_rules else None
 
-            df = df[~df['pattern'].str.contains('IP-CIDR6')].reset_index(drop=True)
             df = df[~df['pattern'].str.contains('#')].reset_index(drop=True)
             df = df[df['pattern'].isin(config.map_dict.keys())].reset_index(drop=True)
             df = df.drop_duplicates().reset_index(drop=True)
@@ -607,36 +731,35 @@ class RuleParser:
         except OSError as e:
             logging.error(f"删除全体文件 {general_files[0]} 失败: {e}")
 
-    def apply_blacklist_fix(self, json_data, blacklist_data):
+    def apply_corrections(self, ruleset_data, corrections_data):
         """
-        根据 blacklist_data 对 json_data 中的规则进行排除处理。
+        从目标规则集中移除被上游错误分类的条目。
 
-        排除逻辑：
-        - blacklist domain 精确匹配：从目标 json 的 domain 列表中删除完全相同的条目
-        - blacklist domain_suffix 后缀匹配：
+        分类修正规则：
+        - correction domain 精确匹配：从目标规则集中删除完全相同的 domain
+        - correction domain_suffix 后缀匹配：
             1. 从目标 json 的 domain 列表中删除所有以该后缀结尾的条目
-               （例如 blacklist suffix="gstatic.com" 会删除 "foo.gstatic.com"、"gstatic.com" 等）
-            2. 从目标 json 的 domain_suffix 列表中删除完全相同的条目
-        - blacklist domain_suffix 同样对目标 json 的 domain_suffix 做精确排除
+               （例如 correction suffix="gstatic.com" 会删除 "foo.gstatic.com"、"gstatic.com" 等）
+            2. 从目标 json 的 domain_suffix 列表中删除相同或更具体的后缀
+        - correction domain 同样对目标 json 的 domain_suffix 做精确修正
         """
-        # 整理 blacklist 中的所有精确 domain 和 domain_suffix
-        bl_domains = set()
-        bl_suffixes = set()
-        for rule in blacklist_data.get("rules", []):
+        correction_domains = set()
+        correction_suffixes = set()
+        for rule in corrections_data.get("rules", []):
             if isinstance(rule, dict):
                 for d in rule.get("domain", []):
-                    bl_domains.add(d.strip().lstrip("."))
+                    correction_domains.add(d.strip().lower().rstrip("."))
                 for s in rule.get("domain_suffix", []):
-                    bl_suffixes.add(s.strip().lstrip("."))
+                    correction_suffixes.add(normalize_domain_suffix(s))
 
-        if not bl_domains and not bl_suffixes:
-            return json_data  # blacklist 为空，直接返回
+        if not correction_domains and not correction_suffixes:
+            return ruleset_data, 0, 0
 
         removed_domain = 0
         removed_domain_suffix = 0
 
         new_rules = []
-        for rule in json_data.get("rules", []):
+        for rule in ruleset_data.get("rules", []):
             if not isinstance(rule, dict):
                 new_rules.append(rule)
                 continue
@@ -650,15 +773,15 @@ class RuleParser:
                 if key == "domain":
                     filtered = []
                     for entry in values:
-                        entry_clean = entry.strip().lstrip(".")
+                        entry_clean = entry.strip().lower().rstrip(".")
                         # 精确 domain 排除
-                        if entry_clean in bl_domains:
+                        if entry_clean in correction_domains:
                             removed_domain += 1
                             continue
                         # domain_suffix 后缀包含关系排除
                         # entry 等于 suffix 本身，或者以 "." + suffix 结尾
                         matched_suffix = False
-                        for suffix in bl_suffixes:
+                        for suffix in correction_suffixes:
                             if entry_clean == suffix or entry_clean.endswith("." + suffix):
                                 matched_suffix = True
                                 break
@@ -671,16 +794,19 @@ class RuleParser:
                 elif key == "domain_suffix":
                     filtered = []
                     for entry in values:
-                        entry_clean = entry.strip().lstrip(".")
-                        # 精确 domain_suffix 排除
-                        if entry_clean in bl_suffixes:
+                        entry_clean = normalize_domain_suffix(entry)
+                        # 修正后缀覆盖相同或更具体的目标后缀。
+                        if any(
+                            entry_clean == suffix or entry_clean.endswith("." + suffix)
+                            for suffix in correction_suffixes
+                        ):
                             removed_domain_suffix += 1
                             continue
-                        # blacklist domain 精确排除 domain_suffix
-                        if entry_clean in bl_domains:
+                        # correction domain 精确修正相同的 domain_suffix
+                        if entry_clean in correction_domains:
                             removed_domain_suffix += 1
                             continue
-                        filtered.append(entry)
+                        filtered.append(entry_clean)
                     new_rule[key] = filtered
 
                 else:
@@ -691,53 +817,95 @@ class RuleParser:
                any(v for v in new_rule.values() if not isinstance(v, list)):
                 new_rules.append(new_rule)
 
-        json_data["rules"] = new_rules
-        return json_data, removed_domain, removed_domain_suffix
+        ruleset_data["rules"] = new_rules
+        return ruleset_data, removed_domain, removed_domain_suffix
 
-    def apply_blacklist_to_output(self, output_directory, blacklist_directory="blacklist"):
+    def apply_corrections_to_output(self, output_directory,
+                                    corrections_directory="corrections"):
         """
         遍历 output_directory 中所有 JSON 文件，
-        若 blacklist_directory 中存在同名文件，则对其进行排除处理并回写。
+        若 corrections_directory 中存在同名文件，则应用分类修正并回写。
         """
-        if not os.path.isdir(blacklist_directory):
-            logging.debug(f"blacklist 目录不存在，跳过 blacklist 修复: {blacklist_directory}")
+        if not os.path.isdir(corrections_directory):
+            logging.debug(f"分类修正目录不存在，跳过修正: {corrections_directory}")
             return
 
         json_files = [f for f in os.listdir(output_directory) if f.endswith('.json')]
         for json_file in json_files:
-            bl_path = os.path.join(blacklist_directory, json_file)
-            if not os.path.exists(bl_path):
-                continue  # 同名 blacklist 不存在，跳过
+            correction_path = os.path.join(corrections_directory, json_file)
+            if not os.path.exists(correction_path):
+                continue
 
             json_file_path = os.path.join(output_directory, json_file)
             try:
                 with open(json_file_path, 'r', encoding='utf-8') as f:
                     json_data = json.load(f)
-                with open(bl_path, 'r', encoding='utf-8') as f:
-                    blacklist_data = json.load(f)
+                with open(correction_path, 'r', encoding='utf-8') as f:
+                    corrections_data = json.load(f)
 
-                result = self.apply_blacklist_fix(json_data, blacklist_data)
-                if isinstance(result, tuple):
-                    fixed_data, rm_domain, rm_suffix = result
-                else:
-                    fixed_data = result
-                    rm_domain = rm_suffix = 0
+                fixed_data, rm_domain, rm_suffix = self.apply_corrections(
+                    json_data,
+                    corrections_data,
+                )
 
                 with open(json_file_path, 'w', encoding='utf-8') as f:
                     json.dump(fixed_data, f, ensure_ascii=False, indent=4)
 
                 logging.info(
-                    f"[blacklist fix] {json_file}: "
+                    f"[classification correction] {json_file}: "
                     f"domain 删除 {rm_domain} 条，domain_suffix 删除 {rm_suffix} 条"
                 )
             except Exception as e:
-                logging.error(f"[blacklist fix] 处理 {json_file} 时出错: {e}")
+                logging.error(f"[classification correction] 处理 {json_file} 时出错: {e}")
 
     def has_generated_rule_artifacts(self, output_directory):
         return any(
             f.endswith((".json", ".srs"))
             for f in os.listdir(output_directory)
         )
+
+    def build_published_inventory(self, output_directory):
+        inventory = []
+        for filename in sorted(os.listdir(output_directory)):
+            if not filename.endswith(".json"):
+                continue
+            path = os.path.join(output_directory, filename)
+            with open(path, 'r', encoding='utf-8') as file:
+                rules = json.load(file).get("rules", [])
+            inventory.append({
+                "ruleset": filename.removesuffix(".json"),
+                "entries": count_rule_entries(rules),
+                "entries_by_field": count_entries_by_field(rules),
+            })
+        return inventory
+
+    def write_quality_report(self, output_directory, report_file):
+        """Atomically publish deterministic quality metrics after a successful run."""
+        report_directory = os.path.dirname(report_file) or "."
+        os.makedirs(report_directory, exist_ok=True)
+        payload = {
+            "version": 1,
+            "scope": "structured-json-rulesets",
+            "rule_sets": sorted(
+                self.quality_reports,
+                key=lambda report: (report["ruleset"], report["type"]),
+            ),
+            "published_inventory": self.build_published_inventory(output_directory),
+        }
+
+        fd, temporary_path = tempfile.mkstemp(
+            prefix=".ruleset-quality-",
+            suffix=".json",
+            dir=report_directory,
+        )
+        try:
+            with os.fdopen(fd, 'w', encoding='utf-8') as file:
+                json.dump(payload, file, ensure_ascii=False, indent=2)
+                file.write("\n")
+            os.replace(temporary_path, report_file)
+        finally:
+            if os.path.exists(temporary_path):
+                os.remove(temporary_path)
 
     def replace_output_directory(self, staging_directory, output_directory):
         backup_directory = None
@@ -758,6 +926,7 @@ class RuleParser:
 
     def run(self):
         #### 解析规则，生成sing-box规则集
+        self.quality_reports = []
         source_directory = config.source_dir
         output_directory = config.singbox_output_directory
         os.makedirs(config.rule_dir, exist_ok=True)
@@ -784,6 +953,7 @@ class RuleParser:
         convert_json_to_clash(output_directory)
 
         convert_yaml_to_mrs(config.clash_output_directory)
+        self.write_quality_report(output_directory, config.quality_report_file)
         return True
 
     def main(self):
@@ -796,15 +966,20 @@ class RuleParser:
             yaml_file_path = os.path.join(source_directory, yaml_file)
             # 检查 adg文件
             if any(keyword in yaml_file for keyword in config.adg_keyword):
-                self.parse_adguard_file(yaml_file_path, output_directory)
+                succeeded = self.parse_adguard_file(yaml_file_path, output_directory)
             else:
-                self.parse_yaml_file(yaml_file_path, output_directory)
+                succeeded = self.parse_yaml_file(yaml_file_path, output_directory)
+            if not succeeded:
+                raise RuntimeError(f"规则集生成失败，保留旧产物: {yaml_file}")
 
         # 拆分 !cn 规则与 cn 规则
         self.process_category_files(output_directory)
 
-        # ---- Blacklist Fix：在编译 srs 之前，先对 JSON 做排除处理 ----
-        self.apply_blacklist_to_output(output_directory, blacklist_directory="blacklist")
+        # 编译前应用针对上游错误分类的修正规则。
+        self.apply_corrections_to_output(
+            output_directory,
+            corrections_directory="corrections",
+        )
 
         # 生成 SRS 文件
         json_files = sorted(f for f in os.listdir(output_directory) if f.endswith('.json'))

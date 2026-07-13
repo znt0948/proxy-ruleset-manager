@@ -1,4 +1,4 @@
-name: Config Update
+name: Ruleset Update
 
 on:
   push:
@@ -41,6 +41,11 @@ jobs:
         # 创建log.txt并设置读写权限
         touch ./log.txt
         chmod 666 ./log.txt
+
+    - name: Test ruleset semantics
+      env:
+        PYTHONPATH: src
+      run: python -m unittest discover -s tests -v
 
     - name: Run script
       run: python main.py

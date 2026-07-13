@@ -31,7 +31,6 @@ payload:
   - DOMAIN,googleapis-cn.com
   - DOMAIN,googleapps-cn.com
   - DOMAIN,googleflights-cn.net
-  - DOMAIN,gspe1-ssl.ls.apple.com
   - DOMAIN,gstatic-cn.com
   - DOMAIN,gtm.oasisfeng.com
   - DOMAIN,heads-ak-spotify-com.akamaized.net
@@ -40,7 +39,6 @@ payload:
   - DOMAIN,images-fe.ssl-images-amazon.com
   - DOMAIN,images-na.ssl-images-amazon.com
   - DOMAIN,ip.comss.net
-  - DOMAIN,ipinfo.io
   - DOMAIN,ippure.com
   - DOMAIN,ipv4-check-perf.radar.cloudflare.com
   - DOMAIN,ipv6-check-perf.radar.cloudflare.com
@@ -230,25 +228,6 @@ payload:
   - DOMAIN-REGEX,^r+[0-9]+(---|\.)sn-(2x3|ni5|j5o)\w{5}\.googlevideo\.com$
   - DOMAIN-REGEX,^r+[0-9]+(---|\.)sn-(2x3|ni5|j5o)\w{5}\.xn--ngstr-lra8j\.com$
   - DOMAIN-REGEX,javdb\d+\.com$
-  - DOMAIN-SUFFIX,.adult
-  - DOMAIN-SUFFIX,.android
-  - DOMAIN-SUFFIX,.chrome
-  - DOMAIN-SUFFIX,.dclk
-  - DOMAIN-SUFFIX,.gbiz
-  - DOMAIN-SUFFIX,.gle
-  - DOMAIN-SUFFIX,.gmail
-  - DOMAIN-SUFFIX,.goo
-  - DOMAIN-SUFFIX,.goog
-  - DOMAIN-SUFFIX,.google
-  - DOMAIN-SUFFIX,.greencloudvps.com
-  - DOMAIN-SUFFIX,.guge
-  - DOMAIN-SUFFIX,.hangout
-  - DOMAIN-SUFFIX,.hbo
-  - DOMAIN-SUFFIX,.nexus
-  - DOMAIN-SUFFIX,.porn
-  - DOMAIN-SUFFIX,.xn--flw351e
-  - DOMAIN-SUFFIX,.xn--qcka1pmc
-  - DOMAIN-SUFFIX,.youtube
   - DOMAIN-SUFFIX,02weqj32.com
   - DOMAIN-SUFFIX,04647.club
   - DOMAIN-SUFFIX,0cgdklr5sfwj.com
@@ -650,12 +629,11 @@ payload:
   - DOMAIN-SUFFIX,adporn.cc
   - DOMAIN-SUFFIX,adpornu.xyz
   - DOMAIN-SUFFIX,ads-twitter.com
-  - DOMAIN-SUFFIX,ads.youtube.com
   - DOMAIN-SUFFIX,adsense.com
   - DOMAIN-SUFFIX,adsensecustomsearchads.com
   - DOMAIN-SUFFIX,adsenseformobileapps.com
-  - DOMAIN-SUFFIX,adservice.google.com
   - DOMAIN-SUFFIX,adtrafficquality.google
+  - DOMAIN-SUFFIX,adult
   - DOMAIN-SUFFIX,adult-doujin-free-information-bureau.officialblog.jp
   - DOMAIN-SUFFIX,adult-h.com
   - DOMAIN-SUFFIX,adult-home-videos.com
@@ -750,18 +728,14 @@ payload:
   - DOMAIN-SUFFIX,ai.studio
   - DOMAIN-SUFFIX,ai7995.site
   - DOMAIN-SUFFIX,ai91porn.cc
-  - DOMAIN-SUFFIX,aicode.googleapis.com
-  - DOMAIN-SUFFIX,aida.googleapis.com
   - DOMAIN-SUFFIX,aimei133.com
   - DOMAIN-SUFFIX,aipa553.com
   - DOMAIN-SUFFIX,airav.cc
   - DOMAIN-SUFFIX,airav.wiki
   - DOMAIN-SUFFIX,airport-gov-cn.com
   - DOMAIN-SUFFIX,airsextube.com
-  - DOMAIN-SUFFIX,aisandbox-pa.googleapis.com
   - DOMAIN-SUFFIX,aisejushi.com
   - DOMAIN-SUFFIX,aishegw.com
-  - DOMAIN-SUFFIX,aistudio.google.com
   - DOMAIN-SUFFIX,aiv-cdn.net
   - DOMAIN-SUFFIX,aiwucm-us.sbs
   - DOMAIN-SUFFIX,aixingge2.cc
@@ -885,8 +859,8 @@ payload:
   - DOMAIN-SUFFIX,analscreen.com
   - DOMAIN-SUFFIX,analtime.org
   - DOMAIN-SUFFIX,analvids.com
-  - DOMAIN-SUFFIX,analytics-alv.google.com
   - DOMAIN-SUFFIX,ancensored.com
+  - DOMAIN-SUFFIX,android
   - DOMAIN-SUFFIX,android.com
   - DOMAIN-SUFFIX,androidify.com
   - DOMAIN-SUFFIX,andygod.com
@@ -926,7 +900,6 @@ payload:
   - DOMAIN-SUFFIX,antarvasnaclips.com
   - DOMAIN-SUFFIX,antarvasnax.com
   - DOMAIN-SUFFIX,anthropic.com
-  - DOMAIN-SUFFIX,antigravity-unleash.goog
   - DOMAIN-SUFFIX,antigravity.google
   - DOMAIN-SUFFIX,anudetube.com
   - DOMAIN-SUFFIX,anxiangxing.com
@@ -967,7 +940,6 @@ payload:
   - DOMAIN-SUFFIX,appspot.com
   - DOMAIN-SUFFIX,appyq.com
   - DOMAIN-SUFFIX,apture.com
-  - DOMAIN-SUFFIX,apyarstorybooks.blogspot.com
   - DOMAIN-SUFFIX,aqdlt.net
   - DOMAIN-SUFFIX,arabianchicks.com
   - DOMAIN-SUFFIX,arabnek.com
@@ -1182,7 +1154,6 @@ payload:
   - DOMAIN-SUFFIX,bangkokstreetwhores.com
   - DOMAIN-SUFFIX,bangyourwife.com
   - DOMAIN-SUFFIX,baraero.com
-  - DOMAIN-SUFFIX,bard.google.com
   - DOMAIN-SUFFIX,barelist.com
   - DOMAIN-SUFFIX,bareporno.com
   - DOMAIN-SUFFIX,barfuck.com
@@ -1728,6 +1699,7 @@ payload:
   - DOMAIN-SUFFIX,chobit.cc
   - DOMAIN-SUFFIX,chocam.com
   - DOMAIN-SUFFIX,christymarks.com
+  - DOMAIN-SUFFIX,chrome
   - DOMAIN-SUFFIX,chrome.com
   - DOMAIN-SUFFIX,chromebook.com
   - DOMAIN-SUFFIX,chromecast.com
@@ -1772,7 +1744,6 @@ payload:
   - DOMAIN-SUFFIX,claudemcpcontent.com
   - DOMAIN-SUFFIX,claudeusercontent.com
   - DOMAIN-SUFFIX,clawhub.ai
-  - DOMAIN-SUFFIX,climateone.blogspot.co.id
   - DOMAIN-SUFFIX,clinical-videos.com
   - DOMAIN-SUFFIX,clip16.com
   - DOMAIN-SUFFIX,clipcake.com
@@ -1821,7 +1792,6 @@ payload:
   - DOMAIN-SUFFIX,coliriodemacho.com.br
   - DOMAIN-SUFFIX,collection-3d.com
   - DOMAIN-SUFFIX,collectionofbestporn.com
-  - DOMAIN-SUFFIX,collector.xhamster.com
   - DOMAIN-SUFFIX,collegepornonly.com
   - DOMAIN-SUFFIX,collegesexgames.com
   - DOMAIN-SUFFIX,colliderporn.com
@@ -2000,6 +1970,7 @@ payload:
   - DOMAIN-SUFFIX,date2night.xyz
   - DOMAIN-SUFFIX,daylenerio.com
   - DOMAIN-SUFFIX,db-ip.com
+  - DOMAIN-SUFFIX,dclk
   - DOMAIN-SUFFIX,ddd-smart.net
   - DOMAIN-SUFFIX,ddff66.com
   - DOMAIN-SUFFIX,ddff77.com
@@ -2246,7 +2217,6 @@ payload:
   - DOMAIN-SUFFIX,driverxxx.com
   - DOMAIN-SUFFIX,drivevideo.xyz
   - DOMAIN-SUFFIX,drkogyi.com
-  - DOMAIN-SUFFIX,drmgmggyi-mm.blogspot.com
   - DOMAIN-SUFFIX,drtuber.com
   - DOMAIN-SUFFIX,drunk6.com
   - DOMAIN-SUFFIX,drunkenstepfather.com
@@ -2322,7 +2292,6 @@ payload:
   - DOMAIN-SUFFIX,elog-ch.net
   - DOMAIN-SUFFIX,elpionero.es
   - DOMAIN-SUFFIX,elpornoamateur.com
-  - DOMAIN-SUFFIX,elpube-scat-movies.blogspot.com
   - DOMAIN-SUFFIX,empero-right.mom
   - DOMAIN-SUFFIX,empflix.com
   - DOMAIN-SUFFIX,empornium.site
@@ -2333,7 +2302,6 @@ payload:
   - DOMAIN-SUFFIX,enemaexperiences.com
   - DOMAIN-SUFFIX,enemahistory.com
   - DOMAIN-SUFFIX,enemainformation.com
-  - DOMAIN-SUFFIX,enemaporn.blogspot.com
   - DOMAIN-SUFFIX,enemarotica.com
   - DOMAIN-SUFFIX,enemas4fun.com
   - DOMAIN-SUFFIX,enemasexfetish.com
@@ -2560,7 +2528,6 @@ payload:
   - DOMAIN-SUFFIX,fbjav.com
   - DOMAIN-SUFFIX,fbooktaiwan.com
   - DOMAIN-SUFFIX,fc2ppv.tv
-  - DOMAIN-SUFFIX,fcmatch.google.com
   - DOMAIN-SUFFIX,fcw.xxx
   - DOMAIN-SUFFIX,fcww0.com
   - DOMAIN-SUFFIX,feedburner.com
@@ -2782,7 +2749,6 @@ payload:
   - DOMAIN-SUFFIX,fuliba2021.com
   - DOMAIN-SUFFIX,fuliba2023.net
   - DOMAIN-SUFFIX,fulipic.gumroad.com
-  - DOMAIN-SUFFIX,fullbookmm.blogspot.com
   - DOMAIN-SUFFIX,fulldesisex.com
   - DOMAIN-SUFFIX,fullfuli.com
   - DOMAIN-SUFFIX,fullhdxxx.com
@@ -2865,7 +2831,6 @@ payload:
   - DOMAIN-SUFFIX,gaypornsky.com
   - DOMAIN-SUFFIX,gayrawclub.com
   - DOMAIN-SUFFIX,gayroom.com
-  - DOMAIN-SUFFIX,gaysheaven.blogspot.com
   - DOMAIN-SUFFIX,gaysonic.eu
   - DOMAIN-SUFFIX,gaystarnews.com
   - DOMAIN-SUFFIX,gaystream.pw
@@ -2874,7 +2839,7 @@ payload:
   - DOMAIN-SUFFIX,gaytube.com
   - DOMAIN-SUFFIX,gayvl.net
   - DOMAIN-SUFFIX,gazounabi.com
-  - DOMAIN-SUFFIX,gbluebooks.blogspot.com
+  - DOMAIN-SUFFIX,gbiz
   - DOMAIN-SUFFIX,gcolle.net
   - DOMAIN-SUFFIX,gcr.io
   - DOMAIN-SUFFIX,gdian-dh.mom
@@ -2886,12 +2851,8 @@ payload:
   - DOMAIN-SUFFIX,gelbooru.com
   - DOMAIN-SUFFIX,gelbooru.me
   - DOMAIN-SUFFIX,gelbooru.wjcodes.com
-  - DOMAIN-SUFFIX,geller-pa.googleapis.com
   - DOMAIN-SUFFIX,gemini.google
-  - DOMAIN-SUFFIX,gemini.google.com
-  - DOMAIN-SUFFIX,gemini.gstatic.com
   - DOMAIN-SUFFIX,generativeai.google
-  - DOMAIN-SUFFIX,generativelanguage.googleapis.com
   - DOMAIN-SUFFIX,geng8cn.xyz
   - DOMAIN-SUFFIX,gengba-av.mom
   - DOMAIN-SUFFIX,gengba.cc
@@ -2973,9 +2934,11 @@ payload:
   - DOMAIN-SUFFIX,gladporn.com
   - DOMAIN-SUFFIX,glam0ur.com
   - DOMAIN-SUFFIX,glamourtits.com
+  - DOMAIN-SUFFIX,gle
   - DOMAIN-SUFFIX,globaledu.org
   - DOMAIN-SUFFIX,gloporn.com
   - DOMAIN-SUFFIX,gloryholeswallow.com
+  - DOMAIN-SUFFIX,gmail
   - DOMAIN-SUFFIX,gmail.com
   - DOMAIN-SUFFIX,gmodules.com
   - DOMAIN-SUFFIX,gmoney.org
@@ -3014,14 +2977,17 @@ payload:
   - DOMAIN-SUFFIX,gonglchuangl.net
   - DOMAIN-SUFFIX,gonzo-movies.com
   - DOMAIN-SUFFIX,gonzo.com
+  - DOMAIN-SUFFIX,goo
   - DOMAIN-SUFFIX,goo.gl
   - DOMAIN-SUFFIX,good-gay.com
   - DOMAIN-SUFFIX,goodporn.to
   - DOMAIN-SUFFIX,goodporno.cc
   - DOMAIN-SUFFIX,goodsexporn.org
+  - DOMAIN-SUFFIX,goog
   - DOMAIN-SUFFIX,googel.com
   - DOMAIN-SUFFIX,googil.com
   - DOMAIN-SUFFIX,googl.com
+  - DOMAIN-SUFFIX,google
   - DOMAIN-SUFFIX,google-access.net
   - DOMAIN-SUFFIX,google-analytics-cn.com
   - DOMAIN-SUFFIX,google-analytics.com
@@ -3224,7 +3190,6 @@ payload:
   - DOMAIN-SUFFIX,google.ws
   - DOMAIN-SUFFIX,googleacquisitionmigration.com
   - DOMAIN-SUFFIX,googleadapis.com
-  - DOMAIN-SUFFIX,googleadapis.l.google.com
   - DOMAIN-SUFFIX,googleads-cn.com
   - DOMAIN-SUFFIX,googleads.com
   - DOMAIN-SUFFIX,googleadservices-cn.com
@@ -3306,11 +3271,11 @@ payload:
   - DOMAIN-SUFFIX,grannytube.net
   - DOMAIN-SUFFIX,graph.org
   - DOMAIN-SUFFIX,greatretroporn.com
+  - DOMAIN-SUFFIX,greencloudvps.com
   - DOMAIN-SUFFIX,greginhollywood.com
   - DOMAIN-SUFFIX,greip.io
   - DOMAIN-SUFFIX,gridaware.app
   - DOMAIN-SUFFIX,grok.com
-  - DOMAIN-SUFFIX,grok.x.com
   - DOMAIN-SUFFIX,grooby.com
   - DOMAIN-SUFFIX,groq.com
   - DOMAIN-SUFFIX,groupfun.com
@@ -3322,6 +3287,7 @@ payload:
   - DOMAIN-SUFFIX,gsuite.com
   - DOMAIN-SUFFIX,gt536.top
   - DOMAIN-SUFFIX,guaranitermal.com
+  - DOMAIN-SUFFIX,guge
   - DOMAIN-SUFFIX,guifw.xyz
   - DOMAIN-SUFFIX,guochantube.com
   - DOMAIN-SUFFIX,guochanw.life
@@ -3375,6 +3341,7 @@ payload:
   - DOMAIN-SUFFIX,hanbao-tv.lol
   - DOMAIN-SUFFIX,handjobhub.com
   - DOMAIN-SUFFIX,handjobtube4free.com
+  - DOMAIN-SUFFIX,hangout
   - DOMAIN-SUFFIX,hanime.me
   - DOMAIN-SUFFIX,hanime.tv
   - DOMAIN-SUFFIX,hanime.xxx
@@ -3391,6 +3358,7 @@ payload:
   - DOMAIN-SUFFIX,hardsextube.com
   - DOMAIN-SUFFIX,hardx.com
   - DOMAIN-SUFFIX,hath.network
+  - DOMAIN-SUFFIX,hbo
   - DOMAIN-SUFFIX,hbo-europe.com
   - DOMAIN-SUFFIX,hbo.ba
   - DOMAIN-SUFFIX,hbo.bg
@@ -3715,7 +3683,6 @@ payload:
   - DOMAIN-SUFFIX,homepornvideo.net
   - DOMAIN-SUFFIX,homesexmade.com
   - DOMAIN-SUFFIX,homo.xxx
-  - DOMAIN-SUFFIX,homofans.blogspot.com
   - DOMAIN-SUFFIX,honestpornreviews.com
   - DOMAIN-SUFFIX,hongjie10.xyz
   - DOMAIN-SUFFIX,hongjie11.xyz
@@ -4006,6 +3973,7 @@ payload:
   - DOMAIN-SUFFIX,ipbase.com
   - DOMAIN-SUFFIX,ipbot.com
   - DOMAIN-SUFFIX,ipcalf.com
+  - DOMAIN-SUFFIX,ipcheck.ing
   - DOMAIN-SUFFIX,ipchicken.com
   - DOMAIN-SUFFIX,ipdata.co
   - DOMAIN-SUFFIX,ipecho.net
@@ -4381,7 +4349,6 @@ payload:
   - DOMAIN-SUFFIX,juiceced.xyz
   - DOMAIN-SUFFIX,juicytwink.com
   - DOMAIN-SUFFIX,jules.google
-  - DOMAIN-SUFFIX,jules.google.com
   - DOMAIN-SUFFIX,julesjordan.com
   - DOMAIN-SUFFIX,juliamiles.com
   - DOMAIN-SUFFIX,juliamovies.com
@@ -4445,14 +4412,12 @@ payload:
   - DOMAIN-SUFFIX,kendralist.com
   - DOMAIN-SUFFIX,kenxxx.com
   - DOMAIN-SUFFIX,kenya4.com
-  - DOMAIN-SUFFIX,kenyanporn.blogspot.com
   - DOMAIN-SUFFIX,kenyaraha.net
   - DOMAIN-SUFFIX,keyhole.com
   - DOMAIN-SUFFIX,keyporntube.com
   - DOMAIN-SUFFIX,keytransparency.com
   - DOMAIN-SUFFIX,keytransparency.foo
   - DOMAIN-SUFFIX,keytransparency.org
-  - DOMAIN-SUFFIX,khayannpyar.blogspot.com
   - DOMAIN-SUFFIX,khotruyentranhx.com
   - DOMAIN-SUFFIX,kichikuou.com
   - DOMAIN-SUFFIX,kickporn.com
@@ -4525,7 +4490,6 @@ payload:
   - DOMAIN-SUFFIX,l2.io
   - DOMAIN-SUFFIX,la-mama.ru
   - DOMAIN-SUFFIX,labs.google
-  - DOMAIN-SUFFIX,labs.google.com
   - DOMAIN-SUFFIX,lacomics.org
   - DOMAIN-SUFFIX,ladies.com
   - DOMAIN-SUFFIX,ladybaba.net
@@ -4743,9 +4707,7 @@ payload:
   - DOMAIN-SUFFIX,mafia-linkz.to
   - DOMAIN-SUFFIX,magicmovies.com
   - DOMAIN-SUFFIX,mahajantech.com
-  - DOMAIN-SUFFIX,mail-ads.google.com
   - DOMAIN-SUFFIX,maileoch.com
-  - DOMAIN-SUFFIX,makersuite.google.com
   - DOMAIN-SUFFIX,malayporn.site
   - DOMAIN-SUFFIX,malayporn.space
   - DOMAIN-SUFFIX,malaypornhub.com
@@ -4776,7 +4738,6 @@ payload:
   - DOMAIN-SUFFIX,maomi-shipin.com
   - DOMAIN-SUFFIX,maomiav.one
   - DOMAIN-SUFFIX,maomiav.top
-  - DOMAIN-SUFFIX,marketingplatform.google.com
   - DOMAIN-SUFFIX,marranazas.com
   - DOMAIN-SUFFIX,marscode.com
   - DOMAIN-SUFFIX,marvel.com
@@ -4945,7 +4906,6 @@ payload:
   - DOMAIN-SUFFIX,mmtongdao.xyz
   - DOMAIN-SUFFIX,mmtv.life
   - DOMAIN-SUFFIX,mmwxl27.top
-  - DOMAIN-SUFFIX,mobileads.google.com
   - DOMAIN-SUFFIX,mobileporngames.com
   - DOMAIN-SUFFIX,mobilepornmovies.com
   - DOMAIN-SUFFIX,mobileview.page
@@ -5223,6 +5183,7 @@ payload:
   - DOMAIN-SUFFIX,nexitally.com
   - DOMAIN-SUFFIX,nexitallysafe.com
   - DOMAIN-SUFFIX,nexitcore.com
+  - DOMAIN-SUFFIX,nexus
   - DOMAIN-SUFFIX,nflxext.com
   - DOMAIN-SUFFIX,nflximg.com
   - DOMAIN-SUFFIX,nflximg.net
@@ -5274,7 +5235,6 @@ payload:
   - DOMAIN-SUFFIX,noodlemagazine.com
   - DOMAIN-SUFFIX,norsk.mobi
   - DOMAIN-SUFFIX,notebooklm.google
-  - DOMAIN-SUFFIX,notebooklm.google.com
   - DOMAIN-SUFFIX,noveltrove.com
   - DOMAIN-SUFFIX,novids.com
   - DOMAIN-SUFFIX,novinhabucetuda.com
@@ -5429,7 +5389,6 @@ payload:
   - DOMAIN-SUFFIX,onxxxvideo.com
   - DOMAIN-SUFFIX,op7979.com
   - DOMAIN-SUFFIX,opal.google
-  - DOMAIN-SUFFIX,opal.google.com
   - DOMAIN-SUFFIX,openai.com
   - DOMAIN-SUFFIX,openai.com.cdn.cloudflare.net
   - DOMAIN-SUFFIX,openart.ai
@@ -5476,7 +5435,6 @@ payload:
   - DOMAIN-SUFFIX,pacopacomama.com
   - DOMAIN-SUFFIX,paerosnen.club
   - DOMAIN-SUFFIX,page.link
-  - DOMAIN-SUFFIX,pagead.l.google.com
   - DOMAIN-SUFFIX,pagespeedmobilizer.com
   - DOMAIN-SUFFIX,pageview.mobi
   - DOMAIN-SUFFIX,paheal.net
@@ -5502,7 +5460,6 @@ payload:
   - DOMAIN-SUFFIX,paon.site
   - DOMAIN-SUFFIX,papalah.com
   - DOMAIN-SUFFIX,paradisehill.cc
-  - DOMAIN-SUFFIX,partnerad.l.google.com
   - DOMAIN-SUFFIX,partylikeits1986.org
   - DOMAIN-SUFFIX,pasionmujeres.com
   - DOMAIN-SUFFIX,passion-hd.com
@@ -5805,6 +5762,7 @@ payload:
   - DOMAIN-SUFFIX,poringa.net
   - DOMAIN-SUFFIX,porkahd.co
   - DOMAIN-SUFFIX,porm.club
+  - DOMAIN-SUFFIX,porn
   - DOMAIN-SUFFIX,porn-bokep.com
   - DOMAIN-SUFFIX,porn-comic.com
   - DOMAIN-SUFFIX,porn-discounts.com
@@ -6177,7 +6135,6 @@ payload:
   - DOMAIN-SUFFIX,privatecasting-x.com
   - DOMAIN-SUFFIX,privateclassics.com
   - DOMAIN-SUFFIX,privatevoyeurvideos.com
-  - DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
   - DOMAIN-SUFFIX,proctoscopeexam.com
   - DOMAIN-SUFFIX,prod.service.minerva.devices.a2z.com
   - DOMAIN-SUFFIX,profreeporno.com
@@ -6366,7 +6323,6 @@ payload:
   - DOMAIN-SUFFIX,rlczdo.xyz
   - DOMAIN-SUFFIX,rm2029.com
   - DOMAIN-SUFFIX,ro89.com
-  - DOMAIN-SUFFIX,robinfrontend-pa.googleapis.com
   - DOMAIN-SUFFIX,rockettube.com
   - DOMAIN-SUFFIX,rocksextube.com
   - DOMAIN-SUFFIX,roloflix.com
@@ -7932,6 +7888,7 @@ payload:
   - DOMAIN-SUFFIX,xn--bnq297cix3a.cn
   - DOMAIN-SUFFIX,xn--cck4d8b3009a.com
   - DOMAIN-SUFFIX,xn--d4ty0ojsqzfd.com
+  - DOMAIN-SUFFIX,xn--flw351e
   - DOMAIN-SUFFIX,xn--flw351e.com
   - DOMAIN-SUFFIX,xn--ggle-55da.com
   - DOMAIN-SUFFIX,xn--gmq348bujlxrb.com
@@ -7943,6 +7900,7 @@ payload:
   - DOMAIN-SUFFIX,xn--mtswd61ejxq.com
   - DOMAIN-SUFFIX,xn--ngstr-lra8j.com
   - DOMAIN-SUFFIX,xn--p8j9a0d9c9a.xn--q9jyb4c
+  - DOMAIN-SUFFIX,xn--qcka1pmc
   - DOMAIN-SUFFIX,xn--r8jwklh769h2mc880dk1o431a.com
   - DOMAIN-SUFFIX,xn--r8jwklh769hk43amcfoyl3z3a.com
   - DOMAIN-SUFFIX,xn--sgt856gbjl.cc
@@ -8093,7 +8051,6 @@ payload:
   - DOMAIN-SUFFIX,xxx-com.cfd
   - DOMAIN-SUFFIX,xxx-fap.com
   - DOMAIN-SUFFIX,xxx-files.org
-  - DOMAIN-SUFFIX,xxx-hentai.blogspot.com
   - DOMAIN-SUFFIX,xxx-porn-fuck.com
   - DOMAIN-SUFFIX,xxx-porn-tube.com
   - DOMAIN-SUFFIX,xxx-porn.info
@@ -8306,6 +8263,7 @@ payload:
   - DOMAIN-SUFFIX,youskbe.com
   - DOMAIN-SUFFIX,youtrannytube.com
   - DOMAIN-SUFFIX,youtu.be
+  - DOMAIN-SUFFIX,youtube
   - DOMAIN-SUFFIX,youtube-nocookie.com
   - DOMAIN-SUFFIX,youtube.ae
   - DOMAIN-SUFFIX,youtube.al

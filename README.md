@@ -2,13 +2,19 @@
 
 一个用于整理代理规则集的生成工具。项目从 `upstream/*.yaml` 读取上游规则，生成 sing-box、Surge、Shadowrocket、Clash/Mihomo 等格式的规则文件，并通过 GitHub Actions 定时更新。
 
+本项目只负责规则集的获取、清洗、合并、优化与格式转换，不生成或修改 sing-box、Mihomo 等客户端的运行配置。
+
 ## 功能
 
 - 从 YAML、LIST、JSON、SRS、AdGuard 等来源拉取规则
 - 合并、去重并按 `domain_suffix` 清理重复域名
+- 所有 `domain_suffix` 统一为“根域名 + 全部子域名”语义：输入的 `example.com`、`.example.com`、`+.example.com` 均规范化为 `example.com`；Mihomo domain provider 输出为 `+.example.com`
+- `domain`、`domain_suffix`、`domain_keyword` 统一转为小写；`domain_regex`、进程名和进程路径保持原样，避免改变正则或文件系统匹配语义
+- 拒绝把 `*.example.com` 当作 suffix，因为它不包含根域名，语义不同
 - 生成 sing-box JSON/SRS 规则集
 - 转换 Surge、Shadowrocket、Clash YAML 和 Mihomo MRS 规则集
-- 支持 `blacklist/` 同名文件对生成结果做排除修正
+- 支持 `corrections/` 同名文件修正上游的错误分类
+- 对每个结构化上游分别清洗后再合并，并生成 `report/ruleset-quality.json`，记录单上游去重、合并后去重和精确来源重叠；`domain_keyword` 仅做规范化与完全重复去重，不参与覆盖推断
 
 ## 环境要求
 
@@ -78,6 +84,7 @@ src/
     converters/       # 各客户端格式转换出口
 upstream/             # 上游规则源定义
 self-host/            # 仓库自维护规则源
-blacklist/            # 生成后排除规则
+corrections/          # 按输出文件名修正上游错误分类
+report/               # 规则质量、来源重叠和发布产物统计
 rule/                 # 自动生成的规则产物
 ```

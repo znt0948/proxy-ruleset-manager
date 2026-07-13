@@ -8,6 +8,9 @@ from .utils import (
     fix_domain_prefix,
     normalize_adguard_hosts_line,
     normalize_adguard_rule_line,
+    normalize_domain,
+    normalize_domain_keyword,
+    normalize_domain_suffix,
     normalize_payload_items,
 )
 
@@ -19,5 +22,8 @@ __all__ = [
     "fix_domain_prefix",
     "normalize_adguard_hosts_line",
     "normalize_adguard_rule_line",
+    "normalize_domain",
+    "normalize_domain_keyword",
+    "normalize_domain_suffix",
     "normalize_payload_items",
 ]

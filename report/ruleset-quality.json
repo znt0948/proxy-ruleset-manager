@@ -1,0 +1,4141 @@
+{
+  "version": 1,
+  "scope": "structured-json-rulesets",
+  "rule_sets": [
+    {
+      "ruleset": "geoip-blocker-httpdns",
+      "type": "geoip",
+      "source_count": 1,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/BlockHttpDNS/BlockHttpDNS_OCD_IP.yaml",
+          "raw_entries": 41,
+          "normalized_entries": 41,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 41,
+            "output_entries": 41,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 41,
+        "output_entries": 41,
+        "removed_entries": 0,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "ip_cidr": 41
+      },
+      "provenance": {
+        "tracked_normalized_entries": 41,
+        "published_entries": 41,
+        "published_entries_with_multiple_exact_sources": 0,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 0,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/BlockHttpDNS/BlockHttpDNS_OCD_IP.yaml": 41
+        },
+        "source_pair_overlaps": [],
+        "multi_source_samples": []
+      }
+    },
+    {
+      "ruleset": "geoip-category-direct",
+      "type": "geoip",
+      "source_count": 4,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geoip-direct@selfhost.json",
+          "raw_entries": 12,
+          "normalized_entries": 12,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 12,
+            "output_entries": 12,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+          "raw_entries": 7774,
+          "normalized_entries": 7774,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 7774,
+            "output_entries": 7774,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs",
+          "raw_entries": 6040,
+          "normalized_entries": 6040,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 6040,
+            "output_entries": 6040,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/privateip.srs",
+          "raw_entries": 18,
+          "normalized_entries": 18,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 18,
+            "output_entries": 18,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 12153,
+        "output_entries": 8511,
+        "removed_entries": 3642,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 3642
+      },
+      "output_entries_by_field": {
+        "ip_cidr": 8511
+      },
+      "provenance": {
+        "tracked_normalized_entries": 12153,
+        "published_entries": 8511,
+        "published_entries_with_multiple_exact_sources": 1691,
+        "published_entries_without_exact_source": 2,
+        "normalized_entries_shared_by_sources": 1691,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geoip-direct@selfhost.json": 12,
+          "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs": 7503,
+          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs": 2667,
+          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/privateip.srs": 18
+        },
+        "source_pair_overlaps": [
+          {
+            "sources": [
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs",
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+            ],
+            "entry_count": 1691
+          }
+        ],
+        "multi_source_samples": [
+          {
+            "field": "ip_cidr",
+            "value": "1.12.0.0/14",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "1.180.0.0/14",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "1.184.0.0/15",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "1.188.0.0/14",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "1.192.0.0/13",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "1.202.0.0/15",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "1.204.0.0/14",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "1.24.0.0/13",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "1.45.0.0/16",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "1.48.0.0/14",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "1.56.0.0/13",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "1.68.0.0/14",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.1.0.0/22",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.128.0.0/22",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.129.0.0/16",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.144.0.0/12",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.16.0.0/12",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.2.172.0/22",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.200.0.0/15",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.203.172.0/22",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.204.0.0/14",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.224.0.0/13",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.234.76.0/22",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.248.0.0/15",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.251.0.0/22",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.252.0.0/15",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.33.128.0/17",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.34.0.0/15",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.36.128.0/17",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.37.0.0/16",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.4.0.0/14",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.50.56.0/22",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.50.8.0/21",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.53.100.0/22",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.64.0.0/13",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.72.0.0/14",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.76.0.0/15",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.78.0.0/22",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "101.80.0.0/12",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "103.1.168.0/22",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "103.1.20.0/22",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "103.1.8.0/22",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "103.10.0.0/22",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "103.10.84.0/22",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "103.101.180.0/22",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "103.102.200.0/22",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "103.104.252.0/22",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "103.105.12.0/22",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "103.105.180.0/22",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          },
+          {
+            "field": "ip_cidr",
+            "value": "103.105.184.0/22",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/cnip.srs"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "ruleset": "geoip-category-download@!cn",
+      "type": "geoip",
+      "source_count": 1,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geoip-download@selfhost.json",
+          "raw_entries": 1,
+          "normalized_entries": 1,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 1,
+            "output_entries": 1,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 1,
+        "output_entries": 1,
+        "removed_entries": 0,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "ip_cidr": 1
+      },
+      "provenance": {
+        "tracked_normalized_entries": 1,
+        "published_entries": 1,
+        "published_entries_with_multiple_exact_sources": 0,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 0,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geoip-download@selfhost.json": 1
+        },
+        "source_pair_overlaps": [],
+        "multi_source_samples": []
+      }
+    },
+    {
+      "ruleset": "geoip-category-vpn@!cn",
+      "type": "geoip",
+      "source_count": 2,
+      "sources": [
+        {
+          "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/netflixip.srs",
+          "raw_entries": 1119,
+          "normalized_entries": 1119,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 1119,
+            "output_entries": 1119,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/telegramip.srs",
+          "raw_entries": 12,
+          "normalized_entries": 12,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 12,
+            "output_entries": 12,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 1131,
+        "output_entries": 1131,
+        "removed_entries": 0,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "ip_cidr": 1131
+      },
+      "provenance": {
+        "tracked_normalized_entries": 1131,
+        "published_entries": 1131,
+        "published_entries_with_multiple_exact_sources": 0,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 0,
+        "source_output_contribution": {
+          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/netflixip.srs": 1119,
+          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/telegramip.srs": 12
+        },
+        "source_pair_overlaps": [],
+        "multi_source_samples": []
+      }
+    },
+    {
+      "ruleset": "geoip-geolocation-eu",
+      "type": "geoip",
+      "source_count": 1,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geoip-eu@selfhost.json",
+          "raw_entries": 3,
+          "normalized_entries": 3,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 3,
+            "output_entries": 3,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 3,
+        "output_entries": 3,
+        "removed_entries": 0,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "ip_cidr": 3
+      },
+      "provenance": {
+        "tracked_normalized_entries": 3,
+        "published_entries": 3,
+        "published_entries_with_multiple_exact_sources": 0,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 0,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geoip-eu@selfhost.json": 3
+        },
+        "source_pair_overlaps": [],
+        "multi_source_samples": []
+      }
+    },
+    {
+      "ruleset": "geoip-geolocation-jp",
+      "type": "geoip",
+      "source_count": 1,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geoip-jp@selfhost.json",
+          "raw_entries": 2,
+          "normalized_entries": 2,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 2,
+            "output_entries": 2,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 2,
+        "output_entries": 2,
+        "removed_entries": 0,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "ip_cidr": 2
+      },
+      "provenance": {
+        "tracked_normalized_entries": 2,
+        "published_entries": 2,
+        "published_entries_with_multiple_exact_sources": 0,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 0,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geoip-jp@selfhost.json": 2
+        },
+        "source_pair_overlaps": [],
+        "multi_source_samples": []
+      }
+    },
+    {
+      "ruleset": "geosite-blocker-httpdns",
+      "type": "geosite",
+      "source_count": 2,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/BlockHttpDNS/BlockHttpDNS_OCD_Domain.yaml",
+          "raw_entries": 22,
+          "normalized_entries": 22,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 22,
+            "output_entries": 22,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/BlockHttpDNSPlus/BlockHttpDNSPlus.yaml",
+          "raw_entries": 12,
+          "normalized_entries": 12,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 12,
+            "output_entries": 12,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 34,
+        "output_entries": 34,
+        "removed_entries": 0,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "domain": 18,
+        "domain_keyword": 12,
+        "domain_suffix": 4
+      },
+      "provenance": {
+        "tracked_normalized_entries": 34,
+        "published_entries": 34,
+        "published_entries_with_multiple_exact_sources": 0,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 0,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/BlockHttpDNS/BlockHttpDNS_OCD_Domain.yaml": 22,
+          "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/BlockHttpDNSPlus/BlockHttpDNSPlus.yaml": 12
+        },
+        "source_pair_overlaps": [],
+        "multi_source_samples": []
+      }
+    },
+    {
+      "ruleset": "geosite-blocker-trash",
+      "type": "geosite",
+      "source_count": 3,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/leohidalgo/little-snitch---rule-groups/main/rules/hosts-unified.lsrules",
+          "raw_entries": 104219,
+          "normalized_entries": 104219,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 104219,
+            "output_entries": 46603,
+            "removed_entries": 57616,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 57616,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-blocklist@selfhost.json",
+          "raw_entries": 3,
+          "normalized_entries": 3,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 3,
+            "output_entries": 3,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/HijackingPlus/HijackingPlus.yaml",
+          "raw_entries": 30,
+          "normalized_entries": 30,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 30,
+            "output_entries": 30,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 46632,
+        "output_entries": 46631,
+        "removed_entries": 1,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 1,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "domain": 20838,
+        "domain_keyword": 5,
+        "domain_suffix": 25786,
+        "ip_cidr": 2
+      },
+      "provenance": {
+        "tracked_normalized_entries": 46632,
+        "published_entries": 46631,
+        "published_entries_with_multiple_exact_sources": 4,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 4,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/leohidalgo/little-snitch---rule-groups/main/rules/hosts-unified.lsrules": 46603,
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-blocklist@selfhost.json": 2,
+          "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/HijackingPlus/HijackingPlus.yaml": 30
+        },
+        "source_pair_overlaps": [
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/HijackingPlus/HijackingPlus.yaml",
+              "https://raw.githubusercontent.com/leohidalgo/little-snitch---rule-groups/main/rules/hosts-unified.lsrules"
+            ],
+            "entry_count": 4
+          }
+        ],
+        "multi_source_samples": [
+          {
+            "field": "domain",
+            "value": "tracking.india.miui.com",
+            "sources": [
+              "https://raw.githubusercontent.com/leohidalgo/little-snitch---rule-groups/main/rules/hosts-unified.lsrules",
+              "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/HijackingPlus/HijackingPlus.yaml"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "tracking.intl.miui.com",
+            "sources": [
+              "https://raw.githubusercontent.com/leohidalgo/little-snitch---rule-groups/main/rules/hosts-unified.lsrules",
+              "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/HijackingPlus/HijackingPlus.yaml"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "tracking.miui.com",
+            "sources": [
+              "https://raw.githubusercontent.com/leohidalgo/little-snitch---rule-groups/main/rules/hosts-unified.lsrules",
+              "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/HijackingPlus/HijackingPlus.yaml"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "tracking.rus.miui.com",
+            "sources": [
+              "https://raw.githubusercontent.com/leohidalgo/little-snitch---rule-groups/main/rules/hosts-unified.lsrules",
+              "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/HijackingPlus/HijackingPlus.yaml"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "ruleset": "geosite-blocker-trash@mobile",
+      "type": "geosite",
+      "source_count": 1,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/HijackingPlus/HijackingPlus.yaml",
+          "raw_entries": 30,
+          "normalized_entries": 30,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 30,
+            "output_entries": 30,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 30,
+        "output_entries": 30,
+        "removed_entries": 0,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "domain": 5,
+        "domain_keyword": 5,
+        "domain_suffix": 18,
+        "ip_cidr": 2
+      },
+      "provenance": {
+        "tracked_normalized_entries": 30,
+        "published_entries": 30,
+        "published_entries_with_multiple_exact_sources": 0,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 0,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/HijackingPlus/HijackingPlus.yaml": 30
+        },
+        "source_pair_overlaps": [],
+        "multi_source_samples": []
+      }
+    },
+    {
+      "ruleset": "geosite-category-direct",
+      "type": "geosite",
+      "source_count": 21,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+          "raw_entries": 294,
+          "normalized_entries": 294,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 294,
+            "output_entries": 294,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-itunes@cn.srs",
+          "raw_entries": 50,
+          "normalized_entries": 50,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 50,
+            "output_entries": 50,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google@cn.srs",
+          "raw_entries": 126,
+          "normalized_entries": 126,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 126,
+            "output_entries": 126,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-jd.srs",
+          "raw_entries": 240,
+          "normalized_entries": 240,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 240,
+            "output_entries": 232,
+            "removed_entries": 8,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 8,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-meituan.srs",
+          "raw_entries": 19,
+          "normalized_entries": 19,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 19,
+            "output_entries": 19,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-direct@selfhost.json",
+          "raw_entries": 39,
+          "normalized_entries": 38,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 38,
+            "output_entries": 36,
+            "removed_entries": 2,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 2,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+          "raw_entries": 112274,
+          "normalized_entries": 112274,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 112274,
+            "output_entries": 112126,
+            "removed_entries": 148,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 148,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-private.srs",
+          "raw_entries": 131,
+          "normalized_entries": 131,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 131,
+            "output_entries": 131,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
+          "raw_entries": 8779,
+          "normalized_entries": 8779,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 8779,
+            "output_entries": 8302,
+            "removed_entries": 477,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 63,
+            "suffix_covered_by_suffix": 414,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-game-platforms-download@cn.srs",
+          "raw_entries": 24,
+          "normalized_entries": 24,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 24,
+            "output_entries": 24,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/category-games-!cn@cn.srs",
+          "raw_entries": 40,
+          "normalized_entries": 40,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 40,
+            "output_entries": 40,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/SteamCN/SteamCN_OCD_Domain.yaml",
+          "raw_entries": 17,
+          "normalized_entries": 17,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 17,
+            "output_entries": 17,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/Game/GameDownloadCN/GameDownloadCN_OCD_Domain.yaml",
+          "raw_entries": 16,
+          "normalized_entries": 16,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 16,
+            "output_entries": 16,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/games-cn.srs",
+          "raw_entries": 344,
+          "normalized_entries": 344,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 344,
+            "output_entries": 344,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-steam@cn.srs",
+          "raw_entries": 17,
+          "normalized_entries": 17,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 17,
+            "output_entries": 17,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json",
+          "raw_entries": 132,
+          "normalized_entries": 132,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 132,
+            "output_entries": 132,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/WeChat/WeChat_OCD_Domain.yaml",
+          "raw_entries": 30,
+          "normalized_entries": 30,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 30,
+            "output_entries": 30,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-springer.srs",
+          "raw_entries": 5,
+          "normalized_entries": 5,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 5,
+            "output_entries": 5,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-elsevier.srs",
+          "raw_entries": 14,
+          "normalized_entries": 14,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 14,
+            "output_entries": 14,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-ieee.srs",
+          "raw_entries": 54,
+          "normalized_entries": 54,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 54,
+            "output_entries": 54,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://static-file-global.353355.xyz/rules/cn-additional-list-clash.yaml",
+          "raw_entries": 43245,
+          "normalized_entries": 43245,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 43245,
+            "output_entries": 43222,
+            "removed_entries": 23,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 23,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 146441,
+        "output_entries": 131158,
+        "removed_entries": 15283,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 162,
+        "suffix_covered_by_suffix": 15121,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "domain": 584,
+        "domain_regex": 10,
+        "domain_suffix": 130564
+      },
+      "provenance": {
+        "tracked_normalized_entries": 146441,
+        "published_entries": 131158,
+        "published_entries_with_multiple_exact_sources": 13341,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 14584,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs": 233,
+          "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-itunes@cn.srs": 45,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google@cn.srs": 119,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-jd.srs": 215,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-meituan.srs": 17,
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-direct@selfhost.json": 35,
+          "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt": 112119,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-private.srs": 127,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs": 6207,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-game-platforms-download@cn.srs": 4,
+          "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/category-games-!cn@cn.srs": 10,
+          "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/SteamCN/SteamCN_OCD_Domain.yaml": 7,
+          "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/Game/GameDownloadCN/GameDownloadCN_OCD_Domain.yaml": 5,
+          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/games-cn.srs": 265,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-steam@cn.srs": 4,
+          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json": 125,
+          "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/WeChat/WeChat_OCD_Domain.yaml": 10,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-springer.srs": 5,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-elsevier.srs": 14,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-ieee.srs": 54,
+          "https://static-file-global.353355.xyz/rules/cn-additional-list-clash.yaml": 28990
+        },
+        "source_pair_overlaps": [
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://static-file-global.353355.xyz/rules/cn-additional-list-clash.yaml"
+            ],
+            "entry_count": 10458
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ],
+            "entry_count": 5933
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
+              "https://static-file-global.353355.xyz/rules/cn-additional-list-clash.yaml"
+            ],
+            "entry_count": 4426
+          },
+          {
+            "sources": [
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/games-cn.srs",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ],
+            "entry_count": 316
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ],
+            "entry_count": 294
+          },
+          {
+            "sources": [
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/games-cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt"
+            ],
+            "entry_count": 256
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs"
+            ],
+            "entry_count": 233
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-jd.srs"
+            ],
+            "entry_count": 228
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-jd.srs"
+            ],
+            "entry_count": 207
+          },
+          {
+            "sources": [
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/games-cn.srs",
+              "https://static-file-global.353355.xyz/rules/cn-additional-list-clash.yaml"
+            ],
+            "entry_count": 193
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-jd.srs",
+              "https://static-file-global.353355.xyz/rules/cn-additional-list-clash.yaml"
+            ],
+            "entry_count": 129
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google@cn.srs"
+            ],
+            "entry_count": 126
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google@cn.srs"
+            ],
+            "entry_count": 116
+          },
+          {
+            "sources": [
+              "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-itunes@cn.srs",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs"
+            ],
+            "entry_count": 50
+          },
+          {
+            "sources": [
+              "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-itunes@cn.srs",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ],
+            "entry_count": 50
+          },
+          {
+            "sources": [
+              "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-itunes@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt"
+            ],
+            "entry_count": 45
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/category-games-!cn@cn.srs",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ],
+            "entry_count": 34
+          },
+          {
+            "sources": [
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/games-cn.srs",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-game-platforms-download@cn.srs"
+            ],
+            "entry_count": 20
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-meituan.srs"
+            ],
+            "entry_count": 19
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-meituan.srs",
+              "https://static-file-global.353355.xyz/rules/cn-additional-list-clash.yaml"
+            ],
+            "entry_count": 19
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-meituan.srs"
+            ],
+            "entry_count": 17
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/category-games-!cn@cn.srs",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-steam@cn.srs"
+            ],
+            "entry_count": 17
+          },
+          {
+            "sources": [
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/games-cn.srs",
+              "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/SteamCN/SteamCN_OCD_Domain.yaml"
+            ],
+            "entry_count": 15
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-game-platforms-download@cn.srs",
+              "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/Game/GameDownloadCN/GameDownloadCN_OCD_Domain.yaml"
+            ],
+            "entry_count": 14
+          },
+          {
+            "sources": [
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/games-cn.srs",
+              "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/Game/GameDownloadCN/GameDownloadCN_OCD_Domain.yaml"
+            ],
+            "entry_count": 13
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-steam@cn.srs"
+            ],
+            "entry_count": 13
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-direct@selfhost.json"
+            ],
+            "entry_count": 12
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-game-platforms-download@cn.srs",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ],
+            "entry_count": 11
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/WeChat/WeChat_OCD_Domain.yaml",
+              "https://static-file-global.353355.xyz/rules/cn-additional-list-clash.yaml"
+            ],
+            "entry_count": 11
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/WeChat/WeChat_OCD_Domain.yaml"
+            ],
+            "entry_count": 9
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
+              "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/WeChat/WeChat_OCD_Domain.yaml"
+            ],
+            "entry_count": 9
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/category-games-!cn@cn.srs",
+              "https://static-file-global.353355.xyz/rules/cn-additional-list-clash.yaml"
+            ],
+            "entry_count": 7
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
+              "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/Game/GameDownloadCN/GameDownloadCN_OCD_Domain.yaml"
+            ],
+            "entry_count": 7
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/category-games-!cn@cn.srs"
+            ],
+            "entry_count": 6
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-direct@selfhost.json",
+              "https://static-file-global.353355.xyz/rules/cn-additional-list-clash.yaml"
+            ],
+            "entry_count": 6
+          },
+          {
+            "sources": [
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/games-cn.srs",
+              "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/category-games-!cn@cn.srs"
+            ],
+            "entry_count": 5
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
+              "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-direct@selfhost.json"
+            ],
+            "entry_count": 5
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/Game/GameDownloadCN/GameDownloadCN_OCD_Domain.yaml",
+              "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/SteamCN/SteamCN_OCD_Domain.yaml"
+            ],
+            "entry_count": 5
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-private.srs"
+            ],
+            "entry_count": 4
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-steam@cn.srs"
+            ],
+            "entry_count": 4
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/category-games-!cn@cn.srs",
+              "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/SteamCN/SteamCN_OCD_Domain.yaml"
+            ],
+            "entry_count": 4
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-game-platforms-download@cn.srs",
+              "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/SteamCN/SteamCN_OCD_Domain.yaml"
+            ],
+            "entry_count": 4
+          },
+          {
+            "sources": [
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/games-cn.srs",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-steam@cn.srs"
+            ],
+            "entry_count": 3
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/category-games-!cn@cn.srs",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-game-platforms-download@cn.srs"
+            ],
+            "entry_count": 3
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-direct@selfhost.json"
+            ],
+            "entry_count": 3
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-game-platforms-download@cn.srs",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-steam@cn.srs"
+            ],
+            "entry_count": 3
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-steam@cn.srs",
+              "https://static-file-global.353355.xyz/rules/cn-additional-list-clash.yaml"
+            ],
+            "entry_count": 3
+          },
+          {
+            "sources": [
+              "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-itunes@cn.srs",
+              "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-direct@selfhost.json"
+            ],
+            "entry_count": 2
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
+              "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/SteamCN/SteamCN_OCD_Domain.yaml"
+            ],
+            "entry_count": 2
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-steam@cn.srs",
+              "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/SteamCN/SteamCN_OCD_Domain.yaml"
+            ],
+            "entry_count": 2
+          },
+          {
+            "sources": [
+              "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/games-cn.srs",
+              "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-direct@selfhost.json"
+            ],
+            "entry_count": 1
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-game-platforms-download@cn.srs"
+            ],
+            "entry_count": 1
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/SteamCN/SteamCN_OCD_Domain.yaml"
+            ],
+            "entry_count": 1
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/category-games-!cn@cn.srs",
+              "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/Game/GameDownloadCN/GameDownloadCN_OCD_Domain.yaml"
+            ],
+            "entry_count": 1
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/sing/geo/geosite/category-games-!cn@cn.srs",
+              "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-direct@selfhost.json"
+            ],
+            "entry_count": 1
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://static-file-global.353355.xyz/rules/cn-additional-list-clash.yaml"
+            ],
+            "entry_count": 1
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-ieee.srs",
+              "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-direct@selfhost.json"
+            ],
+            "entry_count": 1
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-private.srs",
+              "https://static-file-global.353355.xyz/rules/cn-additional-list-clash.yaml"
+            ],
+            "entry_count": 1
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-steam@cn.srs",
+              "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/Game/GameDownloadCN/GameDownloadCN_OCD_Domain.yaml"
+            ],
+            "entry_count": 1
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/SteamCN/SteamCN_OCD_Domain.yaml",
+              "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-direct@selfhost.json"
+            ],
+            "entry_count": 1
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/peiyingyao/Rule-for-OCD/refs/heads/master/rule/Clash/SteamCN/SteamCN_OCD_Domain.yaml",
+              "https://static-file-global.353355.xyz/rules/cn-additional-list-clash.yaml"
+            ],
+            "entry_count": 1
+          }
+        ],
+        "multi_source_samples": [
+          {
+            "field": "domain",
+            "value": "2mdn-cn.net",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "2mdn.net",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "a1.mzstatic.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "a2.mzstatic.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "a3.mzstatic.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "a4.mzstatic.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "a5.mzstatic.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "account-cn.alibabacloud.com",
+            "sources": [
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "activate.activation-v2.kaspersky.com",
+            "sources": [
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "activation-v2.kaspersky.com",
+            "sources": [
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "adcdownload.apple.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "adcdownload.apple.com.akadns.net",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "admob-cn.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "adservice.google.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "afcs.dell.com",
+            "sources": [
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "amp-api-edge-lb-cn.itunes-apple.com.akadns.net",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-itunes@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "amp-api-edge-lb.itunes-apple.com.akadns.net",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-itunes@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "amp-api-edge.apps.apple.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "amp-api-edge.music.apple.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "amp-api-search-edge.apps.apple.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "amp-api-updates.apps.apple.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "amp-api.apps.apple.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "amp-api.media.apple.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "amp-api.music.apple.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "amp-api.podcasts.apple.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "aod-ssl.itunes.apple.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-itunes@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "aod.itunes.apple.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-itunes@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "api-edge.apps.apple.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "api.alibabacloud.com",
+            "sources": [
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "app-analytics-services.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "app-measurement-cn.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "app-measurement.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "app-site-association.cdn-apple.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "appldnld.apple.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "appldnld.g.aaplimg.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "appleid.cdn-apple.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "apps.mzstatic.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "apps5.oingo.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "apptrailers.itunes.apple.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-itunes@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "avail.googleflights.net",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "bag-cdn.itunes-apple.com.akadns.net",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-itunes@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "bag.itunes.apple.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-itunes@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "beacons.gcp.gvt2.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "beacons.gvt2.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "beacons2.gvt2.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "beacons3.gvt2.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "bookkeeper.itunes.apple.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple@cn.srs",
+              "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-itunes@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "c.admob.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "c.android.clients.google.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain",
+            "value": "c.pki.goog",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google@cn.srs",
+              "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "ruleset": "geosite-category-download@!cn",
+      "type": "geosite",
+      "source_count": 16,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-anaconda.srs",
+          "raw_entries": 4,
+          "normalized_entries": 4,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 4,
+            "output_entries": 4,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-ubuntu.srs",
+          "raw_entries": 4,
+          "normalized_entries": 4,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 4,
+            "output_entries": 4,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-nvidia.srs",
+          "raw_entries": 63,
+          "normalized_entries": 63,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 63,
+            "output_entries": 62,
+            "removed_entries": 1,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 1,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-rust.srs",
+          "raw_entries": 4,
+          "normalized_entries": 4,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 4,
+            "output_entries": 4,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-npmjs.srs",
+          "raw_entries": 3,
+          "normalized_entries": 3,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 3,
+            "output_entries": 3,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-docker.srs",
+          "raw_entries": 6,
+          "normalized_entries": 6,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 6,
+            "output_entries": 6,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-python.srs",
+          "raw_entries": 6,
+          "normalized_entries": 6,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 6,
+            "output_entries": 6,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-pikpak.srs",
+          "raw_entries": 7,
+          "normalized_entries": 7,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 7,
+            "output_entries": 7,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-onedrive.srs",
+          "raw_entries": 11,
+          "normalized_entries": 11,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 11,
+            "output_entries": 11,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-terabox.srs",
+          "raw_entries": 7,
+          "normalized_entries": 7,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 7,
+            "output_entries": 7,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-huggingface.srs",
+          "raw_entries": 3,
+          "normalized_entries": 3,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 3,
+            "output_entries": 3,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-emby.srs",
+          "raw_entries": 82,
+          "normalized_entries": 82,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 82,
+            "output_entries": 82,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-mega.srs",
+          "raw_entries": 3,
+          "normalized_entries": 3,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 3,
+            "output_entries": 3,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-tmdb.srs",
+          "raw_entries": 4,
+          "normalized_entries": 4,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 4,
+            "output_entries": 4,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/GoogleDrive.yaml",
+          "raw_entries": 4,
+          "normalized_entries": 4,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 4,
+            "output_entries": 4,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-download@selfhost.json",
+          "raw_entries": 75,
+          "normalized_entries": 75,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 75,
+            "output_entries": 75,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 285,
+        "output_entries": 278,
+        "removed_entries": 7,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 7,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "domain": 104,
+        "domain_suffix": 174
+      },
+      "provenance": {
+        "tracked_normalized_entries": 285,
+        "published_entries": 278,
+        "published_entries_with_multiple_exact_sources": 0,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 0,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-anaconda.srs": 4,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-ubuntu.srs": 4,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-nvidia.srs": 62,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-rust.srs": 4,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-npmjs.srs": 3,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-docker.srs": 5,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-python.srs": 6,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-pikpak.srs": 7,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-onedrive.srs": 11,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-terabox.srs": 7,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-huggingface.srs": 3,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-emby.srs": 82,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-mega.srs": 3,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-tmdb.srs": 4,
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/GoogleDrive.yaml": 4,
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-download@selfhost.json": 69
+        },
+        "source_pair_overlaps": [],
+        "multi_source_samples": []
+      }
+    },
+    {
+      "ruleset": "geosite-category-nsfw@!cn",
+      "type": "geosite",
+      "source_count": 1,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-porn.srs",
+          "raw_entries": 6654,
+          "normalized_entries": 6654,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 6654,
+            "output_entries": 6651,
+            "removed_entries": 3,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 2,
+            "suffix_covered_by_suffix": 1,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 6651,
+        "output_entries": 6651,
+        "removed_entries": 0,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "domain": 3,
+        "domain_regex": 140,
+        "domain_suffix": 6508
+      },
+      "provenance": {
+        "tracked_normalized_entries": 6651,
+        "published_entries": 6651,
+        "published_entries_with_multiple_exact_sources": 0,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 0,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-porn.srs": 6651
+        },
+        "source_pair_overlaps": [],
+        "multi_source_samples": []
+      }
+    },
+    {
+      "ruleset": "geosite-category-proxy",
+      "type": "geosite",
+      "source_count": 2,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-proxy@selfhost.json",
+          "raw_entries": 3,
+          "normalized_entries": 3,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 3,
+            "output_entries": 3,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-!cn.srs",
+          "raw_entries": 23697,
+          "normalized_entries": 23697,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 23697,
+            "output_entries": 23487,
+            "removed_entries": 210,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 130,
+            "suffix_covered_by_suffix": 80,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 23489,
+        "output_entries": 23487,
+        "removed_entries": 2,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 2,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "domain": 113,
+        "domain_regex": 151,
+        "domain_suffix": 23223
+      },
+      "provenance": {
+        "tracked_normalized_entries": 23489,
+        "published_entries": 23487,
+        "published_entries_with_multiple_exact_sources": 1,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 1,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-proxy@selfhost.json": 1,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-!cn.srs": 23487
+        },
+        "source_pair_overlaps": [
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-!cn.srs",
+              "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-proxy@selfhost.json"
+            ],
+            "entry_count": 1
+          }
+        ],
+        "multi_source_samples": [
+          {
+            "field": "domain_suffix",
+            "value": "gstatic.com",
+            "sources": [
+              "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-proxy@selfhost.json",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-!cn.srs"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "ruleset": "geosite-category-vpn@!cn",
+      "type": "geosite",
+      "source_count": 21,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-vpn@selfhost.json",
+          "raw_entries": 8,
+          "normalized_entries": 8,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 8,
+            "output_entries": 8,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-icloudprivaterelay.srs",
+          "raw_entries": 3,
+          "normalized_entries": 3,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 3,
+            "output_entries": 3,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleNews/AppleNews.yaml",
+          "raw_entries": 2,
+          "normalized_entries": 2,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 2,
+            "output_entries": 2,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/ddgksf2013/Filter/refs/heads/master/AppleIntelligence.list",
+          "raw_entries": 10,
+          "normalized_entries": 10,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 10,
+            "output_entries": 10,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-tiktok@!cn.srs",
+          "raw_entries": 36,
+          "normalized_entries": 36,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 36,
+            "output_entries": 36,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-reddit.srs",
+          "raw_entries": 12,
+          "normalized_entries": 12,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 12,
+            "output_entries": 12,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-vpnservices.srs",
+          "raw_entries": 67,
+          "normalized_entries": 67,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 67,
+            "output_entries": 67,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-ctrip@!cn.srs",
+          "raw_entries": 16,
+          "normalized_entries": 16,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 16,
+            "output_entries": 16,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-primevideo.srs",
+          "raw_entries": 23,
+          "normalized_entries": 23,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 23,
+            "output_entries": 23,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-netflix.srs",
+          "raw_entries": 28,
+          "normalized_entries": 28,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 28,
+            "output_entries": 28,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-disney.srs",
+          "raw_entries": 156,
+          "normalized_entries": 156,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 156,
+            "output_entries": 156,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-hbo.srs",
+          "raw_entries": 64,
+          "normalized_entries": 64,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 64,
+            "output_entries": 64,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-spotify.srs",
+          "raw_entries": 28,
+          "normalized_entries": 28,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 28,
+            "output_entries": 25,
+            "removed_entries": 3,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 3,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-paypal.srs",
+          "raw_entries": 245,
+          "normalized_entries": 245,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 245,
+            "output_entries": 245,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-bilibili@!cn.srs",
+          "raw_entries": 4,
+          "normalized_entries": 4,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 4,
+            "output_entries": 4,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-twitter.srs",
+          "raw_entries": 24,
+          "normalized_entries": 24,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 24,
+            "output_entries": 24,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ip-geo-detect.srs",
+          "raw_entries": 160,
+          "normalized_entries": 160,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 160,
+            "output_entries": 160,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ai-chat-!cn.srs",
+          "raw_entries": 164,
+          "normalized_entries": 164,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 164,
+            "output_entries": 164,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google.srs",
+          "raw_entries": 935,
+          "normalized_entries": 935,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 935,
+            "output_entries": 847,
+            "removed_entries": 88,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 78,
+            "suffix_covered_by_suffix": 10,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-telegram.srs",
+          "raw_entries": 21,
+          "normalized_entries": 21,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 21,
+            "output_entries": 21,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-porn.srs",
+          "raw_entries": 6654,
+          "normalized_entries": 6654,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 6654,
+            "output_entries": 6651,
+            "removed_entries": 3,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 2,
+            "suffix_covered_by_suffix": 1,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 8564,
+        "output_entries": 8520,
+        "removed_entries": 44,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 14,
+        "suffix_covered_by_suffix": 30,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "domain": 81,
+        "domain_regex": 148,
+        "domain_suffix": 8291
+      },
+      "provenance": {
+        "tracked_normalized_entries": 8564,
+        "published_entries": 8520,
+        "published_entries_with_multiple_exact_sources": 2,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 2,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-vpn@selfhost.json": 6,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-icloudprivaterelay.srs": 3,
+          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleNews/AppleNews.yaml": 1,
+          "https://raw.githubusercontent.com/ddgksf2013/Filter/refs/heads/master/AppleIntelligence.list": 10,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-tiktok@!cn.srs": 36,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-reddit.srs": 12,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-vpnservices.srs": 67,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-ctrip@!cn.srs": 16,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-primevideo.srs": 23,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-netflix.srs": 28,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-disney.srs": 156,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-hbo.srs": 64,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-spotify.srs": 25,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-paypal.srs": 245,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-bilibili@!cn.srs": 4,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-twitter.srs": 24,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ip-geo-detect.srs": 160,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ai-chat-!cn.srs": 135,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google.srs": 847,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-telegram.srs": 21,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-porn.srs": 6639
+        },
+        "source_pair_overlaps": [
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ai-chat-!cn.srs",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google.srs"
+            ],
+            "entry_count": 2
+          }
+        ],
+        "multi_source_samples": [
+          {
+            "field": "domain_suffix",
+            "value": "ai.studio",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ai-chat-!cn.srs",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google.srs"
+            ]
+          },
+          {
+            "field": "domain_suffix",
+            "value": "deepmind.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ai-chat-!cn.srs",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google.srs"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "ruleset": "geosite-category-vpn@hk",
+      "type": "geosite",
+      "source_count": 3,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-bilibili@!cn.srs",
+          "raw_entries": 4,
+          "normalized_entries": 4,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 4,
+            "output_entries": 4,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-bahamut.srs",
+          "raw_entries": 5,
+          "normalized_entries": 5,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 5,
+            "output_entries": 5,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-viu.srs",
+          "raw_entries": 7,
+          "normalized_entries": 7,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 7,
+            "output_entries": 7,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 16,
+        "output_entries": 16,
+        "removed_entries": 0,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "domain": 7,
+        "domain_regex": 1,
+        "domain_suffix": 8
+      },
+      "provenance": {
+        "tracked_normalized_entries": 16,
+        "published_entries": 16,
+        "published_entries_with_multiple_exact_sources": 0,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 0,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-bilibili@!cn.srs": 4,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-bahamut.srs": 5,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-viu.srs": 7
+        },
+        "source_pair_overlaps": [],
+        "multi_source_samples": []
+      }
+    },
+    {
+      "ruleset": "geosite-category-vpn@jp",
+      "type": "geosite",
+      "source_count": 5,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-abema.srs",
+          "raw_entries": 21,
+          "normalized_entries": 21,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 21,
+            "output_entries": 21,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-dmm.srs",
+          "raw_entries": 17,
+          "normalized_entries": 17,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 17,
+            "output_entries": 16,
+            "removed_entries": 1,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 1,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-niconico.srs",
+          "raw_entries": 8,
+          "normalized_entries": 8,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 8,
+            "output_entries": 8,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-jp@selfhost.json",
+          "raw_entries": 3,
+          "normalized_entries": 3,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 3,
+            "output_entries": 3,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/HomeIP/HomeIPJP.yaml",
+          "raw_entries": 40,
+          "normalized_entries": 40,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 40,
+            "output_entries": 39,
+            "removed_entries": 1,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 1,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 81,
+        "output_entries": 81,
+        "removed_entries": 0,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "domain": 6,
+        "domain_suffix": 75
+      },
+      "provenance": {
+        "tracked_normalized_entries": 81,
+        "published_entries": 81,
+        "published_entries_with_multiple_exact_sources": 6,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 6,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-abema.srs": 21,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-dmm.srs": 16,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-niconico.srs": 8,
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-jp@selfhost.json": 3,
+          "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/HomeIP/HomeIPJP.yaml": 39
+        },
+        "source_pair_overlaps": [
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/HomeIP/HomeIPJP.yaml",
+              "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-jp@selfhost.json"
+            ],
+            "entry_count": 3
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/HomeIP/HomeIPJP.yaml",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-dmm.srs"
+            ],
+            "entry_count": 2
+          },
+          {
+            "sources": [
+              "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/HomeIP/HomeIPJP.yaml",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-abema.srs"
+            ],
+            "entry_count": 1
+          }
+        ],
+        "multi_source_samples": [
+          {
+            "field": "domain_suffix",
+            "value": "abema.tv",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-abema.srs",
+              "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/HomeIP/HomeIPJP.yaml"
+            ]
+          },
+          {
+            "field": "domain_suffix",
+            "value": "animestore.docomo.ne.jp",
+            "sources": [
+              "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-jp@selfhost.json",
+              "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/HomeIP/HomeIPJP.yaml"
+            ]
+          },
+          {
+            "field": "domain_suffix",
+            "value": "dmm.co.jp",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-dmm.srs",
+              "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/HomeIP/HomeIPJP.yaml"
+            ]
+          },
+          {
+            "field": "domain_suffix",
+            "value": "dmm.com",
+            "sources": [
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-dmm.srs",
+              "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/HomeIP/HomeIPJP.yaml"
+            ]
+          },
+          {
+            "field": "domain_suffix",
+            "value": "lemino.docomo.ne.jp",
+            "sources": [
+              "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-jp@selfhost.json",
+              "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/HomeIP/HomeIPJP.yaml"
+            ]
+          },
+          {
+            "field": "domain_suffix",
+            "value": "radiko.jp",
+            "sources": [
+              "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-jp@selfhost.json",
+              "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/HomeIP/HomeIPJP.yaml"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "ruleset": "geosite-category-vpn@tw",
+      "type": "geosite",
+      "source_count": 1,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-bahamut.srs",
+          "raw_entries": 5,
+          "normalized_entries": 5,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 5,
+            "output_entries": 5,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 5,
+        "output_entries": 5,
+        "removed_entries": 0,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "domain": 2,
+        "domain_suffix": 3
+      },
+      "provenance": {
+        "tracked_normalized_entries": 5,
+        "published_entries": 5,
+        "published_entries_with_multiple_exact_sources": 0,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 0,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-bahamut.srs": 5
+        },
+        "source_pair_overlaps": [],
+        "multi_source_samples": []
+      }
+    },
+    {
+      "ruleset": "geosite-category-vpn@us",
+      "type": "geosite",
+      "source_count": 2,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-openai.srs",
+          "raw_entries": 22,
+          "normalized_entries": 22,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 22,
+            "output_entries": 22,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/HomeIP/HomeIPUS.yaml",
+          "raw_entries": 95,
+          "normalized_entries": 95,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 95,
+            "output_entries": 95,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 117,
+        "output_entries": 117,
+        "removed_entries": 0,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "domain": 9,
+        "domain_keyword": 90,
+        "domain_regex": 1,
+        "domain_suffix": 17
+      },
+      "provenance": {
+        "tracked_normalized_entries": 117,
+        "published_entries": 117,
+        "published_entries_with_multiple_exact_sources": 0,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 0,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-openai.srs": 22,
+          "https://raw.githubusercontent.com/Accademia/Additional_Rule_For_Clash/refs/heads/main/HomeIP/HomeIPUS.yaml": 95
+        },
+        "source_pair_overlaps": [],
+        "multi_source_samples": []
+      }
+    },
+    {
+      "ruleset": "geosite-filter-downloadKeywords@!cn",
+      "type": "geosite",
+      "source_count": 1,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-download-keywords@selfhost.json",
+          "raw_entries": 19,
+          "normalized_entries": 19,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 19,
+            "output_entries": 19,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 19,
+        "output_entries": 19,
+        "removed_entries": 0,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "domain_keyword": 5,
+        "domain_regex": 14
+      },
+      "provenance": {
+        "tracked_normalized_entries": 19,
+        "published_entries": 19,
+        "published_entries_with_multiple_exact_sources": 0,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 0,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-download-keywords@selfhost.json": 19
+        },
+        "source_pair_overlaps": [],
+        "multi_source_samples": []
+      }
+    },
+    {
+      "ruleset": "geosite-filter-fakeip",
+      "type": "geosite",
+      "source_count": 2,
+      "sources": [
+        {
+          "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/fakeip-filter.srs",
+          "raw_entries": 91,
+          "normalized_entries": 91,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 91,
+            "output_entries": 91,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/filter-fakeip.json",
+          "raw_entries": 2,
+          "normalized_entries": 2,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 2,
+            "output_entries": 2,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 93,
+        "output_entries": 93,
+        "removed_entries": 0,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "domain": 35,
+        "domain_keyword": 3,
+        "domain_regex": 6,
+        "domain_suffix": 49
+      },
+      "provenance": {
+        "tracked_normalized_entries": 93,
+        "published_entries": 93,
+        "published_entries_with_multiple_exact_sources": 0,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 0,
+        "source_output_contribution": {
+          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/fakeip-filter.srs": 91,
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/filter-fakeip.json": 2
+        },
+        "source_pair_overlaps": [],
+        "multi_source_samples": []
+      }
+    },
+    {
+      "ruleset": "geosite-geolocation-!cn",
+      "type": "geosite",
+      "source_count": 2,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-!cn.srs",
+          "raw_entries": 23697,
+          "normalized_entries": 23697,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 23697,
+            "output_entries": 23487,
+            "removed_entries": 210,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 130,
+            "suffix_covered_by_suffix": 80,
+            "cidr_collapsed": 0
+          }
+        },
+        {
+          "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-geolocation-!cn.json",
+          "raw_entries": 1,
+          "normalized_entries": 1,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 1,
+            "output_entries": 1,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 23488,
+        "output_entries": 23487,
+        "removed_entries": 1,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 1,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "domain": 113,
+        "domain_regex": 151,
+        "domain_suffix": 23223
+      },
+      "provenance": {
+        "tracked_normalized_entries": 23488,
+        "published_entries": 23487,
+        "published_entries_with_multiple_exact_sources": 0,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 0,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-!cn.srs": 23487,
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-geolocation-!cn.json": 0
+        },
+        "source_pair_overlaps": [],
+        "multi_source_samples": []
+      }
+    },
+    {
+      "ruleset": "geosite-geolocation-jp",
+      "type": "geosite",
+      "source_count": 1,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-jp@selfhost.json",
+          "raw_entries": 3,
+          "normalized_entries": 3,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 3,
+            "output_entries": 3,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 3,
+        "output_entries": 3,
+        "removed_entries": 0,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "domain_suffix": 3
+      },
+      "provenance": {
+        "tracked_normalized_entries": 3,
+        "published_entries": 3,
+        "published_entries_with_multiple_exact_sources": 0,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 0,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-jp@selfhost.json": 3
+        },
+        "source_pair_overlaps": [],
+        "multi_source_samples": []
+      }
+    },
+    {
+      "ruleset": "process-blocker-rejectApp@amos",
+      "type": "process",
+      "source_count": 1,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/filter-offlineApp.json",
+          "raw_entries": 31,
+          "normalized_entries": 31,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 31,
+            "output_entries": 31,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 31,
+        "output_entries": 31,
+        "removed_entries": 0,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "process_name": 31
+      },
+      "provenance": {
+        "tracked_normalized_entries": 31,
+        "published_entries": 31,
+        "published_entries_with_multiple_exact_sources": 0,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 0,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/filter-offlineApp.json": 31
+        },
+        "source_pair_overlaps": [],
+        "multi_source_samples": []
+      }
+    },
+    {
+      "ruleset": "process-filter-browser",
+      "type": "process",
+      "source_count": 1,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/filter-browser.json",
+          "raw_entries": 9,
+          "normalized_entries": 9,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 9,
+            "output_entries": 9,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 9,
+        "output_entries": 9,
+        "removed_entries": 0,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "process_name": 9
+      },
+      "provenance": {
+        "tracked_normalized_entries": 9,
+        "published_entries": 9,
+        "published_entries_with_multiple_exact_sources": 0,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 0,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/filter-browser.json": 9
+        },
+        "source_pair_overlaps": [],
+        "multi_source_samples": []
+      }
+    },
+    {
+      "ruleset": "process-filter-directApp",
+      "type": "process",
+      "source_count": 1,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/filter-directApp.json",
+          "raw_entries": 82,
+          "normalized_entries": 82,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 82,
+            "output_entries": 82,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 82,
+        "output_entries": 82,
+        "removed_entries": 0,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "process_name": 82
+      },
+      "provenance": {
+        "tracked_normalized_entries": 82,
+        "published_entries": 82,
+        "published_entries_with_multiple_exact_sources": 0,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 0,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/filter-directApp.json": 82
+        },
+        "source_pair_overlaps": [],
+        "multi_source_samples": []
+      }
+    },
+    {
+      "ruleset": "process-filter-downloadApp@!cn",
+      "type": "process",
+      "source_count": 1,
+      "sources": [
+        {
+          "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/filter-downloadApp@!cn.json",
+          "raw_entries": 50,
+          "normalized_entries": 50,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 50,
+            "output_entries": 50,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 50,
+        "output_entries": 50,
+        "removed_entries": 0,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "process_name": 50
+      },
+      "provenance": {
+        "tracked_normalized_entries": 50,
+        "published_entries": 50,
+        "published_entries_with_multiple_exact_sources": 0,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 0,
+        "source_output_contribution": {
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/filter-downloadApp@!cn.json": 50
+        },
+        "source_pair_overlaps": [],
+        "multi_source_samples": []
+      }
+    }
+  ],
+  "published_inventory": [
+    {
+      "ruleset": "geoip-blocker-httpdns",
+      "entries": 41,
+      "entries_by_field": {
+        "ip_cidr": 41
+      }
+    },
+    {
+      "ruleset": "geoip-category-direct",
+      "entries": 8511,
+      "entries_by_field": {
+        "ip_cidr": 8511
+      }
+    },
+    {
+      "ruleset": "geoip-category-download@!cn",
+      "entries": 1,
+      "entries_by_field": {
+        "ip_cidr": 1
+      }
+    },
+    {
+      "ruleset": "geoip-category-vpn@!cn",
+      "entries": 1131,
+      "entries_by_field": {
+        "ip_cidr": 1131
+      }
+    },
+    {
+      "ruleset": "geoip-geolocation-eu",
+      "entries": 3,
+      "entries_by_field": {
+        "ip_cidr": 3
+      }
+    },
+    {
+      "ruleset": "geoip-geolocation-jp",
+      "entries": 2,
+      "entries_by_field": {
+        "ip_cidr": 2
+      }
+    },
+    {
+      "ruleset": "geosite-blocker-httpdns",
+      "entries": 34,
+      "entries_by_field": {
+        "domain": 18,
+        "domain_keyword": 12,
+        "domain_suffix": 4
+      }
+    },
+    {
+      "ruleset": "geosite-blocker-trash",
+      "entries": 46631,
+      "entries_by_field": {
+        "domain": 20838,
+        "domain_keyword": 5,
+        "domain_suffix": 25786,
+        "ip_cidr": 2
+      }
+    },
+    {
+      "ruleset": "geosite-blocker-trash@mobile",
+      "entries": 30,
+      "entries_by_field": {
+        "domain": 5,
+        "domain_keyword": 5,
+        "domain_suffix": 18,
+        "ip_cidr": 2
+      }
+    },
+    {
+      "ruleset": "geosite-category-direct",
+      "entries": 131137,
+      "entries_by_field": {
+        "domain": 564,
+        "domain_regex": 10,
+        "domain_suffix": 130563
+      }
+    },
+    {
+      "ruleset": "geosite-category-download@!cn",
+      "entries": 278,
+      "entries_by_field": {
+        "domain": 104,
+        "domain_suffix": 174
+      }
+    },
+    {
+      "ruleset": "geosite-category-nsfw@!cn",
+      "entries": 6651,
+      "entries_by_field": {
+        "domain": 3,
+        "domain_regex": 140,
+        "domain_suffix": 6508
+      }
+    },
+    {
+      "ruleset": "geosite-category-proxy",
+      "entries": 23487,
+      "entries_by_field": {
+        "domain": 113,
+        "domain_regex": 151,
+        "domain_suffix": 23223
+      }
+    },
+    {
+      "ruleset": "geosite-category-vpn@!cn",
+      "entries": 8520,
+      "entries_by_field": {
+        "domain": 81,
+        "domain_regex": 148,
+        "domain_suffix": 8291
+      }
+    },
+    {
+      "ruleset": "geosite-category-vpn@hk",
+      "entries": 16,
+      "entries_by_field": {
+        "domain": 7,
+        "domain_regex": 1,
+        "domain_suffix": 8
+      }
+    },
+    {
+      "ruleset": "geosite-category-vpn@jp",
+      "entries": 81,
+      "entries_by_field": {
+        "domain": 6,
+        "domain_suffix": 75
+      }
+    },
+    {
+      "ruleset": "geosite-category-vpn@tw",
+      "entries": 5,
+      "entries_by_field": {
+        "domain": 2,
+        "domain_suffix": 3
+      }
+    },
+    {
+      "ruleset": "geosite-category-vpn@us",
+      "entries": 117,
+      "entries_by_field": {
+        "domain": 9,
+        "domain_keyword": 90,
+        "domain_regex": 1,
+        "domain_suffix": 17
+      }
+    },
+    {
+      "ruleset": "geosite-filter-downloadKeywords@!cn",
+      "entries": 19,
+      "entries_by_field": {
+        "domain_keyword": 5,
+        "domain_regex": 14
+      }
+    },
+    {
+      "ruleset": "geosite-filter-fakeip",
+      "entries": 93,
+      "entries_by_field": {
+        "domain": 35,
+        "domain_keyword": 3,
+        "domain_regex": 6,
+        "domain_suffix": 49
+      }
+    },
+    {
+      "ruleset": "geosite-geolocation-!cn",
+      "entries": 23487,
+      "entries_by_field": {
+        "domain": 113,
+        "domain_regex": 151,
+        "domain_suffix": 23223
+      }
+    },
+    {
+      "ruleset": "geosite-geolocation-jp",
+      "entries": 3,
+      "entries_by_field": {
+        "domain_suffix": 3
+      }
+    },
+    {
+      "ruleset": "process-blocker-rejectApp@amos",
+      "entries": 31,
+      "entries_by_field": {
+        "process_name": 31
+      }
+    },
+    {
+      "ruleset": "process-filter-browser",
+      "entries": 9,
+      "entries_by_field": {
+        "process_name": 9
+      }
+    },
+    {
+      "ruleset": "process-filter-directApp",
+      "entries": 82,
+      "entries_by_field": {
+        "process_name": 82
+      }
+    },
+    {
+      "ruleset": "process-filter-downloadApp@!cn",
+      "entries": 50,
+      "entries_by_field": {
+        "process_name": 50
+      }
+    }
+  ]
+}
