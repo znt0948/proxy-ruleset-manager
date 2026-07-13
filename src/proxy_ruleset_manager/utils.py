@@ -51,21 +51,55 @@ CLASH_CLASSICAL_ONLY_FIELDS = {
     "process_name",
 }
 
+SINGBOX_DESTINATION_DOMAIN_FIELDS = (
+    "domain",
+    "domain_suffix",
+    "domain_keyword",
+    "domain_regex",
+)
 
-def normalize_domain(value):
-    """Return a canonical exact domain without changing match scope."""
-    if not isinstance(value, str):
-        raise ValueError("domain must be a string")
+CLASH_CLASSICAL_RULE_PRIORITY = {
+    "DOMAIN": 0,
+    "DOMAIN-SUFFIX": 1,
+    "IP-CIDR": 2,
+    "SRC-IP-CIDR": 3,
+    "DOMAIN-KEYWORD": 4,
+    "PROCESS-NAME": 5,
+    "DOMAIN-REGEX": 6,
+}
 
+
+def _normalize_idna_domain(value, field_name):
+    """Normalize a DNS name to lowercase ASCII without widening its scope."""
     normalized = value.strip().lower().rstrip(".")
     if (
         not normalized
         or normalized.startswith((".", "+", "*"))
         or ".." in normalized
         or "/" in normalized
+        or ":" in normalized
+        or any(character.isspace() for character in normalized)
     ):
-        raise ValueError(f"invalid domain: {value}")
+        raise ValueError(f"invalid {field_name}: {value}")
+
+    try:
+        normalized = normalized.encode("idna").decode("ascii")
+    except UnicodeError as exc:
+        raise ValueError(f"invalid {field_name}: {value}") from exc
+
+    if len(normalized) > 253 or any(
+        not label or len(label) > 63
+        for label in normalized.split(".")
+    ):
+        raise ValueError(f"invalid {field_name}: {value}")
     return normalized
+
+
+def normalize_domain(value):
+    """Return a canonical exact domain without changing match scope."""
+    if not isinstance(value, str):
+        raise ValueError("domain must be a string")
+    return _normalize_idna_domain(value, "domain")
 
 
 def normalize_domain_keyword(value):
@@ -91,15 +125,7 @@ def normalize_domain_suffix(value):
     elif normalized.startswith("."):
         normalized = normalized[1:]
 
-    normalized = normalized.rstrip(".")
-    if (
-        not normalized
-        or normalized.startswith(".")
-        or ".." in normalized
-        or "/" in normalized
-    ):
-        raise ValueError(f"invalid domain_suffix: {value}")
-    return normalized
+    return _normalize_idna_domain(normalized, "domain_suffix")
 
 
 def run_command(command, description):
@@ -383,7 +409,9 @@ def subtract_rules(base_data, subtract_data):
             elif isinstance(values, str):
                 subtract_values[key].add(values)
 
-    deduplicated_data = deduplicate_json(base_data)
+    # Category subtraction happens before classification corrections. Preserve
+    # covered child entries until the final optimization stage.
+    deduplicated_data = deduplicate_exact_rules(base_data)
     subtract_suffixes = {
         normalize_domain_suffix(value)
         for value in subtract_values["domain_suffix"]
@@ -456,27 +484,16 @@ def count_rule_entries(rules):
     return count
 
 
-def deduplicate_json(data, return_stats=False):
-    """
-    对输入的 JSON 数据进行三轮去重操作：
-    1. 第一轮去重：检查 process_name, domain, domain_suffix, ip_cidr, domain_regex 中是否有完全一致的条目。
-    2. 第二轮去重：使用 domain_suffix 去重 domain，基于 Trie 进行去重。
-
-    domain_regex 只做完全重复消除。不能使用 Python re 推断 sing-box
-    或 Mihomo 中的覆盖关系，因为三个正则引擎的语义并不完全相同。
-    """
-
+def deduplicate_exact_rules(data, return_stats=False):
+    """Normalize values and remove exact duplicates without coverage pruning."""
     input_entry_count = count_rule_entries(data)
-
-    # 第一轮去重：初始化合并规则
     merged_rules = {field: set() for field in RULE_VALUE_FIELDS}
     logical_rules = []
     seen_logical_rules = set()
     exact_duplicate_count = 0
 
-    # 遍历输入列表，逐一合并规则
     for rule in data:
-        if isinstance(rule, dict):  # 确保条目是字典
+        if isinstance(rule, dict):
             if LOGICAL_RULE_KEYS.issubset(rule.keys()):
                 marker = make_hashable(rule)
                 if marker not in seen_logical_rules:
@@ -505,10 +522,44 @@ def deduplicate_json(data, return_stats=False):
                             exact_duplicate_count += 1
                         merged_rules[category].add(value)
 
-    # domain_keyword 只做规范化和完全重复去重。它的匹配范围过宽，
-    # 不用于推断或删除 domain/domain_suffix/其他 keyword。
-    merged_rules["domain"] = merged_rules["domain"].copy()
-    merged_rules["domain_suffix"] = merged_rules["domain_suffix"].copy()
+    result = logical_rules + [
+        {category: sorted(values)}
+        for category, values in merged_rules.items()
+        if values
+    ]
+    stats = {
+        "input_entries": input_entry_count,
+        "output_entries": count_rule_entries(result),
+        "removed_entries": exact_duplicate_count,
+        "exact_duplicates": exact_duplicate_count,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0,
+    }
+    if return_stats:
+        return result, stats
+    return result
+
+
+def deduplicate_json(data, return_stats=False):
+    """Apply exact deduplication, semantic coverage pruning, and safe packing.
+
+    This final optimization must run after classification corrections. Regex and
+    keyword fields only receive exact deduplication; their coverage is not
+    inferred. The four destination-domain fields are packed into one sing-box
+    rule because sing-box evaluates them as alternatives within that group.
+    """
+
+    exact_rules, exact_stats = deduplicate_exact_rules(data, return_stats=True)
+    merged_rules = {field: set() for field in RULE_VALUE_FIELDS}
+    logical_rules = []
+    for rule in exact_rules:
+        if LOGICAL_RULE_KEYS.issubset(rule.keys()):
+            logical_rules.append(rule)
+            continue
+        for category, values in rule.items():
+            if category in merged_rules:
+                merged_rules[category].update(values)
 
     # 使用 Trie 对 domain_suffix 自身去重，并清洗 domain。
     suffix_count_before_trie = len(merged_rules["domain_suffix"])
@@ -529,19 +580,25 @@ def deduplicate_json(data, return_stats=False):
         + source_ip_cidr_count_before - len(merged_rules["source_ip_cidr"])
     )
 
-    # 构造最终的输出列表
-    final_rules = []
+    # Pack only sing-box destination-domain alternatives. Other fields remain
+    # separate so we never manufacture an accidental AND relationship.
+    destination_domain_rule = {
+        category: sorted(merged_rules[category])
+        for category in SINGBOX_DESTINATION_DOMAIN_FIELDS
+        if merged_rules[category]
+    }
+    final_rules = [destination_domain_rule] if destination_domain_rule else []
     for category, values in merged_rules.items():
-        if values:
+        if category not in SINGBOX_DESTINATION_DOMAIN_FIELDS and values:
             final_rules.append({category: sorted(values)})
 
     result = logical_rules + final_rules
     output_entry_count = count_rule_entries(result)
     stats = {
-        "input_entries": input_entry_count,
+        "input_entries": exact_stats["input_entries"],
         "output_entries": output_entry_count,
-        "removed_entries": input_entry_count - output_entry_count,
-        "exact_duplicates": exact_duplicate_count,
+        "removed_entries": exact_stats["input_entries"] - output_entry_count,
+        "exact_duplicates": exact_stats["exact_duplicates"],
         "domain_covered_by_suffix": domain_covered_by_suffix_count,
         "suffix_covered_by_suffix": suffix_covered_by_suffix_count,
         "cidr_collapsed": cidr_collapsed_count,
@@ -861,6 +918,11 @@ def clash_classical_rule(clash_type, value):
     return f"{clash_type},{value}"
 
 
+def clash_classical_rule_sort_key(rule):
+    rule_type = rule.split(",", 1)[0]
+    return CLASH_CLASSICAL_RULE_PRIORITY.get(rule_type, 100), rule
+
+
 def clash_domain_rule(clash_type, value):
     if clash_type == "DOMAIN-SUFFIX":
         return f"+.{normalize_domain_suffix(value)}"
@@ -940,7 +1002,12 @@ def convert_json_to_clash(input_dir):
                     # 只有 clash_rules 不为空时，才会执行写入操作
                 with open(output_path, "w", encoding="utf-8") as f:
                     f.write("payload:\n")
-                    for rule in sorted(clash_rules):
+                    ordered_rules = (
+                        sorted(clash_rules, key=clash_classical_rule_sort_key)
+                        if behavior == "classical"
+                        else sorted(clash_rules)
+                    )
+                    for rule in ordered_rules:
                         f.write(f"  - {rule}\n")
 
                 logging.info(f"成功转换: {filename} -> {os.path.basename(output_path)}")

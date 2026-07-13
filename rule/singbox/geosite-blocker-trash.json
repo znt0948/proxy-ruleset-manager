@@ -3,7 +3,6 @@
     "rules": [
         {
             "domain": [
-                "0.0.0.0",
                 "0.nextyourcontent.com",
                 "0.r.msn.com",
                 "000.gaysexe.free.fr",
@@ -20841,9 +20840,7 @@
                 "zyrtec.3.p2l.info",
                 "zyrtec.4.p2l.info",
                 "zzz.onion.pet"
-            ]
-        },
-        {
+            ],
             "domain_suffix": [
                 "00000.uno",
                 "000free.us",
@@ -46631,9 +46628,7 @@
                 "zz3r0.com",
                 "zzbfxvgn.shop",
                 "zzfghen.icu"
-            ]
-        },
-        {
+            ],
             "domain_keyword": [
                 "chanct",
                 "fqzpt",
@@ -46644,6 +46639,7 @@
         },
         {
             "ip_cidr": [
+                "0.0.0.0/32",
                 "157.148.47.204/32",
                 "219.143.187.136/32"
             ]

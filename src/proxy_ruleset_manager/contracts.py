@@ -68,6 +68,14 @@ def _normalize_string_values(value):
     return values
 
 
+def _domain_value_as_cidr(value):
+    """Return a canonical host/network CIDR when a domain field contains an IP."""
+    try:
+        return str(ipaddress.ip_network(value, strict=False))
+    except ValueError:
+        return None
+
+
 def validate_ruleset_rules(rules, ruleset_type):
     """Validate rules without accepting a partial interpretation of a rule."""
 
@@ -101,6 +109,7 @@ def validate_ruleset_rules(rules, ruleset_type):
             continue
 
         normalized_rule = {}
+        relocated_ip_cidrs = []
         invalid_reason = None
         for field_name in sorted(populated_fields):
             values = _normalize_string_values(rule[field_name])
@@ -124,6 +133,10 @@ def validate_ruleset_rules(rules, ruleset_type):
             if field_name == "domain_suffix":
                 normalized_suffixes = []
                 for value in values:
+                    cidr = _domain_value_as_cidr(value)
+                    if cidr is not None:
+                        relocated_ip_cidrs.append(cidr)
+                        continue
                     try:
                         normalized_suffixes.append(normalize_domain_suffix(value))
                     except ValueError as exc:
@@ -142,6 +155,11 @@ def validate_ruleset_rules(rules, ruleset_type):
                 )
                 normalized_values = []
                 for value in values:
+                    if field_name == "domain":
+                        cidr = _domain_value_as_cidr(value)
+                        if cidr is not None:
+                            relocated_ip_cidrs.append(cidr)
+                            continue
                     try:
                         normalized_values.append(normalizer(value))
                     except ValueError as exc:
@@ -154,6 +172,11 @@ def validate_ruleset_rules(rules, ruleset_type):
 
             if values:
                 normalized_rule[field_name] = values
+
+        if relocated_ip_cidrs:
+            normalized_rule["ip_cidr"] = list(dict.fromkeys(
+                normalized_rule.get("ip_cidr", []) + relocated_ip_cidrs
+            ))
 
         if invalid_reason:
             result.issues.append(RuleIssue(index, "invalid_rule", invalid_reason))

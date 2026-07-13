@@ -27,10 +27,12 @@ from .utils import (
     convert_yaml_to_mrs,
     count_rule_entries,
     deduplicate_adguard_lines,
+    deduplicate_exact_rules,
     deduplicate_json,
     load_json,
     make_hashable,
     merge_rules,
+    normalize_domain,
     normalize_domain_suffix,
     parse_and_convert_to_dataframe,
     run_command,
@@ -323,7 +325,7 @@ class RuleParser:
                 unsupported_count += contract_result.unsupported_count
                 invalid_count += contract_result.invalid_count
                 normalized_entry_count = count_rule_entries(contract_result.rules)
-                cleaned_rules, source_deduplication = deduplicate_json(
+                cleaned_rules, source_deduplication = deduplicate_exact_rules(
                     contract_result.rules,
                     return_stats=True,
                 )
@@ -394,10 +396,9 @@ class RuleParser:
         # 如果只有一个 JSON 文件，直接保存，不调用 merge_json
         if len(json_file_list) == 1 and config.trust_upstream:
             single_file_stats = json_file_list[0]
-            # Even trusted single-source inputs need canonicalization and
-            # coverage deduplication. A suffix already covers its root domain
-            # and every subdomain, so retaining those exact domains is wasteful.
-            final_rules, merge_deduplication = deduplicate_json(
+            # Keep coverage-related entries until classification corrections
+            # have removed any erroneous parent suffixes.
+            final_rules, merge_deduplication = deduplicate_exact_rules(
                 single_file_stats.get("rules", []),
                 return_stats=True,
             )
@@ -504,14 +505,15 @@ class RuleParser:
                             elif isinstance(values, str):
                                 merged_rules[category].add(values)
 
-        # 统一执行与单上游相同的规范化和覆盖去重。
+        # Merge and normalize exactly here. Coverage pruning is intentionally
+        # delayed until after classification corrections.
         original_domain_count = len(merged_rules.get("domain", set()))
         combined_rules = logical_rules + [
             {category: sorted(values)}
             for category, values in merged_rules.items()
             if values
         ]
-        final_rules, merge_deduplication = deduplicate_json(
+        final_rules, merge_deduplication = deduplicate_exact_rules(
             combined_rules,
             return_stats=True,
         )
@@ -683,7 +685,7 @@ class RuleParser:
             final_non_cn_data = updated_non_cn_data
             final_cn_data = cn_data
 
-            final_non_cn_data = deduplicate_json(final_non_cn_data)
+            final_non_cn_data = deduplicate_exact_rules(final_non_cn_data)
             final_non_cn_data = convert_sets_to_lists(final_non_cn_data)
 
             # 保存去重后的非cn文件
@@ -748,7 +750,7 @@ class RuleParser:
         for rule in corrections_data.get("rules", []):
             if isinstance(rule, dict):
                 for d in rule.get("domain", []):
-                    correction_domains.add(d.strip().lower().rstrip("."))
+                    correction_domains.add(normalize_domain(d))
                 for s in rule.get("domain_suffix", []):
                     correction_suffixes.add(normalize_domain_suffix(s))
 
@@ -773,7 +775,7 @@ class RuleParser:
                 if key == "domain":
                     filtered = []
                     for entry in values:
-                        entry_clean = entry.strip().lower().rstrip(".")
+                        entry_clean = normalize_domain(entry)
                         # 精确 domain 排除
                         if entry_clean in correction_domains:
                             removed_domain += 1
@@ -857,6 +859,42 @@ class RuleParser:
                 )
             except Exception as e:
                 logging.error(f"[classification correction] 处理 {json_file} 时出错: {e}")
+
+    def optimize_output_rulesets(self, output_directory):
+        """Apply coverage pruning and sing-box packing after corrections."""
+        reports_by_ruleset = {
+            report["ruleset"]: report
+            for report in self.quality_reports
+        }
+        json_files = sorted(
+            filename
+            for filename in os.listdir(output_directory)
+            if filename.endswith(".json")
+        )
+        for json_file in json_files:
+            json_path = os.path.join(output_directory, json_file)
+            with open(json_path, "r", encoding="utf-8") as file:
+                data = json.load(file)
+
+            optimized_rules, optimization_stats = deduplicate_json(
+                data.get("rules", []),
+                return_stats=True,
+            )
+            with open(json_path, "w", encoding="utf-8") as file:
+                json.dump(
+                    {"version": 1, "rules": optimized_rules},
+                    file,
+                    ensure_ascii=False,
+                    indent=4,
+                )
+
+            ruleset_name = json_file.removesuffix(".json")
+            report = reports_by_ruleset.get(ruleset_name)
+            if report is not None:
+                report["final_optimization"] = optimization_stats
+                report["output_entries_by_field"] = count_entries_by_field(
+                    optimized_rules
+                )
 
     def has_generated_rule_artifacts(self, output_directory):
         return any(
@@ -980,6 +1018,10 @@ class RuleParser:
             output_directory,
             corrections_directory="corrections",
         )
+
+        # Corrections must run before suffix/CIDR coverage pruning; otherwise a
+        # correct child entry can be lost behind an erroneous parent suffix.
+        self.optimize_output_rulesets(output_directory)
 
         # 生成 SRS 文件
         json_files = sorted(f for f in os.listdir(output_directory) if f.endswith('.json'))

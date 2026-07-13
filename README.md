@@ -10,11 +10,21 @@
 - 合并、去重并按 `domain_suffix` 清理重复域名
 - 所有 `domain_suffix` 统一为“根域名 + 全部子域名”语义：输入的 `example.com`、`.example.com`、`+.example.com` 均规范化为 `example.com`；Mihomo domain provider 输出为 `+.example.com`
 - `domain`、`domain_suffix`、`domain_keyword` 统一转为小写；`domain_regex`、进程名和进程路径保持原样，避免改变正则或文件系统匹配语义
+- Unicode 域名规范化为 IDNA/Punycode；误放在域名字段中的 IP/CIDR 自动迁移到 `ip_cidr`；URL、路径和带端口域名视为无效输入
 - 拒绝把 `*.example.com` 当作 suffix，因为它不包含根域名，语义不同
+- 分类修正在 suffix/CIDR 覆盖去重之前执行，避免错误父规则被修正后，正确的子规则已经提前丢失
+- sing-box 输出会把 `domain`、`domain_suffix`、`domain_keyword`、`domain_regex` 安全打包到一个目标域名规则中，减少顶层规则遍历；其他字段保持独立
 - 生成 sing-box JSON/SRS 规则集
 - 转换 Surge、Shadowrocket、Clash YAML 和 Mihomo MRS 规则集
 - 支持 `corrections/` 同名文件修正上游的错误分类
 - 对每个结构化上游分别清洗后再合并，并生成 `report/ruleset-quality.json`，记录单上游去重、合并后去重和精确来源重叠；`domain_keyword` 仅做规范化与完全重复去重，不参与覆盖推断
+
+规则处理顺序固定为：
+
+```text
+解析 → 字段规范化 → 完全重复去重 → 分类修正
+     → suffix/CIDR 覆盖去重 → 按引擎组织规则 → 编译验证
+```
 
 ## 环境要求
 

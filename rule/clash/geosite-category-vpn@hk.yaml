@@ -6,7 +6,6 @@ payload:
   - DOMAIN,gamer-cds.cdn.hinet.net
   - DOMAIN,gamer2-cds.cdn.hinet.net
   - DOMAIN,upos-hz-mirrorakam.akamaized.net
-  - DOMAIN-REGEX,^ewcdn[0-9]+\.nowe\.com$
   - DOMAIN-SUFFIX,bahamut.akamaized.net
   - DOMAIN-SUFFIX,bahamut.com.tw
   - DOMAIN-SUFFIX,bilibili.tv
@@ -15,3 +14,4 @@ payload:
   - DOMAIN-SUFFIX,gamer.com.tw
   - DOMAIN-SUFFIX,viu.com
   - DOMAIN-SUFFIX,viu.tv
+  - DOMAIN-REGEX,^ewcdn[0-9]+\.nowe\.com$

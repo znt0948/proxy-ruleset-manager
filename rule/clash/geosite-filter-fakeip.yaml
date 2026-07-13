@@ -34,15 +34,6 @@ payload:
   - DOMAIN,swscan.apple.com
   - DOMAIN,trackercdn.kugou.com
   - DOMAIN,xnotify.xboxlive.com
-  - DOMAIN-KEYWORD,ntp
-  - DOMAIN-KEYWORD,stun
-  - DOMAIN-KEYWORD,time
-  - DOMAIN-REGEX,^Mijia\sCloud$
-  - DOMAIN-REGEX,^[^.]+$
-  - DOMAIN-REGEX,^[^.]+\.[^.]+\.xboxlive\.com$
-  - DOMAIN-REGEX,^localhost\.[^.]+\.weixin\.qq\.com$
-  - DOMAIN-REGEX,^xbox\.[^.]+\.[^.]+\.microsoft\.com$
-  - DOMAIN-REGEX,^xbox\.[^.]+\.microsoft\.com$
   - DOMAIN-SUFFIX,126.net
   - DOMAIN-SUFFIX,3gppnetwork.org
   - DOMAIN-SUFFIX,battle.net
@@ -92,3 +83,12 @@ payload:
   - DOMAIN-SUFFIX,wowsgame.cn
   - DOMAIN-SUFFIX,xiami.com
   - DOMAIN-SUFFIX,y.qq.com
+  - DOMAIN-KEYWORD,ntp
+  - DOMAIN-KEYWORD,stun
+  - DOMAIN-KEYWORD,time
+  - DOMAIN-REGEX,^Mijia\sCloud$
+  - DOMAIN-REGEX,^[^.]+$
+  - DOMAIN-REGEX,^[^.]+\.[^.]+\.xboxlive\.com$
+  - DOMAIN-REGEX,^localhost\.[^.]+\.weixin\.qq\.com$
+  - DOMAIN-REGEX,^xbox\.[^.]+\.[^.]+\.microsoft\.com$
+  - DOMAIN-REGEX,^xbox\.[^.]+\.microsoft\.com$
