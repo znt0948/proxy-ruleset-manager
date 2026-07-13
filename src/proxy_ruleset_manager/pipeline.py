@@ -84,10 +84,29 @@ class RuleParser:
                 )
                 return False
 
-            adguard_rules = deduplicate_adguard_lines(raw_lines)
+            adguard_rules, optimization_stats = deduplicate_adguard_lines(
+                raw_lines,
+                return_stats=True,
+            )
             if not adguard_rules:
                 logging.warning(f"{rule_set_name} 没有可用 AdGuard 规则，跳过生成")
                 return False
+            if optimization_stats["unsupported_lines"]:
+                logging.info(
+                    "%s 跳过 %s 条 sing-box DNS 规则不支持的 AdGuard 条目",
+                    rule_set_name,
+                    optimization_stats["unsupported_lines"],
+                )
+            logging.info(
+                "%s AdGuard DNS 优化: %s -> %s，完全重复 %s，"
+                "后缀覆盖精确规则 %s，后缀覆盖后缀规则 %s",
+                rule_set_name,
+                optimization_stats["input_lines"],
+                optimization_stats["output_lines"],
+                optimization_stats["exact_duplicates"],
+                optimization_stats["exact_covered_by_suffix"],
+                optimization_stats["suffix_covered_by_suffix"],
+            )
 
             with tempfile.TemporaryDirectory() as tmp_dir:
                 logging.debug(f"创建临时目录: {tmp_dir}")

@@ -231,20 +231,10 @@ def normalize_payload_items(yaml_data):
 
 
 def normalize_adguard_rule_line(line):
-    value = line.strip()
-    if not value:
-        return None
-    if value.startswith("!") or value.startswith("["):
-        return None
+    from .adguard import parse_adguard_dns_rule
 
-    hosts_rule = normalize_adguard_hosts_line(value)
-    if hosts_rule is not None:
-        return hosts_rule
-
-    if not is_supported_adguard_modifier_rule(value):
-        return None
-
-    return value
+    rule, status = parse_adguard_dns_rule(line)
+    return rule.render() if status == "parsed" else None
 
 
 def normalize_adguard_hosts_line(value):
@@ -274,8 +264,19 @@ def is_supported_adguard_modifier_rule(value):
     if not modifiers:
         return True
 
-    supported_modifiers = {"important", "dnsrewrite=0.0.0.0"}
-    unsupported_modifiers = [modifier for modifier in modifiers if modifier not in supported_modifiers]
+    unsupported_modifiers = []
+    for modifier in modifiers:
+        if modifier == "important":
+            continue
+        if modifier.startswith("dnsrewrite="):
+            try:
+                address = ipaddress.ip_address(modifier.split("=", 1)[1])
+            except ValueError:
+                unsupported_modifiers.append(modifier)
+                continue
+            if address.is_unspecified:
+                continue
+        unsupported_modifiers.append(modifier)
     if unsupported_modifiers:
         logging.debug(f"跳过 sing-box 不支持的 AdGuard modifier 规则: {value}")
         return False
@@ -283,18 +284,13 @@ def is_supported_adguard_modifier_rule(value):
     return True
 
 
-def deduplicate_adguard_lines(lines):
-    seen = set()
-    deduplicated = []
+def deduplicate_adguard_lines(lines, return_stats=False):
+    """Compatibility entrypoint for the sing-box-aware DNS optimizer."""
+    # Local import avoids a module cycle: the optimizer reuses the canonical
+    # domain and suffix helpers defined in this module.
+    from .adguard import optimize_adguard_lines
 
-    for line in lines:
-        value = normalize_adguard_rule_line(line)
-        if not value or value in seen:
-            continue
-        deduplicated.append(value)
-        seen.add(value)
-
-    return deduplicated
+    return optimize_adguard_lines(lines, return_stats=return_stats)
 
 
 def is_ipv4_or_ipv6(address):

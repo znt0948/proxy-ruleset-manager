@@ -1,12 +1,18 @@
 import json
 import os
 import re
+import shutil
+import subprocess
 import tempfile
 import unittest
 from unittest import mock
 
 import pandas as pd
 
+from proxy_ruleset_manager.adguard import (
+    optimize_adguard_lines,
+    parse_adguard_dns_rule,
+)
 from proxy_ruleset_manager.contracts import validate_ruleset_rules
 from proxy_ruleset_manager.pipeline import RuleParser
 from proxy_ruleset_manager.quality import build_provenance, summarize_provenance
@@ -39,6 +45,123 @@ def matches_destination_domain(rules, domain):
         if any(re.search(pattern, domain) for pattern in rule.get("domain_regex", [])):
             return True
     return False
+
+
+class AdGuardOptimizationTests(unittest.TestCase):
+    def test_equivalent_exact_domain_forms_are_deduplicated(self):
+        rules, stats = optimize_adguard_lines([
+            "Example.COM",
+            "0.0.0.0 example.com",
+            "|example.com^",
+        ], return_stats=True)
+
+        self.assertEqual(rules, ["|example.com^"])
+        self.assertEqual(stats["exact_duplicates"], 2)
+
+    def test_raw_domain_is_anchored_before_mixing_with_adguard_patterns(self):
+        rules = optimize_adguard_lines([
+            "example.com",
+            "example.net^",
+        ])
+
+        self.assertEqual(rules, ["|example.com^", "example.net^"])
+
+    def test_suffix_coverage_is_isolated_by_priority_bucket(self):
+        rules, stats = optimize_adguard_lines([
+            "||example.com^",
+            "||ads.example.com^",
+            "tracker.example.com",
+            "@@||allow.example.com^",
+            "@@|api.allow.example.com^",
+            "||ads.example.com^$important",
+            "@@||private.example.com^$important",
+        ], return_stats=True)
+
+        self.assertEqual(rules, [
+            "||example.com^",
+            "@@||allow.example.com^",
+            "||ads.example.com^$important",
+            "@@||private.example.com^$important",
+        ])
+        self.assertEqual(stats["suffix_covered_by_suffix"], 1)
+        self.assertEqual(stats["exact_covered_by_suffix"], 2)
+
+    def test_dnsrewrite_is_canonicalized_and_important_is_preserved(self):
+        rules = optimize_adguard_lines([
+            "||Example.com^$DNSRewrite=0.0.0.0,Important",
+            "||example.com^$dnsrewrite=::,important",
+            "||example.com^$important",
+        ])
+
+        self.assertEqual(rules, ["||example.com^$important"])
+
+    def test_complex_and_regex_rules_only_receive_exact_deduplication(self):
+        rules = optimize_adguard_lines([
+            "example.net^",
+            "EXAMPLE.NET^",
+            "||example.edu",
+            "/^ad[0-9]+\\.example$/",
+        ])
+
+        self.assertEqual(rules, [
+            "example.net^",
+            "||example.edu",
+            "/^ad[0-9]+\\.example$/",
+        ])
+
+    def test_non_dns_and_unsupported_sing_box_rules_are_removed(self):
+        lines = [
+            "! comment",
+            "# comment",
+            "[Adblock Plus 2.0]",
+            "||example.com/path^",
+            "||example.com^$third-party",
+            "example.com##.advert",
+            "127.0.0.1 example.com",
+            r"/^192\.0\.2\./",
+            "||keep.example^",
+        ]
+        rules, stats = optimize_adguard_lines(lines, return_stats=True)
+
+        self.assertEqual(rules, ["||keep.example^"])
+        self.assertEqual(stats["skipped_comments_or_empty"], 3)
+        self.assertEqual(stats["unsupported_lines"], 5)
+
+    def test_modified_bare_domain_keeps_sing_box_pattern_semantics(self):
+        rule, status = parse_adguard_dns_rule("example.com$important")
+
+        self.assertEqual(status, "parsed")
+        self.assertEqual(rule.kind, "complex")
+        self.assertEqual(rule.render(), "example.com$important")
+
+    @unittest.skipUnless(shutil.which("sing-box"), "sing-box is not installed")
+    def test_optimized_rules_convert_with_sing_box(self):
+        rules = optimize_adguard_lines([
+            "0.0.0.0 exact.example",
+            "||suffix.example^",
+            "@@||allow.suffix.example^",
+            "||important.example^$important",
+            r"/^regex[0-9]+\.example$/",
+        ])
+
+        with tempfile.TemporaryDirectory() as directory:
+            input_path = os.path.join(directory, "rules.txt")
+            output_path = os.path.join(directory, "rules.srs")
+            with open(input_path, "w", encoding="utf-8") as file:
+                file.write("\n".join(rules))
+            subprocess.run([
+                "sing-box",
+                "rule-set",
+                "convert",
+                "--type",
+                "adguard",
+                "--output",
+                output_path,
+                input_path,
+            ], check=True, capture_output=True, text=True)
+
+            self.assertTrue(os.path.exists(output_path))
+            self.assertGreater(os.path.getsize(output_path), 0)
 
 
 class RuleContractTests(unittest.TestCase):

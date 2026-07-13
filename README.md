@@ -18,6 +18,9 @@
 - 转换 Surge、Shadowrocket、Clash YAML 和 Mihomo MRS 规则集
 - 支持 `corrections/` 同名文件修正上游的错误分类
 - 对每个结构化上游分别清洗后再合并，并生成 `report/ruleset-quality.json`，记录单上游去重、合并后去重和精确来源重叠；`domain_keyword` 仅做规范化与完全重复去重，不参与覆盖推断
+- AdGuard 输入按 sing-box 的 DNS 支持范围清洗：丢弃路径、查询参数、cosmetic filter、IP/CIDR 模式和不支持的 modifier
+- AdGuard 裸域名、`0.0.0.0 hosts` 与精确锚点统一输出为 `|domain^`，避免混合规则触发非精确匹配；严格 `||domain^` 统一为根域名及子域规则
+- AdGuard 覆盖去重严格隔离普通拦截、普通例外、`$important` 拦截和 `$important` 例外；regex、通配和非严格模式只做完全重复去重
 
 规则处理顺序固定为：
 

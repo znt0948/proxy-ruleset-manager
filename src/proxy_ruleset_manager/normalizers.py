@@ -1,5 +1,6 @@
 """Rule normalization helpers."""
 
+from .adguard import optimize_adguard_lines, parse_adguard_dns_rule
 from .utils import (
     clean_comment,
     clean_denied_domains,
@@ -26,4 +27,6 @@ __all__ = [
     "normalize_domain_keyword",
     "normalize_domain_suffix",
     "normalize_payload_items",
+    "optimize_adguard_lines",
+    "parse_adguard_dns_rule",
 ]
