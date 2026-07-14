@@ -15,7 +15,12 @@ from proxy_ruleset_manager.adguard import (
 )
 from proxy_ruleset_manager.contracts import validate_ruleset_rules
 from proxy_ruleset_manager.pipeline import RuleParser
-from proxy_ruleset_manager.quality import build_provenance, summarize_provenance
+from proxy_ruleset_manager.quality import (
+    analyze_light_source_candidates,
+    build_provenance,
+    summarize_provenance,
+    summarize_semantic_overlap,
+)
 from proxy_ruleset_manager.utils import (
     clash_domain_rule,
     clean_denied_domains,
@@ -576,6 +581,67 @@ class ParserTests(unittest.TestCase):
 
 
 class QualityReportTests(unittest.TestCase):
+    def test_semantic_overlap_uses_suffix_and_cidr_coverage(self):
+        candidate = [
+            {"domain": ["api.example.com"], "domain_suffix": ["sub.example.com"]},
+            {"ip_cidr": ["192.0.2.128/25"]},
+            {"domain_keyword": ["download"]},
+        ]
+        reference = [
+            {"domain_suffix": ["example.com"]},
+            {"ip_cidr": ["192.0.2.0/24"]},
+            {"domain_keyword": ["down"]},
+        ]
+
+        summary = summarize_semantic_overlap(candidate, reference)
+
+        self.assertEqual(summary["entries"], 4)
+        self.assertEqual(summary["covered"], 3)
+        self.assertEqual(summary["by_field"]["domain_keyword"]["covered"], 0)
+
+    def test_light_candidate_analysis_builds_greedy_coverage_order(self):
+        records = [
+            {
+                "url": "broad-source",
+                "rules": [{"domain_suffix": ["example.com"]}],
+            },
+            {
+                "url": "focused-source",
+                "rules": [{"domain": ["api.example.com", "unique.test"]}],
+                "correction_removed_entries": 1,
+            },
+        ]
+        target = [{
+            "domain": ["api.example.com", "unique.test"],
+            "domain_suffix": ["example.com"],
+        }]
+        conflicts = {
+            "download_strict": [{"domain": ["unique.test"]}],
+        }
+
+        analysis = analyze_light_source_candidates(records, target, conflicts)
+
+        self.assertEqual(analysis["greedy_coverage_order"][0]["url"], "broad-source")
+        self.assertEqual(
+            analysis["greedy_coverage_order"][-1]["cumulative_target_coverage_ratio"],
+            1.0,
+        )
+        focused = next(
+            item for item in analysis["sources"]
+            if item["url"] == "focused-source"
+        )
+        self.assertEqual(focused["correction_removed_entries"], 1)
+        self.assertEqual(
+            focused["classification_conflicts"]["download_strict"][
+                "covered_source_entries"
+            ],
+            1,
+        )
+        self.assertEqual(
+            analysis["non_bulk_scenario"]["maximum_source_entries"],
+            10000,
+        )
+
     def test_exact_provenance_reports_shared_entries_and_source_contribution(self):
         records = [
             {
@@ -684,9 +750,48 @@ class QualityReportTests(unittest.TestCase):
         report = parser.quality_reports[-1]
         self.assertEqual(report["source_count"], 2)
         self.assertEqual(len(report["sources"]), 2)
+        self.assertEqual(parser.source_records_by_ruleset, {})
 
 
 class ClassificationCorrectionTests(unittest.TestCase):
+    def test_named_variant_inherits_base_classification_correction(self):
+        parser = RuleParser()
+        with tempfile.TemporaryDirectory() as directory:
+            output_directory = os.path.join(directory, "output")
+            corrections_directory = os.path.join(directory, "corrections")
+            os.makedirs(output_directory)
+            os.makedirs(corrections_directory)
+            with open(
+                os.path.join(output_directory, "geosite-category-direct@light.json"),
+                "w",
+                encoding="utf-8",
+            ) as file:
+                json.dump({
+                    "version": 1,
+                    "rules": [{"domain_suffix": ["googleapis.com", "keep.test"]}],
+                }, file)
+            with open(
+                os.path.join(corrections_directory, "geosite-category-direct.json"),
+                "w",
+                encoding="utf-8",
+            ) as file:
+                json.dump({
+                    "version": 1,
+                    "rules": [{"domain_suffix": ["googleapis.com"]}],
+                }, file)
+
+            parser.apply_corrections_to_output(
+                output_directory,
+                corrections_directory,
+            )
+            with open(
+                os.path.join(output_directory, "geosite-category-direct@light.json"),
+                encoding="utf-8",
+            ) as file:
+                corrected = json.load(file)
+
+        self.assertEqual(corrected["rules"], [{"domain_suffix": ["keep.test"]}])
+
     def test_correction_runs_before_suffix_coverage_pruning(self):
         parser = RuleParser()
         ruleset = {

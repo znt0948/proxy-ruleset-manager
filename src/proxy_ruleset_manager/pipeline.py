@@ -1,4 +1,5 @@
 import os
+import copy
 import json
 import logging
 import time
@@ -9,6 +10,7 @@ import requests
 from .config import Config
 from .contracts import validate_ruleset_rules
 from .quality import (
+    analyze_light_source_candidates,
     build_provenance,
     count_entries_by_field,
     summarize_provenance,
@@ -44,9 +46,11 @@ config = Config()
 
 
 class RuleParser:
-    def __init__(self):
+    def __init__(self, capture_source_records=False):
         self.ls_index = 1
         self.quality_reports = []
+        self.capture_source_records = capture_source_records
+        self.source_records_by_ruleset = {}
 
     def parse_adguard_file(self, yaml_file_path, output_directory):
         """
@@ -463,8 +467,11 @@ class RuleParser:
         with open(output_file, 'r', encoding='utf-8') as file:
             final_rules = json.load(file).get("rules", [])
         provenance = build_provenance(source_records)
+        ruleset_id = os.path.basename(output_file).removesuffix(".json")
+        if self.capture_source_records:
+            self.source_records_by_ruleset[ruleset_id] = source_records
         self.quality_reports.append({
-            "ruleset": os.path.basename(output_file).removesuffix(".json"),
+            "ruleset": ruleset_id,
             "type": type,
             "source_count": len(unique_links),
             "sources": source_reports,
@@ -854,6 +861,9 @@ class RuleParser:
         json_files = [f for f in os.listdir(output_directory) if f.endswith('.json')]
         for json_file in json_files:
             correction_path = os.path.join(corrections_directory, json_file)
+            if not os.path.exists(correction_path) and "@" in json_file:
+                base_name = json_file.split("@", 1)[0] + ".json"
+                correction_path = os.path.join(corrections_directory, base_name)
             if not os.path.exists(correction_path):
                 continue
 
@@ -915,6 +925,69 @@ class RuleParser:
                     optimized_rules
                 )
 
+    def build_direct_light_analysis(self, output_directory,
+                                    corrections_directory="corrections"):
+        """Evaluate direct upstreams against corrected published semantics."""
+        ruleset_name = "geosite-category-direct"
+        source_records = self.source_records_by_ruleset.get(ruleset_name)
+        target_path = os.path.join(output_directory, f"{ruleset_name}.json")
+        if not source_records or not os.path.exists(target_path):
+            return None
+
+        with open(target_path, encoding="utf-8") as file:
+            target_rules = json.load(file).get("rules", [])
+
+        corrections = {"version": 1, "rules": []}
+        correction_path = os.path.join(
+            corrections_directory,
+            f"{ruleset_name}.json",
+        )
+        if os.path.exists(correction_path):
+            with open(correction_path, encoding="utf-8") as file:
+                corrections = json.load(file)
+
+        corrected_source_records = []
+        for record in source_records:
+            source_data = {
+                "version": 1,
+                "rules": copy.deepcopy(record["rules"]),
+            }
+            corrected, removed_domains, removed_suffixes = self.apply_corrections(
+                source_data,
+                corrections,
+            )
+            corrected_source_records.append({
+                "url": record["url"],
+                "rules": corrected.get("rules", []),
+                "correction_removed_entries": (
+                    removed_domains + removed_suffixes
+                ),
+            })
+
+        conflict_files = {
+            "download_strict": "geosite-category-download@!cn.json",
+            "proxy": "geosite-category-proxy.json",
+            "geolocation_non_cn": "geosite-geolocation-!cn.json",
+            "vpn_non_cn": "geosite-category-vpn@!cn.json",
+            "blocker_trash": "geosite-blocker-trash.json",
+        }
+        conflict_rule_sets = {}
+        for label, filename in conflict_files.items():
+            path = os.path.join(output_directory, filename)
+            if not os.path.exists(path):
+                continue
+            with open(path, encoding="utf-8") as file:
+                conflict_rule_sets[label] = json.load(file).get("rules", [])
+
+        analysis = analyze_light_source_candidates(
+            corrected_source_records,
+            target_rules,
+            conflict_rule_sets,
+        )
+        analysis["ruleset"] = ruleset_name
+        analysis["excluded_dimensions"] = ["download_stability"]
+        return analysis
+
     def has_generated_rule_artifacts(self, output_directory):
         return any(
             f.endswith((".json", ".srs"))
@@ -949,7 +1022,6 @@ class RuleParser:
             ),
             "published_inventory": self.build_published_inventory(output_directory),
         }
-
         fd, temporary_path = tempfile.mkstemp(
             prefix=".ruleset-quality-",
             suffix=".json",
@@ -984,6 +1056,7 @@ class RuleParser:
     def run(self):
         #### 解析规则，生成sing-box规则集
         self.quality_reports = []
+        self.source_records_by_ruleset = {}
         source_directory = config.source_dir
         output_directory = config.singbox_output_directory
         os.makedirs(config.rule_dir, exist_ok=True)

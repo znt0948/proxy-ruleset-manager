@@ -56,6 +56,14 @@ python main.py
 
 `main.py` 是兼容旧用法的薄入口，实际代码位于 `src/proxy_ruleset_manager/` 包内。
 
+`direct@light` 的上游语义覆盖和分类冲突统计属于人工选源阶段，默认构建不会执行。需要重新评估时可在本地按需运行：
+
+```bash
+python scripts/analyze_direct_light.py
+```
+
+结果写入 `report/direct-light-analysis.json`；下载稳定性不参与这份静态内容评估。
+
 生成结果会写入：
 
 - `rule/singbox/`

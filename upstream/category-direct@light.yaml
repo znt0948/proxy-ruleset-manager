@@ -1,0 +1,10 @@
+geosite:
+  - "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/main/self-host/geosite-direct@selfhost.json"
+  - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-private.srs"
+  - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+  - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-springer.srs"
+  - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-elsevier.srs"
+  - "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-ieee.srs"
+  - "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+geoip:
+  - "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
