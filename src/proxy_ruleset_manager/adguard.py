@@ -189,6 +189,8 @@ def parse_adguard_dns_rule(line):
     if match_body.startswith("||") and match_body.endswith("^"):
         domain = match_body[2:-1]
         if "*" not in domain:
+            if _is_ip_or_cidr(domain):
+                return None, "unsupported"
             try:
                 domain = normalize_domain_suffix(domain)
             except ValueError:
@@ -198,6 +200,8 @@ def parse_adguard_dns_rule(line):
     if match_body.startswith("|") and match_body.endswith("^"):
         domain = match_body[1:-1]
         if "*" not in domain:
+            if _is_ip_or_cidr(domain):
+                return None, "unsupported"
             try:
                 domain = normalize_domain(domain)
             except ValueError:

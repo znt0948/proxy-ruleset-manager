@@ -132,6 +132,17 @@ class AdGuardOptimizationTests(unittest.TestCase):
         self.assertEqual(stats["skipped_comments_or_empty"], 3)
         self.assertEqual(stats["unsupported_lines"], 5)
 
+    def test_anchored_ip_addresses_are_not_treated_as_domains(self):
+        rules, stats = optimize_adguard_lines([
+            "||1.0.140.1^",
+            "|2001:db8::1^",
+            "||192.0.2.0/24^",
+            "||keep.example^",
+        ], return_stats=True)
+
+        self.assertEqual(rules, ["||keep.example^"])
+        self.assertEqual(stats["unsupported_lines"], 3)
+
     def test_modified_bare_domain_keeps_sing_box_pattern_semantics(self):
         rule, status = parse_adguard_dns_rule("example.com$important")
 
