@@ -1,6 +1,5 @@
 payload:
   - DOMAIN,004430.xyz
-  - DOMAIN,0123456789nonexistent.com
   - DOMAIN,021912.xyz
   - DOMAIN,1337.abcvg.info
   - DOMAIN,2mdn-cn.net
@@ -69,12 +68,8 @@ payload:
   - DOMAIN,bittorrent-tracker.e-n-c-r-y-p-t.net
   - DOMAIN,bj1.api.bing.com
   - DOMAIN,bookkeeper.itunes.apple.com
-  - DOMAIN,bt.okmp3.ru
-  - DOMAIN,bt.poletracker.org
   - DOMAIN,bt1.archive.org
-  - DOMAIN,bt1.xxxxbt.cc
   - DOMAIN,bt2.archive.org
-  - DOMAIN,buny.uk
   - DOMAIN,c.admob.com
   - DOMAIN,c.android.clients.google.com
   - DOMAIN,c.pki.goog
@@ -271,7 +266,6 @@ payload:
   - DOMAIN,guzzoni-apple-com.v.aaplimg.com
   - DOMAIN,guzzoni.apple.com
   - DOMAIN,guzzoni.smoot.apple.com
-  - DOMAIN,home.yxgz.club
   - DOMAIN,ht.therarbg.to
   - DOMAIN,i.dell.com
   - DOMAIN,i.pki.goog
@@ -319,7 +313,6 @@ payload:
   - DOMAIN,izattime.qcomgeo2.com
   - DOMAIN,job.spdb.com
   - DOMAIN,js-cdn.music.apple.com
-  - DOMAIN,jvavav.com
   - DOMAIN,km.support.apple.com
   - DOMAIN,ksn-cinfo-geo.kaspersky-labs.com
   - DOMAIN,ksn-cinfo.geoksn.kaspersky.com
@@ -349,6 +342,7 @@ payload:
   - DOMAIN,lex.download.prss.microsoft.com
   - DOMAIN,lexuat.download.prss.microsoft.com
   - DOMAIN,local.adguard.org
+  - DOMAIN,lucke.fenesisu.moe
   - DOMAIN,lv.queniujq.cn
   - DOMAIN,mail.segso.net
   - DOMAIN,maps.apple.com
@@ -395,7 +389,6 @@ payload:
   - DOMAIN,open.stealth.si
   - DOMAIN,open.tracker.cl
   - DOMAIN,open.tracker.ink
-  - DOMAIN,open.trackerlist.xyz
   - DOMAIN,opencloud.wostore.cn
   - DOMAIN,opentor.org
   - DOMAIN,orgtgju.org
@@ -463,7 +456,6 @@ payload:
   - DOMAIN,refresh-bkg.activation-v2.kaspersky.com
   - DOMAIN,rekcart.duckdns.org
   - DOMAIN,retracker.hotplug.ru
-  - DOMAIN,retracker.spark-rostov.ru
   - DOMAIN,retracker01-msk-virt.corbina.net
   - DOMAIN,router.asus.com
   - DOMAIN,routerlogin.com
@@ -503,7 +495,6 @@ payload:
   - DOMAIN,seed-sequoia.siri.apple.com
   - DOMAIN,seed-swallow.siri.apple.com
   - DOMAIN,seed.siri.apple.com
-  - DOMAIN,seeders-paradise.org
   - DOMAIN,seedpeer.net
   - DOMAIN,sequoia.apple.com
   - DOMAIN,service.urchin.com
@@ -511,10 +502,8 @@ payload:
   - DOMAIN,sf-api-token-service.itunes.apple.com
   - DOMAIN,sh-pod2-smp-device.apple.com
   - DOMAIN,shahidrazi.online
-  - DOMAIN,share.hkg-fansub.info
   - DOMAIN,shazam-insights.cdn-apple.com
   - DOMAIN,shell.cdn.office.net
-  - DOMAIN,shubt.net
   - DOMAIN,si.cdn.dell.com
   - DOMAIN,sm.dell.com
   - DOMAIN,smp-device-content.apple.com
@@ -543,6 +532,7 @@ payload:
   - DOMAIN,storeedgefd.dsx.mp.microsoft.com
   - DOMAIN,streamingaudio.itunes.apple.com
   - DOMAIN,su.itunes.apple.com
+  - DOMAIN,supertracker.cc.cd
   - DOMAIN,support-china.apple-support.akadns.net
   - DOMAIN,support.apple.com
   - DOMAIN,supportassist.dell.com
@@ -566,12 +556,12 @@ payload:
   - DOMAIN,time.xtracloud.net
   - DOMAIN,tj-pod1-smp-device.apple.com
   - DOMAIN,tools.google.com
-  - DOMAIN,torrent.hificode.in
   - DOMAIN,torrentclub.online
   - DOMAIN,torrentsmd.com
   - DOMAIN,tp.louisvuitton.com
   - DOMAIN,tplogin.cn
   - DOMAIN,tr.abiir.top
+  - DOMAIN,tr.abir.ga
   - DOMAIN,tr.highstar.shop
   - DOMAIN,tr.kxmp.cf
   - DOMAIN,tr.nyacat.pw
@@ -580,33 +570,26 @@ payload:
   - DOMAIN,tracker-udp.gbitt.info
   - DOMAIN,tracker.7471.top
   - DOMAIN,tracker.adgk.net
-  - DOMAIN,tracker.anibt.net
   - DOMAIN,tracker.aruku.ovh
   - DOMAIN,tracker.auctor.tv
   - DOMAIN,tracker.bittor.pw
   - DOMAIN,tracker.bluefrog.pw
   - DOMAIN,tracker.breizh.pm
-  - DOMAIN,tracker.bt-hash.com
   - DOMAIN,tracker.bt4g.com
-  - DOMAIN,tracker.bz
   - DOMAIN,tracker.corpscorp.online
   - DOMAIN,tracker.ddunlimited.net
   - DOMAIN,tracker.dhitechnical.com
   - DOMAIN,tracker.dler.com
   - DOMAIN,tracker.dler.org
-  - DOMAIN,tracker.dmcomic.org
   - DOMAIN,tracker.ducks.party
   - DOMAIN,tracker.filemail.com
+  - DOMAIN,tracker.flatuslifir.is
   - DOMAIN,tracker.foreverpirates.co
-  - DOMAIN,tracker.gcrenwp.top
   - DOMAIN,tracker.gmi.gd
   - DOMAIN,tracker.ilibr.org
-  - DOMAIN,tracker.ipv6tracker.org
   - DOMAIN,tracker.kuroy.me
   - DOMAIN,tracker.leechshield.link
-  - DOMAIN,tracker.lintk.me
   - DOMAIN,tracker.manager.v6.navy
-  - DOMAIN,tracker.moxing.party
   - DOMAIN,tracker.mywaifu.best
   - DOMAIN,tracker.nekomi.cn
   - DOMAIN,tracker.nexusstream.eu
@@ -624,16 +607,14 @@ payload:
   - DOMAIN,tracker.qingwapt.org
   - DOMAIN,tracker.qu.ax
   - DOMAIN,tracker.renfei.net
-  - DOMAIN,tracker.sbsub.com
   - DOMAIN,tracker.skynetcloud.site
   - DOMAIN,tracker.skyts.net
   - DOMAIN,tracker.teambelgium.net
+  - DOMAIN,tracker.theoks.net
   - DOMAIN,tracker.torrent.eu.org
   - DOMAIN,tracker.tryhackx.org
-  - DOMAIN,tracker.vanitycore.co
   - DOMAIN,tracker.waaa.moe
   - DOMAIN,tracker.wildkat.net
-  - DOMAIN,tracker.xiaoduola.xyz
   - DOMAIN,tracker.xn--djrq4gl4hvoi.top
   - DOMAIN,tracker.yemekyedim.com
   - DOMAIN,tracker.zhuqiy.com
@@ -644,7 +625,6 @@ payload:
   - DOMAIN,tracker2.itzmx.com
   - DOMAIN,tracker3.itzmx.com
   - DOMAIN,tracker4.itzmx.com
-  - DOMAIN,tracker810.xyz
   - DOMAIN,trts.baishancdnx.cn
   - DOMAIN,ubisoftconnect.eo-edgefunctions7.com
   - DOMAIN,universal-activity-service.itunes.apple.com
@@ -679,13 +659,11 @@ payload:
   - DOMAIN,www.dell.com
   - DOMAIN,www.destinationurl.com
   - DOMAIN,www.entrust.cn
-  - DOMAIN,www.genesis-sp.org
   - DOMAIN,www.pxcc.com
   - DOMAIN,www.recaptcha-cn.net
   - DOMAIN,www.recaptcha.net
   - DOMAIN,www.routerlogin.com
   - DOMAIN,www.support.apple.com
-  - DOMAIN,www.torrentsnipe.info
   - DOMAIN,www.wareztorrent.com
   - DOMAIN,xp.apple.com
   - DOMAIN,xtratime.qcomgeo2.com
