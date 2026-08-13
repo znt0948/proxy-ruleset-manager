@@ -1,5 +1,7 @@
 payload:
   - DOMAIN,004430.xyz
+  - DOMAIN,0123456789nonexistent.com
+  - DOMAIN,0d.kebhana.mx
   - DOMAIN,1337.abcvg.info
   - DOMAIN,2mdn-cn.net
   - DOMAIN,2mdn.net
@@ -47,6 +49,7 @@ payload:
   - DOMAIN,apps5.oingo.com
   - DOMAIN,apptrailers.itunes.apple.com
   - DOMAIN,archive.torrentonline.cc
+  - DOMAIN,asiatorrent.giize.com
   - DOMAIN,asusrouter.com
   - DOMAIN,avail.googleflights.net
   - DOMAIN,bag-cdn.itunes-apple.com.akadns.net
@@ -58,8 +61,11 @@ payload:
   - DOMAIN,bittorrent-tracker.e-n-c-r-y-p-t.net
   - DOMAIN,bookkeeper.itunes.apple.com
   - DOMAIN,bt.okmp3.ru
+  - DOMAIN,bt.poletracker.org
   - DOMAIN,bt1.archive.org
+  - DOMAIN,bt1.xxxxbt.cc
   - DOMAIN,bt2.archive.org
+  - DOMAIN,buny.uk
   - DOMAIN,c.admob.com
   - DOMAIN,c.android.clients.google.com
   - DOMAIN,c.pki.goog
@@ -313,7 +319,6 @@ payload:
   - DOMAIN,myapp.itunes.apple.com
   - DOMAIN,nexus.dell.com
   - DOMAIN,np-edge.itunes.apple.com
-  - DOMAIN,ns3109441.mypdns.org
   - DOMAIN,ns575949.ip-51-222-82.net
   - DOMAIN,ntp.aliyun.com
   - DOMAIN,ntp1.aliyun.com
@@ -333,7 +338,6 @@ payload:
   - DOMAIN,open.demonoid.ch
   - DOMAIN,open.ftorrent.com
   - DOMAIN,open.stealth.si
-  - DOMAIN,open.tracker.cl
   - DOMAIN,open.tracker.ink
   - DOMAIN,open.trackerlist.xyz
   - DOMAIN,opentor.org
@@ -398,6 +402,7 @@ payload:
   - DOMAIN,seed-sequoia.siri.apple.com
   - DOMAIN,seed-swallow.siri.apple.com
   - DOMAIN,seed.siri.apple.com
+  - DOMAIN,seeders-paradise.org
   - DOMAIN,seedpeer.net
   - DOMAIN,sequoia.apple.com
   - DOMAIN,service.urchin.com
@@ -407,6 +412,7 @@ payload:
   - DOMAIN,share.hkg-fansub.info
   - DOMAIN,shazam-insights.cdn-apple.com
   - DOMAIN,shell.cdn.office.net
+  - DOMAIN,shubt.net
   - DOMAIN,si.cdn.dell.com
   - DOMAIN,sm.dell.com
   - DOMAIN,smp-device-content.apple.com
@@ -462,6 +468,7 @@ payload:
   - DOMAIN,tp.louisvuitton.com
   - DOMAIN,tr.abiir.top
   - DOMAIN,tr.abir.ga
+  - DOMAIN,tr.btube3.com
   - DOMAIN,tr.kxmp.cf
   - DOMAIN,tr.nyacat.pw
   - DOMAIN,tr.zukizuki.org
@@ -469,12 +476,14 @@ payload:
   - DOMAIN,tr4ck3r.duckdns.org
   - DOMAIN,tracker-udp.gbitt.info
   - DOMAIN,tracker.0x7c0.com
+  - DOMAIN,tracker.23794.top
   - DOMAIN,tracker.7471.top
   - DOMAIN,tracker.adgk.net
   - DOMAIN,tracker.aruku.ovh
   - DOMAIN,tracker.auctor.tv
   - DOMAIN,tracker.bittor.pw
   - DOMAIN,tracker.breizh.pm
+  - DOMAIN,tracker.bt-hash.com
   - DOMAIN,tracker.bt4g.com
   - DOMAIN,tracker.bug38.com
   - DOMAIN,tracker.bz
@@ -489,17 +498,19 @@ payload:
   - DOMAIN,tracker.ducks.party
   - DOMAIN,tracker.farted.net
   - DOMAIN,tracker.filemail.com
-  - DOMAIN,tracker.flatuslifir.is
+  - DOMAIN,tracker.fnix.net
   - DOMAIN,tracker.foreverpirates.co
   - DOMAIN,tracker.gcrenwp.top
   - DOMAIN,tracker.gmi.gd
   - DOMAIN,tracker.ilibr.org
+  - DOMAIN,tracker.ipv6tracker.org
   - DOMAIN,tracker.k.vu
   - DOMAIN,tracker.kuroy.me
   - DOMAIN,tracker.leechshield.link
   - DOMAIN,tracker.lenition.de
   - DOMAIN,tracker.lintk.me
   - DOMAIN,tracker.linvk.com
+  - DOMAIN,tracker.moxing.party
   - DOMAIN,tracker.mywaifu.best
   - DOMAIN,tracker.nexusstream.eu
   - DOMAIN,tracker.nyaa.net
@@ -508,6 +519,7 @@ payload:
   - DOMAIN,tracker.openwebtorrent.com
   - DOMAIN,tracker.peerfect.org
   - DOMAIN,tracker.playground.ru
+  - DOMAIN,tracker.plx.im
   - DOMAIN,tracker.pmman.tech
   - DOMAIN,tracker.privateseedbox.xyz
   - DOMAIN,tracker.publictracker.xyz
@@ -523,6 +535,7 @@ payload:
   - DOMAIN,tracker.wildkat.net
   - DOMAIN,tracker.xiaoduola.xyz
   - DOMAIN,tracker.xn--djrq4gl4hvoi.top
+  - DOMAIN,tracker.yemekyedim.com
   - DOMAIN,tracker.zhuqiy.dgj055.icu
   - DOMAIN,tracker1.520.jp
   - DOMAIN,tracker2.dler.org
@@ -552,12 +565,14 @@ payload:
   - DOMAIN,www.asusrouter.com
   - DOMAIN,www.dell.com
   - DOMAIN,www.destinationurl.com
+  - DOMAIN,www.genesis-sp.org
   - DOMAIN,www.miwifi.com
   - DOMAIN,www.pxcc.com
   - DOMAIN,www.recaptcha-cn.net
   - DOMAIN,www.recaptcha.net
   - DOMAIN,www.routerlogin.com
   - DOMAIN,www.support.apple.com
+  - DOMAIN,www.torrentsnipe.info
   - DOMAIN,www.wareztorrent.com
   - DOMAIN,xp.apple.com
   - DOMAIN,xtratime.qcomgeo2.com
@@ -3227,6 +3242,7 @@ payload:
   - DOMAIN-SUFFIX,194nb.com
   - DOMAIN-SUFFIX,195155.com
   - DOMAIN-SUFFIX,195268032591463.icu
+  - DOMAIN-SUFFIX,1958xy.com
   - DOMAIN-SUFFIX,195idc.com
   - DOMAIN-SUFFIX,196b7adb23969e39.com
   - DOMAIN-SUFFIX,196g.com
@@ -16736,7 +16752,6 @@ payload:
   - DOMAIN-SUFFIX,bamboofactorychina.com
   - DOMAIN-SUFFIX,bambooolab.com
   - DOMAIN-SUFFIX,bambu-lab.com
-  - DOMAIN-SUFFIX,bambulab.com
   - DOMAIN-SUFFIX,bamengame.com
   - DOMAIN-SUFFIX,bamensq.com
   - DOMAIN-SUFFIX,bamenyun.com
@@ -19604,6 +19619,7 @@ payload:
   - DOMAIN-SUFFIX,bktsj.com
   - DOMAIN-SUFFIX,bkvps.com
   - DOMAIN-SUFFIX,bkweek.com
+  - DOMAIN-SUFFIX,bkzhibo.com
   - DOMAIN-SUFFIX,bkzzy.com
   - DOMAIN-SUFFIX,bl.com
   - DOMAIN-SUFFIX,bl0757.com
@@ -61145,6 +61161,7 @@ payload:
   - DOMAIN-SUFFIX,jgsemicon.com
   - DOMAIN-SUFFIX,jgstour.com
   - DOMAIN-SUFFIX,jgsxfw.com
+  - DOMAIN-SUFFIX,jgtab.link
   - DOMAIN-SUFFIX,jgtc315.com
   - DOMAIN-SUFFIX,jguanjia.com
   - DOMAIN-SUFFIX,jgums.com
@@ -99505,6 +99522,7 @@ payload:
   - DOMAIN-SUFFIX,sxyqgs.asia
   - DOMAIN-SUFFIX,sxyupzfmc.com
   - DOMAIN-SUFFIX,sxyyc.net
+  - DOMAIN-SUFFIX,sxyygh.com
   - DOMAIN-SUFFIX,sxzhaobiao.com
   - DOMAIN-SUFFIX,sxzhongfei.com
   - DOMAIN-SUFFIX,sxzhyy.com
@@ -114382,6 +114400,7 @@ payload:
   - DOMAIN-SUFFIX,xhsd.net
   - DOMAIN-SUFFIX,xhsdns.com
   - DOMAIN-SUFFIX,xhsdns.net
+  - DOMAIN-SUFFIX,xhsdzd.com
   - DOMAIN-SUFFIX,xhsf.com
   - DOMAIN-SUFFIX,xhshwyx.com
   - DOMAIN-SUFFIX,xhsilkroad.com
@@ -122439,7 +122458,6 @@ payload:
   - DOMAIN-SUFFIX,youlesp.com
   - DOMAIN-SUFFIX,youletd.com
   - DOMAIN-SUFFIX,youleyou.com
-  - DOMAIN-SUFFIX,youlian.fun
   - DOMAIN-SUFFIX,youlianfuwu.com
   - DOMAIN-SUFFIX,youliangda.com
   - DOMAIN-SUFFIX,youlianghz.com
