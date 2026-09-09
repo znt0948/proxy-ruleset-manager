@@ -1,9 +1,14 @@
 payload:
   - DOMAIN,004430.xyz
-  - DOMAIN,0d.kebhana.mx
+  - DOMAIN,0123456789nonexistent.com
+  - DOMAIN,1.tracker.eu.org
   - DOMAIN,1337.abcvg.info
+  - DOMAIN,2.tracker.eu.org
   - DOMAIN,2mdn-cn.net
   - DOMAIN,2mdn.net
+  - DOMAIN,3.tracker.eu.org
+  - DOMAIN,4.tracker.eu.org
+  - DOMAIN,5.tracker.eu.org
   - DOMAIN,a1.mzstatic.com
   - DOMAIN,a2.mzstatic.com
   - DOMAIN,a3.mzstatic.com
@@ -47,6 +52,8 @@ payload:
   - DOMAIN,apps.mzstatic.com
   - DOMAIN,apps5.oingo.com
   - DOMAIN,apptrailers.itunes.apple.com
+  - DOMAIN,archive.torrentonline.cc
+  - DOMAIN,asiatorrent.giize.com
   - DOMAIN,asusrouter.com
   - DOMAIN,avail.googleflights.net
   - DOMAIN,azuremigrate.download.prss.microsoft.com
@@ -63,6 +70,7 @@ payload:
   - DOMAIN,bittorrent-tracker.e-n-c-r-y-p-t.net
   - DOMAIN,bj1.api.bing.com
   - DOMAIN,bookkeeper.itunes.apple.com
+  - DOMAIN,bt.poletracker.org
   - DOMAIN,bt1.archive.org
   - DOMAIN,bt2.archive.org
   - DOMAIN,buny.uk
@@ -247,7 +255,6 @@ payload:
   - DOMAIN,guzzoni-apple-com.v.aaplimg.com
   - DOMAIN,guzzoni.apple.com
   - DOMAIN,guzzoni.smoot.apple.com
-  - DOMAIN,home.yxgz.club
   - DOMAIN,ht.therarbg.to
   - DOMAIN,i.pki.goog
   - DOMAIN,id6.me
@@ -295,7 +302,6 @@ payload:
   - DOMAIN,izattime.qcomgeo2.com
   - DOMAIN,job.spdb.com
   - DOMAIN,js-cdn.music.apple.com
-  - DOMAIN,jvavav.com
   - DOMAIN,km.support.apple.com
   - DOMAIN,ksn-cinfo-geo.kaspersky-labs.com
   - DOMAIN,ksn-cinfo.geoksn.kaspersky.com
@@ -413,7 +419,6 @@ payload:
   - DOMAIN,prod-support.apple-support.akadns.net
   - DOMAIN,prod.databe.floonet.goog
   - DOMAIN,publicassets.cdn-apple.com
-  - DOMAIN,pybittrack.retiolus.net
   - DOMAIN,qiao-cn.com
   - DOMAIN,qpx.googleflights.net
   - DOMAIN,recaptcha-cn.net
@@ -471,13 +476,11 @@ payload:
   - DOMAIN,seed-sequoia.siri.apple.com
   - DOMAIN,seed-swallow.siri.apple.com
   - DOMAIN,seed.siri.apple.com
-  - DOMAIN,seedpeer.net
   - DOMAIN,sequoia.apple.com
   - DOMAIN,service.urchin.com
   - DOMAIN,setmeup.arubanetworks.com
   - DOMAIN,sf-api-token-service.itunes.apple.com
   - DOMAIN,sh-pod2-smp-device.apple.com
-  - DOMAIN,share.hkg-fansub.info
   - DOMAIN,shazam-insights.cdn-apple.com
   - DOMAIN,shell.cdn.office.net
   - DOMAIN,shubt.net
@@ -529,9 +532,7 @@ payload:
   - DOMAIN,tj-pod2-smp-device.apple.com
   - DOMAIN,tj-pod3-smp-device.apple.com
   - DOMAIN,tools.google.com
-  - DOMAIN,torrent.hificode.in
   - DOMAIN,torrent.tracker.durukanbal.com
-  - DOMAIN,torrentclub.online
   - DOMAIN,torrentsmd.com
   - DOMAIN,tplogin.cn
   - DOMAIN,tr.abiir.top
@@ -547,30 +548,25 @@ payload:
   - DOMAIN,tracker.auctor.tv
   - DOMAIN,tracker.bittor.pw
   - DOMAIN,tracker.breizh.pm
-  - DOMAIN,tracker.bt-hash.com
-  - DOMAIN,tracker.bt4g.com
   - DOMAIN,tracker.bug38.com
-  - DOMAIN,tracker.bz
   - DOMAIN,tracker.cn.nyaa.net
   - DOMAIN,tracker.corpscorp.online
   - DOMAIN,tracker.ddunlimited.net
   - DOMAIN,tracker.dhitechnical.com
   - DOMAIN,tracker.dler.com
   - DOMAIN,tracker.dler.org
-  - DOMAIN,tracker.dmcomic.org
   - DOMAIN,tracker.ducks.party
   - DOMAIN,tracker.farted.net
   - DOMAIN,tracker.filemail.com
-  - DOMAIN,tracker.fnix.net
   - DOMAIN,tracker.foreverpirates.co
   - DOMAIN,tracker.gmi.gd
   - DOMAIN,tracker.govt.hu
   - DOMAIN,tracker.ilibr.org
+  - DOMAIN,tracker.ipv6tracker.org
   - DOMAIN,tracker.k.vu
   - DOMAIN,tracker.kuroy.me
   - DOMAIN,tracker.lenition.de
   - DOMAIN,tracker.lintk.me
-  - DOMAIN,tracker.moxing.party
   - DOMAIN,tracker.mywaifu.best
   - DOMAIN,tracker.nekomi.cn
   - DOMAIN,tracker.nexusstream.eu
@@ -582,21 +578,19 @@ payload:
   - DOMAIN,tracker.orsvarn.com
   - DOMAIN,tracker.peerfect.org
   - DOMAIN,tracker.playground.ru
+  - DOMAIN,tracker.plx.im
   - DOMAIN,tracker.pmman.tech
   - DOMAIN,tracker.privateseedbox.xyz
   - DOMAIN,tracker.publictracker.xyz
   - DOMAIN,tracker.qingwapt.org
   - DOMAIN,tracker.qu.ax
   - DOMAIN,tracker.renfei.net
-  - DOMAIN,tracker.sbsub.com
   - DOMAIN,tracker.skyts.net
   - DOMAIN,tracker.teambelgium.net
   - DOMAIN,tracker.therarbg.to
   - DOMAIN,tracker.torrent.eu.org
-  - DOMAIN,tracker.tryhackx.org
   - DOMAIN,tracker.waaa.moe
   - DOMAIN,tracker.wildkat.net
-  - DOMAIN,tracker.xiaoduola.xyz
   - DOMAIN,tracker.zhuqiy.com
   - DOMAIN,tracker.zhuqiy.dgj055.icu
   - DOMAIN,tracker1.520.jp
@@ -634,13 +628,11 @@ payload:
   - DOMAIN,www.asusrouter.com
   - DOMAIN,www.destinationurl.com
   - DOMAIN,www.entrust.cn
-  - DOMAIN,www.genesis-sp.org
   - DOMAIN,www.pxcc.com
   - DOMAIN,www.recaptcha-cn.net
   - DOMAIN,www.recaptcha.net
   - DOMAIN,www.routerlogin.com
   - DOMAIN,www.support.apple.com
-  - DOMAIN,www.torrentsnipe.info
   - DOMAIN,www.wareztorrent.com
   - DOMAIN,xp.apple.com
   - DOMAIN,xtratime.qcomgeo2.com
@@ -8698,6 +8690,7 @@ payload:
   - DOMAIN-SUFFIX,ytzq.com
   - DOMAIN-SUFFIX,yuanbei.biz
   - DOMAIN-SUFFIX,yuanfudao.com
+  - DOMAIN-SUFFIX,yuanqidesk.com
   - DOMAIN-SUFFIX,yuanshen.com
   - DOMAIN-SUFFIX,yuansouti.com
   - DOMAIN-SUFFIX,yuantiku.com
@@ -8847,6 +8840,7 @@ payload:
   - DOMAIN-SUFFIX,zhcw.com
   - DOMAIN-SUFFIX,zhenai.com
   - DOMAIN-SUFFIX,zhfund.com
+  - DOMAIN-SUFFIX,zhhainiao.com
   - DOMAIN-SUFFIX,zhi10.com
   - DOMAIN-SUFFIX,zhibo8.cc
   - DOMAIN-SUFFIX,zhibo8.com
