@@ -1,0 +1,20 @@
+name: Lite schedule
+
+# GitHub only runs scheduled workflows on the default branch, so the daily
+# update of the lite branch (rule sets for hz) is dispatched from here.
+on:
+  schedule:
+    - cron: '30 12 * * *'
+  workflow_dispatch:
+
+permissions:
+  actions: write
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run sync.yml on the lite branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run sync.yml --ref lite --repo "${{ github.repository }}"
