@@ -1,5 +1,4 @@
 {
-  "version": 1,
   "rules": [
     {
       "domain": [
@@ -60,30 +59,32 @@
     },
     {
       "domain_suffix": [
+        "2000.run",
+        "buzzheavier.com",
         "civitai.com",
-        "nexus-cdn.com",
-        "sharepoint.com",
-        "mediafire.com",
-        "escapefromtarkov.com",
-        "pytorch.org",
-        "snapcraftcontent.com",
-        "iva-api.com",
+        "cloudflarestorage.com",
         "doubledouble.top",
-        "kiko-play-niptan.one",
-        "microsoftpersonalcontent.com",
-        "objects.githubusercontent.com",
-        "raw.githubusercontent.com",
+        "escapefromtarkov.com",
         "github.global.ssl.fastly.net",
         "gofile.io",
-        "cloudflarestorage.com",
         "gvt1.com",
         "gvt2.com",
         "gvt3.com",
-        "workupload.com",
-        "buzzheavier.com",
+        "icloud-content.com",
+        "iva-api.com",
+        "kiko-play-niptan.one",
+        "mediafire.com",
+        "microsoftpersonalcontent.com",
+        "nexus-cdn.com",
+        "objects.githubusercontent.com",
         "pkg.github.com",
-        "icloud-content.com"
+        "pytorch.org",
+        "raw.githubusercontent.com",
+        "sharepoint.com",
+        "snapcraftcontent.com",
+        "workupload.com"
       ]
     }
-  ]
+  ],
+  "version": 1
 }
