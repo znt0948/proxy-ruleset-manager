@@ -1,11 +1,12 @@
-name: Ruleset Update
+name: Ruleset Update (lite)
 
+# lite 分支：只生成 hz 模板用到的 sing-box 规则集（直连、拦截、下载）。
+# GitHub 只在默认分支上跑定时任务，每日更新由 main 分支的
+# lite-schedule.yml 触发本工作流。
 on:
   push:
-    branches: [ main ]
+    branches: [ lite ]
   workflow_dispatch:
-  schedule:
-    - cron: '0 12 * * *'
 
 jobs:
   build:
@@ -20,13 +21,6 @@ jobs:
           set -Eeuo pipefail
           wget -O sing-box.deb $SING_BOX_DEB_URL
           sudo dpkg -i sing-box.deb
-    - name: "Setup mihomo"
-      env:
-        MIHOMO_DEB_URL: "https://github.com/MetaCubeX/mihomo/releases/download/v1.19.4/mihomo-linux-amd64-v1.19.4.deb"
-      run: |
-          set -Eeuo pipefail
-          wget -O mihomo.deb $MIHOMO_DEB_URL
-          sudo dpkg -i mihomo.deb
     - name: Set up Python3
       uses: actions/setup-python@v5
       with:

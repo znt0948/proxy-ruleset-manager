@@ -1079,10 +1079,11 @@ class RuleParser:
                 shutil.rmtree(staging_directory)
 
         #### 调用工具函数 将 sing-box 规则转化为 Surge/Shadowrocket 规则
-        convert_json_to_surge(output_directory)
-        convert_json_to_clash(output_directory)
+        if config.extra_formats:
+            convert_json_to_surge(output_directory)
+            convert_json_to_clash(output_directory)
 
-        convert_yaml_to_mrs(config.clash_output_directory)
+            convert_yaml_to_mrs(config.clash_output_directory)
         self.write_quality_report(output_directory, config.quality_report_file)
         return True
 

@@ -33,6 +33,8 @@ class Config:
         self.surge_output_directory = os.path.join(self.rule_dir, 'surge')
         self.shadowrocket_output_directory = os.path.join(self.rule_dir, 'shadowrocket')
         self.clash_output_directory = os.path.join(self.rule_dir, 'clash')
+        # lite 分支只服务 sing-box 客户端（hz），不生成 Surge/Shadowrocket/Clash 产物
+        self.extra_formats = False
 
         self.trust_upstream = False
         self.ls_index = 1

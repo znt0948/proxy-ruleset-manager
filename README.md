@@ -1,4 +1,12 @@
-# proxy-ruleset-manager
+# proxy-ruleset-manager（lite 分支）
+
+> 这是 `lite` 分支：只生成 hz（sing-box 多用户中转管理）客户端模板用到的规则集——**直连**（`category-direct@light`）、**拦截**（`blocker-trash@mobile`、`blocker-httpdns`、`adguard-blocker@mobile`）和**下载**（`category-download@!cn`、`filter-downloadKeywords@!cn`），其余流量由模板的 `final` 走代理。只输出 sing-box 格式（`rule/singbox/`），不生成 Surge/Shadowrocket/Clash 产物。
+>
+> - 自维护规则在 `self-host/`，上游定义里的自维护链接指向本分支（`refs/heads/lite`）。
+> - 每日更新由 `main` 分支的 `lite-schedule.yml` 触发本分支的 `sync.yml`；推送到本分支也会触发。
+> - 规则使用地址：`https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/lite/rule/singbox/<名称>.srs`
+> - 以后 hz 的「规则观测」给出的修改建议，会以 PR 的形式提交到本分支的 `self-host/` 或 `corrections/`。
+
 
 一个用于整理代理规则集的生成工具。项目从 `upstream/*.yaml` 读取上游规则，生成 sing-box、Surge、Shadowrocket、Clash/Mihomo 等格式的规则文件，并通过 GitHub Actions 定时更新。
 
