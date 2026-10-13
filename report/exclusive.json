@@ -7666,105 +7666,6 @@
       "covering": {
         "domain_regex": "^mirror[-.].+"
       }
-    },
-    {
-      "field": "domain_suffix",
-      "value": "pgdt.gtimg.cn",
-      "kept_in": "adguard-blocker@mobile.json",
-      "carved_from": "geosite-category-direct@light.json",
-      "covering": {
-        "domain_suffix": "gtimg.cn"
-      }
-    },
-    {
-      "field": "domain_suffix",
-      "value": "ifacelog.iqiyi.com",
-      "kept_in": "adguard-blocker@mobile.json",
-      "carved_from": "geosite-category-direct@light.json",
-      "covering": {
-        "domain_suffix": "iqiyi.com"
-      }
-    },
-    {
-      "field": "domain_suffix",
-      "value": "mbdlog.iqiyi.com",
-      "kept_in": "adguard-blocker@mobile.json",
-      "carved_from": "geosite-category-direct@light.json",
-      "covering": {
-        "domain_suffix": "iqiyi.com"
-      }
-    },
-    {
-      "field": "domain",
-      "value": "httpdns.push.oppomobile.com",
-      "kept_in": "geosite-blocker-httpdns.json",
-      "carved_from": "geosite-category-direct@light.json",
-      "covering": {
-        "domain_suffix": "oppomobile.com"
-      }
-    },
-    {
-      "field": "domain_suffix",
-      "value": "httpdns.ocloud.oppomobile.com",
-      "kept_in": "adguard-blocker@mobile.json",
-      "carved_from": "geosite-category-direct@light.json",
-      "covering": {
-        "domain_suffix": "oppomobile.com"
-      }
-    },
-    {
-      "field": "domain_suffix",
-      "value": "a.market.xiaomi.com",
-      "kept_in": "adguard-blocker@mobile.json",
-      "carved_from": "geosite-category-direct@light.json",
-      "covering": {
-        "domain_suffix": "xiaomi.com"
-      }
-    },
-    {
-      "field": "domain_suffix",
-      "value": "data.mistat.india.xiaomi.com",
-      "kept_in": "adguard-blocker@mobile.json",
-      "carved_from": "geosite-category-direct@light.json",
-      "covering": {
-        "domain_suffix": "xiaomi.com"
-      }
-    },
-    {
-      "field": "domain_suffix",
-      "value": "data.mistat.intl.xiaomi.com",
-      "kept_in": "adguard-blocker@mobile.json",
-      "carved_from": "geosite-category-direct@light.json",
-      "covering": {
-        "domain_suffix": "xiaomi.com"
-      }
-    },
-    {
-      "field": "domain_suffix",
-      "value": "data.mistat.rus.xiaomi.com",
-      "kept_in": "adguard-blocker@mobile.json",
-      "carved_from": "geosite-category-direct@light.json",
-      "covering": {
-        "domain_suffix": "xiaomi.com"
-      }
-    },
-    {
-      "field": "domain_suffix",
-      "value": "data.mistat.xiaomi.com",
-      "kept_in": "adguard-blocker@mobile.json",
-      "carved_from": "geosite-category-direct@light.json",
-      "covering": {
-        "domain_suffix": "xiaomi.com"
-      }
-    },
-    {
-      "field": "domain_suffix",
-      "value": "tracker.ai.xiaomi.com",
-      "kept_in": "adguard-blocker@mobile.json",
-      "carved_from": "geosite-category-direct@light.json",
-      "covering": {
-        "domain_suffix": "xiaomi.com"
-      }
     }
   ],
   "blocked": [
@@ -7886,30 +7787,3461 @@
       }
     }
   ],
+  "regions": [
+    {
+      "pattern": {
+        "domain_keyword": "1fichier"
+      },
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "entries_of": "geosite-blocker-trash@mobile.json",
+      "carved_entries": 18
+    },
+    {
+      "pattern": {
+        "domain_keyword": "1fichier"
+      },
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "entries_of": "adguard-blocker@mobile.json",
+      "carved_entries": 1926
+    },
+    {
+      "pattern": {
+        "domain_keyword": "1fichier"
+      },
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "entries_of": "geosite-blocker-httpdns.json",
+      "carved_entries": 4
+    },
+    {
+      "pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      },
+      "carved_from": "geosite-category-direct@light.json",
+      "entries_of": "geosite-category-download@!cn.json",
+      "carved_entries": 60
+    },
+    {
+      "pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][a-e0-9]\\.cn$"
+      },
+      "carved_from": "geosite-category-direct@light.json",
+      "entries_of": "adguard-blocker@mobile.json",
+      "carved_entries": 69
+    },
+    {
+      "pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      },
+      "carved_from": "geosite-category-direct@light.json",
+      "entries_of": "geosite-blocker-trash@mobile.json",
+      "carved_entries": 8
+    },
+    {
+      "pattern": {
+        "domain_keyword": "1fichier"
+      },
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "entries_of": "geosite-category-direct@light.json",
+      "carved_entries": 8439
+    },
+    {
+      "pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][a-e0-9]\\.cn$"
+      },
+      "carved_from": "geosite-category-direct@light.json",
+      "entries_of": "geosite-blocker-trash@mobile.json",
+      "carved_entries": 9
+    },
+    {
+      "pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      },
+      "carved_from": "geosite-category-direct@light.json",
+      "entries_of": "adguard-blocker@mobile.json",
+      "carved_entries": 919
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.).*\\-datareceiver\\.aki\\-game\\.net$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.).*cdn\\-settings\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.).*conversions\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.).*launches\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.).*register\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)admob\\-app\\-id\\-.*\\.firebaseio\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)ali\\-bj\\-pcdn\\-.*\\.biliapi\\.net$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)analysis\\.polarisoffice\\.com"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)analytics\\-.*\\-nfl\\.yinzcam\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)api.*\\.amplitude\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)api.*\\.moengage\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)appanalysis.*\\.banggood\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)applog.*\\.matrix\\.easebar\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)attr\\-logs\\..*\\.amazonaws\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)batchlogging.*\\-eu\\.truecaller\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)batchlogging.*\\-noneu\\.truecaller\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)beacons.*\\.gvt3\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)collector\\-.*\\.perimeterx\\.net$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)datacollector\\-.*\\.dt\\.hicloud\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)device\\-metrics\\-.*\\.amazon\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)event\\..*\\.karrotmarket\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)flurry\\.agentportal\\-.*\\.yahoodns\\.net$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)flurry\\.agentportal\\..*\\.yahoodns\\.net$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)fp\\-.*it.*\\.fengkongcloud\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)gbxreport\\-.*\\.wf\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)hw\\-sh\\-pcdn\\-.*\\.biliapi\\.net$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)imp\\-.*\\.jampp\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)invenio_tracking_.*\\.sgnapps\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)kbox\\-analytics\\-prod\\.s.*\\.amazonaws\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)liveme\\-sensors\\-collect2\\-.*\\.amazonaws\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log.*\\-.*\\.tiktokv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log.*\\-misc\\-lf\\.amemv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log.*\\-normal\\-.*\\.tiktokv\\.com"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log.*\\-normal\\-useast1a\\.lemon8\\-app\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log.*\\.boomplaymusic\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log.*\\.byteoversea\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log\\-.*\\.isnssdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log\\-collector\\.shopee\\."
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log\\-va.*\\.capcutapi\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)logreport\\-global\\-dual\\.cool.*cloud\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)logs\\-.*\\.rebxgame\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)logservice\\.dbankcloud\\.cn"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)maas\\-.*\\.phunware\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mcs\\-va\\-.*\\.tiktokv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mcs\\..*\\.tiktok\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mcs\\..*\\.tiktokv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mobileanalytics\\..*\\.amazonaws\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mon.*\\-.*\\.tiktokv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mon.*\\-misc\\-lf\\.fqnovel\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mon.*\\-misc\\.fqnovel\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mon\\-.*\\.tiktokv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mon\\-v.*\\-boot\\.capcutapi\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mon\\-va.*\\.capcutapi\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mssdk\\.capcutapi\\.us"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)ping.*\\.bidease\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)report.*\\.appmetrica\\.webvisor\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)report\\..*\\.qq\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)rtlog.*\\.tiktokv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)sdk\\-.*\\.moengage\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)seller\\-log\\-collector\\.shopee\\."
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)snowplow\\-collector\\."
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)sonar.*\\.xy\\.fbcdn\\.net$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)stats\\..*\\.ronghub\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)stats\\..*\\.rongnav\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)tnc.*\\.tiktokv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)tnc16\\-.*\\.byteoversea\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)tnc16\\-.*\\.hypic\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)tnc\\-va.*\\.capcutapi\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)trace\\-.*\\.free\\-reels\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)track\\..*\\.roku\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)tracking\\-.*\\.trnox\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)tracking\\..*\\.miui\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)ulog.*\\.gifshow\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)ulog.*\\.kwai\\-pro\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)ulog.*\\.kwaipros\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)ulog\\-.*\\.ksapisrv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)ulog\\..*\\.ksapisrv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)ulog\\..*\\.kwai\\-pro\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)use\\-trk.*\\.bluevoox\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)weblogger\\-wss\\.cool.*cloud\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)wslog\\-global\\-dual\\.cool.*cloud\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)xlog.*\\-.*\\.tiktokv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": ".*\\-ad\\.sm\\.cn.*"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": ".*\\-ad\\.video\\.yximgs\\.com.*"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": ".*\\-ad\\.wtzw\\.com.*"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": ".*\\-be\\-pack\\-sign\\.pglstatp\\-toutiao\\.com.*"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-adrevenue\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-applog.*\\.fqnovel\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-attr\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-client\\-report\\.honkaiimpact3\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-datareceiver\\.aki\\-game\\.net$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-logsdk\\.kwai\\-pro\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-pia\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-rtb\\.gravite\\.net$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-skadsdkless\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-spiky\\.clevertap\\-prod\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-ulog\\-.*\\.kwai\\-pro\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-ulog\\-.*\\.kwaipros\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-ulog\\..*\\.kwai\\-pro\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-ulog\\..*\\.kwaipros\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-ulog\\.ksapisrv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-ulog\\.kwai\\-pro\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-ulog\\.kwaipros\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-ulog\\.region\\.kwai\\-pro\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-ulogl.*\\.kwai\\-pro\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-ulogl2\\.kwai\\-pro\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-ulogl2\\.kwaipros\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\.skadsdkless\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "^anon1.gt\\d{6}.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "^https:\\/\\/anon1.gt\\d{6}.com"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "dlsdk\\.appsflyer\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "dlsdk\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "dynamic\\-report\\-api\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "gcdsdk\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)datacollector\\-.*\\.dt\\.dbankcloud\\.cn$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][a-e0-9]\\.cn$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)logservice\\-.*\\.platform\\.dbankcloud\\.cn$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][a-e0-9]\\.cn$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)ubacollect\\-.*\\.cloud\\.dbankcloud\\.cn$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][a-e0-9]\\.cn$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)discovery\\-ios\\-.*\\.ertelecom\\.ru$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": "^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)f\\-log\\-.*\\.grammarly\\.io$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": "^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log.*\\-normal\\-.*\\.tiktokv\\.us$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": "^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mapi\\-log\\.qoo.*\\.jp$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": "^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mon.*\\-.*\\.tiktokv\\.us$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": "^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)report\\..*\\.gbqofs\\.io$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": "^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)rtlog.*\\.tiktokv\\.us$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": "^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)sdk\\.fra\\-.*\\.braze\\.eu$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": "^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)t.*\\.playdigo\\.live$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": "^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)tnc.*\\.tiktokv\\.us$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": "^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)trace\\-.*\\.hungrypanda\\.co$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": "^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)track\\-.*\\.hungrypanda\\.co$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": "^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "api-dns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "api.dns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "apidns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "dns-api"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "dns.api"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "dnsapi"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "http-dns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "http.dns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "httpdns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "https-dns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "https.dns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "httpsdns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "chanct"
+      },
+      "kept_in": "geosite-blocker-trash@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "fqzpt"
+      },
+      "kept_in": "geosite-blocker-trash@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "fzlm"
+      },
+      "kept_in": "geosite-blocker-trash@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "gjfzpt"
+      },
+      "kept_in": "geosite-blocker-trash@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "ifcert.cn"
+      },
+      "kept_in": "geosite-blocker-trash@mobile.json",
+      "excluded_from": "geosite-category-direct@light.json",
+      "overlapping_pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)beacons.*\\.gvt3\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 1
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log.*\\-normal\\-useast1a\\.lemon8\\-app\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 1
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)analysis\\.polarisoffice\\.com"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log.*\\-normal\\-.*\\.tiktokv\\.com"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log\\-collector\\.shopee\\."
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)logservice\\.dbankcloud\\.cn"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mssdk\\.capcutapi\\.us"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)seller\\-log\\-collector\\.shopee\\."
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)snowplow\\-collector\\."
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_regex": ".*\\-ad\\.sm\\.cn.*"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_regex": ".*\\-ad\\.video\\.yximgs\\.com.*"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_regex": ".*\\-ad\\.wtzw\\.com.*"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_regex": ".*\\-be\\-pack\\-sign\\.pglstatp\\-toutiao\\.com.*"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_regex": "^https:\\/\\/anon1.gt\\d{6}.com"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mapi\\-log\\.qoo.*\\.jp$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 4
+    },
+    {
+      "pattern": {
+        "domain_regex": "^anon1.gt\\d{6}.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 53
+    },
+    {
+      "pattern": {
+        "domain_keyword": "api-dns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_keyword": "api.dns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_keyword": "apidns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_keyword": "dns-api"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_keyword": "dns.api"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_keyword": "dnsapi"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_keyword": "http-dns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_keyword": "http.dns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_keyword": "httpdns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_keyword": "https-dns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_keyword": "https.dns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_keyword": "httpsdns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_keyword": "chanct"
+      },
+      "kept_in": "geosite-blocker-trash@mobile.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_keyword": "fqzpt"
+      },
+      "kept_in": "geosite-blocker-trash@mobile.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_keyword": "fzlm"
+      },
+      "kept_in": "geosite-blocker-trash@mobile.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_keyword": "gjfzpt"
+      },
+      "kept_in": "geosite-blocker-trash@mobile.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_keyword": "ifcert.cn"
+      },
+      "kept_in": "geosite-blocker-trash@mobile.json",
+      "excluded_from": "geosite-category-download@!cn.json",
+      "overlapping_entries": 177
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.).*\\-datareceiver\\.aki\\-game\\.net$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.).*cdn\\-settings\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.).*conversions\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.).*launches\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.).*register\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)admob\\-app\\-id\\-.*\\.firebaseio\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)ali\\-bj\\-pcdn\\-.*\\.biliapi\\.net$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)analysis\\.polarisoffice\\.com"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)analytics\\-.*\\-nfl\\.yinzcam\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)api.*\\.amplitude\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)api.*\\.moengage\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)appanalysis.*\\.banggood\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)applog.*\\.matrix\\.easebar\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)attr\\-logs\\..*\\.amazonaws\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)batchlogging.*\\-eu\\.truecaller\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)batchlogging.*\\-noneu\\.truecaller\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)beacons.*\\.gvt3\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)collector\\-.*\\.perimeterx\\.net$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)datacollector\\-.*\\.dt\\.dbankcloud\\.cn$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)datacollector\\-.*\\.dt\\.hicloud\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)device\\-metrics\\-.*\\.amazon\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)discovery\\-ios\\-.*\\.ertelecom\\.ru$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)event\\..*\\.karrotmarket\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)f\\-log\\-.*\\.grammarly\\.io$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)flurry\\.agentportal\\-.*\\.yahoodns\\.net$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)flurry\\.agentportal\\..*\\.yahoodns\\.net$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)fp\\-.*it.*\\.fengkongcloud\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)gbxreport\\-.*\\.wf\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)hw\\-sh\\-pcdn\\-.*\\.biliapi\\.net$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)imp\\-.*\\.jampp\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)invenio_tracking_.*\\.sgnapps\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)kbox\\-analytics\\-prod\\.s.*\\.amazonaws\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)liveme\\-sensors\\-collect2\\-.*\\.amazonaws\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log.*\\-.*\\.tiktokv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log.*\\-misc\\-lf\\.amemv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log.*\\-normal\\-.*\\.tiktokv\\.com"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log.*\\-normal\\-.*\\.tiktokv\\.us$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log.*\\-normal\\-useast1a\\.lemon8\\-app\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log.*\\.boomplaymusic\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log.*\\.byteoversea\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log\\-.*\\.isnssdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log\\-collector\\.shopee\\."
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)log\\-va.*\\.capcutapi\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)logreport\\-global\\-dual\\.cool.*cloud\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)logs\\-.*\\.rebxgame\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)logservice\\-.*\\.platform\\.dbankcloud\\.cn$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)logservice\\.dbankcloud\\.cn"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)maas\\-.*\\.phunware\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mapi\\-log\\.qoo.*\\.jp$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mcs\\-va\\-.*\\.tiktokv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mcs\\..*\\.tiktok\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mcs\\..*\\.tiktokv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mobileanalytics\\..*\\.amazonaws\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mon.*\\-.*\\.tiktokv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mon.*\\-.*\\.tiktokv\\.us$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mon.*\\-misc\\-lf\\.fqnovel\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mon.*\\-misc\\.fqnovel\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mon\\-.*\\.tiktokv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mon\\-v.*\\-boot\\.capcutapi\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mon\\-va.*\\.capcutapi\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)mssdk\\.capcutapi\\.us"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)ping.*\\.bidease\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)report.*\\.appmetrica\\.webvisor\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)report\\..*\\.gbqofs\\.io$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)report\\..*\\.qq\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)rtlog.*\\.tiktokv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)rtlog.*\\.tiktokv\\.us$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)sdk\\-.*\\.moengage\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)sdk\\.fra\\-.*\\.braze\\.eu$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)seller\\-log\\-collector\\.shopee\\."
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)snowplow\\-collector\\."
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)sonar.*\\.xy\\.fbcdn\\.net$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)stats\\..*\\.ronghub\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)stats\\..*\\.rongnav\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)t.*\\.playdigo\\.live$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)tnc.*\\.tiktokv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)tnc.*\\.tiktokv\\.us$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)tnc16\\-.*\\.byteoversea\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)tnc16\\-.*\\.hypic\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)tnc\\-va.*\\.capcutapi\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)trace\\-.*\\.free\\-reels\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)trace\\-.*\\.hungrypanda\\.co$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)track\\-.*\\.hungrypanda\\.co$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)track\\..*\\.roku\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)tracking\\-.*\\.trnox\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)tracking\\..*\\.miui\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)ubacollect\\-.*\\.cloud\\.dbankcloud\\.cn$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)ulog.*\\.gifshow\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)ulog.*\\.kwai\\-pro\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)ulog.*\\.kwaipros\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)ulog\\-.*\\.ksapisrv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)ulog\\..*\\.ksapisrv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)ulog\\..*\\.kwai\\-pro\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)use\\-trk.*\\.bluevoox\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)weblogger\\-wss\\.cool.*cloud\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)wslog\\-global\\-dual\\.cool.*cloud\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "(^|\\.)xlog.*\\-.*\\.tiktokv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": ".*\\-ad\\.sm\\.cn.*"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": ".*\\-ad\\.video\\.yximgs\\.com.*"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": ".*\\-ad\\.wtzw\\.com.*"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": ".*\\-be\\-pack\\-sign\\.pglstatp\\-toutiao\\.com.*"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-adrevenue\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-applog.*\\.fqnovel\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-attr\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-client\\-report\\.honkaiimpact3\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-datareceiver\\.aki\\-game\\.net$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-logsdk\\.kwai\\-pro\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-pia\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-rtb\\.gravite\\.net$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-skadsdkless\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-spiky\\.clevertap\\-prod\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-ulog\\-.*\\.kwai\\-pro\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-ulog\\-.*\\.kwaipros\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-ulog\\..*\\.kwai\\-pro\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-ulog\\..*\\.kwaipros\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-ulog\\.ksapisrv\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-ulog\\.kwai\\-pro\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-ulog\\.kwaipros\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-ulog\\.region\\.kwai\\-pro\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-ulogl.*\\.kwai\\-pro\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-ulogl2\\.kwai\\-pro\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\-ulogl2\\.kwaipros\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "\\.skadsdkless\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "^anon1.gt\\d{6}.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "^https:\\/\\/anon1.gt\\d{6}.com"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "dlsdk\\.appsflyer\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "dlsdk\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "dynamic\\-report\\-api\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "gcdsdk\\.appsflyersdk\\.com$"
+      },
+      "kept_in": "adguard-blocker@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "api-dns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "api.dns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "apidns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "dns-api"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "dns.api"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "dnsapi"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "http-dns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "http.dns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "httpdns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "https-dns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "https.dns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "httpsdns"
+      },
+      "kept_in": "geosite-blocker-httpdns.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "chanct"
+      },
+      "kept_in": "geosite-blocker-trash@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "fqzpt"
+      },
+      "kept_in": "geosite-blocker-trash@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "fzlm"
+      },
+      "kept_in": "geosite-blocker-trash@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "gjfzpt"
+      },
+      "kept_in": "geosite-blocker-trash@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_keyword": "ifcert.cn"
+      },
+      "kept_in": "geosite-blocker-trash@mobile.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
+      },
+      "kept_in": "geosite-category-direct@light.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": ".+\\.awsdns-cn-[0-9][a-e0-9]\\.cn$"
+      },
+      "kept_in": "geosite-category-direct@light.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "^.*\\.fastly-edge\\.com$"
+      },
+      "kept_in": "geosite-category-direct@light.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "^.+-mihayo\\.akamaized\\.net$"
+      },
+      "kept_in": "geosite-category-direct@light.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$"
+      },
+      "kept_in": "geosite-category-direct@light.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "^cdn\\d-epicgames-\\d+\\.file\\.myqcloud\\.com$"
+      },
+      "kept_in": "geosite-category-direct@light.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "^epicgames-download\\d-\\d+\\.file\\.myqcloud\\.com$"
+      },
+      "kept_in": "geosite-category-direct@light.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "^nis.+\\.10010\\.com$"
+      },
+      "kept_in": "geosite-category-direct@light.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.googlevideo\\.com$"
+      },
+      "kept_in": "geosite-category-direct@light.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    },
+    {
+      "pattern": {
+        "domain_regex": "^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.xn--ngstr-lra8j\\.com$"
+      },
+      "kept_in": "geosite-category-direct@light.json",
+      "excluded_from": "geosite-filter-downloadKeywords@!cn.json",
+      "overlapping_pattern": {
+        "domain_keyword": "1fichier"
+      }
+    }
+  ],
   "unresolved": [],
   "hand_conflicts": [],
   "summary": {
     "geoip-category-direct@light.json": {
       "removed": 0,
-      "carved": 86
+      "carved": 43
     },
     "geosite-blocker-httpdns.json": {
       "removed": 0,
-      "carved": 5
+      "carved": 3
     },
     "geosite-category-direct@light.json": {
       "removed": 44,
-      "carved": 1430
+      "carved": 1921
     },
     "geosite-category-download@!cn.json": {
       "removed": 3,
-      "carved": 21
+      "carved": 44
     },
     "geosite-filter-downloadKeywords@!cn.json": {
       "removed": 0,
-      "carved": 123
+      "carved": 10605
     }
   },
   "remaining": [],
-  "passes": 2
+  "passes": 1,
+  "changed": [
+    {
+      "name": "bdns-api-test.net",
+      "before": "reject",
+      "after": "direct"
+    },
+    {
+      "name": "beacons.gcp.gvt2.com",
+      "before": "download",
+      "after": "direct"
+    },
+    {
+      "name": "beacons2.gvt2.com",
+      "before": "download",
+      "after": "direct"
+    },
+    {
+      "name": "beacons3.gvt2.com",
+      "before": "download",
+      "after": "direct"
+    },
+    {
+      "name": "cn.download.nvidia.com",
+      "before": "download",
+      "after": "direct"
+    },
+    {
+      "name": "dnsapi.cn",
+      "before": "reject",
+      "after": "direct"
+    },
+    {
+      "name": "geforce.cn",
+      "before": "download",
+      "after": "direct"
+    },
+    {
+      "name": "gofile.io",
+      "before": "download",
+      "after": "direct"
+    },
+    {
+      "name": "gputechconf.cn",
+      "before": "download",
+      "after": "direct"
+    },
+    {
+      "name": "nvidia.cn",
+      "before": "download",
+      "after": "direct"
+    },
+    {
+      "name": "redirector.gcpcdn.gvt1.com",
+      "before": "download",
+      "after": "direct"
+    },
+    {
+      "name": "redirector.gvt1.com",
+      "before": "download",
+      "after": "direct"
+    },
+    {
+      "name": "redirector.offline-maps.gvt1.com",
+      "before": "download",
+      "after": "direct"
+    },
+    {
+      "name": "redirector.snap.gvt1.com",
+      "before": "download",
+      "after": "direct"
+    }
+  ],
+  "orphaned": []
 }

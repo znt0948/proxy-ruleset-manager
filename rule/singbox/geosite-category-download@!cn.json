@@ -306,6 +306,43 @@
                         "redirector.offline-maps.gvt1.com",
                         "redirector.snap.gvt1.com"
                     ],
+                    "domain_keyword": [
+                        "api-dns",
+                        "api.dns",
+                        "apidns",
+                        "chanct",
+                        "dns-api",
+                        "dns.api",
+                        "dnsapi",
+                        "fqzpt",
+                        "fzlm",
+                        "gjfzpt",
+                        "http-dns",
+                        "http.dns",
+                        "httpdns",
+                        "https-dns",
+                        "https.dns",
+                        "httpsdns",
+                        "ifcert.cn"
+                    ],
+                    "domain_regex": [
+                        "(^|\\.)analysis\\.polarisoffice\\.com",
+                        "(^|\\.)beacons.*\\.gvt3\\.com$",
+                        "(^|\\.)log.*\\-normal\\-.*\\.tiktokv\\.com",
+                        "(^|\\.)log.*\\-normal\\-useast1a\\.lemon8\\-app\\.com$",
+                        "(^|\\.)log\\-collector\\.shopee\\.",
+                        "(^|\\.)logservice\\.dbankcloud\\.cn",
+                        "(^|\\.)mapi\\-log\\.qoo.*\\.jp$",
+                        "(^|\\.)mssdk\\.capcutapi\\.us",
+                        "(^|\\.)seller\\-log\\-collector\\.shopee\\.",
+                        "(^|\\.)snowplow\\-collector\\.",
+                        ".*\\-ad\\.sm\\.cn.*",
+                        ".*\\-ad\\.video\\.yximgs\\.com.*",
+                        ".*\\-ad\\.wtzw\\.com.*",
+                        ".*\\-be\\-pack\\-sign\\.pglstatp\\-toutiao\\.com.*",
+                        "^anon1.gt\\d{6}.com$",
+                        "^https:\\/\\/anon1.gt\\d{6}.com"
+                    ],
                     "domain_suffix": [
                         "beacons.gvt2.com"
                     ],
