@@ -51,6 +51,7 @@ jobs:
         # 添加log.txt和规则文件
         git add ./rule/
         git add ./log.txt
+        git add ./report/
     
         # 检查是否有文件被修改
         if git diff --staged --quiet; then
