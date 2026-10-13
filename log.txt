@@ -1,7 +1,7 @@
-2026-10-13 02:45:15,686 - INFO - adguard-blocker@mobile 跳过 84 条 sing-box DNS 规则不支持的 AdGuard 条目
-2026-10-13 02:45:15,686 - INFO - adguard-blocker@mobile AdGuard DNS 优化: 2363 -> 2061，完全重复 73，后缀覆盖精确规则 0，后缀覆盖后缀规则 82
-2026-10-13 02:45:16,072 - INFO - blocker-httpdns 规则整理完成:
-2026-10-13 02:45:16,072 - INFO - 类型: geosite
+2026-10-13 04:00:24,736 - INFO - adguard-blocker@mobile 跳过 84 条 sing-box DNS 规则不支持的 AdGuard 条目
+2026-10-13 04:00:24,736 - INFO - adguard-blocker@mobile AdGuard DNS 优化: 2363 -> 2061，完全重复 73，后缀覆盖精确规则 0，后缀覆盖后缀规则 82
+2026-10-13 04:00:25,333 - INFO - blocker-httpdns 规则整理完成:
+2026-10-13 04:00:25,333 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 34
 规则分析:
@@ -14,7 +14,7 @@ domain 被过滤掉的条目数量: 0
   无效规则/值数量: 0
   失败的必需上游数: 0
 --------------------------------------------------
-2026-10-13 02:45:16,072 - INFO - 类型: geoip
+2026-10-13 04:00:25,333 - INFO - 类型: geoip
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 41
 规则分析:
@@ -27,8 +27,8 @@ domain 被过滤掉的条目数量: 0
   无效规则/值数量: 0
   失败的必需上游数: 0
 --------------------------------------------------
-2026-10-13 02:45:16,202 - INFO - blocker-trash@mobile 规则整理完成:
-2026-10-13 02:45:16,202 - INFO - 类型: geosite
+2026-10-13 04:00:25,513 - INFO - blocker-trash@mobile 规则整理完成:
+2026-10-13 04:00:25,513 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 30
 规则分析:
@@ -41,13 +41,13 @@ domain 被过滤掉的条目数量: 0
   无效规则/值数量: 0
   失败的必需上游数: 0
 --------------------------------------------------
-2026-10-13 02:45:17,539 - INFO - category-direct@light 规则整理完成:
-2026-10-13 02:45:17,539 - INFO - 类型: geosite
+2026-10-13 04:00:27,311 - INFO - category-direct@light 规则整理完成:
+2026-10-13 04:00:27,311 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
-剩余规则总数: 9642
+剩余规则总数: 9643
 规则分析:
   domain 条目数: 721
-  domain_suffix 条目数: 8911
+  domain_suffix 条目数: 8912
   ip_cidr 条目数: 0
   process_name 条目数: 0
   domain_regex 条目数: 10
@@ -55,7 +55,7 @@ domain 被过滤掉的条目数量: 0
   无效规则/值数量: 0
   失败的必需上游数: 0
 --------------------------------------------------
-2026-10-13 02:45:17,539 - INFO - 类型: geoip
+2026-10-13 04:00:27,311 - INFO - 类型: geoip
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 8113
 规则分析:
@@ -68,8 +68,8 @@ domain 被过滤掉的条目数量: 0
   无效规则/值数量: 0
   失败的必需上游数: 0
 --------------------------------------------------
-2026-10-13 02:45:19,592 - INFO - category-download@!cn 规则整理完成:
-2026-10-13 02:45:19,592 - INFO - 类型: geosite
+2026-10-13 04:00:31,243 - INFO - category-download@!cn 规则整理完成:
+2026-10-13 04:00:31,243 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 293
 规则分析:
@@ -82,7 +82,7 @@ domain 被过滤掉的条目数量: 0
   无效规则/值数量: 0
   失败的必需上游数: 0
 --------------------------------------------------
-2026-10-13 02:45:19,592 - INFO - 类型: geoip
+2026-10-13 04:00:31,243 - INFO - 类型: geoip
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 1
 规则分析:
@@ -95,8 +95,8 @@ domain 被过滤掉的条目数量: 0
   无效规则/值数量: 0
   失败的必需上游数: 0
 --------------------------------------------------
-2026-10-13 02:45:19,719 - INFO - filter-downloadKeywords@!cn 规则整理完成:
-2026-10-13 02:45:19,719 - INFO - 类型: geosite
+2026-10-13 04:00:31,393 - INFO - filter-downloadKeywords@!cn 规则整理完成:
+2026-10-13 04:00:31,393 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 19
 规则分析:
@@ -109,12 +109,12 @@ domain 被过滤掉的条目数量: 0
   无效规则/值数量: 0
   失败的必需上游数: 0
 --------------------------------------------------
-2026-10-13 02:45:19,719 - INFO - 处理类别：geosite-category-direct
-2026-10-13 02:45:19,719 - INFO - 跳过处理 geosite-category-direct，因为没有全体文件
-2026-10-13 02:45:19,719 - INFO - 处理类别：geoip-category-direct
-2026-10-13 02:45:19,719 - INFO - 跳过处理 geoip-category-direct，因为没有全体文件
-2026-10-13 02:45:19,719 - INFO - 处理类别：geosite-category-download
-2026-10-13 02:45:19,719 - INFO - 跳过处理 geosite-category-download，因为没有全体文件
-2026-10-13 02:45:19,719 - INFO - 处理类别：geoip-category-download
-2026-10-13 02:45:19,719 - INFO - 跳过处理 geoip-category-download，因为没有全体文件
-2026-10-13 02:45:19,755 - INFO - [classification correction] geosite-category-direct@light.json: domain 删除 20 条，domain_suffix 删除 0 条
+2026-10-13 04:00:31,393 - INFO - 处理类别：geosite-category-direct
+2026-10-13 04:00:31,393 - INFO - 跳过处理 geosite-category-direct，因为没有全体文件
+2026-10-13 04:00:31,393 - INFO - 处理类别：geoip-category-direct
+2026-10-13 04:00:31,393 - INFO - 跳过处理 geoip-category-direct，因为没有全体文件
+2026-10-13 04:00:31,393 - INFO - 处理类别：geosite-category-download
+2026-10-13 04:00:31,394 - INFO - 跳过处理 geosite-category-download，因为没有全体文件
+2026-10-13 04:00:31,394 - INFO - 处理类别：geoip-category-download
+2026-10-13 04:00:31,394 - INFO - 跳过处理 geoip-category-download，因为没有全体文件
+2026-10-13 04:00:31,437 - INFO - [classification correction] geosite-category-direct@light.json: domain 删除 20 条，domain_suffix 删除 0 条
