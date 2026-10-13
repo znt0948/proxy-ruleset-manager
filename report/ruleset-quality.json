@@ -311,13 +311,13 @@
       "sources": [
         {
           "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json",
-          "raw_entries": 38,
-          "normalized_entries": 37,
+          "raw_entries": 41,
+          "normalized_entries": 40,
           "unsupported_rules": 0,
           "invalid_rules_or_values": 0,
           "deduplication": {
-            "input_entries": 37,
-            "output_entries": 37,
+            "input_entries": 40,
+            "output_entries": 40,
             "removed_entries": 0,
             "exact_duplicates": 0,
             "domain_covered_by_suffix": 0,
@@ -439,11 +439,11 @@
       "provenance": {
         "tracked_normalized_entries": 9642,
         "published_entries": 9642,
-        "published_entries_with_multiple_exact_sources": 6,
+        "published_entries_with_multiple_exact_sources": 9,
         "published_entries_without_exact_source": 0,
-        "normalized_entries_shared_by_sources": 6,
+        "normalized_entries_shared_by_sources": 9,
         "source_output_contribution": {
-          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json": 37,
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json": 40,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-private.srs": 131,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs": 9303,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-springer.srs": 5,
@@ -457,7 +457,7 @@
               "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
               "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json"
             ],
-            "entry_count": 5
+            "entry_count": 8
           },
           {
             "sources": [
@@ -494,6 +494,22 @@
           },
           {
             "field": "domain_suffix",
+            "value": "geforce.cn",
+            "sources": [
+              "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain_suffix",
+            "value": "gputechconf.cn",
+            "sources": [
+              "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain_suffix",
             "value": "ieee.org",
             "sources": [
               "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json",
@@ -511,6 +527,14 @@
           {
             "field": "domain_suffix",
             "value": "mxbc.net",
+            "sources": [
+              "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json",
+              "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+            ]
+          },
+          {
+            "field": "domain_suffix",
+            "value": "nvidia.cn",
             "sources": [
               "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json",
               "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
@@ -932,6 +956,14 @@
     }
   ],
   "published_inventory": [
+    {
+      "ruleset": "adguard-blocker@mobile",
+      "entries": 2061,
+      "entries_by_field": {
+        "domain_regex": 129,
+        "domain_suffix": 1932
+      }
+    },
     {
       "ruleset": "geoip-blocker-httpdns",
       "entries": 41,
