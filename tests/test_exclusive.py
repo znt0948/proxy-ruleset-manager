@@ -100,6 +100,19 @@ class ExclusiveTest(unittest.TestCase):
         ties = {(t["value"], t["kept_in"]) for t in report["ties"]}
         self.assertIn(("kept-ads.example", "geosite-category-direct@light.json"), ties)
 
+    def test_no_orphans_when_a_tie_moves_an_entry(self):
+        # direct's regex only has the literal tail ".cn", so it "overlaps"
+        # download's nvidia.cn; the hand-kept tie moves nvidia.cn to direct.
+        # Carving nvidia.cn out of direct for the regex would orphan it.
+        write(self.output, "geosite-category-download@!cn.json", [{"domain_suffix": ["nvidia.cn", "download.nvidia.com"]}])
+        write(self.output, "geosite-category-direct@light.json", [{"domain_suffix": ["nvidia.cn", "qq.com"],
+                                                                   "domain_regex": [".+\\.awsdns-cn-[0-9][a-e0-9]\\.cn$"]}])
+        write(self.root, "self-host/geosite-direct@selfhost.json", [{"domain_suffix": ["nvidia.cn"]}])
+        report = make_exclusive(self.output, root=self.root)
+        self.assertEqual((report["remaining"], report["orphaned"]), ([], []))
+        self.assertEqual(destinations(self.output, "nvidia.cn"), {"direct"})
+        self.assertEqual(destinations(self.output, "www.nvidia.cn"), {"direct"})
+
     def test_idempotent(self):
         make_exclusive(self.output, root=self.root)
         before = {name: read(self.output, name) for name in os.listdir(self.output)}

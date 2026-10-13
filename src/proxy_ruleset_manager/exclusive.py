@@ -367,7 +367,12 @@ def _exclusive_pass(output_directory, root):
             for other, other_info in sets.items():
                 if other_info["group"] == info["group"]:
                     continue
-                hits = [(f, v) for f, v in other_info["index"].entries() if _intersects(pattern_field, pattern, compiled, f, v)]
+                # Entries the other set gives up (removed, or carved out of it)
+                # cannot take a region over: carving them would leave names
+                # without any match.
+                hits = [(f, v) for f, v in other_info["index"].entries()
+                        if (f, v) not in removals[other] and (f, v) not in exceptions[other]
+                        and _intersects(pattern_field, pattern, compiled, f, v)]
                 # Patterns of the other destination that may overlap this one.
                 other_index = other_info["index"]
                 other_patterns = [("domain_keyword", k) for k in other_index.keywords] + [("domain_regex", p) for p, _ in other_index.regexes]
