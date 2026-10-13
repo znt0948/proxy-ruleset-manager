@@ -1,0 +1,1309 @@
+{
+  "ties": [
+    {
+      "field": "domain",
+      "value": "dl.google.com",
+      "kept_in": "geosite-category-download@!cn.json",
+      "removed_from": "geosite-category-direct@light.json"
+    },
+    {
+      "field": "domain_suffix",
+      "value": "httpdns.pro",
+      "kept_in": "geosite-blocker-httpdns.json",
+      "removed_from": "geosite-category-direct@light.json"
+    },
+    {
+      "field": "domain_suffix",
+      "value": "geforce.cn",
+      "kept_in": "geosite-category-download@!cn.json",
+      "removed_from": "geosite-category-direct@light.json"
+    },
+    {
+      "field": "domain_suffix",
+      "value": "gputechconf.cn",
+      "kept_in": "geosite-category-download@!cn.json",
+      "removed_from": "geosite-category-direct@light.json"
+    },
+    {
+      "field": "domain_suffix",
+      "value": "nvidia.cn",
+      "kept_in": "geosite-category-download@!cn.json",
+      "removed_from": "geosite-category-direct@light.json"
+    },
+    {
+      "field": "domain_suffix",
+      "value": "plex.direct",
+      "kept_in": "geosite-category-download@!cn.json",
+      "removed_from": "geosite-category-direct@light.json"
+    }
+  ],
+  "carved": [
+    {
+      "field": "ip_cidr",
+      "value": "101.124.19.122/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "101.124.0.0/15"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "101.91.140.124/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "101.80.0.0/12"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "101.91.140.224/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "101.80.0.0/12"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "103.224.222.208/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "103.224.220.0/22"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "112.64.218.119/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "112.64.0.0/14"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "112.65.200.117/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "112.64.0.0/14"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "114.116.215.110/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "114.116.0.0/15"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "115.236.121.195/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "115.224.0.0/12"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "115.236.121.51/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "115.224.0.0/12"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "116.63.10.135/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "116.60.0.0/14"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "116.63.10.31/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "116.60.0.0/14"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "117.144.238.29/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "117.144.0.0/12"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "117.185.228.108/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "117.160.0.0/11"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "118.89.204.198/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "118.89.0.0/16"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "119.29.29.98/31",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "119.28.0.0/15"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "120.46.169.234/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "120.32.0.0/12"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "121.36.72.124/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "121.32.0.0/13"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "122.9.13.79/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "122.9.0.0/16"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "122.9.15.129/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "122.9.0.0/16"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "122.9.7.134/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "122.9.0.0/16"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "123.151.54.50/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "123.144.0.0/12"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "157.148.47.204/32",
+      "kept_in": "geosite-blocker-trash@mobile.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "157.148.0.0/16"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "180.76.76.200/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "180.76.0.0/14"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "182.254.116.117/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "182.254.0.0/16"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "182.254.118.119/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "182.254.0.0/16"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "202.90.108.13/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "202.90.96.0/19"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "202.90.110.46/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "202.90.96.0/19"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "203.107.1.0/24",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "203.107.0.0/17"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "219.143.187.136/32",
+      "kept_in": "geosite-blocker-trash@mobile.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "219.128.0.0/11"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "2402:4e00:1200:ed00:0:9089:6dac:96b6/128",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "2402:4e00::/32"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "2402:4e00:1900:1700:0:9554:1ad9:c3a/128",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "2402:4e00::/32"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "2402:db40:5100:1011::5/128",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "2402:db40::/32"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "240e:928:1400:10::25/128",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "240e:800::/21"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "39.97.128.148/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "39.96.0.0/13"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "39.97.130.51/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "39.96.0.0/13"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "42.187.182.106/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "42.187.128.0/17"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "42.187.182.123/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "42.187.128.0/17"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "42.187.184.154/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "42.187.128.0/17"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "42.81.232.18/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "42.80.0.0/15"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "47.100.123.169/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "47.96.0.0/11"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "47.101.175.206/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "47.96.0.0/11"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "59.111.239.61/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "59.108.0.0/14"
+      }
+    },
+    {
+      "field": "ip_cidr",
+      "value": "59.111.239.62/32",
+      "kept_in": "geoip-blocker-httpdns.json",
+      "carved_from": "geoip-category-direct@light.json",
+      "covering": {
+        "ip_cidr": "59.108.0.0/14"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "bdns-api-test.net",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-blocker-httpdns.json",
+      "covering": {
+        "domain_keyword": "dns-api"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "dnsapi.cn",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-blocker-httpdns.json",
+      "covering": {
+        "domain_keyword": "dnsapi"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "httpdns.ocloud.oppomobile.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-blocker-httpdns.json",
+      "covering": {
+        "domain_keyword": "httpdns"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "httpdns.music.163.com",
+      "kept_in": "geosite-blocker-httpdns.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "163.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "lofter.httpdns.c.163.com",
+      "kept_in": "geosite-blocker-httpdns.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "163.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "music.httpdns.c.163.com",
+      "kept_in": "geosite-blocker-httpdns.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "163.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "httpdns.alicdn.com",
+      "kept_in": "geosite-blocker-httpdns.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "alicdn.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "httpdns-api.aliyuncs.com",
+      "kept_in": "geosite-blocker-httpdns.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "aliyuncs.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "httpdns-sc.aliyuncs.com",
+      "kept_in": "geosite-blocker-httpdns.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "aliyuncs.com"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "httpdns.baidu.com",
+      "kept_in": "geosite-blocker-httpdns.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "baidu.com"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "httpsdns.baidu.com",
+      "kept_in": "geosite-blocker-httpdns.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "baidu.com"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "httpdns.baidubce.com",
+      "kept_in": "geosite-blocker-httpdns.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "baidubce.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "httpdns.bilivideo.com",
+      "kept_in": "geosite-blocker-httpdns.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "bilivideo.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "httpdns.calorietech.com",
+      "kept_in": "geosite-blocker-httpdns.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "calorietech.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "httpdns.c.cdnhwc2.com",
+      "kept_in": "geosite-blocker-httpdns.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "cdnhwc2.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "httpdns.push.oppomobile.com",
+      "kept_in": "geosite-blocker-httpdns.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "httpdns.push.oppomobile.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "dns.jd.com",
+      "kept_in": "geosite-blocker-httpdns.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "jd.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "httpdns.meituan.com",
+      "kept_in": "geosite-blocker-httpdns.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "meituan.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "tracking.india.miui.com",
+      "kept_in": "geosite-blocker-trash@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "miui.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "tracking.intl.miui.com",
+      "kept_in": "geosite-blocker-trash@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "miui.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "tracking.miui.com",
+      "kept_in": "geosite-blocker-trash@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "miui.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "tracking.rus.miui.com",
+      "kept_in": "geosite-blocker-trash@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "miui.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "httpdns.n.netease.com",
+      "kept_in": "geosite-blocker-httpdns.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "netease.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "dns.weixin.qq.com",
+      "kept_in": "geosite-blocker-httpdns.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "qq.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "dns.weixin.qq.com.cn",
+      "kept_in": "geosite-blocker-httpdns.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "qq.com.cn"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "httpdns.volcengineapi.com",
+      "kept_in": "geosite-blocker-httpdns.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "volcengineapi.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "dns.weibo.cn",
+      "kept_in": "geosite-blocker-httpdns.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "weibo.cn"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "api.installer.xiaomi.com",
+      "kept_in": "geosite-blocker-trash@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "xiaomi.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "httpdns.yunxindns.com",
+      "kept_in": "geosite-blocker-httpdns.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "yunxindns.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "gofile.io",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-category-download@!cn.json",
+      "covering": {
+        "domain_suffix": "gofile.io"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "redirector.gcpcdn.gvt1.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-category-download@!cn.json",
+      "covering": {
+        "domain_suffix": "gvt1.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "redirector.gvt1.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-category-download@!cn.json",
+      "covering": {
+        "domain_suffix": "gvt1.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "redirector.offline-maps.gvt1.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-category-download@!cn.json",
+      "covering": {
+        "domain_suffix": "gvt1.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "redirector.snap.gvt1.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-category-download@!cn.json",
+      "covering": {
+        "domain_suffix": "gvt1.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "beacons.gcp.gvt2.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-category-download@!cn.json",
+      "covering": {
+        "domain_suffix": "gvt2.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "beacons.gvt2.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-category-download@!cn.json",
+      "covering": {
+        "domain_suffix": "gvt2.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "beacons2.gvt2.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-category-download@!cn.json",
+      "covering": {
+        "domain_suffix": "gvt2.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "beacons3.gvt2.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-category-download@!cn.json",
+      "covering": {
+        "domain_suffix": "gvt2.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "cn.download.nvidia.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-category-download@!cn.json",
+      "covering": {
+        "domain_suffix": "nvidia.com"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "adcdownload.apple.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "adcdownload.apple.com.akadns.net",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "azuremigrate.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "azuremigratetest.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "azurestackhub.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "azurestackhubuat.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "cbdstest.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "cn.download.nvidia.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "collaborate.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "collaborateppe.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "download.developer.apple.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "download.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "download.mlcc.google.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "download.tensorflow.google.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "download.visualstudio.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "downloaddispatch.itunes.apple.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "dreamspark.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "dreamsparkuat.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "epicgames-download1-1251447533.file.myqcloud.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "itacademy.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "itacademyuat.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "lex.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "lexuat.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "mbs.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "mpnbenefits.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "mpnbenefitsrtl.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "mpnbenefitsrtluat.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "msdn.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "msdprod-ad.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "msproduct.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "myvs.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "oemsoc.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "oemsocuat.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "officemkt.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "officemktuat.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "osrelease.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "rsm.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "software.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "storecorefulfillment.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "surface.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "surface.downloads.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "vlportal.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "volic.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "vscode.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "vz.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "windbg.download.prss.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "download.windowsupdate.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "heytapdownload.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "archive.torrentonline.cc",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_regex": "^archive[-.].+"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "cache-management-prod.google.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_regex": "^cache[-.].+"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "cache.pack.google.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_regex": "^cache[-.].+"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "dl.google.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_regex": "^dl[-.].+"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "dl.l.google.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_regex": "^dl[-.].+"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "dl.delivery.mp.microsoft.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_regex": "^dl[-.].+"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "dl.steam.clngaa.com",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_regex": "^dl[-.].+"
+      }
+    },
+    {
+      "field": "domain",
+      "value": "mirror.ctan.org",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_regex": "^mirror[-.].+"
+      }
+    }
+  ],
+  "unresolved": [],
+  "hand_conflicts": [],
+  "summary": {
+    "geoip-category-direct@light.json": {
+      "removed": 0,
+      "carved": 43
+    },
+    "geosite-blocker-httpdns.json": {
+      "removed": 0,
+      "carved": 3
+    },
+    "geosite-category-direct@light.json": {
+      "removed": 6,
+      "carved": 26
+    },
+    "geosite-category-download@!cn.json": {
+      "removed": 0,
+      "carved": 10
+    },
+    "geosite-filter-downloadKeywords@!cn.json": {
+      "removed": 0,
+      "carved": 56
+    }
+  },
+  "remaining": []
+}
