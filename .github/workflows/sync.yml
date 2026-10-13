@@ -8,6 +8,11 @@ on:
     branches: [ lite ]
   workflow_dispatch:
 
+# A newer push supersedes a running build (both would push to lite).
+concurrency:
+  group: lite-build
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
