@@ -65,6 +65,33 @@ class ExclusiveTest(unittest.TestCase):
         direct = read(self.output, "geosite-category-direct@light.json")
         self.assertIn({"domain_suffix": ["cn.download.nvidia.com"]}, direct)
 
+    def test_blocking_wins_over_routing(self):
+        # The direct list names google-analytics.com exactly, the block list
+        # covers it as a suffix: it stays blocked (direct is no allowlist).
+        # A keyword block and a hand-kept direct entry do not win.
+        write(self.output, "adguard-blocker@mobile.json", [{"domain_suffix": ["google-analytics.com", "kept-ads.example"],
+                                                            "domain_regex": ["(^|\\.)tracking\\..*\\.miui\\.com$"]}])
+        write(self.output, "geosite-category-direct@light.json", [{
+            "domain": ["google-analytics.com", "tracking.intl.miui.com"],
+            "domain_suffix": ["dnsapi.cn", "kept-ads.example"]}])
+        write(self.root, "self-host/geosite-direct@selfhost.json", [{"domain_suffix": ["kept-ads.example"]}])
+        report = make_exclusive(self.output, root=self.root)
+        self.assertEqual(report["remaining"], [])
+        blocked = {(b["field"], b["value"]) for b in report["blocked"]}
+        self.assertIn(("domain", "google-analytics.com"), blocked)
+        self.assertIn(("domain_regex", "(^|\\.)tracking\\..*\\.miui\\.com$"), blocked)
+        carved = {(c["value"], c["carved_from"]) for c in report["carved"]}
+        self.assertIn(("dnsapi.cn", "geosite-blocker-httpdns.json"), carved)
+        ties = {(t["value"], t["kept_in"]) for t in report["ties"]}
+        self.assertIn(("kept-ads.example", "geosite-category-direct@light.json"), ties)
+
+    def test_idempotent(self):
+        make_exclusive(self.output, root=self.root)
+        before = {name: read(self.output, name) for name in os.listdir(self.output)}
+        report = make_exclusive(self.output, root=self.root)
+        self.assertEqual(report["remaining"], [])
+        self.assertEqual(before, {name: read(self.output, name) for name in os.listdir(self.output)})
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,5 +1,6 @@
 import os
 from .exclusive import make_exclusive
+from .adguard import adguard_lines_to_singbox_rules
 import copy
 import json
 import logging
@@ -113,26 +114,17 @@ class RuleParser:
                 optimization_stats["suffix_covered_by_suffix"],
             )
 
-            with tempfile.TemporaryDirectory() as tmp_dir:
-                logging.debug(f"创建临时目录: {tmp_dir}")
-                adguard_file_path = os.path.join(tmp_dir, "adguard_combined.txt")
-
-                # 将去重后的行写入临时文件
-                with open(adguard_file_path, "w", encoding="utf-8") as f:
-                    f.write("\n".join(adguard_rules))
-
-                # 执行 sing-box 转换为 srs 格式
-                srs_file_path = os.path.join(output_directory, "{}.srs".format(rule_set_name))
-                conversion_command = [
-                    "sing-box", "rule-set", "convert", "--type", "adguard",
-                    "--output", srs_file_path, adguard_file_path
-                ]
-                run_command(conversion_command, f"转换 AdGuard 规则 {rule_set_name}")
-
-                # 确认 .srs 文件已经生成
-                if not os.path.exists(srs_file_path):
-                    logging.error(f"转换失败，没有找到生成的 SRS 文件: {srs_file_path}")
-                    return False
+            # Structured JSON (compiled with the other sets) rather than the
+            # opaque adguard rule-set type, so the exclusivity step can see
+            # and carve these rules like any other set.
+            rules = adguard_lines_to_singbox_rules(adguard_rules)
+            if not rules:
+                logging.warning(f"{rule_set_name} 没有可用 AdGuard 规则，跳过生成")
+                return False
+            json_file_path = os.path.join(output_directory, "{}.json".format(rule_set_name))
+            with open(json_file_path, "w", encoding="utf-8") as f:
+                json.dump({"version": 1, "rules": rules}, f, ensure_ascii=False, indent=4)
+                f.write("\n")
 
             return True
 

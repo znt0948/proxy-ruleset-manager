@@ -2,6 +2,7 @@
 
 from dataclasses import asdict, dataclass
 import ipaddress
+import re
 
 from .utils import (
     build_suffix_trie,
@@ -307,3 +308,57 @@ __all__ = [
     "optimize_adguard_lines",
     "parse_adguard_dns_rule",
 ]
+
+
+def adguard_pattern_to_regex(pattern):
+    """Translate an AdGuard DNS host pattern to a domain regex.
+
+    ``||`` matches at the start of the name or after a dot, ``|`` anchors at
+    either end, ``^`` (a separator) can only be the end of a host name, and
+    ``*`` is any run of characters.
+    """
+    body = pattern
+    prefix, suffix = "", ""
+    if body.startswith("||"):
+        prefix, body = r"(^|\.)", body[2:]
+    elif body.startswith("|"):
+        prefix, body = "^", body[1:]
+    if body.endswith("^") or body.endswith("|"):
+        suffix, body = "$", body[:-1]
+    regex = "".join(".*" if character == "*" else re.escape(character) for character in body)
+    return prefix + regex + suffix
+
+
+def adguard_lines_to_singbox_rules(lines):
+    """Structured sing-box headless rules equivalent to AdGuard DNS lines.
+
+    Blocking rules form one rule; allow rules (``@@``) are an inverted
+    exception of it, and ``$important`` blocks stay a separate rule so they
+    win over allow rules, as in AdGuard. Structured rules (unlike the
+    ``adguard`` rule-set type) can be edited by later build steps.
+    """
+    buckets = {key: {"domain": set(), "domain_suffix": set(), "domain_regex": set()} for key in ("block", "important", "allow")}
+    for line in lines:
+        rule, _ = parse_adguard_dns_rule(line)
+        if rule is None:
+            continue
+        bucket = buckets["allow" if rule.allow else "important" if rule.important else "block"]
+        if rule.kind == "exact":
+            bucket["domain"].add(rule.value)
+        elif rule.kind == "suffix":
+            bucket["domain_suffix"].add(rule.value)
+        elif rule.kind == "regex":
+            bucket["domain_regex"].add(rule.value.removeprefix("@@")[1:-1])
+        else:
+            bucket["domain_regex"].add(adguard_pattern_to_regex(rule.value.removeprefix("@@")))
+
+    def as_rule(bucket):
+        return {field: sorted(values) for field, values in bucket.items() if values}
+
+    rules = []
+    block, allow, important = as_rule(buckets["block"]), as_rule(buckets["allow"]), as_rule(buckets["important"])
+    if block:
+        rules.append({"type": "logical", "mode": "and", "rules": [block, {**allow, "invert": True}]} if allow else block)
+    if important:
+        rules.append(important)
+    return rules

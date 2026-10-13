@@ -19,9 +19,17 @@ Conflicts are resolved by specificity, like longest-prefix routing:
   otherwise the first destination in ``GROUPS`` order (the order clients
   evaluate today, so the result does not change behavior).
 
+* Blocking is not overridden by routing preferences: a direct or download
+  entry covered by a block list leaves its set (or excludes the blocking
+  regex) even when it is more specific, since a direct list is not an
+  allowlist. Exceptions: entries hand-kept in a self-host list, and blocks
+  that come from a keyword (too broad to win; dnsapi.cn is no HTTPDNS).
+
 Keyword-against-keyword and regex-against-regex overlaps cannot be decided
-statically and are only reported.  Logical rules coming from upstream are
-left as they are.
+statically and are only reported.  Logical rules (from upstream, or from
+AdGuard allow rules) are indexed through their positive parts and carved by
+appending to their "and".  Passes repeat until verification finds no
+overlap; the result is stable when run again.
 """
 
 import ipaddress
@@ -39,6 +47,7 @@ GROUPS = (
             "geosite-blocker-trash@mobile.json",
             "geosite-blocker-httpdns.json",
             "geoip-blocker-httpdns.json",
+            "adguard-blocker@mobile.json",
         ),
         "self_host": (),
     },
@@ -94,7 +103,7 @@ class RuleIndex:
         self.keywords, self.regexes = [], []
         self.networks = set()
         self._prefixes = None
-        for rule in _plain_rules(rules):
+        for rule in _flatten(rules):
             self.domains.update(_norm(v) for v in _values(rule, "domain"))
             self.suffixes.update(_norm(v) for v in _values(rule, "domain_suffix"))
             self.keywords.extend(v.lower() for v in _values(rule, "domain_keyword") if v)
@@ -176,9 +185,44 @@ def _self_host_entries(root):
     return owners
 
 
+MAX_PASSES = 4
+
+
 def make_exclusive(output_directory, root=".", report_file=None):
     """Rewrite the rule sets in output_directory so destinations do not
-    overlap; returns the report (also written to report_file if given)."""
+    overlap; returns the report (also written to report_file if given).
+
+    A pass can expose new overlaps (dropping a tied entry from one set lets a
+    broader entry of that set match the name), so passes repeat until the
+    verification finds none."""
+    report = None
+    for number in range(1, MAX_PASSES + 1):
+        current = _exclusive_pass(output_directory, root)
+        if report is None:
+            report = current
+        else:
+            for key in ("ties", "carved", "blocked", "unresolved", "hand_conflicts"):
+                report[key].extend(x for x in current[key] if x not in report[key])
+            for filename, counts in current["summary"].items():
+                total = report["summary"].setdefault(filename, {"removed": 0, "carved": 0})
+                total["removed"] += counts["removed"]
+                total["carved"] += counts["carved"]
+        report["remaining"] = verify_exclusive(output_directory)
+        report["passes"] = number
+        if not report["remaining"] or not (current["ties"] or current["carved"] or current["blocked"]):
+            break
+    for conflict in report["hand_conflicts"]:
+        logging.warning("exclusive: %s %s is hand-kept in %s; kept in %s",
+                        conflict["field"], conflict["value"], ", ".join(conflict["destinations"]), conflict["destinations"][0])
+    if report_file:
+        os.makedirs(os.path.dirname(report_file) or ".", exist_ok=True)
+        with open(report_file, "w", encoding="utf-8") as file:
+            json.dump(report, file, ensure_ascii=False, indent=2)
+            file.write("\n")
+    return report
+
+
+def _exclusive_pass(output_directory, root):
     sets = {}
     for group in GROUPS:
         for filename in group["files"]:
@@ -194,7 +238,7 @@ def make_exclusive(output_directory, root=".", report_file=None):
 
     removals = {filename: set() for filename in sets}    # (field, value) dropped
     exceptions = {filename: set() for filename in sets}  # (field, value) carved out
-    report = {"ties": [], "carved": [], "unresolved": [], "hand_conflicts": []}
+    report = {"ties": [], "carved": [], "blocked": [], "unresolved": [], "hand_conflicts": []}
 
     def winner(field, value, groups):
         hand = owners.get((field, value), set()) & set(groups)
@@ -221,6 +265,21 @@ def make_exclusive(output_directory, root=".", report_file=None):
                     if keep == info["group"] and (field, value) not in removals[other]:
                         removals[other].add((field, value))
                         report["ties"].append({"field": field, "value": value, "kept_in": filename, "removed_from": other})
+                elif (other_info["group"] == "reject" and info["group"] != "reject" and matched[2] != "domain_keyword"
+                      and info["group"] not in owners.get((field, value), set())):
+                    # Blocking wins over routing preferences: a direct or
+                    # download entry the block list covers leaves its set
+                    # (or, under a block regex, excludes that regex), unless
+                    # it is hand-kept. Keyword blocks are too broad to win.
+                    if matched[2] in ("domain", "domain_suffix"):
+                        if (field, value) not in removals[filename]:
+                            removals[filename].add((field, value))
+                            report["blocked"].append({"field": field, "value": value, "removed_from": filename,
+                                                      "blocked_by": other, "covering": {matched[2]: matched[3]}})
+                    elif ("domain_regex", matched[3]) not in exceptions[filename]:
+                        exceptions[filename].add(("domain_regex", matched[3]))
+                        report["blocked"].append({"field": "domain_regex", "value": matched[3], "carved_from": filename,
+                                                  "blocked_by": other, "covering": {field: value}})
                 elif rank > other_rank:
                     if (field, value) not in exceptions[other]:
                         exceptions[other].add((field, value))
@@ -239,6 +298,13 @@ def make_exclusive(output_directory, root=".", report_file=None):
                 if container is None:
                     continue
                 value = str(network)
+                if container != network and other_info["group"] == "reject" and info["group"] != "reject" \
+                        and info["group"] not in owners.get(("ip_cidr", value), set()):
+                    if ("ip_cidr", value) not in removals[filename]:
+                        removals[filename].add(("ip_cidr", value))
+                        report["blocked"].append({"field": "ip_cidr", "value": value, "removed_from": filename,
+                                                  "blocked_by": other, "covering": {"ip_cidr": str(container)}})
+                    continue
                 if container == network:
                     keep = winner("ip_cidr", value, [info["group"], other_info["group"]])
                     if keep == info["group"] and ("ip_cidr", value) not in removals[other]:
@@ -263,15 +329,6 @@ def make_exclusive(output_directory, root=".", report_file=None):
         filename: {"removed": len(removals[filename]), "carved": len(exceptions[filename])}
         for filename in sorted(sets) if removals[filename] or exceptions[filename]
     }
-    for conflict in report["hand_conflicts"]:
-        logging.warning("exclusive: %s %s is hand-kept in %s; kept in %s",
-                        conflict["field"], conflict["value"], ", ".join(conflict["destinations"]), conflict["destinations"][0])
-    report["remaining"] = verify_exclusive(output_directory)
-    if report_file:
-        os.makedirs(os.path.dirname(report_file) or ".", exist_ok=True)
-        with open(report_file, "w", encoding="utf-8") as file:
-            json.dump(report, file, ensure_ascii=False, indent=2)
-            file.write("\n")
     return report
 
 
@@ -292,43 +349,96 @@ def _covered_by(field, value, exceptions):
     return False
 
 
-def _rewrite(rules, removals, exceptions):
-    plain, others = [], []
-    for rule in rules:
-        if isinstance(rule, dict) and not LOGICAL_KEYS.issubset(rule) and not rule.get("invert"):
-            plain.append(rule)
-        else:
-            others.append(rule)
-    cleaned, pinned = [], {}
-    for rule in plain:
+def _key(field, raw):
+    return str(ipaddress.ip_network(raw, strict=False)) if field == "ip_cidr" else _norm(raw)
+
+
+def _strip(rule, removals, pinned, exceptions):
+    """Drop removed entries from a rule (recursing into the positive parts of
+    logical rules) and move entries that must stay matched despite an
+    exception into pinned. Returns None when nothing is left."""
+    if LOGICAL_KEYS.issubset(rule):
         rule = dict(rule)
-        for field in ("domain", "domain_suffix", "ip_cidr"):
-            if field not in rule:
+        subs = []
+        for sub in rule["rules"]:
+            if sub.get("invert"):
+                subs.append(sub)
                 continue
-            kept = []
-            for raw in _values(rule, field):
-                key = str(ipaddress.ip_network(raw, strict=False)) if field == "ip_cidr" else _norm(raw)
-                if (field, key) in removals:
-                    continue
-                kept.append(raw)
-                if exceptions and _covered_by(field, key, exceptions):
-                    pinned.setdefault(field, []).append(raw)
-            if kept:
-                rule[field] = kept
-            else:
-                del rule[field]
-        if any(key != "invert" for key in rule):
-            cleaned.append(rule)
-    if not exceptions:
-        return cleaned + others
-    # One inverted rule per field family: sing-box ORs the domain fields of a
-    # rule but ANDs them with ip_cidr.
+            sub = _strip(sub, removals, pinned, exceptions)
+            if sub is not None:
+                subs.append(sub)
+        if not any(not sub.get("invert") for sub in subs):
+            return None
+        rule["rules"] = subs
+        return rule
+    rule = dict(rule)
+    for field in ("domain", "domain_suffix", "ip_cidr"):
+        if field not in rule:
+            continue
+        kept = []
+        for raw in _values(rule, field):
+            key = _key(field, raw)
+            if (field, key) in removals:
+                continue
+            if exceptions and _covered_by(field, key, exceptions):
+                pinned.setdefault(field, set()).add(raw)
+                continue
+            kept.append(raw)
+        if kept:
+            rule[field] = kept
+        else:
+            del rule[field]
+    return rule if any(key != "invert" for key in rule) else None
+
+
+def _inverted(exceptions):
+    """One inverted rule per field family: sing-box ORs the domain fields of
+    a rule but ANDs them with ip_cidr."""
     domain_excluded, ip_excluded = {}, {}
     for field, value in sorted(exceptions):
         (ip_excluded if field == "ip_cidr" else domain_excluded).setdefault(field, []).append(value)
-    inverted = [{**excluded, "invert": True} for excluded in (domain_excluded, ip_excluded) if excluded]
-    wrapped = [{"type": "logical", "mode": "and", "rules": [rule, *inverted]} for rule in cleaned]
-    return wrapped + ([{**{k: sorted(v) for k, v in pinned.items()}}] if pinned else []) + others
+    return [{**excluded, "invert": True} for excluded in (domain_excluded, ip_excluded) if excluded]
+
+
+def _carve(rule, inverted):
+    """rule AND NOT each inverted rule; appended to an existing "and" (merged
+    with an inverted rule of the same family) instead of nesting."""
+    if not inverted:
+        return rule
+    if not (LOGICAL_KEYS.issubset(rule) and rule.get("mode", "and") == "and" and not rule.get("invert")):
+        return {"type": "logical", "mode": "and", "rules": [rule, *inverted]}
+    subs = [dict(sub) for sub in rule["rules"]]
+    for addition in inverted:
+        family = "ip" if "ip_cidr" in addition else "domain"
+        for sub in subs:
+            if sub.get("invert") and not LOGICAL_KEYS.issubset(sub) and ("ip" if "ip_cidr" in sub else "domain") == family \
+                    and all(k in ("domain", "domain_suffix", "domain_keyword", "domain_regex", "ip_cidr", "invert") for k in sub):
+                for field, values in addition.items():
+                    if field != "invert":
+                        sub[field] = sorted(set(_values(sub, field)) | set(values))
+                break
+        else:
+            subs.append(addition)
+    return {**rule, "rules": subs}
+
+
+def _rewrite(rules, removals, exceptions):
+    pinned, result = {}, []
+    for rule in rules:
+        if not isinstance(rule, dict) or rule.get("invert"):
+            result.append(rule)
+            continue
+        stripped = _strip(rule, removals, pinned, exceptions)
+        if stripped is not None:
+            result.append(_carve(stripped, _inverted(exceptions)))
+    if pinned:
+        # Pinned entries are more specific than some exceptions; the others
+        # (more specific than them) still apply.
+        under = {(field, value) for field, value in exceptions
+                 if any(_covered_by(f, _key(f, raw), {(field, value)}) for f, raws in pinned.items() for raw in raws)}
+        rule = {field: sorted(values) for field, values in pinned.items()}
+        result.append(_carve(rule, _inverted(exceptions - under)))
+    return result
 
 
 def _rule_matches(rule, name=None, address=None, cache=None):
