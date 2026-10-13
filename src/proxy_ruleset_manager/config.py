@@ -28,6 +28,7 @@ class Config:
         self.source_dir = './upstream'
         self.report_dir = './report'
         self.quality_report_file = os.path.join(self.report_dir, 'ruleset-quality.json')
+        self.exclusive_report_file = os.path.join(self.report_dir, 'exclusive.json')
 
         self.singbox_output_directory = os.path.join(self.rule_dir, 'singbox')
         self.surge_output_directory = os.path.join(self.rule_dir, 'surge')

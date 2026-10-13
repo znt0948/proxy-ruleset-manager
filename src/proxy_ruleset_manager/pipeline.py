@@ -1,4 +1,5 @@
 import os
+from .exclusive import make_exclusive
 import copy
 import json
 import logging
@@ -1115,6 +1116,12 @@ class RuleParser:
         # Corrections must run before suffix/CIDR coverage pruning; otherwise a
         # correct child entry can be lost behind an erroneous parent suffix.
         self.optimize_output_rulesets(output_directory)
+
+        # Destinations must not overlap: clients should not depend on the
+        # order of their route rules (see exclusive.py).
+        report = make_exclusive(output_directory, root=".", report_file=config.exclusive_report_file)
+        if report["remaining"]:
+            raise RuntimeError(f"规则集仍有 {len(report['remaining'])} 处跨去向重叠，保留旧产物")
 
         # 生成 SRS 文件
         json_files = sorted(f for f in os.listdir(output_directory) if f.endswith('.json'))
