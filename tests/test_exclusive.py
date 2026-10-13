@@ -3,7 +3,18 @@ import os
 import tempfile
 import unittest
 
-from proxy_ruleset_manager.exclusive import make_exclusive, verify_exclusive
+from proxy_ruleset_manager.exclusive import GROUPS, _rule_matches, make_exclusive, verify_exclusive
+
+
+def destinations(directory, name):
+    """Destinations whose rule sets match name."""
+    found = set()
+    for group in GROUPS:
+        for filename in group["files"]:
+            path = os.path.join(directory, filename)
+            if os.path.exists(path) and any(_rule_matches(rule, name=name) for rule in read(directory, filename)):
+                found.add(group["name"])
+    return found
 
 
 def write(directory, name, rules):
@@ -62,8 +73,10 @@ class ExclusiveTest(unittest.TestCase):
         write(self.output, "geosite-category-direct@light.json", [{"domain_suffix": ["nvidia.com", "cn.download.nvidia.com"]}])
         report = make_exclusive(self.output, root=self.root)
         self.assertEqual(report["remaining"], [])
-        direct = read(self.output, "geosite-category-direct@light.json")
-        self.assertIn({"domain_suffix": ["cn.download.nvidia.com"]}, direct)
+        self.assertEqual(destinations(self.output, "cn.download.nvidia.com"), {"direct"})
+        self.assertEqual(destinations(self.output, "x.cn.download.nvidia.com"), {"direct"})
+        self.assertEqual(destinations(self.output, "download.nvidia.com"), {"download"})
+        self.assertEqual(destinations(self.output, "www.nvidia.com"), {"direct"})
 
     def test_blocking_wins_over_routing(self):
         # The direct list names google-analytics.com exactly, the block list
@@ -79,7 +92,9 @@ class ExclusiveTest(unittest.TestCase):
         self.assertEqual(report["remaining"], [])
         blocked = {(b["field"], b["value"]) for b in report["blocked"]}
         self.assertIn(("domain", "google-analytics.com"), blocked)
-        self.assertIn(("domain_regex", "(^|\\.)tracking\\..*\\.miui\\.com$"), blocked)
+        self.assertIn(("domain", "tracking.intl.miui.com"), blocked)
+        self.assertEqual(destinations(self.output, "tracking.intl.miui.com"), {"reject"})
+        self.assertEqual(destinations(self.output, "dnsapi.cn"), {"direct"})
         carved = {(c["value"], c["carved_from"]) for c in report["carved"]}
         self.assertIn(("dnsapi.cn", "geosite-blocker-httpdns.json"), carved)
         ties = {(t["value"], t["kept_in"]) for t in report["ties"]}
