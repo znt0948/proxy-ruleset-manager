@@ -1111,7 +1111,8 @@ class RuleParser:
 
         # Destinations must not overlap: clients should not depend on the
         # order of their route rules (see exclusive.py).
-        report = make_exclusive(output_directory, root=".", report_file=config.exclusive_report_file)
+        report = make_exclusive(output_directory, root=".", report_file=config.exclusive_report_file,
+                                pre_directory=config.pre_exclusive_dir)
         if report["remaining"] or report["orphaned"]:
             raise RuntimeError(
                 f"规则集仍有 {len(report['remaining'])} 处跨去向重叠、{len(report['orphaned'])} 个名称失去匹配，保留旧产物")

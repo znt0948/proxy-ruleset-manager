@@ -26,6 +26,13 @@ jobs:
           set -Eeuo pipefail
           wget -O sing-box.deb $SING_BOX_DEB_URL
           sudo dpkg -i sing-box.deb
+    - name: Set up Go (for the sing-box matcher)
+      uses: actions/setup-go@v5
+      with:
+        go-version-file: tools/srmatch/go.mod
+        cache-dependency-path: tools/srmatch/go.sum
+    - name: Build srmatch (sing-box rule engine, the version clients run)
+      run: cd tools/srmatch && go build -o srmatch .
     - name: Set up Python3
       uses: actions/setup-python@v5
       with:
@@ -48,6 +55,15 @@ jobs:
 
     - name: Run script
       run: python main.py
+    - name: Differential test with sing-box
+      # The published sets under sing-box's own matcher: model fidelity,
+      # compiled .srs = JSON, exclusivity, order independence, and every
+      # destination change listed in report/exclusive.json. A failure keeps
+      # the new rules from being published.
+      env:
+        PYTHONPATH: src
+        SRMATCH_REQUIRED: "1"
+      run: python -m unittest tests.test_singbox_differential -v
     - name: Commit and push rules
       run: |
         git config --global user.email "action@github.com"

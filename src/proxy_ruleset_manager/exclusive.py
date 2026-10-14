@@ -256,14 +256,21 @@ def _self_host_entries(root):
 MAX_PASSES = 4
 
 
-def make_exclusive(output_directory, root=".", report_file=None):
+def make_exclusive(output_directory, root=".", report_file=None, pre_directory=None):
     """Rewrite the rule sets in output_directory so destinations do not
     overlap; returns the report (also written to report_file if given).
+    With pre_directory, the rule sets as they were before are copied there
+    first (for the real sing-box differential test).
 
     A pass can expose new overlaps (dropping a tied entry from one set lets a
     broader entry of that set match the name), so passes repeat until the
     verification finds none."""
     before = _load_documents(output_directory)
+    if pre_directory:
+        os.makedirs(pre_directory, exist_ok=True)
+        for _, filename, rules in before:
+            with open(os.path.join(pre_directory, filename), "w", encoding="utf-8") as file:
+                json.dump({"version": 3, "rules": rules}, file, ensure_ascii=False)
     report = None
     for number in range(1, MAX_PASSES + 1):
         current = _exclusive_pass(output_directory, root)

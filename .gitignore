@@ -15,3 +15,8 @@ __pycache__/
 
 # 按需执行的本地上游选源分析
 /report/direct-light-analysis.json
+
+# Build intermediates (pre-exclusivity rule sets for the differential test)
+/build/
+# srmatch binary
+/tools/srmatch/srmatch
