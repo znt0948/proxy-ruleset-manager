@@ -17,7 +17,8 @@ properties the rewrite promises, against the real engine — the srmatch tool
 5. intended changes: with the rule sets from before the rewrite
    (build/pre-exclusive, written by the build), every name whose
    destination sing-box sees change is listed in report/exclusive.json with
-   the same before/after, and no name loses every match.
+   the same before/after, or falls under a listed name (a moved suffix)
+   with the same before/after; and no name loses every match.
 
 Probes: the rewrite's own probes (every entry, keyword and regex regions),
 boundary names (subdomains, parents and look-alikes of suffix and exact
@@ -168,6 +169,12 @@ class SingBoxDifferential(unittest.TestCase):
             return None
 
         reported = {x["name"]: (x["before"], x["after"]) for x in self.report.get("changed", [])}
+
+        def explained(name, change):
+            # The report lists the changed entries; names under a changed
+            # suffix follow it.
+            labels = name.split(".")
+            return any(reported.get(".".join(labels[i:])) == change for i in range(len(labels) - 1))
         unexplained, orphaned = [], []
         for name, old, new in zip(self.names, before, self.name_matches):
             a, b = destination(old), destination(new)
@@ -175,7 +182,7 @@ class SingBoxDifferential(unittest.TestCase):
                 continue
             if b is None:
                 orphaned.append(f"{name}: {a} -> none")
-            elif reported.get(name) != (a, b):
+            elif not explained(name, (a, b)):
                 unexplained.append(f"{name}: {a} -> {b} (report: {reported.get(name)})")
         self.assertEqual(orphaned[:20], [], f"{len(orphaned)} names lost every match")
         self.assertEqual(unexplained[:20], [], f"{len(unexplained)} unreported destination changes")
