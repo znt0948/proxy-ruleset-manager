@@ -76,6 +76,32 @@ def _boundary(documents):
     return {name for name in names if exclusive.HOSTNAME.fullmatch(name)}
 
 
+def _explained(name, change, reported):
+    """Whether a destination change (before, after) is in the report: the
+    name itself, or a parent name (a moved suffix) with the same change."""
+    labels = name.split(".")
+    return any(reported.get(".".join(labels[i:])) == change for i in range(len(labels) - 1))
+
+
+class ReportCoverage(unittest.TestCase):
+    """The rule deciding which destination changes the report explains
+    (no sing-box needed)."""
+
+    reported = {"example.com": ("direct", "download")}
+
+    def test_own_and_inherited_change(self):
+        self.assertTrue(_explained("example.com", ("direct", "download"), self.reported))
+        self.assertTrue(_explained("a.b.example.com", ("direct", "download"), self.reported))
+
+    def test_other_change_under_a_reported_suffix(self):
+        self.assertFalse(_explained("a.example.com", ("reject", "proxy"), self.reported))
+        self.assertFalse(_explained("a.example.com", ("direct", "proxy"), self.reported))
+
+    def test_no_label_boundary_or_top_level(self):
+        self.assertFalse(_explained("xexample.com", ("direct", "download"), self.reported))
+        self.assertFalse(_explained("other.com", ("direct", "download"), {"com": ("direct", "download")}))
+
+
 class SingBoxDifferential(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -169,12 +195,6 @@ class SingBoxDifferential(unittest.TestCase):
             return None
 
         reported = {x["name"]: (x["before"], x["after"]) for x in self.report.get("changed", [])}
-
-        def explained(name, change):
-            # The report lists the changed entries; names under a changed
-            # suffix follow it.
-            labels = name.split(".")
-            return any(reported.get(".".join(labels[i:])) == change for i in range(len(labels) - 1))
         unexplained, orphaned = [], []
         for name, old, new in zip(self.names, before, self.name_matches):
             a, b = destination(old), destination(new)
@@ -182,7 +202,7 @@ class SingBoxDifferential(unittest.TestCase):
                 continue
             if b is None:
                 orphaned.append(f"{name}: {a} -> none")
-            elif not explained(name, (a, b)):
+            elif not _explained(name, (a, b), reported):
                 unexplained.append(f"{name}: {a} -> {b} (report: {reported.get(name)})")
         self.assertEqual(orphaned[:20], [], f"{len(orphaned)} names lost every match")
         self.assertEqual(unexplained[:20], [], f"{len(unexplained)} unreported destination changes")
