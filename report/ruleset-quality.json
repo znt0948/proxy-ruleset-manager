@@ -407,13 +407,13 @@
         },
         {
           "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json",
-          "raw_entries": 105,
-          "normalized_entries": 105,
+          "raw_entries": 104,
+          "normalized_entries": 104,
           "unsupported_rules": 0,
           "invalid_rules_or_values": 0,
           "deduplication": {
-            "input_entries": 105,
-            "output_entries": 105,
+            "input_entries": 104,
+            "output_entries": 104,
             "removed_entries": 0,
             "exact_duplicates": 0,
             "domain_covered_by_suffix": 0,
@@ -423,8 +423,8 @@
         }
       ],
       "merge_deduplication": {
-        "input_entries": 9645,
-        "output_entries": 9645,
+        "input_entries": 9644,
+        "output_entries": 9644,
         "removed_entries": 0,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 0,
@@ -432,13 +432,13 @@
         "cidr_collapsed": 0
       },
       "output_entries_by_field": {
-        "domain": 633,
+        "domain": 632,
         "domain_regex": 10,
         "domain_suffix": 8476
       },
       "provenance": {
-        "tracked_normalized_entries": 9645,
-        "published_entries": 9645,
+        "tracked_normalized_entries": 9644,
+        "published_entries": 9644,
         "published_entries_with_multiple_exact_sources": 9,
         "published_entries_without_exact_source": 0,
         "normalized_entries_shared_by_sources": 9,
@@ -449,7 +449,7 @@
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-springer.srs": 5,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-elsevier.srs": 14,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-ieee.srs": 54,
-          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json": 105
+          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json": 104
         },
         "source_pair_overlaps": [
           {
@@ -543,8 +543,8 @@
         ]
       },
       "final_optimization": {
-        "input_entries": 9625,
-        "output_entries": 9119,
+        "input_entries": 9624,
+        "output_entries": 9118,
         "removed_entries": 506,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 69,
@@ -799,13 +799,13 @@
         },
         {
           "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json",
-          "raw_entries": 79,
-          "normalized_entries": 79,
+          "raw_entries": 80,
+          "normalized_entries": 80,
           "unsupported_rules": 0,
           "invalid_rules_or_values": 0,
           "deduplication": {
-            "input_entries": 79,
-            "output_entries": 79,
+            "input_entries": 80,
+            "output_entries": 80,
             "removed_entries": 0,
             "exact_duplicates": 0,
             "domain_covered_by_suffix": 0,
@@ -815,8 +815,8 @@
         }
       ],
       "merge_deduplication": {
-        "input_entries": 295,
-        "output_entries": 295,
+        "input_entries": 296,
+        "output_entries": 296,
         "removed_entries": 0,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 0,
@@ -825,11 +825,11 @@
       },
       "output_entries_by_field": {
         "domain": 106,
-        "domain_suffix": 181
+        "domain_suffix": 182
       },
       "provenance": {
-        "tracked_normalized_entries": 295,
-        "published_entries": 295,
+        "tracked_normalized_entries": 296,
+        "published_entries": 296,
         "published_entries_with_multiple_exact_sources": 3,
         "published_entries_without_exact_source": 0,
         "normalized_entries_shared_by_sources": 3,
@@ -849,7 +849,7 @@
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-mega.srs": 7,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-tmdb.srs": 4,
           "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/GoogleDrive.yaml": 4,
-          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json": 79
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json": 80
         },
         "source_pair_overlaps": [
           {
@@ -888,8 +888,8 @@
         ]
       },
       "final_optimization": {
-        "input_entries": 295,
-        "output_entries": 287,
+        "input_entries": 296,
+        "output_entries": 288,
         "removed_entries": 8,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 8,
