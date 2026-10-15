@@ -799,13 +799,13 @@
         },
         {
           "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json",
-          "raw_entries": 80,
-          "normalized_entries": 80,
+          "raw_entries": 78,
+          "normalized_entries": 78,
           "unsupported_rules": 0,
           "invalid_rules_or_values": 0,
           "deduplication": {
-            "input_entries": 80,
-            "output_entries": 80,
+            "input_entries": 78,
+            "output_entries": 78,
             "removed_entries": 0,
             "exact_duplicates": 0,
             "domain_covered_by_suffix": 0,
@@ -815,8 +815,8 @@
         }
       ],
       "merge_deduplication": {
-        "input_entries": 296,
-        "output_entries": 296,
+        "input_entries": 294,
+        "output_entries": 294,
         "removed_entries": 0,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 0,
@@ -824,12 +824,12 @@
         "cidr_collapsed": 0
       },
       "output_entries_by_field": {
-        "domain": 106,
+        "domain": 104,
         "domain_suffix": 182
       },
       "provenance": {
-        "tracked_normalized_entries": 296,
-        "published_entries": 296,
+        "tracked_normalized_entries": 294,
+        "published_entries": 294,
         "published_entries_with_multiple_exact_sources": 3,
         "published_entries_without_exact_source": 0,
         "normalized_entries_shared_by_sources": 3,
@@ -849,7 +849,7 @@
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-mega.srs": 7,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-tmdb.srs": 4,
           "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/GoogleDrive.yaml": 4,
-          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json": 80
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json": 78
         },
         "source_pair_overlaps": [
           {
@@ -888,8 +888,8 @@
         ]
       },
       "final_optimization": {
-        "input_entries": 296,
-        "output_entries": 288,
+        "input_entries": 294,
+        "output_entries": 286,
         "removed_entries": 8,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 8,
