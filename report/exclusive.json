@@ -7597,6 +7597,15 @@
     },
     {
       "field": "domain",
+      "value": "archive.torrentonline.cc",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_regex": "^archive[-.].+"
+      }
+    },
+    {
+      "field": "domain",
       "value": "cache-management-prod.google.com",
       "kept_in": "geosite-category-direct@light.json",
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
@@ -9333,7 +9342,7 @@
       },
       "kept_in": "adguard-blocker@mobile.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9341,7 +9350,7 @@
       },
       "kept_in": "adguard-blocker@mobile.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9349,7 +9358,7 @@
       },
       "kept_in": "adguard-blocker@mobile.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9357,7 +9366,7 @@
       },
       "kept_in": "adguard-blocker@mobile.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9365,7 +9374,7 @@
       },
       "kept_in": "adguard-blocker@mobile.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9373,7 +9382,7 @@
       },
       "kept_in": "adguard-blocker@mobile.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9381,7 +9390,7 @@
       },
       "kept_in": "adguard-blocker@mobile.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9389,7 +9398,7 @@
       },
       "kept_in": "adguard-blocker@mobile.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9397,7 +9406,7 @@
       },
       "kept_in": "adguard-blocker@mobile.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9405,7 +9414,7 @@
       },
       "kept_in": "adguard-blocker@mobile.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9413,7 +9422,7 @@
       },
       "kept_in": "adguard-blocker@mobile.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9421,7 +9430,7 @@
       },
       "kept_in": "adguard-blocker@mobile.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9445,7 +9454,7 @@
       },
       "kept_in": "geosite-blocker-httpdns.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9453,7 +9462,7 @@
       },
       "kept_in": "geosite-blocker-httpdns.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9461,7 +9470,7 @@
       },
       "kept_in": "geosite-blocker-httpdns.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9469,7 +9478,7 @@
       },
       "kept_in": "geosite-blocker-httpdns.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9477,7 +9486,7 @@
       },
       "kept_in": "geosite-blocker-httpdns.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9485,7 +9494,7 @@
       },
       "kept_in": "geosite-blocker-httpdns.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9493,7 +9502,7 @@
       },
       "kept_in": "geosite-blocker-httpdns.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9501,7 +9510,7 @@
       },
       "kept_in": "geosite-blocker-httpdns.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9509,7 +9518,7 @@
       },
       "kept_in": "geosite-blocker-httpdns.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9517,7 +9526,7 @@
       },
       "kept_in": "geosite-blocker-httpdns.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9525,7 +9534,7 @@
       },
       "kept_in": "geosite-blocker-httpdns.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9533,7 +9542,7 @@
       },
       "kept_in": "geosite-blocker-httpdns.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9541,7 +9550,7 @@
       },
       "kept_in": "geosite-blocker-trash@mobile.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9549,7 +9558,7 @@
       },
       "kept_in": "geosite-blocker-trash@mobile.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9557,7 +9566,7 @@
       },
       "kept_in": "geosite-blocker-trash@mobile.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9565,7 +9574,7 @@
       },
       "kept_in": "geosite-blocker-trash@mobile.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -9573,7 +9582,7 @@
       },
       "kept_in": "geosite-blocker-trash@mobile.json",
       "excluded_from": "geosite-category-download@!cn.json",
-      "overlapping_entries": 179
+      "overlapping_entries": 180
     },
     {
       "pattern": {
@@ -11157,7 +11166,7 @@
     },
     "geosite-filter-downloadKeywords@!cn.json": {
       "removed": 0,
-      "carved": 10608
+      "carved": 10609
     }
   },
   "remaining": [],
