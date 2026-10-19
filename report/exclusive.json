@@ -7597,6 +7597,15 @@
     },
     {
       "field": "domain",
+      "value": "archive.torrentonline.cc",
+      "kept_in": "geosite-category-direct@light.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_regex": "^archive[-.].+"
+      }
+    },
+    {
+      "field": "domain",
       "value": "cache-management-prod.google.com",
       "kept_in": "geosite-category-direct@light.json",
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
@@ -7793,7 +7802,7 @@
       },
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
       "entries_of": "adguard-blocker@mobile.json",
-      "carved_entries": 1927
+      "carved_entries": 1928
     },
     {
       "pattern": {
@@ -7849,7 +7858,7 @@
       },
       "carved_from": "geosite-category-direct@light.json",
       "entries_of": "adguard-blocker@mobile.json",
-      "carved_entries": 919
+      "carved_entries": 920
     },
     {
       "pattern": {
@@ -11149,7 +11158,7 @@
     },
     "geosite-category-direct@light.json": {
       "removed": 44,
-      "carved": 1923
+      "carved": 1924
     },
     "geosite-category-download@!cn.json": {
       "removed": 3,
@@ -11157,7 +11166,7 @@
     },
     "geosite-filter-downloadKeywords@!cn.json": {
       "removed": 0,
-      "carved": 10608
+      "carved": 10610
     }
   },
   "remaining": [],
