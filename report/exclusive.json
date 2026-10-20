@@ -7597,15 +7597,6 @@
     },
     {
       "field": "domain",
-      "value": "archive.torrentonline.cc",
-      "kept_in": "geosite-category-direct@light.json",
-      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
-      "covering": {
-        "domain_regex": "^archive[-.].+"
-      }
-    },
-    {
-      "field": "domain",
       "value": "cache-management-prod.google.com",
       "kept_in": "geosite-category-direct@light.json",
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
@@ -7802,7 +7793,7 @@
       },
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
       "entries_of": "adguard-blocker@mobile.json",
-      "carved_entries": 1928
+      "carved_entries": 1927
     },
     {
       "pattern": {
@@ -11166,7 +11157,7 @@
     },
     "geosite-filter-downloadKeywords@!cn.json": {
       "removed": 0,
-      "carved": 10610
+      "carved": 10608
     }
   },
   "remaining": [],
