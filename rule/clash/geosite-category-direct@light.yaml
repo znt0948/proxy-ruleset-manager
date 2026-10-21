@@ -47,7 +47,7 @@ payload:
   - DOMAIN,apps.mzstatic.com
   - DOMAIN,apps5.oingo.com
   - DOMAIN,apptrailers.itunes.apple.com
-  - DOMAIN,asiatorrent.giize.com
+  - DOMAIN,archive.torrentonline.cc
   - DOMAIN,asusrouter.com
   - DOMAIN,avail.googleflights.net
   - DOMAIN,azuremigrate.download.prss.microsoft.com
@@ -272,11 +272,16 @@ payload:
   - DOMAIN,instant.arubanetworks.com
   - DOMAIN,iosapps.itunes.apple.com
   - DOMAIN,iosapps.itunes.g.aaplimg.com
+  - DOMAIN,ip.3322.net
+  - DOMAIN,ip.gymcalc.cn
+  - DOMAIN,ip.kutool.com
+  - DOMAIN,ip.plyz.net
   - DOMAIN,ipcdn.apple.com
   - DOMAIN,iphone-ld.apple.com
   - DOMAIN,iphone-ld.origin-apple.com.akadns.net
   - DOMAIN,ipv4announce.sktorrent.eu
   - DOMAIN,ipv6.govt.hu
+  - DOMAIN,ipv6test.wcode.net
   - DOMAIN,is-ssl.mzstatic.com-cn-lb.itunes-apple.com.akadns.net
   - DOMAIN,is1-ssl.mzstatic.com
   - DOMAIN,is1.mzstatic.com
@@ -529,7 +534,6 @@ payload:
   - DOMAIN,tplogin.cn
   - DOMAIN,tr.abiir.top
   - DOMAIN,tr.abir.ga
-  - DOMAIN,tr.btube3.com
   - DOMAIN,tr.burnabyhighstar.com
   - DOMAIN,tr.highstar.shop
   - DOMAIN,tr.nyacat.pw
@@ -550,12 +554,15 @@ payload:
   - DOMAIN,tracker.ducks.party
   - DOMAIN,tracker.farted.net
   - DOMAIN,tracker.filemail.com
+  - DOMAIN,tracker.flatuslifir.is
+  - DOMAIN,tracker.fnix.net
   - DOMAIN,tracker.foreverpirates.co
   - DOMAIN,tracker.gmi.gd
   - DOMAIN,tracker.ilibr.org
   - DOMAIN,tracker.internetwarriors.net
   - DOMAIN,tracker.k.vu
   - DOMAIN,tracker.kuroy.me
+  - DOMAIN,tracker.midnightprogrammer.net
   - DOMAIN,tracker.mywaifu.best
   - DOMAIN,tracker.nekomi.cn
   - DOMAIN,tracker.nyaa.net
@@ -578,7 +585,6 @@ payload:
   - DOMAIN,tracker.waaa.moe
   - DOMAIN,tracker.wildkat.net
   - DOMAIN,tracker.willy.pro
-  - DOMAIN,tracker.xn--djrq4gl4hvoi.top
   - DOMAIN,tracker.yume-hatsuyuki.moe
   - DOMAIN,tracker.zhuqiy.com
   - DOMAIN,tracker.zhuqiy.dgj055.icu
@@ -598,6 +604,7 @@ payload:
   - DOMAIN,uplaypc-s-ubisoft.cdn.ubionline.com.cn
   - DOMAIN,upp.itunes.apple.com
   - DOMAIN,v2.iperson.xyz
+  - DOMAIN,v6test.ipgg.cn
   - DOMAIN,valid.apple.com
   - DOMAIN,valid.origin-apple.com.akadns.net
   - DOMAIN,vlportal.download.prss.microsoft.com
@@ -2432,6 +2439,7 @@ payload:
   - DOMAIN-SUFFIX,chaindd.com
   - DOMAIN-SUFFIX,chainedbox.com
   - DOMAIN-SUFFIX,chainnode.com
+  - DOMAIN-SUFFIX,chaip.me
   - DOMAIN-SUFFIX,changanfunds.com
   - DOMAIN-SUFFIX,changba.com
   - DOMAIN-SUFFIX,changdunovel.com
@@ -2462,6 +2470,7 @@ payload:
   - DOMAIN-SUFFIX,chdi.com.cn
   - DOMAIN-SUFFIX,che168.com
   - DOMAIN-SUFFIX,cheaa.com
+  - DOMAIN-SUFFIX,check-host.cn
   - DOMAIN-SUFFIX,checkzeit.com
   - DOMAIN-SUFFIX,cheetahfun.com
   - DOMAIN-SUFFIX,chei.com.cn
@@ -2601,6 +2610,7 @@ payload:
   - DOMAIN-SUFFIX,cih-index.com
   - DOMAIN-SUFFIX,cilisouou.com
   - DOMAIN-SUFFIX,cindasc.com
+  - DOMAIN-SUFFIX,cip.cc
   - DOMAIN-SUFFIX,cisco.cn
   - DOMAIN-SUFFIX,cisco.com.cn
   - DOMAIN-SUFFIX,citibank.com.cn
@@ -3010,6 +3020,7 @@ payload:
   - DOMAIN-SUFFIX,cyts.com
   - DOMAIN-SUFFIX,cytxl.com.cn
   - DOMAIN-SUFFIX,cyzone.cn
+  - DOMAIN-SUFFIX,cz88.net
   - DOMAIN-SUFFIX,cza84.cn
   - DOMAIN-SUFFIX,cztv.com
   - DOMAIN-SUFFIX,cztvcdn.com
@@ -3906,10 +3917,12 @@ payload:
   - DOMAIN-SUFFIX,gei6.com
   - DOMAIN-SUFFIX,geilicdn.com
   - DOMAIN-SUFFIX,gelaiyun.net
+  - DOMAIN-SUFFIX,geoip.cn
   - DOMAIN-SUFFIX,geossl.cn
   - DOMAIN-SUFFIX,gepush.com
   - DOMAIN-SUFFIX,getfeishu.cn
   - DOMAIN-SUFFIX,getfeishu.com
+  - DOMAIN-SUFFIX,getmyip.top
   - DOMAIN-SUFFIX,getsays.cn
   - DOMAIN-SUFFIX,getsays.com
   - DOMAIN-SUFFIX,getui.cn
@@ -4152,6 +4165,7 @@ payload:
   - DOMAIN-SUFFIX,haofenshu.com
   - DOMAIN-SUFFIX,haohaodoc.com
   - DOMAIN-SUFFIX,haohaowan.net
+  - DOMAIN-SUFFIX,haoip.cn
   - DOMAIN-SUFFIX,haojieyun.com
   - DOMAIN-SUFFIX,haokan.com
   - DOMAIN-SUFFIX,haolietou.com
@@ -4605,6 +4619,8 @@ payload:
   - DOMAIN-SUFFIX,ifanrusercontent.com
   - DOMAIN-SUFFIX,ifanrx.com
   - DOMAIN-SUFFIX,ifastps.com.cn
+  - DOMAIN-SUFFIX,ifcfg.cn
+  - DOMAIN-SUFFIX,ifconfig.cc
   - DOMAIN-SUFFIX,ifdian.net
   - DOMAIN-SUFFIX,ifeilian.cn
   - DOMAIN-SUFFIX,ifeilian.com
@@ -4706,16 +4722,36 @@ payload:
   - DOMAIN-SUFFIX,ioppo.net
   - DOMAIN-SUFFIX,iot-tencent.com
   - DOMAIN-SUFFIX,iotronic.tech
+  - DOMAIN-SUFFIX,ip-api.cn
+  - DOMAIN-SUFFIX,ip-api.com.cn
+  - DOMAIN-SUFFIX,ip-check.cn
+  - DOMAIN-SUFFIX,ip.cn
+  - DOMAIN-SUFFIX,ip.com.cn
+  - DOMAIN-SUFFIX,ip.plus
+  - DOMAIN-SUFFIX,ip00.cn
+  - DOMAIN-SUFFIX,ip111.cn
+  - DOMAIN-SUFFIX,ip111.com
+  - DOMAIN-SUFFIX,ip120.cn
+  - DOMAIN-SUFFIX,ip123.top
   - DOMAIN-SUFFIX,ip138.com
+  - DOMAIN-SUFFIX,ip77.net
+  - DOMAIN-SUFFIX,ip9.com.cn
+  - DOMAIN-SUFFIX,ip99.com
+  - DOMAIN-SUFFIX,ipaddress.com.cn
   - DOMAIN-SUFFIX,ipanda.cn
   - DOMAIN-SUFFIX,ipanda.com
   - DOMAIN-SUFFIX,ipanda.com.cn
   - DOMAIN-SUFFIX,ipanda.net
+  - DOMAIN-SUFFIX,ipchacha.cn
   - DOMAIN-SUFFIX,ipchaxun.com
+  - DOMAIN-SUFFIX,ipchaxun.com.cn
   - DOMAIN-SUFFIX,ipchaxun.net
+  - DOMAIN-SUFFIX,ipchk.cn
   - DOMAIN-SUFFIX,iphone-8.com.cn
   - DOMAIN-SUFFIX,ipify.cn
   - DOMAIN-SUFFIX,ipip.net
+  - DOMAIN-SUFFIX,ipip.top
+  - DOMAIN-SUFFIX,ipjiance.com
   - DOMAIN-SUFFIX,iplark.com
   - DOMAIN-SUFFIX,iplaysoft.com
   - DOMAIN-SUFFIX,ipod.com.cn
@@ -4723,9 +4759,12 @@ payload:
   - DOMAIN-SUFFIX,ipplus360.com
   - DOMAIN-SUFFIX,iprdp.net
   - DOMAIN-SUFFIX,iprintworks.cn
+  - DOMAIN-SUFFIX,ipsearch.com.cn
+  - DOMAIN-SUFFIX,ipsee.cn
   - DOMAIN-SUFFIX,ipshu.com
   - DOMAIN-SUFFIX,ipshudi.com
   - DOMAIN-SUFFIX,ipssh.net
+  - DOMAIN-SUFFIX,iptest.cn
   - DOMAIN-SUFFIX,ipw.cn
   - DOMAIN-SUFFIX,iqilu.com
   - DOMAIN-SUFFIX,iqiyi.com
@@ -6025,6 +6064,7 @@ payload:
   - DOMAIN-SUFFIX,myhwclouds.com.cn
   - DOMAIN-SUFFIX,myhwclouds.net
   - DOMAIN-SUFFIX,myimis.com
+  - DOMAIN-SUFFIX,myipinfo.cn
   - DOMAIN-SUFFIX,mykuaidi.com
   - DOMAIN-SUFFIX,myoppo.com
   - DOMAIN-SUFFIX,mypaas.com
@@ -6407,6 +6447,7 @@ payload:
   - DOMAIN-SUFFIX,pingcap.cn
   - DOMAIN-SUFFIX,pingcap.com
   - DOMAIN-SUFFIX,pingcode.com
+  - DOMAIN-SUFFIX,pingip.cn
   - DOMAIN-SUFFIX,pingplusplus.com
   - DOMAIN-SUFFIX,pingwest.com
   - DOMAIN-SUFFIX,pingxx.com
@@ -6870,6 +6911,7 @@ payload:
   - DOMAIN-SUFFIX,seeed.cn
   - DOMAIN-SUFFIX,seeed.com.cn
   - DOMAIN-SUFFIX,seeedstudio.com.cn
+  - DOMAIN-SUFFIX,seeip.cn
   - DOMAIN-SUFFIX,seewo.com
   - DOMAIN-SUFFIX,segmentfault.com
   - DOMAIN-SUFFIX,segwayrobotics.com
@@ -7244,6 +7286,8 @@ payload:
   - DOMAIN-SUFFIX,sznews.com
   - DOMAIN-SUFFIX,szpgm.com
   - DOMAIN-SUFFIX,szse.cn
+  - DOMAIN-SUFFIX,szu.app
+  - DOMAIN-SUFFIX,szu.moe
   - DOMAIN-SUFFIX,szzfgjj.com
   - DOMAIN-SUFFIX,t.cn
   - DOMAIN-SUFFIX,t00ls.cc
@@ -7582,6 +7626,7 @@ payload:
   - DOMAIN-SUFFIX,tobosu.com
   - DOMAIN-SUFFIX,todesk.cn
   - DOMAIN-SUFFIX,todesk.com
+  - DOMAIN-SUFFIX,todetect.cn
   - DOMAIN-SUFFIX,tokyotrial.cn
   - DOMAIN-SUFFIX,tol.vip
   - DOMAIN-SUFFIX,tom.com
@@ -8217,6 +8262,8 @@ payload:
   - DOMAIN-SUFFIX,wfdata.club
   - DOMAIN-SUFFIX,wggames.cn
   - DOMAIN-SUFFIX,whalecloud.com
+  - DOMAIN-SUFFIX,whatip.cn
+  - DOMAIN-SUFFIX,whatismyip.com.cn
   - DOMAIN-SUFFIX,whccb.com
   - DOMAIN-SUFFIX,whee.com
   - DOMAIN-SUFFIX,whhhealth.com
