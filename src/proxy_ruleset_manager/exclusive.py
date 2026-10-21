@@ -19,11 +19,14 @@ Conflicts are resolved by specificity, like longest-prefix routing:
   otherwise the first destination in ``GROUPS`` order (the order clients
   evaluate today, so the result does not change behavior).
 
-* Blocking is not overridden by routing preferences: a direct or download
-  entry covered by a block list leaves its set (or excludes the blocking
-  regex) even when it is more specific, since a direct list is not an
-  allowlist. Exceptions: entries hand-kept in a self-host list, and blocks
-  that come from a keyword (too broad to win; dnsapi.cn is no HTTPDNS).
+* Blocking from an exact domain, suffix, keyword, or regex wins over routing
+  preferences. A direct or download entry is removed or carved with an
+  inverted blocking rule, since a direct list is not an allowlist. Entries
+  hand-kept in a self-host list still beat exact-domain and suffix blocks,
+  but keyword and regex blocks do not yield to hand-kept routing entries.
+  A small, explicit list of confirmed exceptions is the only exception to
+  keyword/regex precedence; an exception is effective only when that exact
+  name is also present in a direct or download set.
 
 Keyword-against-keyword and regex-against-regex overlaps cannot be decided
 statically and are only reported.  Logical rules (from upstream, or from
@@ -85,6 +88,10 @@ CLIENT_ORDER = (
     ("direct", "geosite-category-direct@light.json"),
     ("download", "geosite-filter-downloadKeywords@!cn.json"),
 )
+
+# This file is intentionally not included in any published rule set.  It is
+# policy metadata read by the exclusivity pass.
+KEYWORD_BLOCK_EXCEPTIONS_FILE = "self-host/keyword-block-exceptions.json"
 
 LOGICAL_KEYS = {"type", "mode", "rules"}
 
@@ -227,6 +234,17 @@ def _patterns_intersect(field_a, a, field_b, b):
     return True
 
 
+def _pattern_region_covers(index, field, value):
+    """Whether a block index has a keyword/regex region under an entry."""
+    for keyword in index.keywords:
+        if _intersects("domain_keyword", keyword, None, field, value):
+            return True
+    for pattern, compiled in index.regexes:
+        if _intersects("domain_regex", pattern, compiled, field, value):
+            return True
+    return False
+
+
 def _entry_rank(field, value):
     return (EXACT if field == "domain" else SUFFIX, len(value))
 
@@ -253,6 +271,42 @@ def _self_host_entries(root):
     return owners
 
 
+def _keyword_block_exceptions(root):
+    """Return confirmed exact names allowed through keyword/regex blocks.
+
+    The list is deliberately exact-domain-only.  It is a tie-break list, not
+    a route source: callers still require the name to match a direct/download
+    output before using it.
+    """
+    path = os.path.join(root, KEYWORD_BLOCK_EXCEPTIONS_FILE)
+    if not os.path.exists(path):
+        return set()
+    with open(path, encoding="utf-8") as file:
+        document = json.load(file)
+    rules = document.get("rules", [])
+    if not isinstance(rules, list):
+        raise ValueError(f"{KEYWORD_BLOCK_EXCEPTIONS_FILE}: rules must be a list")
+    names = set()
+    for rule in rules:
+        if not isinstance(rule, dict) or set(rule) - {"domain"}:
+            raise ValueError(
+                f"{KEYWORD_BLOCK_EXCEPTIONS_FILE}: only exact domain rules are supported"
+            )
+        values = _values(rule, "domain")
+        if not values:
+            raise ValueError(
+                f"{KEYWORD_BLOCK_EXCEPTIONS_FILE}: every rule needs a domain"
+            )
+        for value in values:
+            name = _norm(value)
+            if not HOSTNAME.fullmatch(name):
+                raise ValueError(
+                    f"{KEYWORD_BLOCK_EXCEPTIONS_FILE}: invalid domain {value!r}"
+                )
+            names.add(name)
+    return names
+
+
 MAX_PASSES = 4
 
 
@@ -277,7 +331,7 @@ def make_exclusive(output_directory, root=".", report_file=None, pre_directory=N
         if report is None:
             report = current
         else:
-            for key in ("ties", "carved", "blocked", "regions", "unresolved", "hand_conflicts"):
+            for key in ("ties", "carved", "blocked", "regions", "unresolved", "hand_conflicts", "confirmed_exceptions"):
                 report[key].extend(x for x in current[key] if x not in report[key])
             for filename, counts in current["summary"].items():
                 total = report["summary"].setdefault(filename, {"removed": 0, "carved": 0})
@@ -312,10 +366,21 @@ def _exclusive_pass(output_directory, root):
                               "index": RuleIndex(document.get("rules", []))}
     order = [group["name"] for group in GROUPS]
     owners = _self_host_entries(root)
+    confirmed_exceptions = _keyword_block_exceptions(root)
 
     removals = {filename: set() for filename in sets}    # (field, value) dropped
     exceptions = {filename: set() for filename in sets}  # (field, value) carved out
-    report = {"ties": [], "carved": [], "blocked": [], "regions": [], "unresolved": [], "hand_conflicts": []}
+    protected_entries = {filename: set() for filename in sets}  # explicit winners under a pattern region
+    blocking_overrides = {filename: set() for filename in sets}  # route entries a block pattern must carve
+    # A blocking pattern gets an exact inverted carve-out for a confirmed
+    # exception.  Keep this separate from ``exceptions`` so an exception
+    # does not accidentally weaken an exact/suffix blocking rule in the same
+    # file.
+    pattern_exclusions = {filename: {} for filename in sets}
+    confirmed_routes = {filename: set() for filename in sets}
+    report = {"ties": [], "carved": [], "blocked": [], "regions": [],
+              "unresolved": [], "hand_conflicts": [],
+              "confirmed_exceptions": []}
 
     def winner(field, value, groups):
         hand = owners.get((field, value), set()) & set(groups)
@@ -324,6 +389,52 @@ def _exclusive_pass(output_directory, root):
         if hand:
             return min(hand, key=order.index)
         return min(groups, key=order.index)
+
+    # Resolve confirmed exact exceptions against the current route entries.
+    # A name covered only by a blocker, or by an exact/suffix blocker, is not
+    # an exception.  When several route groups cover it, use the same
+    # specificity/hand-kept/group-order tie-break as ordinary entries.
+    for name in sorted(confirmed_exceptions):
+        blocking_patterns = {}
+        has_non_pattern_block = False
+        for filename, info in sets.items():
+            if info["group"] != "reject":
+                continue
+            matched = info["index"].match(name)
+            if matched and matched[2] in ("domain", "domain_suffix"):
+                has_non_pattern_block = True
+            for keyword in info["index"].keywords:
+                if keyword in name:
+                    blocking_patterns.setdefault(filename, set()).add(("domain_keyword", keyword))
+            for pattern, compiled in info["index"].regexes:
+                if compiled.search(name):
+                    blocking_patterns.setdefault(filename, set()).add(("domain_regex", pattern))
+        if has_non_pattern_block or not blocking_patterns:
+            continue
+
+        candidates = []
+        for filename, info in sets.items():
+            if info["group"] == "reject":
+                continue
+            matched = info["index"].match(name)
+            if matched:
+                candidates.append((matched[:2], info["group"], filename, matched))
+        if not candidates:
+            continue
+        best_rank = max(candidate[0] for candidate in candidates)
+        candidates = [candidate for candidate in candidates if candidate[0] == best_rank]
+        groups = sorted({candidate[1] for candidate in candidates}, key=order.index)
+        if len(groups) > 1:
+            keep_group = winner(candidates[0][3][2], candidates[0][3][3], groups)
+            candidates = [candidate for candidate in candidates if candidate[1] == keep_group]
+        kept = min(candidates, key=lambda candidate: order.index(candidate[1]))
+        kept_filename = kept[2]
+        confirmed_routes[kept_filename].add(name)
+        protected_entries[kept_filename].add(("domain", name))
+        for filename, patterns in blocking_patterns.items():
+            for pattern in patterns:
+                pattern_exclusions[filename].setdefault(pattern, set()).add(name)
+        report["confirmed_exceptions"].append({"domain": name, "kept_in": kept_filename})
 
     # Domain entries.
     for filename, info in sets.items():
@@ -342,12 +453,38 @@ def _exclusive_pass(output_directory, root):
                     if keep == info["group"] and (field, value) not in removals[other]:
                         removals[other].add((field, value))
                         report["ties"].append({"field": field, "value": value, "kept_in": filename, "removed_from": other})
-                elif (other_info["group"] == "reject" and info["group"] != "reject" and matched[2] != "domain_keyword"
+                elif (other_info["group"] == "reject" and info["group"] != "reject"
+                      and matched[2] in ("domain_keyword", "domain_regex")):
+                    # Keyword/regex blocks always win.  A confirmed exact
+                    # exception is protected separately; a suffix containing
+                    # that name is still carved and the exact route is added
+                    # below.
+                    exact_exception = field == "domain" and value in confirmed_routes[filename]
+                    if not exact_exception and (matched[2], matched[3]) not in exceptions[filename]:
+                        exceptions[filename].add((matched[2], matched[3]))
+                        blocking_overrides[filename].add((field, value))
+                        report["blocked"].append({"field": matched[2], "value": matched[3],
+                                                  "carved_from": filename, "blocked_by": other,
+                                                  "covering": {field: value}})
+                elif (other_info["group"] == "reject" and info["group"] != "reject"
+                      and info["group"] in owners.get((field, value), set())):
+                    # A hand-kept exact/suffix route entry still beats a
+                    # non-keyword block. Carve the block at the route entry;
+                    # do not leave the two sets overlapping. If the same
+                    # blocker also has a keyword/regex region under this
+                    # route entry, that stronger pattern must remain in
+                    # force and the later pattern pass handles the route.
+                    if not _pattern_region_covers(other_info["index"], field, value) \
+                            and (field, value) not in exceptions[other]:
+                        exceptions[other].add((field, value))
+                        report["carved"].append({"field": field, "value": value,
+                                                 "kept_in": filename, "carved_from": other,
+                                                 "covering": {matched[2]: matched[3]}})
+                elif (other_info["group"] == "reject" and info["group"] != "reject"
                       and info["group"] not in owners.get((field, value), set())):
-                    # Blocking wins over routing preferences: a direct or
-                    # download entry the block list covers leaves its set
-                    # (or, under a block regex, excludes that regex), unless
-                    # it is hand-kept. Keyword blocks are too broad to win.
+                    # Exact/suffix blocking keeps the historical behavior:
+                    # a hand-kept route entry is allowed to beat it, while an
+                    # ordinary route entry is removed or carved.
                     if matched[2] in ("domain", "domain_suffix") or field == "domain":
                         if (field, value) not in removals[filename]:
                             removals[filename].add((field, value))
@@ -358,7 +495,29 @@ def _exclusive_pass(output_directory, root):
                         report["blocked"].append({"field": "domain_regex", "value": matched[3], "carved_from": filename,
                                                   "blocked_by": other, "covering": {field: value}})
                 elif rank > other_rank:
-                    if (field, value) not in exceptions[other]:
+                    # A hand-kept route entry retains its historical priority
+                    # over an exact/suffix block even when this comparison is
+                    # visited from the blocker's side.
+                    hand_route = (
+                        # This exception is only for a blocking entry.  A
+                        # hand-kept route entry in another routing group does
+                        # not outrank a more-specific route entry; ordinary
+                        # specificity still decides direct-vs-download.
+                        info["group"] == "reject"
+                        and other_info["group"] != "reject"
+                        and other_info["group"] in owners.get((matched[2], matched[3]), set())
+                        and not _pattern_region_covers(info["index"], matched[2], matched[3])
+                    )
+                    if hand_route:
+                        route_entry = (matched[2], matched[3])
+                        if route_entry not in exceptions[filename]:
+                            exceptions[filename].add(route_entry)
+                            report["carved"].append({
+                                "field": matched[2], "value": matched[3],
+                                "kept_in": other, "carved_from": filename,
+                                "covering": {field: value},
+                            })
+                    elif (field, value) not in exceptions[other]:
                         exceptions[other].add((field, value))
                         report["carved"].append({"field": field, "value": value, "kept_in": filename,
                                                  "carved_from": other, "covering": {matched[2]: matched[3]}})
@@ -374,11 +533,16 @@ def _exclusive_pass(output_directory, root):
             for other, other_info in sets.items():
                 if other_info["group"] == info["group"]:
                     continue
-                # Entries the other set gives up (removed, or carved out of it)
-                # cannot take a region over: carving them would leave names
-                # without any match.
+                # A carved entry is still published (possibly as a pinned
+                # plain rule), so a later blocking pattern must still see it.
+                # Keep the original exclusion for routing patterns: letting
+                # those re-carve an already-carved blocking entry can orphan
+                # it.
+                blocking_region = info["group"] == "reject" and other_info["group"] != "reject"
                 hits = [(f, v) for f, v in other_info["index"].entries()
-                        if (f, v) not in removals[other] and (f, v) not in exceptions[other]
+                        if (f, v) not in removals[other]
+                        and (blocking_region or (f, v) not in exceptions[other])
+                        and not (blocking_region and f == "domain" and v in confirmed_routes[other])
                         and _intersects(pattern_field, pattern, compiled, f, v)]
                 # Patterns of the other destination that may overlap this one.
                 other_index = other_info["index"]
@@ -398,14 +562,16 @@ def _exclusive_pass(output_directory, root):
                 if not hits:
                     continue
                 if info["group"] == "reject" and other_info["group"] != "reject":
-                    # Blocking wins in the region; listed names the pattern
-                    # itself hits and that won above stay pinned.
+                    # Keyword/regex blocks win over every route suffix,
+                    # including hand-kept self-host entries.  Confirmed exact
+                    # exceptions were removed from ``hits`` above and are
+                    # re-added as exact route rules after this rewrite.
+                    blocking_overrides[other].update(hits)
                     if (pattern_field, pattern) not in exceptions[other]:
                         exceptions[other].add((pattern_field, pattern))
                         report["regions"].append({"pattern": {pattern_field: pattern}, "kept_in": filename,
                                                   "excluded_from": other, "overlapping_entries": len(hits)})
                 else:
-                    # Explicit entries win over a pattern of another destination.
                     added = [hit for hit in hits if hit not in exceptions[filename]]
                     exceptions[filename].update(added)
                     if added:
@@ -440,10 +606,42 @@ def _exclusive_pass(output_directory, root):
                                              "carved_from": other, "covering": {"ip_cidr": str(container)}})
 
     for filename, info in sets.items():
-        if not removals[filename] and not exceptions[filename]:
+        if not removals[filename] and not exceptions[filename] and not pattern_exclusions[filename] \
+                and not confirmed_routes[filename]:
             continue
-        protected = {(c["field"], c["value"]) for c in report["carved"] if c["kept_in"] == filename}
-        info["document"]["rules"] = _rewrite(info["document"].get("rules", []), removals[filename], exceptions[filename], protected)
+        # A more-specific entry that won a direct-vs-download comparison still
+        # needs its original protection, even when the broader entry is also
+        # carved by a blocking keyword/regex. Reject-side winners are not
+        # restored here; confirmed keyword exceptions are handled separately.
+        protected = {
+            (c["field"], c["value"])
+            for c in report["carved"]
+            if c["kept_in"] == filename
+            and sets.get(c["carved_from"], {}).get("group") != "reject"
+        }
+        protected.update(protected_entries[filename])
+        info["document"]["rules"] = _rewrite(
+            info["document"].get("rules", []),
+            removals[filename],
+            exceptions[filename],
+            protected,
+            pattern_exclusions[filename],
+        )
+        # A confirmed exception is exact-name metadata, not a route source.
+        # Re-add it only when the original route set covered it, and only
+        # after the blocking patterns have been carved at that exact name.
+        if confirmed_routes[filename]:
+            cache = {}
+            missing = sorted(
+                name for name in confirmed_routes[filename]
+                if not any(
+                    _rule_matches(rule, name=name, cache=cache)
+                    for rule in info["document"].get("rules", [])
+                    if isinstance(rule, dict)
+                )
+            )
+            if missing:
+                info["document"].setdefault("rules", []).append({"domain": missing})
         with open(info["path"], "w", encoding="utf-8") as file:
             json.dump(info["document"], file, ensure_ascii=False, indent=4)
             file.write("\n")
@@ -471,11 +669,11 @@ def _covered_by(field, value, exceptions):
     for kind, exception in exceptions:
         if kind == "domain_suffix" and value != exception and value.endswith("." + exception):
             return True
-        if kind == "domain_keyword" and exception in value:
+        if kind == "domain_keyword" and field == "domain" and exception in value:
             return True
         if kind == "domain_regex":
             try:
-                if re.search(exception, value):
+                if field == "domain" and re.search(exception, value):
                     return True
             except re.error:
                 pass
@@ -555,15 +753,43 @@ def _carve(rule, inverted):
     return {**rule, "rules": subs}
 
 
-def _rewrite(rules, removals, exceptions, protected=frozenset()):
+def _rewrite(rules, removals, exceptions, protected=frozenset(), pattern_exclusions=None):
+    return _rewrite_with_pattern_exclusions(
+        rules, removals, exceptions, protected, pattern_exclusions or {}
+    )
+
+
+def _pattern_entries(rule):
+    """Yield positive keyword/regex entries contained in a rule tree."""
+    if not isinstance(rule, dict) or rule.get("invert"):
+        return
+    if LOGICAL_KEYS.issubset(rule):
+        for sub in rule.get("rules", []):
+            yield from _pattern_entries(sub)
+        return
+    for field in ("domain_keyword", "domain_regex"):
+        for value in _values(rule, field):
+            yield (field, value)
+
+
+def _rewrite_with_pattern_exclusions(
+    rules, removals, exceptions, protected=frozenset(), pattern_exclusions=None
+):
+    pattern_exclusions = pattern_exclusions or {}
     pinned, result = {}, []
     for rule in rules:
         if not isinstance(rule, dict) or rule.get("invert"):
             result.append(rule)
             continue
-        stripped = _strip(rule, removals, pinned, exceptions, protected)
+        local_exceptions = set(exceptions)
+        for pattern in _pattern_entries(rule):
+            local_exceptions.update(
+                ("domain", name)
+                for name in pattern_exclusions.get(pattern, set())
+            )
+        stripped = _strip(rule, removals, pinned, local_exceptions, protected)
         if stripped is not None:
-            result.append(_carve(stripped, _inverted(exceptions)))
+            result.append(_carve(stripped, _inverted(local_exceptions)))
     if pinned:
         # Pinned entries are more specific than some exceptions; the others
         # (more specific than them) still apply.
@@ -618,10 +844,20 @@ def _load_documents(output_directory):
 def _destination(documents, name, cache):
     """The destination a client picks for name: the first matching domain
     set in client order (None when no set matches)."""
-    by_file = {filename: (group, rules) for group, filename, rules in documents}
+    by_file_key = ("by-file", id(documents))
+    by_file = cache.get(by_file_key)
+    if by_file is None:
+        by_file = cache[by_file_key] = {filename: (group, rules) for group, filename, rules in documents}
     for group, filename in CLIENT_ORDER:
-        if filename in by_file and any(_rule_matches(rule, name=name, cache=cache)
-                                       for rule in by_file[filename][1] if isinstance(rule, dict)):
+        if filename not in by_file:
+            continue
+        rules = by_file[filename][1]
+        index_key = ("name-index", filename)
+        index = cache.get(index_key)
+        if index is None:
+            index = cache[index_key] = RuleIndex(_flatten(rules))
+        if _name_candidate(index, name) and any(_rule_matches(rule, name=name, cache=cache)
+                                                for rule in rules if isinstance(rule, dict)):
             return group
     return None
 
@@ -647,10 +883,16 @@ def verify_exclusive(output_directory):
     documents = _load_documents(output_directory)
     probes = _probes(documents)
     remaining, cache = [], {}
+    indexes = {
+        filename: RuleIndex(_flatten(rules))
+        for _, filename, rules in documents
+    }
     for kind, probe in sorted(probes, key=str):
         groups = {}
         for group, filename, rules in documents:
             arguments = {"name": probe} if kind == "name" else {"address": probe}
+            if kind == "name" and not _name_candidate(indexes[filename], probe):
+                continue
             if any(_rule_matches(rule, cache=cache, **arguments) for rule in rules if isinstance(rule, dict)):
                 groups.setdefault(group, []).append(filename)
         if len(groups) > 1:
@@ -658,31 +900,56 @@ def verify_exclusive(output_directory):
     return remaining
 
 
+def _name_candidate(index, name):
+    """Reject files that have no possible positive domain match cheaply."""
+    if not (index.domains or index.suffixes or index.keywords or index.regexes):
+        return True
+    return index.match(name) is not None
+
+
 def _probes(documents):
     """Names and addresses that exercise the rule sets: every entry, plus
     names in the regions of keywords and regexes."""
-    probes, suffixes, keywords, regexes = set(), set(), set(), set()
-    for _, _, rules in documents:
+    probes = set()
+    suffixes_by_group, patterns_by_group = {}, {}
+    for group, _, rules in documents:
         index = RuleIndex(_flatten(rules))
-        probes.update(("name", value) for _, value in index.entries())
+        for field, value in index.entries():
+            probes.add(("name", value))
+            probes.add(("name", f"a.{value}"))
+            labels = value.split(".")
+            if len(labels) > 2:
+                probes.add(("name", ".".join(labels[1:])))
+            if field == "domain_suffix":
+                probes.add(("name", f"x{value}"))
         probes.update(("address", network.network_address) for network in index.networks)
-        suffixes.update(index.suffixes)
-        keywords.update(index.keywords)
-        regexes.update(pattern for pattern, _ in index.regexes)
-    # Pattern regions: names a keyword or regex matches under other suffixes.
-    sample = sorted(suffixes)[::max(1, len(suffixes) // 400)]
-    for keyword in keywords:
-        for suffix in sample:
-            probes.update({("name", f"{keyword}.{suffix}"), ("name", f"x{keyword}x.{suffix}")})
-    for pattern in regexes:
-        for name in _regex_samples(pattern):
-            if "\0" not in name:
-                probes.add(("name", name))
+        suffixes_by_group.setdefault(group, set()).update(index.suffixes)
+        patterns_by_group.setdefault(group, []).extend(
+            [("domain_keyword", keyword, None) for keyword in index.keywords]
+            + [("domain_regex", pattern, compiled) for pattern, compiled in index.regexes]
+        )
+    # Pattern regions: pair every pattern with every suffix owned by another
+    # destination. This must not depend on sorted-input sampling.
+    for group, patterns in patterns_by_group.items():
+        other_suffixes = sorted({
+            suffix
+            for other_group, suffixes in suffixes_by_group.items()
+            if other_group != group
+            for suffix in suffixes
+        })
+        for pattern_field, pattern, _ in patterns:
+            if pattern_field == "domain_keyword":
+                for suffix in other_suffixes:
+                    probes.update({("name", f"{pattern}.{suffix}"), ("name", f"x{pattern}x.{suffix}")})
                 continue
-            probes.add(("name", name.replace("\0", "x")))
-            if name.endswith("\0"):
-                for suffix in sample:
-                    probes.add(("name", name[:-1].replace("\0", "x") + suffix))
+            for name in _regex_samples(pattern):
+                if "\0" not in name:
+                    probes.add(("name", name))
+                    continue
+                probes.add(("name", name.replace("\0", "x")))
+                if name.endswith("\0"):
+                    prefix = name[:-1].replace("\0", "x")
+                    probes.update(("name", prefix + suffix) for suffix in other_suffixes)
     return {(kind, probe) for kind, probe in probes if kind != "name" or HOSTNAME.fullmatch(probe)}
 
 

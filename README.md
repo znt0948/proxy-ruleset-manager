@@ -25,6 +25,7 @@
 - 生成 sing-box JSON/SRS 规则集
 - 转换 Surge、Shadowrocket、Clash YAML 和 Mihomo MRS 规则集
 - 支持 `corrections/` 同名文件修正上游的错误分类
+- 规则集在发布前按去向做互斥处理：拦截规则优先于直连/下载规则（`self-host/` 中自维护的条目仍优先于精确域名/后缀拦截，但不优先于关键字/正则拦截）；`self-host/keyword-block-exceptions.json` 是仅供互斥判定使用的、已确认的关键字/正则例外名单，不是发布规则集，且其中的域名只有在直连或下载集合已有匹配时才生效
 - 对每个结构化上游分别清洗后再合并，并生成 `report/ruleset-quality.json`，记录单上游去重、合并后去重和精确来源重叠；`domain_keyword` 仅做规范化与完全重复去重，不参与覆盖推断
 - AdGuard 输入按 sing-box 的 DNS 支持范围清洗：丢弃路径、查询参数、cosmetic filter、IP/CIDR 模式和不支持的 modifier
 - AdGuard 裸域名、`0.0.0.0 hosts` 与精确锚点统一输出为 `|domain^`，避免混合规则触发非精确匹配；严格 `||domain^` 统一为根域名及子域规则
@@ -117,3 +118,5 @@ corrections/          # 按输出文件名修正上游错误分类
 report/               # 规则质量、来源重叠和发布产物统计
 rule/                 # 自动生成的规则产物
 ```
+
+`self-host/keyword-block-exceptions.json` 只记录人工确认的精确域名例外。它不会单独产生路由；它仅决定该域名在已有直连/下载匹配时是否可以避开关键字或正则拦截。普通自维护直连/下载条目不会自动获得这个优先级。

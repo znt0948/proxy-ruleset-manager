@@ -1,4 +1,5 @@
 import os
+from . import exclusive as exclusive_module
 from .exclusive import make_exclusive, verify_exclusive
 from .adguard import adguard_lines_to_singbox_rules
 import copy
@@ -985,6 +986,165 @@ class RuleParser:
                 file.write("\n")
             logging.info("[classification correction] %s: final exact-domain exclusions applied", json_file)
 
+    @staticmethod
+    def _correction_path(corrections_directory, json_file):
+        correction_path = os.path.join(corrections_directory, json_file)
+        if not os.path.exists(correction_path) and "@" in json_file:
+            correction_path = os.path.join(
+                corrections_directory,
+                json_file.split("@", 1)[0] + ".json",
+            )
+        return correction_path
+
+    @staticmethod
+    def _correction_names(corrections_data):
+        names = set()
+        for section in ("rules", "exclude"):
+            entries = corrections_data.get(section, [])
+            if not isinstance(entries, list):
+                continue
+            for rule in entries:
+                if not isinstance(rule, dict):
+                    continue
+                values = rule.get("domain", [])
+                if isinstance(values, str):
+                    values = [values]
+                for value in values:
+                    if isinstance(value, str):
+                        name = value.strip().lower().lstrip(".").rstrip(".")
+                        if exclusive_module.HOSTNAME.fullmatch(name):
+                            names.add(name)
+        return names
+
+    def _explicit_correction_documents(self, documents, corrections_directory):
+        """Return corrected documents and names deliberately removed.
+
+        The first document list applies only ``rules`` corrections; the
+        second also applies exact ``exclude`` carve-outs.  Keeping both lets
+        the final report distinguish a deliberate fall-through from a lost
+        match caused by exclusivity.
+        """
+        corrected, explicit, names = [], [], set()
+        for group, filename, rules in documents:
+            correction_path = self._correction_path(corrections_directory, filename)
+            corrections = {"rules": []}
+            if os.path.exists(correction_path):
+                with open(correction_path, encoding="utf-8") as file:
+                    corrections = json.load(file)
+                names.update(self._correction_names(corrections))
+
+            source = {"version": 1, "rules": copy.deepcopy(rules)}
+            fixed, _, _ = self.apply_corrections(
+                source,
+                corrections,
+            )
+            corrected.append((group, filename, copy.deepcopy(fixed.get("rules", []))))
+
+            final_source = {"version": 1, "rules": copy.deepcopy(fixed.get("rules", []))}
+            if corrections.get("exclude"):
+                final_source = self.apply_exclusions(final_source, corrections)
+            explicit.append((group, filename, final_source.get("rules", [])))
+        return corrected, explicit, names
+
+    @staticmethod
+    def _write_exclusive_report(report_file, report):
+        if not report_file:
+            return
+        os.makedirs(os.path.dirname(report_file) or ".", exist_ok=True)
+        with open(report_file, "w", encoding="utf-8") as file:
+            json.dump(report, file, ensure_ascii=False, indent=2)
+            file.write("\n")
+
+    def _classify_final_exclusive_changes(
+        self,
+        report,
+        raw_documents,
+        corrected_documents,
+        explicit_documents,
+        pre_exclusive_documents,
+        final_documents,
+        correction_names,
+    ):
+        """Annotate report orphans after explicit corrections and exclusions."""
+        probes = {
+            (kind, probe)
+            for documents in (
+                raw_documents,
+                corrected_documents,
+                explicit_documents,
+                pre_exclusive_documents,
+                final_documents,
+            )
+            for kind, probe in exclusive_module._probes(documents)
+        }
+        probes.update(("name", name) for name in correction_names)
+        names = sorted(probe for kind, probe in probes if kind == "name")
+
+        def destinations(documents):
+            cache = {}
+            return {
+                name: exclusive_module._destination(documents, name, cache)
+                for name in names
+            }
+
+        raw = destinations(raw_documents)
+        corrected = destinations(corrected_documents)
+        explicit = destinations(explicit_documents)
+        before = destinations(pre_exclusive_documents)
+        after = destinations(final_documents)
+
+        intentional = {}
+        for name in names:
+            if raw[name] is not None and corrected[name] is None:
+                intentional[name] = {
+                    "name": name,
+                    "before": raw[name],
+                    "after": None,
+                    "reason": "correction",
+                }
+            elif corrected[name] is not None and explicit[name] is None:
+                intentional[name] = {
+                    "name": name,
+                    "before": corrected[name],
+                    "after": None,
+                    "reason": "exclude",
+                }
+
+        existing_changed = {
+            item["name"]: item for item in report.get("changed", [])
+        }
+        accidental = list(report.get("orphaned", []))
+        for name in names:
+            if before[name] == after[name]:
+                continue
+            if after[name] is None:
+                item = intentional.get(name)
+                if item is not None:
+                    continue
+                accidental.append({
+                    "name": name,
+                    "before": before[name],
+                    "after": None,
+                    "reason": "exclusivity",
+                })
+                continue
+            if name not in existing_changed:
+                item = {"name": name, "before": before[name], "after": after[name]}
+                report.setdefault("changed", []).append(item)
+                existing_changed[name] = item
+
+        report["intentional_orphaned"] = sorted(
+            intentional.values(), key=lambda item: item["name"]
+        )
+        report["orphaned"] = sorted(
+            {
+                (item["name"], item.get("before"), item.get("after"), item.get("reason", "exclusivity")): item
+                for item in accidental
+            }.values(),
+            key=lambda item: item["name"],
+        )
+        report["changed"].sort(key=lambda item: item["name"])
+
     def optimize_output_rulesets(self, output_directory):
         """Apply coverage pruning and sing-box packing after corrections."""
         reports_by_ruleset = {
@@ -1089,6 +1249,15 @@ class RuleParser:
                                root=".", report_file=None,
                                pre_directory=None, compile_rules=True):
         """Run the post-parse production pipeline on sing-box JSON rules."""
+        raw_documents = exclusive_module._load_documents(output_directory)
+        corrected_documents, explicit_documents, correction_names = (
+            self._explicit_correction_documents(
+                raw_documents,
+                corrections_directory,
+            )
+            if os.path.isdir(corrections_directory)
+            else (raw_documents, raw_documents, set())
+        )
         # Corrections must run before suffix/CIDR coverage pruning; otherwise a
         # correct child entry can be lost behind an erroneous parent suffix.
         self.apply_corrections_to_output(
@@ -1105,9 +1274,8 @@ class RuleParser:
             report_file=report_file,
             pre_directory=pre_directory,
         )
-        if report["remaining"] or report["orphaned"]:
-            raise RuntimeError(
-                f"规则集仍有 {len(report['remaining'])} 处跨去向重叠、{len(report['orphaned'])} 个名称失去匹配，保留旧产物")
+        pre_final_remaining = report["remaining"]
+        pre_exclusive_documents = exclusive_module._load_documents(output_directory)
 
         # Exact carve-outs only shrink an already-exclusive set.  Keep them
         # after the tie-break and packing so they cannot change either one.
@@ -1116,9 +1284,23 @@ class RuleParser:
             corrections_directory=corrections_directory,
         )
         remaining = verify_exclusive(output_directory)
-        if remaining:
+        final_documents = exclusive_module._load_documents(output_directory)
+        self._classify_final_exclusive_changes(
+            report,
+            raw_documents,
+            corrected_documents,
+            explicit_documents,
+            pre_exclusive_documents,
+            final_documents,
+            correction_names,
+        )
+        report["pre_final_remaining"] = pre_final_remaining
+        report["remaining"] = remaining
+        self._write_exclusive_report(report_file, report)
+        if report["remaining"] or report["pre_final_remaining"] or report["orphaned"]:
             raise RuntimeError(
-                f"最终规则集仍有 {len(remaining)} 处跨去向重叠，保留旧产物")
+                f"规则集仍有 {len(report['remaining'])} 处最终跨去向重叠、"
+                f"{len(report['orphaned'])} 个意外失去匹配，保留旧产物")
 
         if not compile_rules:
             return

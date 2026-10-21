@@ -296,6 +296,48 @@ class ProductionFinalizationTests(unittest.TestCase):
                     compile_rules=False,
                 )
 
+    def test_report_classifies_correction_and_exclude_orphans_as_intentional(self):
+        parser = RuleParser()
+        with tempfile.TemporaryDirectory() as directory:
+            report_path = os.path.join(directory, "exclusive.json")
+            output = self._finalize(parser, directory)
+            with open(report_path, encoding="utf-8") as file:
+                report = json.load(file)
+
+            intentional = {
+                item["name"]: item["reason"]
+                for item in report["intentional_orphaned"]
+            }
+            self.assertEqual(report["orphaned"], [])
+            self.assertEqual(intentional["removed.example"], "correction")
+            self.assertEqual(
+                intentional["gateway-asset.icloud-content.com"],
+                "exclude",
+            )
+
+    def test_report_does_not_hide_an_accidental_orphan(self):
+        parser = RuleParser()
+        documents = [
+            (
+                "direct",
+                "geosite-category-direct@light.json",
+                [{"domain": ["lost.example"]}],
+            ),
+        ]
+        report = {"changed": [], "orphaned": []}
+        parser._classify_final_exclusive_changes(
+            report,
+            documents,
+            documents,
+            documents,
+            documents,
+            [],
+            set(),
+        )
+        self.assertEqual(report["intentional_orphaned"], [])
+        self.assertEqual(report["orphaned"][0]["name"], "lost.example")
+        self.assertEqual(report["orphaned"][0]["reason"], "exclusivity")
+
     @unittest.skipUnless(
         shutil.which("sing-box") and os.path.exists(
             os.path.join(

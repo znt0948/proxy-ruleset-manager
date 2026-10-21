@@ -54,8 +54,9 @@ class ExclusiveTest(unittest.TestCase):
         # More specific entries are carved out of broader ones.
         self.assertIn(("cn.download.nvidia.com", "geosite-category-download@!cn.json"), carved)
         self.assertIn(("dns.weixin.qq.com", "geosite-category-direct@light.json"), carved)
-        self.assertIn(("dnsapi.cn", "geosite-blocker-httpdns.json"), carved)
         self.assertIn(("119.29.29.29/32", "geoip-category-direct@light.json"), carved)
+        self.assertEqual(destinations(self.output, "dnsapi.cn"), {"reject"})
+        self.assertEqual(destinations(self.output, "api.dnsapi.cn"), {"reject"})
 
         direct = read(self.output, "geosite-category-direct@light.json")
         self.assertEqual(direct[0]["type"], "logical")
@@ -92,13 +93,114 @@ class ExclusiveTest(unittest.TestCase):
         self.assertEqual(report["remaining"], [])
         blocked = {(b["field"], b["value"]) for b in report["blocked"]}
         self.assertIn(("domain", "google-analytics.com"), blocked)
-        self.assertIn(("domain", "tracking.intl.miui.com"), blocked)
+        self.assertIn(("domain_regex", r"(^|\.)tracking\..*\.miui\.com$"), blocked)
+        self.assertEqual(destinations(self.output, "google-analytics.com"), {"reject"})
         self.assertEqual(destinations(self.output, "tracking.intl.miui.com"), {"reject"})
-        self.assertEqual(destinations(self.output, "dnsapi.cn"), {"direct"})
+        self.assertEqual(destinations(self.output, "dnsapi.cn"), {"reject"})
         carved = {(c["value"], c["carved_from"]) for c in report["carved"]}
-        self.assertIn(("dnsapi.cn", "geosite-blocker-httpdns.json"), carved)
         ties = {(t["value"], t["kept_in"]) for t in report["ties"]}
         self.assertIn(("kept-ads.example", "geosite-category-direct@light.json"), ties)
+
+    def test_keyword_and_regex_blocks_win_except_confirmed_exact_domain(self):
+        write(self.output, "geosite-blocker-httpdns.json", [{
+            "domain_keyword": ["api-dns", "api.dns", "dnsapi", "httpdns"],
+            "domain_regex": [r"^regex\."],
+        }])
+        write(self.output, "geosite-category-direct@light.json", [{
+            "domain_suffix": ["dnsapi.cn", "aliyuncs.com"],
+        }])
+        write(self.root, "self-host/geosite-direct@selfhost.json", [{
+            "domain_suffix": ["aliyuncs.com"],
+        }])
+        write(self.root, "self-host/keyword-block-exceptions.json", [{
+            "domain": ["dnsapi.cn", "unused.example"],
+        }])
+        report = make_exclusive(self.output, root=self.root)
+        self.assertEqual((report["remaining"], report["orphaned"]), ([], []))
+        self.assertEqual(destinations(self.output, "dnsapi.cn"), {"direct"})
+        for hostname in (
+            "api-dns.dnsapi.cn",
+            "api.dnsapi.cn",
+            "httpdns.dnsapi.cn",
+            "regex.dnsapi.cn",
+            "xhttpdnsx.aliyuncs.com",
+            "httpdns-api.aliyuncs.com",
+        ):
+            self.assertEqual(destinations(self.output, hostname), {"reject"}, hostname)
+        self.assertEqual(destinations(self.output, "oss-cn-hangzhou.aliyuncs.com"), {"direct"})
+        self.assertEqual(destinations(self.output, "httpdns.example.com"), {"reject"})
+        self.assertEqual(destinations(self.output, "regex.example.com"), {"reject"})
+        self.assertEqual(destinations(self.output, "unused.example"), set())
+
+    def test_hand_kept_route_beats_non_keyword_block(self):
+        write(self.output, "adguard-blocker@mobile.json", [{
+            "domain_suffix": ["suffix-block.example"],
+        }])
+        write(self.output, "geosite-category-direct@light.json", [{
+            "domain": ["exact.suffix-block.example"],
+            "domain_suffix": ["suffix-block.example"],
+        }])
+        write(self.root, "self-host/geosite-direct@selfhost.json", [{
+            "domain": ["exact.suffix-block.example"],
+            "domain_suffix": ["suffix-block.example"],
+        }])
+        report = make_exclusive(self.output, root=self.root)
+        self.assertEqual((report["remaining"], report["orphaned"]), ([], []))
+        self.assertEqual(destinations(self.output, "exact.suffix-block.example"), {"direct"})
+        self.assertEqual(destinations(self.output, "x.suffix-block.example"), {"direct"})
+
+    def test_specificity_beats_a_broader_hand_kept_route(self):
+        # A direct exact entry remains more specific than a hand-kept
+        # download suffix.  The B2 keyword precedence change must not alter
+        # this existing direct-vs-download rule.
+        write(self.output, "geosite-category-download@!cn.json", [{
+            "domain_suffix": ["gofile.example"],
+        }])
+        write(self.output, "geosite-category-direct@light.json", [{
+            "domain": ["gofile.example"],
+        }])
+        write(self.root, "self-host/geosite-direct@selfhost.json", [{
+            "domain": ["gofile.example"],
+        }])
+        write(self.root, "self-host/geosite-download@selfhost.json", [{
+            "domain_suffix": ["gofile.example"],
+        }])
+        report = make_exclusive(self.output, root=self.root)
+        self.assertEqual((report["remaining"], report["orphaned"]), ([], []))
+        self.assertEqual(destinations(self.output, "gofile.example"), {"direct"})
+        self.assertEqual(destinations(self.output, "x.gofile.example"), {"download"})
+
+    def test_exception_without_route_match_does_nothing(self):
+        write(self.output, "geosite-blocker-httpdns.json", [{
+            "domain_keyword": ["dnsapi"],
+        }])
+        write(self.output, "geosite-category-direct@light.json", [{
+            "domain_suffix": ["unrelated.example"],
+        }])
+        write(self.root, "self-host/keyword-block-exceptions.json", [{
+            "domain": ["dnsapi.cn"],
+        }])
+        report = make_exclusive(self.output, root=self.root)
+        self.assertEqual((report["remaining"], report["orphaned"]), ([], []))
+        self.assertEqual(destinations(self.output, "dnsapi.cn"), {"reject"})
+
+    def test_keyword_suffix_probe_is_complete_not_a_stride_sample(self):
+        suffixes = [f"s{number:03d}.example" for number in range(801)]
+        target = "s001.example"
+        old_stride = sorted(suffixes)[::max(1, len(suffixes) // 400)]
+        self.assertNotIn(target, old_stride)
+        write(self.output, "geosite-blocker-httpdns.json", [{"domain_keyword": ["needle"]}])
+        write(self.output, "geosite-category-direct@light.json", [{"domain_suffix": suffixes}])
+
+        report = make_exclusive(self.output, root=self.root)
+        self.assertEqual((report["remaining"], report["orphaned"]), ([], []))
+        regions = {
+            (item["pattern"]["domain_keyword"], item["overlapping_entries"])
+            for item in report["regions"]
+            if "domain_keyword" in item.get("pattern", {})
+        }
+        self.assertIn(("needle", len(suffixes)), regions)
+        self.assertEqual(destinations(self.output, f"xneedlex.{target}"), {"reject"})
 
     def test_no_orphans_when_a_tie_moves_an_entry(self):
         # direct's regex only has the literal tail ".cn", so it "overlaps"
