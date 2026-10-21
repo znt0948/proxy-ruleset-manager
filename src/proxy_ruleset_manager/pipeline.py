@@ -1,5 +1,5 @@
 import os
-from .exclusive import make_exclusive
+from .exclusive import make_exclusive, verify_exclusive
 from .adguard import adguard_lines_to_singbox_rules
 import copy
 import json
@@ -763,17 +763,30 @@ class RuleParser:
                （例如 correction suffix="gstatic.com" 会删除 "foo.gstatic.com"、"gstatic.com" 等）
             2. 从目标 json 的 domain_suffix 列表中删除相同或更具体的后缀
         - correction domain 同样对目标 json 的 domain_suffix 做精确修正
+        - correction domain_keyword/domain_regex removes exact pattern entries
+
+        ``exclude`` corrections are intentionally not handled here.  They are
+        applied after the output has been optimized and made exclusive so that
+        an exact carve-out cannot affect the exclusivity tie-break.
         """
         correction_domains = set()
         correction_suffixes = set()
+        correction_patterns = {"domain_keyword": set(), "domain_regex": set()}
         for rule in corrections_data.get("rules", []):
             if isinstance(rule, dict):
                 for d in rule.get("domain", []):
                     correction_domains.add(normalize_domain(d))
                 for s in rule.get("domain_suffix", []):
                     correction_suffixes.add(normalize_domain_suffix(s))
+                for field in correction_patterns:
+                    values = rule.get(field, [])
+                    if isinstance(values, str):
+                        values = [values]
+                    correction_patterns[field].update(
+                        value for value in values if isinstance(value, str)
+                    )
 
-        if not correction_domains and not correction_suffixes:
+        if not correction_domains and not correction_suffixes and not any(correction_patterns.values()):
             return ruleset_data, 0, 0
 
         removed_domain = 0
@@ -830,6 +843,14 @@ class RuleParser:
                         filtered.append(entry_clean)
                     new_rule[key] = filtered
 
+                elif key in correction_patterns:
+                    filtered = [
+                        entry for entry in values
+                        if entry not in correction_patterns[key]
+                    ]
+                    removed_domain += len(values) - len(filtered)
+                    new_rule[key] = filtered
+
                 else:
                     new_rule[key] = values
 
@@ -840,6 +861,60 @@ class RuleParser:
 
         ruleset_data["rules"] = new_rules
         return ruleset_data, removed_domain, removed_domain_suffix
+
+    def apply_exclusions(self, ruleset_data, corrections_data):
+        """Apply exact-domain carve-outs to an already-final ruleset."""
+        excluded_domains = set()
+        for rule in corrections_data.get("exclude", []):
+            if not isinstance(rule, dict):
+                raise ValueError("exclude entries must be objects")
+            for domain in rule.get("domain", []):
+                excluded_domains.add(normalize_domain(domain))
+
+        if not excluded_domains:
+            return ruleset_data
+
+        def add_exclusion(rule):
+            if not isinstance(rule, dict) or rule.get("invert"):
+                return rule
+            if LOGICAL_RULE_KEYS.issubset(rule):
+                result = copy.deepcopy(rule)
+                if result.get("mode", "and") != "and":
+                    return {
+                        "type": "logical",
+                        "mode": "and",
+                        "rules": [
+                            result,
+                            {"domain": sorted(excluded_domains), "invert": True},
+                        ],
+                    }
+                for sub in result.get("rules", []):
+                    if not isinstance(sub, dict) or not sub.get("invert") \
+                            or LOGICAL_RULE_KEYS.issubset(sub):
+                        continue
+                    if any(field in sub for field in (
+                            "domain", "domain_suffix", "domain_keyword", "domain_regex")):
+                        sub["domain"] = sorted(set(sub.get("domain", [])) | excluded_domains)
+                        return result
+                result.setdefault("rules", []).append({
+                    "domain": sorted(excluded_domains),
+                    "invert": True,
+                })
+                return result
+            if any(field in rule for field in (
+                    "domain", "domain_suffix", "domain_keyword", "domain_regex")):
+                return {
+                    "type": "logical",
+                    "mode": "and",
+                    "rules": [
+                        rule,
+                        {"domain": sorted(excluded_domains), "invert": True},
+                    ],
+                }
+            return rule
+
+        ruleset_data["rules"] = [add_exclusion(rule) for rule in ruleset_data.get("rules", [])]
+        return ruleset_data
 
     def apply_corrections_to_output(self, output_directory,
                                     corrections_directory="corrections"):
@@ -881,6 +956,34 @@ class RuleParser:
                 )
             except Exception as e:
                 logging.error(f"[classification correction] 处理 {json_file} 时出错: {e}")
+
+    def apply_final_exclusions_to_output(self, output_directory,
+                                         corrections_directory="corrections"):
+        """Apply ``exclude`` corrections after exclusivity; failures are fatal."""
+        if not os.path.isdir(corrections_directory):
+            return
+
+        for json_file in sorted(f for f in os.listdir(output_directory) if f.endswith(".json")):
+            correction_path = os.path.join(corrections_directory, json_file)
+            if not os.path.exists(correction_path) and "@" in json_file:
+                base_name = json_file.split("@", 1)[0] + ".json"
+                correction_path = os.path.join(corrections_directory, base_name)
+            if not os.path.exists(correction_path):
+                continue
+
+            with open(correction_path, encoding="utf-8") as file:
+                corrections_data = json.load(file)
+            if not corrections_data.get("exclude"):
+                continue
+
+            json_file_path = os.path.join(output_directory, json_file)
+            with open(json_file_path, encoding="utf-8") as file:
+                json_data = json.load(file)
+            final_data = self.apply_exclusions(json_data, corrections_data)
+            with open(json_file_path, "w", encoding="utf-8") as file:
+                json.dump(final_data, file, ensure_ascii=False, indent=4)
+                file.write("\n")
+            logging.info("[classification correction] %s: final exact-domain exclusions applied", json_file)
 
     def optimize_output_rulesets(self, output_directory):
         """Apply coverage pruning and sing-box packing after corrections."""
@@ -1116,6 +1219,17 @@ class RuleParser:
         if report["remaining"] or report["orphaned"]:
             raise RuntimeError(
                 f"规则集仍有 {len(report['remaining'])} 处跨去向重叠、{len(report['orphaned'])} 个名称失去匹配，保留旧产物")
+
+        # Exact carve-outs only shrink an already-exclusive set.  Keep them
+        # after the tie-break and packing so they cannot change either one.
+        self.apply_final_exclusions_to_output(
+            output_directory,
+            corrections_directory="corrections",
+        )
+        remaining = verify_exclusive(output_directory)
+        if remaining:
+            raise RuntimeError(
+                f"最终规则集仍有 {len(remaining)} 处跨去向重叠，保留旧产物")
 
         # 生成 SRS 文件
         json_files = sorted(f for f in os.listdir(output_directory) if f.endswith('.json'))

@@ -14,6 +14,7 @@ from proxy_ruleset_manager.adguard import (
     parse_adguard_dns_rule,
 )
 from proxy_ruleset_manager.contracts import validate_ruleset_rules
+from proxy_ruleset_manager.exclusive import _rule_matches
 from proxy_ruleset_manager.pipeline import RuleParser
 from proxy_ruleset_manager.quality import (
     analyze_light_source_candidates,
@@ -856,6 +857,76 @@ class ClassificationCorrectionTests(unittest.TestCase):
             {"domain": ["keep.example"]},
             {"domain_suffix": ["keep.example"]},
         ])
+
+    def test_corrections_remove_exact_regex_entries(self):
+        parser = RuleParser()
+        ruleset = {
+            "version": 1,
+            "rules": [{"domain_regex": [r"^archive[-.].+", r"^keep[-.].+"]}],
+        }
+        corrections = {
+            "version": 1,
+            "rules": [{"domain_regex": [r"^archive[-.].+"]}],
+        }
+
+        corrected, removed_domains, removed_suffixes = parser.apply_corrections(
+            ruleset,
+            corrections,
+        )
+
+        self.assertEqual((removed_domains, removed_suffixes), (1, 0))
+        self.assertEqual(corrected["rules"], [{"domain_regex": [r"^keep[-.].+"]}])
+
+    def test_corrections_exclude_a_domain_without_removing_its_suffix(self):
+        parser = RuleParser()
+        ruleset = {
+            "version": 1,
+            "rules": [{"domain_suffix": ["icloud-content.com"]}],
+        }
+        corrections = {
+            "version": 1,
+            "rules": [],
+            "exclude": [{"domain": ["gateway-asset.icloud-content.com"]}],
+        }
+
+        corrected, removed_domains, removed_suffixes = parser.apply_corrections(
+            ruleset,
+            corrections,
+        )
+
+        self.assertEqual((removed_domains, removed_suffixes), (0, 0))
+        self.assertEqual(corrected, ruleset)
+
+        final = parser.apply_exclusions(corrected, corrections)
+        rule = final["rules"][0]
+        self.assertTrue(_rule_matches(rule, name="edge.icloud-content.com"))
+        self.assertFalse(_rule_matches(rule, name="gateway-asset.icloud-content.com"))
+
+    def test_final_exclusion_errors_are_not_swallowed(self):
+        parser = RuleParser()
+        with tempfile.TemporaryDirectory() as directory:
+            output_directory = os.path.join(directory, "output")
+            corrections_directory = os.path.join(directory, "corrections")
+            os.makedirs(output_directory)
+            os.makedirs(corrections_directory)
+            with open(
+                os.path.join(output_directory, "geosite-category-download@!cn.json"),
+                "w",
+                encoding="utf-8",
+            ) as file:
+                json.dump({"version": 1, "rules": [{"domain": ["example.com"]}]}, file)
+            with open(
+                os.path.join(corrections_directory, "geosite-category-download.json"),
+                "w",
+                encoding="utf-8",
+            ) as file:
+                file.write("{")
+
+            with self.assertRaises(json.JSONDecodeError):
+                parser.apply_final_exclusions_to_output(
+                    output_directory,
+                    corrections_directory,
+                )
 
     def test_empty_corrections_have_a_stable_return_shape(self):
         parser = RuleParser()

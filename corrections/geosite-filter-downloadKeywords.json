@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_regex": [
+        "^archive[-.].+",
+        "^p[0-9]+-content\\.icloud\\.com$",
+        "^static[0-9]\\.squarespace\\.com$"
+      ]
+    }
+  ]
+}

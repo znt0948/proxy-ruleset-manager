@@ -15,7 +15,6 @@
                     ],
                     "domain_regex": [
                         "^[a-z]{3}[0-9]+\\.mirror\\.jellyfin\\.org$",
-                        "^archive[-.].+",
                         "^cache[-.].+",
                         "^dist[-.].+",
                         "^dl[-.].+",
@@ -23,10 +22,8 @@
                         "^egs-.*-chunks\\.epicgamescdn\\.com$",
                         "^files[-.].+",
                         "^mirror[-.].+",
-                        "^p[0-9]+-content\\.icloud\\.com$",
                         "^pkg[-.].+",
                         "^repo[-.].+",
-                        "^static[0-9]\\.squarespace\\.com$",
                         "^upd[-.].+"
                     ]
                 },

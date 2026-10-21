@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "lh3.googleusercontent.com"
+      ],
+      "domain_suffix": [
+        "docs.google.com",
+        "drive.google.com",
+        "geforce.com",
+        "iva-api.com",
+        "nvidiagrid.net",
+        "onedrive.com",
+        "onedrive.live.com",
+        "pypi.org",
+        "themoviedb.org",
+        "tmdb.org"
+      ]
+    }
+  ],
+  "exclude": [
+    {
+      "domain": [
+        "gateway-asset.icloud-content.com"
+      ]
+    }
+  ]
+}
