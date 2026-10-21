@@ -1084,6 +1084,56 @@ class RuleParser:
         analysis["excluded_dimensions"] = ["download_stability"]
         return analysis
 
+    def finalize_singbox_rules(self, output_directory,
+                               corrections_directory="corrections",
+                               root=".", report_file=None,
+                               pre_directory=None, compile_rules=True):
+        """Run the post-parse production pipeline on sing-box JSON rules."""
+        # Corrections must run before suffix/CIDR coverage pruning; otherwise a
+        # correct child entry can be lost behind an erroneous parent suffix.
+        self.apply_corrections_to_output(
+            output_directory,
+            corrections_directory=corrections_directory,
+        )
+        self.optimize_output_rulesets(output_directory)
+
+        # Destinations must not overlap: clients should not depend on the
+        # order of their route rules (see exclusive.py).
+        report = make_exclusive(
+            output_directory,
+            root=root,
+            report_file=report_file,
+            pre_directory=pre_directory,
+        )
+        if report["remaining"] or report["orphaned"]:
+            raise RuntimeError(
+                f"规则集仍有 {len(report['remaining'])} 处跨去向重叠、{len(report['orphaned'])} 个名称失去匹配，保留旧产物")
+
+        # Exact carve-outs only shrink an already-exclusive set.  Keep them
+        # after the tie-break and packing so they cannot change either one.
+        self.apply_final_exclusions_to_output(
+            output_directory,
+            corrections_directory=corrections_directory,
+        )
+        remaining = verify_exclusive(output_directory)
+        if remaining:
+            raise RuntimeError(
+                f"最终规则集仍有 {len(remaining)} 处跨去向重叠，保留旧产物")
+
+        if not compile_rules:
+            return
+
+        # 生成 SRS 文件
+        json_files = sorted(f for f in os.listdir(output_directory) if f.endswith('.json'))
+        for json_file in json_files:
+            json_file_path = os.path.join(output_directory, json_file)
+            srs_path = json_file_path.replace(".json", ".srs")
+            run_command(
+                ["sing-box", "rule-set", "compile", "--output", srs_path, json_file_path],
+                f"编译 SRS 文件 {json_file}",
+            )
+            logging.debug(f"成功生成 SRS 文件 {srs_path}")
+
     def has_generated_rule_artifacts(self, output_directory):
         return any(
             f.endswith((".json", ".srs"))
@@ -1202,42 +1252,10 @@ class RuleParser:
         # 拆分 !cn 规则与 cn 规则
         self.process_category_files(output_directory)
 
-        # 编译前应用针对上游错误分类的修正规则。
-        self.apply_corrections_to_output(
+        self.finalize_singbox_rules(
             output_directory,
             corrections_directory="corrections",
+            root=".",
+            report_file=config.exclusive_report_file,
+            pre_directory=config.pre_exclusive_dir,
         )
-
-        # Corrections must run before suffix/CIDR coverage pruning; otherwise a
-        # correct child entry can be lost behind an erroneous parent suffix.
-        self.optimize_output_rulesets(output_directory)
-
-        # Destinations must not overlap: clients should not depend on the
-        # order of their route rules (see exclusive.py).
-        report = make_exclusive(output_directory, root=".", report_file=config.exclusive_report_file,
-                                pre_directory=config.pre_exclusive_dir)
-        if report["remaining"] or report["orphaned"]:
-            raise RuntimeError(
-                f"规则集仍有 {len(report['remaining'])} 处跨去向重叠、{len(report['orphaned'])} 个名称失去匹配，保留旧产物")
-
-        # Exact carve-outs only shrink an already-exclusive set.  Keep them
-        # after the tie-break and packing so they cannot change either one.
-        self.apply_final_exclusions_to_output(
-            output_directory,
-            corrections_directory="corrections",
-        )
-        remaining = verify_exclusive(output_directory)
-        if remaining:
-            raise RuntimeError(
-                f"最终规则集仍有 {len(remaining)} 处跨去向重叠，保留旧产物")
-
-        # 生成 SRS 文件
-        json_files = sorted(f for f in os.listdir(output_directory) if f.endswith('.json'))
-        for json_file in json_files:
-            json_file_path = os.path.join(output_directory, json_file)
-            srs_path = json_file_path.replace(".json", ".srs")
-            run_command(
-                ["sing-box", "rule-set", "compile", "--output", srs_path, json_file_path],
-                f"编译 SRS 文件 {json_file}",
-            )
-            logging.debug(f"成功生成 SRS 文件 {srs_path}")
