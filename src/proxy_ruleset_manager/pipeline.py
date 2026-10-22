@@ -606,6 +606,9 @@ class RuleParser:
 
             if link.endswith('.json'):
                 logging.debug(f"检测到 JSON 文件 {link}，直接返回内容")
+                if os.path.isfile(link):
+                    with open(link, 'r', encoding='utf-8') as file:
+                        return json.load(file)
                 return self.download_and_parse_json(link)
 
             if link.endswith('.srs'):

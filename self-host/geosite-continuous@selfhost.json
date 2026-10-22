@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain": [
+        "aod-pod-uk-live.akamaized.net",
+        "as-dash-uk-live.akamaized.net",
+        "as-hls-uk-live.akamaized.net",
+        "audio-ak-spotify-com.akamaized.net",
+        "audio4-ak-spotify-com.akamaized.net",
+        "cbsi.live.ott.irdeto.com",
+        "v16m.tiktokcdn-us.com",
+        "v19.tiktokcdn-us.com",
+        "v45.tiktokcdn-us.com",
+        "ve-dash-uk-live.akamaized.net",
+        "ve-uhd-push-uk-live.akamaized.net",
+        "vod-dash-uk-live.akamaized.net",
+        "vod-dash-ww-live.akamaized.net",
+        "vod-hls-uk-live.akamaized.net",
+        "vs-cmaf-push-uk-live.akamaized.net",
+        "vs-cmaf-pushb-ww-live.akamaized.net",
+        "vs-hls-push-uk-live.akamaized.net",
+        "vs-hls-pushb-uk-live.akamaized.net"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "bilivideo.cn",
+        "bilivideo.com",
+        "bilivideo.net",
+        "googlevideo.com",
+        "live-video.net",
+        "nflxvideo.net",
+        "ttvnw.net",
+        "video-s.twimg.com",
+        "video.pscp.tv",
+        "video.twimg.com"
+      ]
+    }
+  ]
+}
