@@ -31,8 +31,34 @@ class ContinuousLabelTests(unittest.TestCase):
             sum(len(rule.get(field, [])) for rule in result.rules for field in (
                 "domain", "domain_suffix"
             )),
-            28,
+            19,
         )
+        domains = {
+            value
+            for rule in result.rules
+            for field in ("domain", "domain_suffix")
+            for value in rule.get(field, [])
+        }
+        self.assertEqual(
+            sum(len(rule.get("domain", [])) for rule in result.rules),
+            15,
+        )
+        self.assertEqual(
+            sum(len(rule.get("domain_suffix", [])) for rule in result.rules),
+            4,
+        )
+        for rejected in (
+            "v16m.tiktokcdn-us.com",
+            "v19.tiktokcdn-us.com",
+            "v45.tiktokcdn-us.com",
+            "video-s.twimg.com",
+            "video.pscp.tv",
+            "video.twimg.com",
+            "bilivideo.cn",
+            "bilivideo.com",
+            "bilivideo.net",
+        ):
+            self.assertNotIn(rejected, domains)
         self.assertIn(
             "googlevideo.com",
             {value for rule in result.rules for value in rule.get("domain_suffix", [])},
