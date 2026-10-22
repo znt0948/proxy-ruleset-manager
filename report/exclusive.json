@@ -2521,7 +2521,88 @@
     },
     {
       "field": "domain_suffix",
+      "value": "ad-cmp.hismarttv.com",
+      "kept_in": "adguard-blocker@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "hismarttv.com"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "ad-download.hismarttv.com",
+      "kept_in": "adguard-blocker@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "hismarttv.com"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "boost-cmp.hismarttv.com",
+      "kept_in": "adguard-blocker@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "hismarttv.com"
+      }
+    },
+    {
+      "field": "domain_suffix",
       "value": "cdn-plugin-sync-upgrade-juui.hismarttv.com",
+      "kept_in": "adguard-blocker@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "hismarttv.com"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "imp-cmp.hismarttv.com",
+      "kept_in": "adguard-blocker@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "hismarttv.com"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "loading-cmp.hismarttv.com",
+      "kept_in": "adguard-blocker@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "hismarttv.com"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "msg-cmp.hismarttv.com",
+      "kept_in": "adguard-blocker@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "hismarttv.com"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "paster-cmp.hismarttv.com",
+      "kept_in": "adguard-blocker@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "hismarttv.com"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "recmd-cmp.hismarttv.com",
+      "kept_in": "adguard-blocker@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "hismarttv.com"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "resource-cmp.hismarttv.com",
       "kept_in": "adguard-blocker@mobile.json",
       "carved_from": "geosite-category-direct@light.json",
       "covering": {
@@ -3552,6 +3633,15 @@
       "carved_from": "geosite-category-direct@light.json",
       "covering": {
         "domain_suffix": "mi-idc.com"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "g.cn.miaozhen.com",
+      "kept_in": "adguard-blocker@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "miaozhen.com"
       }
     },
     {
@@ -7498,6 +7588,15 @@
     },
     {
       "field": "domain_suffix",
+      "value": "ad-download.hismarttv.com",
+      "kept_in": "adguard-blocker@mobile.json",
+      "carved_from": "geosite-filter-downloadKeywords@!cn.json",
+      "covering": {
+        "domain_keyword": "download"
+      }
+    },
+    {
+      "field": "domain_suffix",
       "value": "download.changhong.upgrade2.huan.tv",
       "kept_in": "adguard-blocker@mobile.json",
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
@@ -7793,7 +7892,7 @@
       },
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
       "entries_of": "adguard-blocker@mobile.json",
-      "carved_entries": 1927
+      "carved_entries": 1937
     },
     {
       "pattern": {
@@ -7817,7 +7916,7 @@
       },
       "carved_from": "geosite-category-direct@light.json",
       "entries_of": "adguard-blocker@mobile.json",
-      "carved_entries": 69
+      "carved_entries": 70
     },
     {
       "pattern": {
@@ -11121,7 +11220,7 @@
     },
     "geosite-category-direct@light.json": {
       "removed": 44,
-      "carved": 1917
+      "carved": 1928
     },
     "geosite-category-download@!cn.json": {
       "removed": 3,
@@ -11129,7 +11228,7 @@
     },
     "geosite-filter-downloadKeywords@!cn.json": {
       "removed": 0,
-      "carved": 10648
+      "carved": 10659
     }
   },
   "remaining": [],
@@ -61935,6 +62034,12 @@
     },
     {
       "name": "archive-v.adx.hubcloud.com.cn",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-v2.reachmax.cn",
       "before": "download",
       "after": null,
       "reason": "correction"
