@@ -305,6 +305,63 @@
       }
     },
     {
+      "ruleset": "geosite-category-continuous",
+      "type": "geosite",
+      "source_count": 1,
+      "sources": [
+        {
+          "url": "self-host/geosite-continuous@selfhost.json",
+          "raw_entries": 19,
+          "normalized_entries": 19,
+          "unsupported_rules": 0,
+          "invalid_rules_or_values": 0,
+          "deduplication": {
+            "input_entries": 19,
+            "output_entries": 19,
+            "removed_entries": 0,
+            "exact_duplicates": 0,
+            "domain_covered_by_suffix": 0,
+            "suffix_covered_by_suffix": 0,
+            "cidr_collapsed": 0
+          }
+        }
+      ],
+      "merge_deduplication": {
+        "input_entries": 19,
+        "output_entries": 19,
+        "removed_entries": 0,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      },
+      "output_entries_by_field": {
+        "domain": 15,
+        "domain_suffix": 4
+      },
+      "provenance": {
+        "tracked_normalized_entries": 19,
+        "published_entries": 19,
+        "published_entries_with_multiple_exact_sources": 0,
+        "published_entries_without_exact_source": 0,
+        "normalized_entries_shared_by_sources": 0,
+        "source_output_contribution": {
+          "self-host/geosite-continuous@selfhost.json": 19
+        },
+        "source_pair_overlaps": [],
+        "multi_source_samples": []
+      },
+      "final_optimization": {
+        "input_entries": 19,
+        "output_entries": 19,
+        "removed_entries": 0,
+        "exact_duplicates": 0,
+        "domain_covered_by_suffix": 0,
+        "suffix_covered_by_suffix": 0,
+        "cidr_collapsed": 0
+      }
+    },
+    {
       "ruleset": "geosite-category-direct@light",
       "type": "geosite",
       "source_count": 7,
@@ -407,13 +464,13 @@
         },
         {
           "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json",
-          "raw_entries": 100,
-          "normalized_entries": 100,
+          "raw_entries": 103,
+          "normalized_entries": 103,
           "unsupported_rules": 0,
           "invalid_rules_or_values": 0,
           "deduplication": {
-            "input_entries": 100,
-            "output_entries": 100,
+            "input_entries": 103,
+            "output_entries": 103,
             "removed_entries": 0,
             "exact_duplicates": 0,
             "domain_covered_by_suffix": 0,
@@ -423,8 +480,8 @@
         }
       ],
       "merge_deduplication": {
-        "input_entries": 9692,
-        "output_entries": 9692,
+        "input_entries": 9695,
+        "output_entries": 9695,
         "removed_entries": 0,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 0,
@@ -432,13 +489,13 @@
         "cidr_collapsed": 0
       },
       "output_entries_by_field": {
-        "domain": 634,
+        "domain": 637,
         "domain_regex": 10,
         "domain_suffix": 8517
       },
       "provenance": {
-        "tracked_normalized_entries": 9692,
-        "published_entries": 9692,
+        "tracked_normalized_entries": 9695,
+        "published_entries": 9695,
         "published_entries_with_multiple_exact_sources": 9,
         "published_entries_without_exact_source": 0,
         "normalized_entries_shared_by_sources": 9,
@@ -449,7 +506,7 @@
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-springer.srs": 5,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-elsevier.srs": 14,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-ieee.srs": 54,
-          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json": 100
+          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json": 103
         },
         "source_pair_overlaps": [
           {
@@ -543,8 +600,8 @@
         ]
       },
       "final_optimization": {
-        "input_entries": 9672,
-        "output_entries": 9161,
+        "input_entries": 9675,
+        "output_entries": 9164,
         "removed_entries": 511,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 74,
@@ -996,6 +1053,14 @@
         "domain_keyword": 5,
         "domain_suffix": 18,
         "ip_cidr": 2
+      }
+    },
+    {
+      "ruleset": "geosite-category-continuous",
+      "entries": 19,
+      "entries_by_field": {
+        "domain": 15,
+        "domain_suffix": 4
       }
     },
     {
