@@ -7932,7 +7932,7 @@
       },
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
       "entries_of": "geosite-category-direct@light.json",
-      "carved_entries": 8482
+      "carved_entries": 8483
     },
     {
       "pattern": {
@@ -11228,7 +11228,7 @@
     },
     "geosite-filter-downloadKeywords@!cn.json": {
       "removed": 0,
-      "carved": 10659
+      "carved": 10660
     }
   },
   "remaining": [],
@@ -63684,6 +63684,12 @@
     },
     {
       "name": "archive-wangsu.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-wangsuceshi.bmcx.com",
       "before": "download",
       "after": null,
       "reason": "correction"

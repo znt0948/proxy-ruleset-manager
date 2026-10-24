@@ -1,0 +1,580 @@
+{
+  "version": 1,
+  "generated_at": "2026-10-24T07:36:40Z",
+  "base_commit": "881490b260e9cde113901e72bfb719f607e22041",
+  "summary": "direct@light +2/-5, filter-downloadKeywords@!cn +1/-0",
+  "rule_sets": [
+    {
+      "ruleset": "adguard-blocker@mobile",
+      "status": "unchanged",
+      "added_count": 0,
+      "removed_count": 0,
+      "fields": {
+        "domain": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_suffix": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_keyword": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_regex": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "ip_cidr": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        }
+      }
+    },
+    {
+      "ruleset": "geoip-blocker-httpdns",
+      "status": "unchanged",
+      "added_count": 0,
+      "removed_count": 0,
+      "fields": {
+        "domain": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_suffix": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_keyword": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_regex": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "ip_cidr": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        }
+      }
+    },
+    {
+      "ruleset": "geoip-category-direct@light",
+      "status": "unchanged",
+      "added_count": 0,
+      "removed_count": 0,
+      "fields": {
+        "domain": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_suffix": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_keyword": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_regex": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "ip_cidr": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "invert": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        }
+      }
+    },
+    {
+      "ruleset": "geoip-category-download@!cn",
+      "status": "unchanged",
+      "added_count": 0,
+      "removed_count": 0,
+      "fields": {
+        "domain": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_suffix": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_keyword": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_regex": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "ip_cidr": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        }
+      }
+    },
+    {
+      "ruleset": "geosite-blocker-httpdns",
+      "status": "unchanged",
+      "added_count": 0,
+      "removed_count": 0,
+      "fields": {
+        "domain": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_suffix": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_keyword": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_regex": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "ip_cidr": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "invert": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        }
+      }
+    },
+    {
+      "ruleset": "geosite-blocker-trash@mobile",
+      "status": "unchanged",
+      "added_count": 0,
+      "removed_count": 0,
+      "fields": {
+        "domain": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_suffix": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_keyword": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_regex": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "ip_cidr": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        }
+      }
+    },
+    {
+      "ruleset": "geosite-category-continuous",
+      "status": "unchanged",
+      "added_count": 0,
+      "removed_count": 0,
+      "fields": {
+        "domain": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_suffix": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_keyword": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_regex": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "ip_cidr": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        }
+      }
+    },
+    {
+      "ruleset": "geosite-category-direct@light",
+      "status": "changed",
+      "added_count": 2,
+      "removed_count": 5,
+      "fields": {
+        "domain": {
+          "added": [
+            {
+              "value": "tracker.flatuslifir.is",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            }
+          ],
+          "removed": [
+            {
+              "value": "archive.torrentonline.cc",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "asiatorrent.giize.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "tr.abir.ga",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "tr3.ysagin.top",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "tracker.tryhackx.org",
+              "sources": [
+                "unknown"
+              ]
+            }
+          ],
+          "added_count": 1,
+          "removed_count": 5,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_suffix": {
+          "added": [
+            {
+              "value": "wangsuceshi.bmcx.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            }
+          ],
+          "removed": [],
+          "added_count": 1,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_keyword": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_regex": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "ip_cidr": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "invert": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        }
+      }
+    },
+    {
+      "ruleset": "geosite-category-download@!cn",
+      "status": "unchanged",
+      "added_count": 0,
+      "removed_count": 0,
+      "fields": {
+        "domain": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_suffix": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_keyword": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_regex": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "ip_cidr": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "invert": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        }
+      }
+    },
+    {
+      "ruleset": "geosite-filter-downloadKeywords@!cn",
+      "status": "changed",
+      "added_count": 1,
+      "removed_count": 0,
+      "fields": {
+        "domain": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_suffix": {
+          "added": [
+            {
+              "value": "wangsuceshi.bmcx.com",
+              "sources": [
+                "unknown"
+              ]
+            }
+          ],
+          "removed": [],
+          "added_count": 1,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_keyword": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_regex": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "ip_cidr": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "invert": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        }
+      }
+    }
+  ]
+}
