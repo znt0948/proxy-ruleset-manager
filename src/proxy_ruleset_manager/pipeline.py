@@ -18,6 +18,13 @@ from .quality import (
     count_entries_by_field,
     summarize_provenance,
 )
+from .changes import (
+    get_base_commit,
+    load_quality_report,
+    read_published_rule_sets,
+    serialize_published_provenance,
+    write_rule_changes_report,
+)
 from collections import defaultdict
 import tempfile
 import shutil
@@ -68,6 +75,8 @@ class RuleParser:
             adg_links = data.get('adguard', [])
             raw_lines = []
             failed_links = []
+            source_records = []
+            source_reports = []
 
             # 遍历每个 AdGuard 规则文件链接，获取并处理数据
             for link in adg_links:
@@ -78,6 +87,20 @@ class RuleParser:
 
                     # 将数据按行分割，并添加到集合中去重
                     raw_lines.extend(raw_data.splitlines())
+                    if self.capture_source_records:
+                        source_rules, source_stats = deduplicate_adguard_lines(
+                            raw_data.splitlines(),
+                            return_stats=True,
+                        )
+                        source_records.append({
+                            "url": link,
+                            "rules": adguard_lines_to_singbox_rules(source_rules),
+                        })
+                        source_reports.append({
+                            "url": link,
+                            "raw_entries": source_stats["input_lines"],
+                            "normalized_entries": source_stats["output_lines"],
+                        })
 
                 except requests.RequestException as e:
                     logging.error(f"获取链接 {link} 时出错: {e}")
@@ -126,6 +149,24 @@ class RuleParser:
             with open(json_file_path, "w", encoding="utf-8") as f:
                 json.dump({"version": 1, "rules": rules}, f, ensure_ascii=False, indent=4)
                 f.write("\n")
+
+            if self.capture_source_records:
+                ruleset_id = os.path.basename(json_file_path).removesuffix(".json")
+                self.source_records_by_ruleset[ruleset_id] = source_records
+                provenance = build_provenance(source_records)
+                self.quality_reports.append({
+                    "ruleset": ruleset_id,
+                    "type": "adguard",
+                    "source_count": len(adg_links),
+                    "sources": source_reports,
+                    "merge_deduplication": {},
+                    "output_entries_by_field": count_entries_by_field(rules),
+                    "provenance": summarize_provenance(
+                        provenance,
+                        rules,
+                        adg_links,
+                    ),
+                })
 
             return True
 
@@ -464,7 +505,7 @@ class RuleParser:
         ruleset_id = os.path.basename(output_file).removesuffix(".json")
         if self.capture_source_records:
             self.source_records_by_ruleset[ruleset_id] = source_records
-        self.quality_reports.append({
+        quality_report = {
             "ruleset": ruleset_id,
             "type": type,
             "source_count": len(unique_links),
@@ -476,7 +517,8 @@ class RuleParser:
                 final_rules,
                 unique_links,
             ),
-        })
+        }
+        self.quality_reports.append(quality_report)
         return statistics
 
     @staticmethod
@@ -1344,6 +1386,14 @@ class RuleParser:
         """Atomically publish deterministic quality metrics after a successful run."""
         report_directory = os.path.dirname(report_file) or "."
         os.makedirs(report_directory, exist_ok=True)
+        published_rules = read_published_rule_sets(output_directory)
+        if self.capture_source_records:
+            for report in self.quality_reports:
+                ruleset = report["ruleset"]
+                report["source_entries"] = serialize_published_provenance(
+                    self.source_records_by_ruleset.get(ruleset, []),
+                    published_rules.get(ruleset, []),
+                )
         payload = {
             "version": 1,
             "scope": "structured-json-rulesets",
@@ -1390,6 +1440,9 @@ class RuleParser:
         self.source_records_by_ruleset = {}
         source_directory = config.source_dir
         output_directory = config.singbox_output_directory
+        baseline_rule_sets = read_published_rule_sets(output_directory)
+        old_quality_report = load_quality_report(config.quality_report_file)
+        base_commit = get_base_commit()
         os.makedirs(config.rule_dir, exist_ok=True)
         staging_directory = tempfile.mkdtemp(prefix=".singbox-staging-", dir=config.rule_dir)
 
@@ -1416,6 +1469,15 @@ class RuleParser:
 
             convert_yaml_to_mrs(config.clash_output_directory)
         self.write_quality_report(output_directory, config.quality_report_file)
+        changes_report = write_rule_changes_report(
+            config.rule_changes_report_file,
+            baseline_rule_sets,
+            output_directory,
+            old_quality_report=old_quality_report,
+            source_records_by_ruleset=self.source_records_by_ruleset,
+            base_commit=base_commit,
+        )
+        logging.info("规则变更报告已生成: %s", changes_report["summary"])
         return True
 
     def main(self):

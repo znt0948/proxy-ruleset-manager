@@ -69,7 +69,7 @@ jobs:
         git config --global user.email "action@github.com"
         git config --global user.name "GitHub Action"
         
-        # 添加log.txt和规则文件
+        # 添加日志、规则文件和报告
         git add ./rule/
         git add ./log.txt
         git add ./report/
@@ -79,6 +79,7 @@ jobs:
           echo "No changes to commit"
           exit 0
         else
-          git commit -m "Update rules"
+          SUMMARY=$(python -c 'import json; print(json.load(open("report/rule-changes.json", encoding="utf-8"))["summary"])')
+          git commit -m "Update rules: ${SUMMARY}"
           git push
         fi

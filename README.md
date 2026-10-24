@@ -6,6 +6,7 @@
 > - 每日更新由 `main` 分支的 `lite-schedule.yml` 触发本分支的 `sync.yml`；推送到本分支也会触发。
 > - 规则使用地址：`https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/lite/rule/singbox/<名称>.srs`
 > - 以后 hz 的「规则观测」给出的修改建议，会以 PR 的形式提交到本分支的 `self-host/` 或 `corrections/`。
+> - 每次构建会将新旧 `rule/singbox/*.json` 做精确字段差异比较，生成 `report/rule-changes.json`；每个字段的明细最多保留 5000 条，并记录可确定的上游来源。
 
 
 一个用于整理代理规则集的生成工具。项目从 `upstream/*.yaml` 读取上游规则，生成 sing-box、Surge、Shadowrocket、Clash/Mihomo 等格式的规则文件，并通过 GitHub Actions 定时更新。
@@ -97,7 +98,7 @@ process:
 
 ## 自动更新
 
-`.github/workflows/sync.yml` 会在 `main` 分支 push、手动触发、以及每天定时运行时重新生成规则并提交变更。
+`.github/workflows/sync.yml` 会在 `main` 分支 push、手动触发、以及每天定时运行时重新生成规则并提交变更。提交信息保留 `Update rules` 前缀，并带上 `report/rule-changes.json` 的一行摘要。
 
 ## 项目结构
 

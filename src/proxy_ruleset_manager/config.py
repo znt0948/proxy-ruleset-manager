@@ -29,6 +29,7 @@ class Config:
         self.report_dir = './report'
         self.quality_report_file = os.path.join(self.report_dir, 'ruleset-quality.json')
         self.exclusive_report_file = os.path.join(self.report_dir, 'exclusive.json')
+        self.rule_changes_report_file = os.path.join(self.report_dir, 'rule-changes.json')
         # Rule sets as they were before the exclusivity rewrite, kept for the
         # real sing-box differential test (not published).
         self.pre_exclusive_dir = os.path.join('build', 'pre-exclusive')

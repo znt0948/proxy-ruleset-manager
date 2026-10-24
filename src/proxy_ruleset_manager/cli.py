@@ -5,4 +5,4 @@ from .pipeline import RuleParser
 def main():
     config = Config()
     setup_logging(config.log_file)
-    return RuleParser().run()
+    return RuleParser(capture_source_records=True).run()
