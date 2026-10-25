@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generated_at": "2026-10-24T16:20:22Z",
-  "base_commit": "91d906bf2bf43e0167efbb36358acf63a22dc8c4",
-  "summary": "no changes",
+  "generated_at": "2026-10-25T16:53:32Z",
+  "base_commit": "c8919fee96bacf54d25e13546949e704d1ff5c2d",
+  "summary": "direct@light +22/-6, filter-downloadKeywords@!cn +18/-3",
   "rule_sets": [
     {
       "ruleset": "adguard-blocker@mobile",
@@ -358,23 +358,195 @@
     },
     {
       "ruleset": "geosite-category-direct@light",
-      "status": "unchanged",
-      "added_count": 0,
-      "removed_count": 0,
+      "status": "changed",
+      "added_count": 22,
+      "removed_count": 6,
       "fields": {
         "domain": {
-          "added": [],
-          "removed": [],
-          "added_count": 0,
-          "removed_count": 0,
+          "added": [
+            {
+              "value": "app.moegirl.org.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "storage.moegirl.org.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "tr.abir.ga",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.tryhackx.org",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            }
+          ],
+          "removed": [
+            {
+              "value": "edgev.duckdns.org",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.flatuslifir.is",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.xn--djrq4gl4hvoi.top",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            }
+          ],
+          "added_count": 4,
+          "removed_count": 3,
           "added_truncated": false,
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [],
-          "removed": [],
-          "added_count": 0,
-          "removed_count": 0,
+          "added": [
+            {
+              "value": "aaej.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "bigdatacq.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "bocd.com.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "cdrcb.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "cdrcbank.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "cldisk.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "cqdcg.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "cqge.com.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "cqsdlys.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "cqyyxc.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "digitalcnzz.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "easemob.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "gpzshq.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "ibangbank.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "isigning.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "isigning.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "nanocorechip.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "xuexitong.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            }
+          ],
+          "removed": [
+            {
+              "value": "icloud.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "moegirl.org",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "moegirl.org.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            }
+          ],
+          "added_count": 18,
+          "removed_count": 3,
           "added_truncated": false,
           "removed_truncated": false
         },
@@ -470,9 +642,9 @@
     },
     {
       "ruleset": "geosite-filter-downloadKeywords@!cn",
-      "status": "unchanged",
-      "added_count": 0,
-      "removed_count": 0,
+      "status": "changed",
+      "added_count": 18,
+      "removed_count": 3,
       "fields": {
         "domain": {
           "added": [],
@@ -483,10 +655,138 @@
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [],
-          "removed": [],
-          "added_count": 0,
-          "removed_count": 0,
+          "added": [
+            {
+              "value": "aaej.cn",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "bigdatacq.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "bocd.com.cn",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "cdrcb.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "cdrcbank.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "cldisk.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "cqdcg.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "cqge.com.cn",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "cqsdlys.cn",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "cqyyxc.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "digitalcnzz.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "easemob.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "gpzshq.cn",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "ibangbank.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "isigning.cn",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "isigning.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "nanocorechip.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "xuexitong.com",
+              "sources": [
+                "unknown"
+              ]
+            }
+          ],
+          "removed": [
+            {
+              "value": "icloud.cn",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "moegirl.org",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "moegirl.org.cn",
+              "sources": [
+                "unknown"
+              ]
+            }
+          ],
+          "added_count": 18,
+          "removed_count": 3,
           "added_truncated": false,
           "removed_truncated": false
         },
