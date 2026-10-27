@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generated_at": "2026-10-26T19:00:41Z",
-  "base_commit": "40f572044e423ca4dcb18038c3801d64a640c206",
-  "summary": "no changes",
+  "generated_at": "2026-10-27T18:17:43Z",
+  "base_commit": "d070e285bf814563f981d099dbe2b995c643eaf8",
+  "summary": "direct@light +8/-3, filter-downloadKeywords@!cn +3/-1",
   "rule_sets": [
     {
       "ruleset": "adguard-blocker@mobile",
@@ -358,23 +358,93 @@
     },
     {
       "ruleset": "geosite-category-direct@light",
-      "status": "unchanged",
-      "added_count": 0,
-      "removed_count": 0,
+      "status": "changed",
+      "added_count": 8,
+      "removed_count": 3,
       "fields": {
         "domain": {
-          "added": [],
-          "removed": [],
-          "added_count": 0,
-          "removed_count": 0,
+          "added": [
+            {
+              "value": "archive.torrentonline.cc",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tr3.ysagin.top",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.sela.st",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.xn--djrq4gl4hvoi.top",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.yemekyedim.com",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            }
+          ],
+          "removed": [
+            {
+              "value": "tr.btube3.com",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.bittor.pw",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            }
+          ],
+          "added_count": 5,
+          "removed_count": 2,
           "added_truncated": false,
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [],
-          "removed": [],
-          "added_count": 0,
-          "removed_count": 0,
+          "added": [
+            {
+              "value": "filmorigin.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "kakaxing.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "xiaomaigui.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            }
+          ],
+          "removed": [
+            {
+              "value": "jikipedia.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            }
+          ],
+          "added_count": 3,
+          "removed_count": 1,
           "added_truncated": false,
           "removed_truncated": false
         },
@@ -470,9 +540,9 @@
     },
     {
       "ruleset": "geosite-filter-downloadKeywords@!cn",
-      "status": "unchanged",
-      "added_count": 0,
-      "removed_count": 0,
+      "status": "changed",
+      "added_count": 3,
+      "removed_count": 1,
       "fields": {
         "domain": {
           "added": [],
@@ -483,10 +553,36 @@
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [],
-          "removed": [],
-          "added_count": 0,
-          "removed_count": 0,
+          "added": [
+            {
+              "value": "filmorigin.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "kakaxing.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "xiaomaigui.com",
+              "sources": [
+                "unknown"
+              ]
+            }
+          ],
+          "removed": [
+            {
+              "value": "jikipedia.com",
+              "sources": [
+                "unknown"
+              ]
+            }
+          ],
+          "added_count": 3,
+          "removed_count": 1,
           "added_truncated": false,
           "removed_truncated": false
         },

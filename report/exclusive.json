@@ -7932,7 +7932,7 @@
       },
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
       "entries_of": "geosite-category-direct@light.json",
-      "carved_entries": 8498
+      "carved_entries": 8500
     },
     {
       "pattern": {
@@ -11228,7 +11228,7 @@
     },
     "geosite-filter-downloadKeywords@!cn.json": {
       "removed": 0,
-      "carved": 10675
+      "carved": 10677
     }
   },
   "remaining": [],
@@ -32873,6 +32873,12 @@
       "reason": "correction"
     },
     {
+      "name": "archive-filmorigin.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
       "name": "archive-fimmu.com",
       "before": "download",
       "after": null,
@@ -41249,12 +41255,6 @@
       "reason": "correction"
     },
     {
-      "name": "archive-jikipedia.com",
-      "before": "download",
-      "after": null,
-      "reason": "correction"
-    },
-    {
       "name": "archive-jimeng.com",
       "before": "download",
       "after": null,
@@ -42408,6 +42408,12 @@
     },
     {
       "name": "archive-kajicam.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-kakaxing.com",
       "before": "download",
       "after": null,
       "reason": "correction"
@@ -65730,6 +65736,12 @@
     },
     {
       "name": "archive-xiaomaicn.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-xiaomaigui.com",
       "before": "download",
       "after": null,
       "reason": "correction"
