@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generated_at": "2026-10-28T18:34:14Z",
-  "base_commit": "3758f05256f45eb5842e84dae1c8f5e774011533",
-  "summary": "direct@light +8/-4",
+  "generated_at": "2026-10-29T18:46:13Z",
+  "base_commit": "ac86272f901fd5eaab95868921ef3285772ebb6d",
+  "summary": "direct@light +7/-1",
   "rule_sets": [
     {
       "ruleset": "adguard-blocker@mobile",
@@ -359,69 +359,25 @@
     {
       "ruleset": "geosite-category-direct@light",
       "status": "changed",
-      "added_count": 8,
-      "removed_count": 4,
+      "added_count": 7,
+      "removed_count": 1,
       "fields": {
         "domain": {
           "added": [
             {
-              "value": "edgev.duckdns.org",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "sh-pod1-smp-device.apple.com",
-              "sources": [
-                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
-              ]
-            },
-            {
-              "value": "sh-pod3-smp-device.apple.com",
-              "sources": [
-                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
-              ]
-            },
-            {
-              "value": "tr.btube3.com",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.bittor.pw",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.evergarden.uk",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.flatuslifir.is",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "whybother.torrentonline.cc",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            }
-          ],
-          "removed": [
-            {
-              "value": "announce.sktorrent.eu",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
               "value": "archive.torrentonline.cc",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "asiatorrent.giize.com",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "opentracker2.lain.moscow",
               "sources": [
                 "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
               ]
@@ -437,10 +393,30 @@
               "sources": [
                 "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
               ]
+            },
+            {
+              "value": "tracker.fnix.net",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.theoks.net",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
             }
           ],
-          "added_count": 8,
-          "removed_count": 4,
+          "removed": [
+            {
+              "value": "whybother.torrentonline.cc",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            }
+          ],
+          "added_count": 7,
+          "removed_count": 1,
           "added_truncated": false,
           "removed_truncated": false
         },
