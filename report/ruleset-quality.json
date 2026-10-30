@@ -9,8 +9,8 @@
       "sources": [
         {
           "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt",
-          "raw_entries": 1388,
-          "normalized_entries": 1243
+          "raw_entries": 1389,
+          "normalized_entries": 1244
         },
         {
           "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt",
@@ -21,16 +21,16 @@
       "merge_deduplication": {},
       "output_entries_by_field": {
         "domain_regex": 129,
-        "domain_suffix": 1944
+        "domain_suffix": 1945
       },
       "provenance": {
-        "tracked_normalized_entries": 2087,
-        "published_entries": 2073,
+        "tracked_normalized_entries": 2088,
+        "published_entries": 2074,
         "published_entries_with_multiple_exact_sources": 69,
         "published_entries_without_exact_source": 0,
         "normalized_entries_shared_by_sources": 69,
         "source_output_contribution": {
-          "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt": 1236,
+          "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt": 1237,
           "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt": 906
         },
         "source_pair_overlaps": [
@@ -446,8 +446,8 @@
         ]
       },
       "final_optimization": {
-        "input_entries": 2073,
-        "output_entries": 2073,
+        "input_entries": 2074,
+        "output_entries": 2074,
         "removed_entries": 0,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 0,
@@ -1474,6 +1474,9 @@
           ],
           "apd-pcdnwxstat.teg.tencent-cloud.net": [
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+          ],
+          "api-abtest-cdn.learnings.ai": [
+            "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
           ],
           "api-access.pangolin-sdk-toutiao1.com": [
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt",
@@ -65753,13 +65756,13 @@
         },
         {
           "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json",
-          "raw_entries": 79,
-          "normalized_entries": 79,
+          "raw_entries": 81,
+          "normalized_entries": 81,
           "unsupported_rules": 0,
           "invalid_rules_or_values": 0,
           "deduplication": {
-            "input_entries": 79,
-            "output_entries": 79,
+            "input_entries": 81,
+            "output_entries": 81,
             "removed_entries": 0,
             "exact_duplicates": 0,
             "domain_covered_by_suffix": 0,
@@ -65769,8 +65772,8 @@
         }
       ],
       "merge_deduplication": {
-        "input_entries": 295,
-        "output_entries": 295,
+        "input_entries": 297,
+        "output_entries": 297,
         "removed_entries": 0,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 0,
@@ -65778,12 +65781,12 @@
         "cidr_collapsed": 0
       },
       "output_entries_by_field": {
-        "domain": 103,
+        "domain": 105,
         "domain_suffix": 173
       },
       "provenance": {
-        "tracked_normalized_entries": 295,
-        "published_entries": 295,
+        "tracked_normalized_entries": 297,
+        "published_entries": 297,
         "published_entries_with_multiple_exact_sources": 3,
         "published_entries_without_exact_source": 0,
         "normalized_entries_shared_by_sources": 3,
@@ -65803,7 +65806,7 @@
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-mega.srs": 7,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-tmdb.srs": 4,
           "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/GoogleDrive.yaml": 4,
-          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json": 79
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json": 81
         },
         "source_pair_overlaps": [
           {
@@ -65842,8 +65845,8 @@
         ]
       },
       "final_optimization": {
-        "input_entries": 283,
-        "output_entries": 276,
+        "input_entries": 285,
+        "output_entries": 278,
         "removed_entries": 7,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 7,
@@ -65890,6 +65893,9 @@
           ],
           "beacons3.gvt2.com": [
             "unknown"
+          ],
+          "builds.dotnet.microsoft.com": [
+            "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json"
           ],
           "cc.ccemby.tk": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-emby.srs"
@@ -66091,6 +66097,9 @@
           ],
           "o4504926511693824.ingest.sentry.io": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-pikpak.srs"
+          ],
+          "openai.gallerycdn.vsassets.io": [
+            "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json"
           ],
           "packaged-media.redd.it": [
             "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json"
@@ -70742,6 +70751,9 @@
             "unknown"
           ],
           "apdcdn.net": [
+            "unknown"
+          ],
+          "api-abtest-cdn.learnings.ai": [
             "unknown"
           ],
           "api-access.pangolin-sdk-toutiao1.com": [
@@ -98984,10 +98996,10 @@
   "published_inventory": [
     {
       "ruleset": "adguard-blocker@mobile",
-      "entries": 2073,
+      "entries": 2074,
       "entries_by_field": {
         "domain_regex": 129,
-        "domain_suffix": 1944
+        "domain_suffix": 1945
       }
     },
     {

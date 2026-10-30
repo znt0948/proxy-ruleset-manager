@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generated_at": "2026-10-30T05:02:05Z",
-  "base_commit": "5892cf27083bffbe0ee495fbdaace363d0147a76",
-  "summary": "direct@light +6/-5, filter-downloadKeywords@!cn +2/-0",
+  "generated_at": "2026-10-30T16:47:21Z",
+  "base_commit": "5417a19f94967935bcf45a59ad514a2fa90defe6",
+  "summary": "adguard-blocker@mobile +1/-0, download@!cn +2/-0, filter-downloadKeywords@!cn +1/-0",
   "rule_sets": [
     {
       "ruleset": "adguard-blocker@mobile",
-      "status": "unchanged",
-      "added_count": 0,
+      "status": "changed",
+      "added_count": 1,
       "removed_count": 0,
       "fields": {
         "domain": {
@@ -19,9 +19,16 @@
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [],
+          "added": [
+            {
+              "value": "api-abtest-cdn.learnings.ai",
+              "sources": [
+                "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
+              ]
+            }
+          ],
           "removed": [],
-          "added_count": 0,
+          "added_count": 1,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
@@ -358,131 +365,6 @@
     },
     {
       "ruleset": "geosite-category-direct@light",
-      "status": "changed",
-      "added_count": 6,
-      "removed_count": 5,
-      "fields": {
-        "domain": {
-          "added": [
-            {
-              "value": "anime-tracker.aruku.kro.kr",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "gargoyleperch.de",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.puvvadi.net",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "whybother.torrentonline.cc",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            }
-          ],
-          "removed": [
-            {
-              "value": "asiatorrent.giize.com",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tr.abir.ga",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tr3.ysagin.top",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.fnix.net",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.yemekyedim.com",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            }
-          ],
-          "added_count": 4,
-          "removed_count": 5,
-          "added_truncated": false,
-          "removed_truncated": false
-        },
-        "domain_suffix": {
-          "added": [
-            {
-              "value": "5eplay.com",
-              "sources": [
-                "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json"
-              ]
-            },
-            {
-              "value": "openxlab.org.cn",
-              "sources": [
-                "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json"
-              ]
-            }
-          ],
-          "removed": [],
-          "added_count": 2,
-          "removed_count": 0,
-          "added_truncated": false,
-          "removed_truncated": false
-        },
-        "domain_keyword": {
-          "added": [],
-          "removed": [],
-          "added_count": 0,
-          "removed_count": 0,
-          "added_truncated": false,
-          "removed_truncated": false
-        },
-        "domain_regex": {
-          "added": [],
-          "removed": [],
-          "added_count": 0,
-          "removed_count": 0,
-          "added_truncated": false,
-          "removed_truncated": false
-        },
-        "ip_cidr": {
-          "added": [],
-          "removed": [],
-          "added_count": 0,
-          "removed_count": 0,
-          "added_truncated": false,
-          "removed_truncated": false
-        },
-        "invert": {
-          "added": [],
-          "removed": [],
-          "added_count": 0,
-          "removed_count": 0,
-          "added_truncated": false,
-          "removed_truncated": false
-        }
-      }
-    },
-    {
-      "ruleset": "geosite-category-download@!cn",
       "status": "unchanged",
       "added_count": 0,
       "removed_count": 0,
@@ -538,9 +420,78 @@
       }
     },
     {
-      "ruleset": "geosite-filter-downloadKeywords@!cn",
+      "ruleset": "geosite-category-download@!cn",
       "status": "changed",
       "added_count": 2,
+      "removed_count": 0,
+      "fields": {
+        "domain": {
+          "added": [
+            {
+              "value": "builds.dotnet.microsoft.com",
+              "sources": [
+                "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json"
+              ]
+            },
+            {
+              "value": "openai.gallerycdn.vsassets.io",
+              "sources": [
+                "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json"
+              ]
+            }
+          ],
+          "removed": [],
+          "added_count": 2,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_suffix": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_keyword": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "domain_regex": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "ip_cidr": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        },
+        "invert": {
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
+          "added_truncated": false,
+          "removed_truncated": false
+        }
+      }
+    },
+    {
+      "ruleset": "geosite-filter-downloadKeywords@!cn",
+      "status": "changed",
+      "added_count": 1,
       "removed_count": 0,
       "fields": {
         "domain": {
@@ -554,20 +505,14 @@
         "domain_suffix": {
           "added": [
             {
-              "value": "5eplay.com",
-              "sources": [
-                "unknown"
-              ]
-            },
-            {
-              "value": "openxlab.org.cn",
+              "value": "api-abtest-cdn.learnings.ai",
               "sources": [
                 "unknown"
               ]
             }
           ],
           "removed": [],
-          "added_count": 2,
+          "added_count": 1,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false

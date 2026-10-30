@@ -7892,7 +7892,7 @@
       },
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
       "entries_of": "adguard-blocker@mobile.json",
-      "carved_entries": 1937
+      "carved_entries": 1938
     },
     {
       "pattern": {
@@ -11228,7 +11228,7 @@
     },
     "geosite-filter-downloadKeywords@!cn.json": {
       "removed": 0,
-      "carved": 10679
+      "carved": 10680
     }
   },
   "remaining": [],
@@ -18162,6 +18162,12 @@
     },
     {
       "name": "archive-apdcdn.net",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-api-abtest-cdn.learnings.ai",
       "before": "download",
       "after": null,
       "reason": "correction"
