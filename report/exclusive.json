@@ -7932,7 +7932,7 @@
       },
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
       "entries_of": "geosite-category-direct@light.json",
-      "carved_entries": 8500
+      "carved_entries": 8502
     },
     {
       "pattern": {
@@ -11228,7 +11228,7 @@
     },
     "geosite-filter-downloadKeywords@!cn.json": {
       "removed": 0,
-      "carved": 10677
+      "carved": 10679
     }
   },
   "remaining": [],
@@ -14190,6 +14190,12 @@
     },
     {
       "name": "archive-5ddd.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-5eplay.com",
       "before": "download",
       "after": null,
       "reason": "correction"
@@ -50544,6 +50550,12 @@
     },
     {
       "name": "archive-openviking.net",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-openxlab.org.cn",
       "before": "download",
       "after": null,
       "reason": "correction"
