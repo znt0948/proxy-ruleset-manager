@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generated_at": "2026-10-30T16:47:21Z",
-  "base_commit": "5417a19f94967935bcf45a59ad514a2fa90defe6",
-  "summary": "adguard-blocker@mobile +1/-0, download@!cn +2/-0, filter-downloadKeywords@!cn +1/-0",
+  "generated_at": "2026-10-30T18:23:09Z",
+  "base_commit": "5c7b50f6908f968018e3a2020b62407e5c329e45",
+  "summary": "no changes",
   "rule_sets": [
     {
       "ruleset": "adguard-blocker@mobile",
-      "status": "changed",
-      "added_count": 1,
+      "status": "unchanged",
+      "added_count": 0,
       "removed_count": 0,
       "fields": {
         "domain": {
@@ -19,16 +19,9 @@
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [
-            {
-              "value": "api-abtest-cdn.learnings.ai",
-              "sources": [
-                "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
-              ]
-            }
-          ],
+          "added": [],
           "removed": [],
-          "added_count": 1,
+          "added_count": 0,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
@@ -421,27 +414,14 @@
     },
     {
       "ruleset": "geosite-category-download@!cn",
-      "status": "changed",
-      "added_count": 2,
+      "status": "unchanged",
+      "added_count": 0,
       "removed_count": 0,
       "fields": {
         "domain": {
-          "added": [
-            {
-              "value": "builds.dotnet.microsoft.com",
-              "sources": [
-                "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json"
-              ]
-            },
-            {
-              "value": "openai.gallerycdn.vsassets.io",
-              "sources": [
-                "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json"
-              ]
-            }
-          ],
+          "added": [],
           "removed": [],
-          "added_count": 2,
+          "added_count": 0,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
@@ -490,8 +470,8 @@
     },
     {
       "ruleset": "geosite-filter-downloadKeywords@!cn",
-      "status": "changed",
-      "added_count": 1,
+      "status": "unchanged",
+      "added_count": 0,
       "removed_count": 0,
       "fields": {
         "domain": {
@@ -503,16 +483,9 @@
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [
-            {
-              "value": "api-abtest-cdn.learnings.ai",
-              "sources": [
-                "unknown"
-              ]
-            }
-          ],
+          "added": [],
           "removed": [],
-          "added_count": 1,
+          "added_count": 0,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
