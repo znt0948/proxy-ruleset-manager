@@ -7932,7 +7932,7 @@
       },
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
       "entries_of": "geosite-category-direct@light.json",
-      "carved_entries": 8502
+      "carved_entries": 8505
     },
     {
       "pattern": {
@@ -11228,7 +11228,7 @@
     },
     "geosite-filter-downloadKeywords@!cn.json": {
       "removed": 0,
-      "carved": 10680
+      "carved": 10683
     }
   },
   "remaining": [],
@@ -32388,6 +32388,24 @@
     },
     {
       "name": "archive-fastly-edge.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-favonis.cloud",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-favonis.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-favonis.space",
       "before": "download",
       "after": null,
       "reason": "correction"

@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generated_at": "2026-10-30T18:23:09Z",
-  "base_commit": "5c7b50f6908f968018e3a2020b62407e5c329e45",
-  "summary": "no changes",
+  "generated_at": "2026-10-31T17:31:57Z",
+  "base_commit": "9787383cb218040e0c81a0e9fbc8591e15c1705d",
+  "summary": "direct@light +5/-5, filter-downloadKeywords@!cn +3/-0",
   "rule_sets": [
     {
       "ruleset": "adguard-blocker@mobile",
@@ -358,22 +358,85 @@
     },
     {
       "ruleset": "geosite-category-direct@light",
-      "status": "unchanged",
-      "added_count": 0,
-      "removed_count": 0,
+      "status": "changed",
+      "added_count": 5,
+      "removed_count": 5,
       "fields": {
         "domain": {
-          "added": [],
-          "removed": [],
-          "added_count": 0,
-          "removed_count": 0,
+          "added": [
+            {
+              "value": "tr3.ysagin.top",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.fnix.net",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            }
+          ],
+          "removed": [
+            {
+              "value": "archive.torrentonline.cc",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tr.btube3.com",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.bittor.pw",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.flatuslifir.is",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.puvvadi.net",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            }
+          ],
+          "added_count": 2,
+          "removed_count": 5,
           "added_truncated": false,
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [],
+          "added": [
+            {
+              "value": "favonis.cloud",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "favonis.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "favonis.space",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            }
+          ],
           "removed": [],
-          "added_count": 0,
+          "added_count": 3,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
@@ -470,8 +533,8 @@
     },
     {
       "ruleset": "geosite-filter-downloadKeywords@!cn",
-      "status": "unchanged",
-      "added_count": 0,
+      "status": "changed",
+      "added_count": 3,
       "removed_count": 0,
       "fields": {
         "domain": {
@@ -483,9 +546,28 @@
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [],
+          "added": [
+            {
+              "value": "favonis.cloud",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "favonis.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "favonis.space",
+              "sources": [
+                "unknown"
+              ]
+            }
+          ],
           "removed": [],
-          "added_count": 0,
+          "added_count": 3,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
