@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generated_at": "2026-11-01T18:11:30Z",
-  "base_commit": "69f3dcb420bd9e8f547304e825a4e338f8eeee88",
-  "summary": "direct@light +3/-3",
+  "generated_at": "2026-11-02T22:06:12Z",
+  "base_commit": "603dd238a91d24a182a20a7995ee8edeac17455b",
+  "summary": "direct@light +28/-5, filter-downloadKeywords@!cn +24/-0",
   "rule_sets": [
     {
       "ruleset": "adguard-blocker@mobile",
@@ -359,11 +359,37 @@
     {
       "ruleset": "geosite-category-direct@light",
       "status": "changed",
-      "added_count": 3,
-      "removed_count": 3,
+      "added_count": 28,
+      "removed_count": 5,
       "fields": {
         "domain": {
           "added": [
+            {
+              "value": "tr3.ysagin.top",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.bittor.pw",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.flatuslifir.is",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.tryhackx.org",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            }
+          ],
+          "removed": [
             {
               "value": "archive.torrentonline.cc",
               "sources": [
@@ -377,41 +403,178 @@
               ]
             },
             {
-              "value": "tr.btube3.com",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            }
-          ],
-          "removed": [
-            {
-              "value": "tr3.ysagin.top",
+              "value": "tracker.fnix.net",
               "sources": [
                 "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
               ]
             },
             {
-              "value": "tracker.theoks.net",
+              "value": "tracker.skynetcloud.site",
               "sources": [
                 "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
               ]
             },
             {
-              "value": "tracker.tryhackx.org",
+              "value": "whybother.torrentonline.cc",
               "sources": [
                 "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
               ]
             }
           ],
-          "added_count": 3,
-          "removed_count": 3,
+          "added_count": 4,
+          "removed_count": 5,
           "added_truncated": false,
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [],
+          "added": [
+            {
+              "value": "alivecdn.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "allwinnertech.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "busyming.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "cambricon.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "doubaoapps.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "edge-byted.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "haimian.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "hmxs.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "hnlshm.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "mayibao.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "mnc000.mcc460.pub.3gppnetwork.org",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "mnc002.mcc460.pub.3gppnetwork.org",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "mnc004.mcc460.pub.3gppnetwork.org",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "mnc007.mcc460.pub.3gppnetwork.org",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "mnc011.mcc460.pub.3gppnetwork.org",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "mnc015.mcc460.pub.3gppnetwork.org",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "mthreads.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "qiaqiafood.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "southchip.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "t-head.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "tenpayglobal.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "wesure.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "wesure100.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "zymls.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            }
+          ],
           "removed": [],
-          "added_count": 0,
+          "added_count": 24,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
@@ -508,8 +671,8 @@
     },
     {
       "ruleset": "geosite-filter-downloadKeywords@!cn",
-      "status": "unchanged",
-      "added_count": 0,
+      "status": "changed",
+      "added_count": 24,
       "removed_count": 0,
       "fields": {
         "domain": {
@@ -521,9 +684,154 @@
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [],
+          "added": [
+            {
+              "value": "alivecdn.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "allwinnertech.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "busyming.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "cambricon.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "doubaoapps.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "edge-byted.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "haimian.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "hmxs.cn",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "hnlshm.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "mayibao.cn",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "mnc000.mcc460.pub.3gppnetwork.org",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "mnc002.mcc460.pub.3gppnetwork.org",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "mnc004.mcc460.pub.3gppnetwork.org",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "mnc007.mcc460.pub.3gppnetwork.org",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "mnc011.mcc460.pub.3gppnetwork.org",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "mnc015.mcc460.pub.3gppnetwork.org",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "mthreads.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "qiaqiafood.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "southchip.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "t-head.cn",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "tenpayglobal.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "wesure.cn",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "wesure100.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "zymls.com",
+              "sources": [
+                "unknown"
+              ]
+            }
+          ],
           "removed": [],
-          "added_count": 0,
+          "added_count": 24,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
