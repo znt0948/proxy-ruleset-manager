@@ -32106,13 +32106,13 @@
         },
         {
           "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json",
-          "raw_entries": 105,
-          "normalized_entries": 105,
+          "raw_entries": 104,
+          "normalized_entries": 104,
           "unsupported_rules": 0,
           "invalid_rules_or_values": 0,
           "deduplication": {
-            "input_entries": 105,
-            "output_entries": 105,
+            "input_entries": 104,
+            "output_entries": 104,
             "removed_entries": 0,
             "exact_duplicates": 0,
             "domain_covered_by_suffix": 0,
@@ -32122,8 +32122,8 @@
         }
       ],
       "merge_deduplication": {
-        "input_entries": 9748,
-        "output_entries": 9748,
+        "input_entries": 9747,
+        "output_entries": 9747,
         "removed_entries": 0,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 0,
@@ -32131,13 +32131,13 @@
         "cidr_collapsed": 0
       },
       "output_entries_by_field": {
-        "domain": 643,
+        "domain": 642,
         "domain_regex": 10,
         "domain_suffix": 8564
       },
       "provenance": {
-        "tracked_normalized_entries": 9748,
-        "published_entries": 9748,
+        "tracked_normalized_entries": 9747,
+        "published_entries": 9747,
         "published_entries_with_multiple_exact_sources": 9,
         "published_entries_without_exact_source": 0,
         "normalized_entries_shared_by_sources": 9,
@@ -32148,7 +32148,7 @@
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-springer.srs": 5,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-elsevier.srs": 14,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-ieee.srs": 54,
-          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json": 105
+          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json": 104
         },
         "source_pair_overlaps": [
           {
@@ -32242,8 +32242,8 @@
         ]
       },
       "final_optimization": {
-        "input_entries": 9728,
-        "output_entries": 9217,
+        "input_entries": 9727,
+        "output_entries": 9216,
         "removed_entries": 511,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 74,
@@ -33905,9 +33905,6 @@
           "tr.nyacat.pw": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
-          "tr3.ysagin.top": [
-            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-          ],
           "tr4ck3r.duckdns.org": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
@@ -33918,6 +33915,12 @@
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.7471.top": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
+          "tracker.aruku.ovh": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
+          "tracker.bittor.pw": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.breizh.pm": [
@@ -33951,9 +33954,6 @@
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.filemail.com": [
-            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-          ],
-          "tracker.flatuslifir.is": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.fnix.net": [
@@ -34026,9 +34026,6 @@
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.skyts.net": [
-            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-          ],
-          "tracker.theoks.net": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.torrent.eu.org": [
