@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generated_at": "2026-11-04T20:11:09Z",
-  "base_commit": "becfe070b347d225493a982a14867b8c65bf777c",
-  "summary": "direct@light +2/-3",
+  "generated_at": "2026-11-05T20:21:18Z",
+  "base_commit": "a2602c013744635ee3a7d2980db3247608c90b66",
+  "summary": "direct@light +1/-0",
   "rule_sets": [
     {
       "ruleset": "adguard-blocker@mobile",
@@ -359,46 +359,21 @@
     {
       "ruleset": "geosite-category-direct@light",
       "status": "changed",
-      "added_count": 2,
-      "removed_count": 3,
+      "added_count": 1,
+      "removed_count": 0,
       "fields": {
         "domain": {
           "added": [
-            {
-              "value": "tracker.aruku.ovh",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.bittor.pw",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            }
-          ],
-          "removed": [
             {
               "value": "tr3.ysagin.top",
               "sources": [
                 "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
               ]
-            },
-            {
-              "value": "tracker.flatuslifir.is",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.theoks.net",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
             }
           ],
-          "added_count": 2,
-          "removed_count": 3,
+          "removed": [],
+          "added_count": 1,
+          "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
         },
