@@ -3239,6 +3239,7 @@ payload:
   - DOMAIN-SUFFIX,beget.cloud
   - DOMAIN-SUFFIX,beget.com
   - DOMAIN-SUFFIX,beget.de
+  - DOMAIN-SUFFIX,beget.email
   - DOMAIN-SUFFIX,beget.hosting
   - DOMAIN-SUFFIX,beget.pro
   - DOMAIN-SUFFIX,beget.ru
@@ -12777,6 +12778,9 @@ payload:
   - DOMAIN-SUFFIX,lilhumpers.com
   - DOMAIN-SUFFIX,liliav.com
   - DOMAIN-SUFFIX,lilith-soft.com
+  - DOMAIN-SUFFIX,limbuscompany.global
+  - DOMAIN-SUFFIX,limbuscompanyapi.com
+  - DOMAIN-SUFFIX,limbuscompanycdn.org
   - DOMAIN-SUFFIX,limedia.tw
   - DOMAIN-SUFFIX,limelight.com
   - DOMAIN-SUFFIX,limer.tw
@@ -17215,6 +17219,7 @@ payload:
   - DOMAIN-SUFFIX,projectcircuitbreaker.com
   - DOMAIN-SUFFIX,projecteuclid.org
   - DOMAIN-SUFFIX,projectjav.com
+  - DOMAIN-SUFFIX,projectmoon.studio
   - DOMAIN-SUFFIX,projectmurphy.net
   - DOMAIN-SUFFIX,projectpoint.com
   - DOMAIN-SUFFIX,projectpoint.net
@@ -18859,6 +18864,7 @@ payload:
   - DOMAIN-SUFFIX,skills.sh
   - DOMAIN-SUFFIX,skillshare.com
   - DOMAIN-SUFFIX,skinstrip.net
+  - DOMAIN-SUFFIX,skinswap.com
   - DOMAIN-SUFFIX,skokka.com
   - DOMAIN-SUFFIX,sksarab.top
   - DOMAIN-SUFFIX,skunkgirl.cc
@@ -23726,7 +23732,7 @@ payload:
   - DOMAIN-REGEX,(^|\.)783([a-z][a-z]?)?\.tv$
   - DOMAIN-REGEX,(^|\.)7mm0([0-1][0-9]?)?\.com$
   - DOMAIN-REGEX,(^|\.)8dgo[1-57-9]\.com$
-  - DOMAIN-REGEX,(^|\.)91cg([1-9]|[0-9][1-9])?.com$
+  - DOMAIN-REGEX,(^|\.)91cg([1-9]|[0-9][1-9])?\.com$
   - DOMAIN-REGEX,(^|\.)91p[0-9][0-9]?\.com$
   - DOMAIN-REGEX,(^|\.)91porn[0-9]?\.store$
   - DOMAIN-REGEX,(^|\.)91porn[0-9]{3}\.me$
@@ -23785,6 +23791,7 @@ payload:
   - DOMAIN-REGEX,(^|\.)hkfg[1-7]\.xyz$
   - DOMAIN-REGEX,(^|\.)hs[1-9]{2}\.vip$
   - DOMAIN-REGEX,(^|\.)jav777\.(cc|tv|work)$
+  - DOMAIN-REGEX,(^|\.)javdb\d+\.com$
   - DOMAIN-REGEX,(^|\.)jb[1-9][0-9]\.lol$
   - DOMAIN-REGEX,(^|\.)jbk0([0-1][0-9]?)?\.com$
   - DOMAIN-REGEX,(^|\.)jdyy[1-9]?\.me$
@@ -23864,4 +23871,3 @@ payload:
   - DOMAIN-REGEX,^epicgames-download\d\.akamaized\.net$
   - DOMAIN-REGEX,^ewcdn[0-9]+\.nowe\.com$
   - DOMAIN-REGEX,^hses[1-7]?\.akamaized\.net$
-  - DOMAIN-REGEX,javdb\d+\.com$
