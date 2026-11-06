@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generated_at": "2026-11-05T20:21:18Z",
-  "base_commit": "a2602c013744635ee3a7d2980db3247608c90b66",
-  "summary": "direct@light +1/-0",
+  "generated_at": "2026-11-06T19:45:37Z",
+  "base_commit": "4807d823a5dcce716474e342b539f9c395b6910d",
+  "summary": "direct@light +1/-0, filter-downloadKeywords@!cn +1/-0",
   "rule_sets": [
     {
       "ruleset": "adguard-blocker@mobile",
@@ -363,24 +363,24 @@
       "removed_count": 0,
       "fields": {
         "domain": {
-          "added": [
-            {
-              "value": "tr3.ysagin.top",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            }
-          ],
+          "added": [],
           "removed": [],
-          "added_count": 1,
+          "added_count": 0,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [],
+          "added": [
+            {
+              "value": "allawnofs.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            }
+          ],
           "removed": [],
-          "added_count": 0,
+          "added_count": 1,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
@@ -477,8 +477,8 @@
     },
     {
       "ruleset": "geosite-filter-downloadKeywords@!cn",
-      "status": "unchanged",
-      "added_count": 0,
+      "status": "changed",
+      "added_count": 1,
       "removed_count": 0,
       "fields": {
         "domain": {
@@ -490,9 +490,16 @@
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [],
+          "added": [
+            {
+              "value": "allawnofs.com",
+              "sources": [
+                "unknown"
+              ]
+            }
+          ],
           "removed": [],
-          "added_count": 0,
+          "added_count": 1,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false

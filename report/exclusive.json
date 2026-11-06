@@ -7932,7 +7932,7 @@
       },
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
       "entries_of": "geosite-category-direct@light.json",
-      "carved_entries": 8529
+      "carved_entries": 8530
     },
     {
       "pattern": {
@@ -11228,7 +11228,7 @@
     },
     "geosite-filter-downloadKeywords@!cn.json": {
       "removed": 0,
-      "carved": 10707
+      "carved": 10708
     }
   },
   "remaining": [],
@@ -17118,6 +17118,12 @@
     },
     {
       "name": "archive-allawno.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-allawnofs.com",
       "before": "download",
       "after": null,
       "reason": "correction"
