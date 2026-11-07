@@ -9,8 +9,8 @@
       "sources": [
         {
           "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt",
-          "raw_entries": 1389,
-          "normalized_entries": 1244
+          "raw_entries": 1391,
+          "normalized_entries": 1246
         },
         {
           "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt",
@@ -21,16 +21,16 @@
       "merge_deduplication": {},
       "output_entries_by_field": {
         "domain_regex": 129,
-        "domain_suffix": 1945
+        "domain_suffix": 1947
       },
       "provenance": {
-        "tracked_normalized_entries": 2088,
-        "published_entries": 2074,
+        "tracked_normalized_entries": 2090,
+        "published_entries": 2076,
         "published_entries_with_multiple_exact_sources": 69,
         "published_entries_without_exact_source": 0,
         "normalized_entries_shared_by_sources": 69,
         "source_output_contribution": {
-          "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt": 1237,
+          "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt": 1239,
           "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt": 906
         },
         "source_pair_overlaps": [
@@ -446,8 +446,8 @@
         ]
       },
       "final_optimization": {
-        "input_entries": 2074,
-        "output_entries": 2074,
+        "input_entries": 2076,
+        "output_entries": 2076,
         "removed_entries": 0,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 0,
@@ -2216,6 +2216,9 @@
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
           ],
           "collector.scopely.io": [
+            "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
+          ],
+          "collector.snowplow.supercell.com": [
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
           ],
           "collector.vhx.tv": [
@@ -4036,6 +4039,9 @@
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
           "mixpanel-proxy-ivbdkvonca-uc.a.run.app": [
+            "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
+          ],
+          "mkt.supercell.com": [
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
           ],
           "mlb.did.ijinshan.com": [
@@ -32042,13 +32048,13 @@
         },
         {
           "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
-          "raw_entries": 9402,
-          "normalized_entries": 9402,
+          "raw_entries": 9509,
+          "normalized_entries": 9509,
           "unsupported_rules": 0,
           "invalid_rules_or_values": 0,
           "deduplication": {
-            "input_entries": 9402,
-            "output_entries": 9402,
+            "input_entries": 9509,
+            "output_entries": 9509,
             "removed_entries": 0,
             "exact_duplicates": 0,
             "domain_covered_by_suffix": 0,
@@ -32106,13 +32112,13 @@
         },
         {
           "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json",
-          "raw_entries": 105,
-          "normalized_entries": 105,
+          "raw_entries": 106,
+          "normalized_entries": 106,
           "unsupported_rules": 0,
           "invalid_rules_or_values": 0,
           "deduplication": {
-            "input_entries": 105,
-            "output_entries": 105,
+            "input_entries": 106,
+            "output_entries": 106,
             "removed_entries": 0,
             "exact_duplicates": 0,
             "domain_covered_by_suffix": 0,
@@ -32122,8 +32128,8 @@
         }
       ],
       "merge_deduplication": {
-        "input_entries": 9749,
-        "output_entries": 9749,
+        "input_entries": 9857,
+        "output_entries": 9857,
         "removed_entries": 0,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 0,
@@ -32131,24 +32137,24 @@
         "cidr_collapsed": 0
       },
       "output_entries_by_field": {
-        "domain": 643,
+        "domain": 645,
         "domain_regex": 10,
-        "domain_suffix": 8565
+        "domain_suffix": 8658
       },
       "provenance": {
-        "tracked_normalized_entries": 9749,
-        "published_entries": 9749,
+        "tracked_normalized_entries": 9857,
+        "published_entries": 9857,
         "published_entries_with_multiple_exact_sources": 9,
         "published_entries_without_exact_source": 0,
         "normalized_entries_shared_by_sources": 9,
         "source_output_contribution": {
           "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json": 45,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-private.srs": 133,
-          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs": 9402,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs": 9509,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-springer.srs": 5,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-elsevier.srs": 14,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-ieee.srs": 54,
-          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json": 105
+          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json": 106
         },
         "source_pair_overlaps": [
           {
@@ -32242,12 +32248,12 @@
         ]
       },
       "final_optimization": {
-        "input_entries": 9729,
-        "output_entries": 9218,
-        "removed_entries": 511,
+        "input_entries": 9837,
+        "output_entries": 9313,
+        "removed_entries": 524,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 74,
-        "suffix_covered_by_suffix": 437,
+        "suffix_covered_by_suffix": 450,
         "cidr_collapsed": 0
       },
       "source_entries": {
@@ -32842,9 +32848,6 @@
           ],
           "fpinit.itunes.apple.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
-          ],
-          "gargoyleperch.de": [
-            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "gateway.icloud.com": [
             "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json"
@@ -33551,6 +33554,9 @@
           "qpx.googleflights.net": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "radio.itunes.apple.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "recaptcha-cn.net": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -33896,6 +33902,9 @@
           "tr.abiir.top": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
+          "tr.abir.ga": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
           "tr.burnabyhighstar.com": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
@@ -33903,9 +33912,6 @@
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tr.nyacat.pw": [
-            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-          ],
-          "tr3.ysagin.top": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tr4ck3r.duckdns.org": [
@@ -33929,7 +33935,7 @@
           "tracker.breizh.pm": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
-          "tracker.cangku.moe": [
+          "tracker.bt4g.com": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.cn.nyaa.net": [
@@ -33957,6 +33963,9 @@
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.filemail.com": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
+          "tracker.flatuslifir.is": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.fnix.net": [
@@ -34029,6 +34038,9 @@
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.skyts.net": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
+          "tracker.theoks.net": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.torrent.eu.org": [
@@ -34422,6 +34434,12 @@
           ],
           "120.100.in-addr.arpa": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-private.srs"
+          ],
+          "120ask.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "120askimages.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "121.100.in-addr.arpa": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-private.srs"
@@ -36422,7 +36440,7 @@
             "unknown"
           ],
           "ads-api-o.api.leiniao.com": [
-            "unknown"
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "ads-api.tiktok.com": [
             "unknown"
@@ -36866,6 +36884,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "ai-guardrail.com.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "ai-indeed.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "ai-kaleidoscope.com": [
@@ -38761,6 +38782,9 @@
           "baike.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "baikemy.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "baikevod.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -38810,6 +38834,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "bandao.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "bangcle.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "bangongziyuan.com": [
@@ -38879,6 +38906,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "baydn.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "bayescom.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "bazai.com": [
@@ -39616,6 +39646,9 @@
           "boe.com.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "bohe.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "bohejiasuqi.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -39676,6 +39709,9 @@
           "bouffalolab.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "bowangcaijing.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "bowenkj.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -39731,6 +39767,12 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "bsclink.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "bse.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "bseinfo.net": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "bsrv.qq.com": [
@@ -40445,6 +40487,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "cctalk.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "cctime.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "cctv.cn": [
@@ -41230,6 +41275,9 @@
           "chenshipin.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "chery.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "chesicc.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -41308,6 +41356,9 @@
           "chinacache.net": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "chinacdc.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "chinachugui.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -41351,6 +41402,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "chinahr.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "chinahtz.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "chinakaoyan.com": [
@@ -41521,6 +41575,9 @@
           "chntel.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "choiceform.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "chongbuluo.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -41582,9 +41639,6 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "chushou.tv": [
-            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
-          ],
-          "chuyu.me": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "cib-fund.com.cn": [
@@ -42217,6 +42271,9 @@
           "cnblogs.vip": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "cnca.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "cncn.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -42238,6 +42295,9 @@
           "cnfolimg.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "cnfood.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "cnhbstock.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -42245,6 +42305,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "cnhubei.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "cnindex.com.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "cninfo.com.cn": [
@@ -42281,6 +42344,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "cnpc.com.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "cnpharm.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "cnppa.org": [
@@ -42403,6 +42469,9 @@
           "collector.brandify.com": [
             "unknown"
           ],
+          "collector.snowplow.supercell.com": [
+            "unknown"
+          ],
           "colorfulclouds.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -42523,6 +42592,9 @@
           "counters.booking.com": [
             "unknown"
           ],
+          "countsheep.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "cowcs.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -42601,6 +42673,9 @@
           "cpro.baidustatic.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "cpta.com.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "cptu.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -42670,6 +42745,9 @@
           "cravatar.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "crecg.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "crggcn.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -42722,6 +42800,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "csgo.com.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "csindex.com.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "csjplatform.com": [
@@ -43270,6 +43351,9 @@
           "dbfund.com.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "dbw.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "dc.di.atlas.samsung.com": [
             "unknown"
           ],
@@ -43696,6 +43780,9 @@
           "dingxinwen.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "dinpay.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "diopic.net": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -43721,6 +43808,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "divoiotcloud.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "diyifanwen.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "diyiyou.com": [
@@ -45115,6 +45205,9 @@
           "faceid.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "faceplusplus.com.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "faceshift.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -45224,6 +45317,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "favonis.space": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "faw.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "faxingbao.com": [
@@ -46114,6 +46210,9 @@
           "gaodun.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "gaodunwangxiao.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "gaojidata.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -46224,6 +46323,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "gelaiyun.net": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "gelonghui.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "gem-log.sloegem.com": [
@@ -47250,7 +47352,16 @@
           "heavenlywind.cc": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "hebnews.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "hebrb.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "hecdn.net": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "heepay.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "hefei.cc": [
@@ -47499,9 +47610,6 @@
           "hitevision-solutions.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
-          "hitokoto.cn": [
-            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
-          ],
           "hitv.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -47563,6 +47671,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "hnair.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "hnapay.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "hnbntv.com": [
@@ -47988,6 +48099,9 @@
           "hunantv.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "hunliji.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "huochepiao.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -48385,6 +48499,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "iccvlog.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "iceo.com.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "ichangtou.com": [
@@ -48898,9 +49015,6 @@
           "imweb.io": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
-          "in.th": [
-            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
-          ],
           "in.treasuredata.com": [
             "unknown"
           ],
@@ -49240,6 +49354,9 @@
           "isealsuite.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "ishansong.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "ishijue.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -49339,6 +49456,9 @@
           "itunesradio.com.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "iuoooo.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "iuynfg.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -49415,6 +49535,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "j-test.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "jac.com.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "jamcz.com": [
@@ -49535,6 +49658,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "jclps.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "jcrb.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "jd-app.com": [
@@ -49738,6 +49864,9 @@
           "jdx.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "jdzj.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "jet-ego.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -49777,6 +49906,9 @@
           "jia.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "jiakaobaodian.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "jiameng.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -49787,6 +49919,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "jianguoyun.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "jianke.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "jianshu.com": [
@@ -49805,6 +49940,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "jianzhi8.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "jianzhimao.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "jiaodong.net": [
@@ -50447,6 +50585,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "kajicam.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "kakamobi.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "kakaxing.com": [
@@ -52342,6 +52483,9 @@
           "luojilab.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "luyong.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "luyouqi.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -52429,6 +52573,15 @@
           "lync.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "lynkco-test.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "lynkco.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "lynkco.com.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "lz310.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -52457,6 +52610,9 @@
             "unknown"
           ],
           "m1.run": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "m12333.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "m1905.cn": [
@@ -52511,6 +52667,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "mahjongcup.net": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "maiche.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "mail.me.com": [
@@ -52688,6 +52847,9 @@
           "mblyun.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "mc-cdn.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "mcadn.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -52719,6 +52881,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "mcmod.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "mcndata.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "mcprev.cn": [
@@ -52797,6 +52962,9 @@
             "unknown"
           ],
           "megawords.cc": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "megvii.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "mei.com": [
@@ -53263,6 +53431,9 @@
           ],
           "mjia.cc": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "mkt.supercell.com": [
+            "unknown"
           ],
           "mlb.did.ijinshan.com": [
             "unknown"
@@ -53741,6 +53912,12 @@
           "mubu.com": [
             "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json"
           ],
+          "mucang.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "mugeda.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "muji.com.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -54180,6 +54357,9 @@
           "news.yxrb.net": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "newscdn.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "newsimg.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -54367,6 +54547,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "nnthink.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "nocode.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "noi.cn": [
@@ -54829,6 +55012,9 @@
           "oppowork.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "opsai.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "opstatics.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -55126,6 +55312,9 @@
           "pcpop.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "pcsoft.com.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "pcwatch.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -55244,6 +55433,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "phira.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "phirda.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "phoenixcenter.cn": [
@@ -55623,6 +55815,9 @@
           ],
           "prugskh.net": [
             "unknown"
+          ],
+          "przwt.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "psbc.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
@@ -56275,6 +56470,9 @@
           "quklive.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "qunaer.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "qunar.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -56408,6 +56606,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "reactorms.com.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "readhub.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "readnovel.com": [
@@ -56938,6 +57139,9 @@
           "scoregg.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "scpublic.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "scratch5.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -57178,6 +57382,24 @@
           "senmuse.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "senseaudio.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "senseavatar.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "sensecore.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "sensefoundry.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "sensenova.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "sensetime.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "sensor.emolm.com": [
             "unknown"
           ],
@@ -57197,6 +57419,9 @@
             "unknown"
           ],
           "sentry.music.163.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "seres.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "serverlesscloud.cn": [
@@ -57362,6 +57587,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "shengdaosoft.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "shengpay.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "shengqugames.com": [
@@ -57550,6 +57778,9 @@
           "shutcm.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "shuwen.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "shuxinyc.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -57563,6 +57794,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "shzq.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "si12333.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "sia.internet.apps.samsung.com": [
@@ -58046,6 +58280,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "sseinfo.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "ssetech.com.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "ssimg.cn": [
@@ -58547,6 +58784,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "szse.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "szsi.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "szu.app": [
@@ -59485,6 +59725,9 @@
           "tiancitycdn.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "tianditao.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "tiangong.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -59552,6 +59795,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "tidenews.com.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "tidesight.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "tieba.com": [
@@ -60217,6 +60463,9 @@
           "trafficmanager.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "traveldaily.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "travelsky.com.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -60344,6 +60593,12 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "tuer123.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "tuhu.cn": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "tuhu.org": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "tuicool.com": [
@@ -60978,6 +61233,9 @@
           ],
           "ups.ksmobile.net": [
             "unknown"
+          ],
+          "upsort.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "upyun.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
@@ -62965,6 +63223,9 @@
           "xiaohongshu.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "xiaohuanxiong.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "xiaojukeji.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -63173,6 +63434,12 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "xinhuaxmt.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "xinhuazhiyun.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "xinli001.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "xinlingshou.cn": [
@@ -63586,6 +63853,9 @@
           "ydsc.com.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "ydshengxue.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "ydstatic.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -63874,6 +64144,12 @@
           "yoma.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "yonyou.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "yonyoucloud.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "yooc.me": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -64001,6 +64277,9 @@
             "unknown"
           ],
           "ys7.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "ysepay.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "ysjf.com": [
@@ -64189,6 +64468,9 @@
           "yundasys.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "yundouxueyuan.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "yundun.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -64309,7 +64591,13 @@
           "yy.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "yybip.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "yyds.co": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "yyeshop.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "yyshub.top": [
@@ -64594,6 +64882,9 @@
           "zhichanli.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "zhichi.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "zhidemai.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -64610,6 +64901,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "zhifang.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "zhiguf.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "zhihang100.com": [
@@ -65048,6 +65342,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "zway.top": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "zww.com.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "zx.com": [
@@ -67319,6 +67616,12 @@
             "unknown"
           ],
           "120.100.in-addr.arpa": [
+            "unknown"
+          ],
+          "120ask.com": [
+            "unknown"
+          ],
+          "120askimages.com": [
             "unknown"
           ],
           "121.100.in-addr.arpa": [
@@ -69799,6 +70102,9 @@
           "ai-guardrail.com.cn": [
             "unknown"
           ],
+          "ai-indeed.com": [
+            "unknown"
+          ],
           "ai-kaleidoscope.com": [
             "unknown"
           ],
@@ -71800,6 +72106,9 @@
           "baike.com": [
             "unknown"
           ],
+          "baikemy.com": [
+            "unknown"
+          ],
           "baikevod.com": [
             "unknown"
           ],
@@ -71849,6 +72158,9 @@
             "unknown"
           ],
           "bandao.cn": [
+            "unknown"
+          ],
+          "bangcle.com": [
             "unknown"
           ],
           "bangongziyuan.com": [
@@ -71918,6 +72230,9 @@
             "unknown"
           ],
           "baydn.com": [
+            "unknown"
+          ],
+          "bayescom.com": [
             "unknown"
           ],
           "bazai.com": [
@@ -72664,6 +72979,9 @@
           "boe.com.cn": [
             "unknown"
           ],
+          "bohe.cn": [
+            "unknown"
+          ],
           "bohejiasuqi.com": [
             "unknown"
           ],
@@ -72722,6 +73040,9 @@
             "unknown"
           ],
           "bouffalolab.com": [
+            "unknown"
+          ],
+          "bowangcaijing.cn": [
             "unknown"
           ],
           "bowenkj.com": [
@@ -72785,6 +73106,12 @@
             "unknown"
           ],
           "bsclink.cn": [
+            "unknown"
+          ],
+          "bse.cn": [
+            "unknown"
+          ],
+          "bseinfo.net": [
             "unknown"
           ],
           "bsrv.qq.com": [
@@ -73505,6 +73832,9 @@
             "unknown"
           ],
           "cctalk.com": [
+            "unknown"
+          ],
+          "cctime.com": [
             "unknown"
           ],
           "cctv.cn": [
@@ -74299,6 +74629,9 @@
           "chenshipin.com": [
             "unknown"
           ],
+          "chery.cn": [
+            "unknown"
+          ],
           "chesicc.cn": [
             "unknown"
           ],
@@ -74377,6 +74710,9 @@
           "chinacache.net": [
             "unknown"
           ],
+          "chinacdc.cn": [
+            "unknown"
+          ],
           "chinachugui.com": [
             "unknown"
           ],
@@ -74420,6 +74756,9 @@
             "unknown"
           ],
           "chinahr.com": [
+            "unknown"
+          ],
+          "chinahtz.com": [
             "unknown"
           ],
           "chinakaoyan.com": [
@@ -74590,6 +74929,9 @@
           "chntel.com": [
             "unknown"
           ],
+          "choiceform.com": [
+            "unknown"
+          ],
           "chongbuluo.com": [
             "unknown"
           ],
@@ -74651,9 +74993,6 @@
             "unknown"
           ],
           "chushou.tv": [
-            "unknown"
-          ],
-          "chuyu.me": [
             "unknown"
           ],
           "cib-fund.com.cn": [
@@ -75295,6 +75634,9 @@
           "cnblogs.vip": [
             "unknown"
           ],
+          "cnca.cn": [
+            "unknown"
+          ],
           "cncn.com": [
             "unknown"
           ],
@@ -75316,6 +75658,9 @@
           "cnfolimg.com": [
             "unknown"
           ],
+          "cnfood.cn": [
+            "unknown"
+          ],
           "cnhbstock.com": [
             "unknown"
           ],
@@ -75323,6 +75668,9 @@
             "unknown"
           ],
           "cnhubei.com": [
+            "unknown"
+          ],
+          "cnindex.com.cn": [
             "unknown"
           ],
           "cninfo.com.cn": [
@@ -75359,6 +75707,9 @@
             "unknown"
           ],
           "cnpc.com.cn": [
+            "unknown"
+          ],
+          "cnpharm.com": [
             "unknown"
           ],
           "cnppa.org": [
@@ -75505,6 +75856,9 @@
           "collector.scopely.io": [
             "unknown"
           ],
+          "collector.snowplow.supercell.com": [
+            "unknown"
+          ],
           "collector.vhx.tv": [
             "unknown"
           ],
@@ -75631,6 +75985,9 @@
           "counters.booking.com": [
             "unknown"
           ],
+          "countsheep.cn": [
+            "unknown"
+          ],
           "cowcs.com": [
             "unknown"
           ],
@@ -75709,6 +76066,9 @@
           "cpro.baidustatic.com": [
             "unknown"
           ],
+          "cpta.com.cn": [
+            "unknown"
+          ],
           "cptu.cn": [
             "unknown"
           ],
@@ -75778,6 +76138,9 @@
           "cravatar.com": [
             "unknown"
           ],
+          "crecg.com": [
+            "unknown"
+          ],
           "crggcn.com": [
             "unknown"
           ],
@@ -75836,6 +76199,9 @@
             "unknown"
           ],
           "csgo.com.cn": [
+            "unknown"
+          ],
+          "csindex.com.cn": [
             "unknown"
           ],
           "csjplatform.com": [
@@ -76387,6 +76753,9 @@
           "dbfund.com.cn": [
             "unknown"
           ],
+          "dbw.cn": [
+            "unknown"
+          ],
           "dc.di.atlas.samsung.com": [
             "unknown"
           ],
@@ -76816,6 +77185,9 @@
           "dingxinwen.cn": [
             "unknown"
           ],
+          "dinpay.com": [
+            "unknown"
+          ],
           "diopic.net": [
             "unknown"
           ],
@@ -76844,6 +77216,9 @@
             "unknown"
           ],
           "divoiotcloud.com": [
+            "unknown"
+          ],
+          "diyifanwen.com": [
             "unknown"
           ],
           "diyiyou.com": [
@@ -78292,6 +78667,9 @@
           "faceid.com": [
             "unknown"
           ],
+          "faceplusplus.com.cn": [
+            "unknown"
+          ],
           "faceshift.cn": [
             "unknown"
           ],
@@ -78401,6 +78779,9 @@
             "unknown"
           ],
           "favonis.space": [
+            "unknown"
+          ],
+          "faw.cn": [
             "unknown"
           ],
           "faxingbao.com": [
@@ -79294,6 +79675,9 @@
           "gaodun.com": [
             "unknown"
           ],
+          "gaodunwangxiao.com": [
+            "unknown"
+          ],
           "gaojidata.com": [
             "unknown"
           ],
@@ -79403,6 +79787,9 @@
             "unknown"
           ],
           "gelaiyun.net": [
+            "unknown"
+          ],
+          "gelonghui.com": [
             "unknown"
           ],
           "gem-log.sloegem.com": [
@@ -80425,7 +80812,16 @@
           "heavenlywind.cc": [
             "unknown"
           ],
+          "hebnews.cn": [
+            "unknown"
+          ],
+          "hebrb.cn": [
+            "unknown"
+          ],
           "hecdn.net": [
+            "unknown"
+          ],
+          "heepay.com": [
             "unknown"
           ],
           "hefei.cc": [
@@ -80680,9 +81076,6 @@
           "hitevision-solutions.com": [
             "unknown"
           ],
-          "hitokoto.cn": [
-            "unknown"
-          ],
           "hitv.com": [
             "unknown"
           ],
@@ -80744,6 +81137,9 @@
             "unknown"
           ],
           "hnair.com": [
+            "unknown"
+          ],
+          "hnapay.com": [
             "unknown"
           ],
           "hnbntv.com": [
@@ -81172,6 +81568,9 @@
           "hunantv.com": [
             "unknown"
           ],
+          "hunliji.com": [
+            "unknown"
+          ],
           "huochepiao.com": [
             "unknown"
           ],
@@ -81572,6 +81971,9 @@
             "unknown"
           ],
           "iccvlog.com": [
+            "unknown"
+          ],
+          "iceo.com.cn": [
             "unknown"
           ],
           "ichangtou.com": [
@@ -82096,9 +82498,6 @@
           "imweb.io": [
             "unknown"
           ],
-          "in.th": [
-            "unknown"
-          ],
           "in.treasuredata.com": [
             "unknown"
           ],
@@ -82474,6 +82873,9 @@
           "isealsuite.com": [
             "unknown"
           ],
+          "ishansong.com": [
+            "unknown"
+          ],
           "ishijue.com": [
             "unknown"
           ],
@@ -82573,6 +82975,9 @@
           "itunesradio.com.cn": [
             "unknown"
           ],
+          "iuoooo.com": [
+            "unknown"
+          ],
           "iuynfg.com": [
             "unknown"
           ],
@@ -82649,6 +83054,9 @@
             "unknown"
           ],
           "j-test.com": [
+            "unknown"
+          ],
+          "jac.com.cn": [
             "unknown"
           ],
           "jamcz.com": [
@@ -82769,6 +83177,9 @@
             "unknown"
           ],
           "jclps.com": [
+            "unknown"
+          ],
+          "jcrb.com": [
             "unknown"
           ],
           "jd-app.com": [
@@ -82975,6 +83386,9 @@
           "jdx.com": [
             "unknown"
           ],
+          "jdzj.com": [
+            "unknown"
+          ],
           "jet-ego.com": [
             "unknown"
           ],
@@ -83014,6 +83428,9 @@
           "jia.com": [
             "unknown"
           ],
+          "jiakaobaodian.com": [
+            "unknown"
+          ],
           "jiameng.com": [
             "unknown"
           ],
@@ -83024,6 +83441,9 @@
             "unknown"
           ],
           "jianguoyun.com": [
+            "unknown"
+          ],
+          "jianke.com": [
             "unknown"
           ],
           "jianshu.com": [
@@ -83042,6 +83462,9 @@
             "unknown"
           ],
           "jianzhi8.com": [
+            "unknown"
+          ],
+          "jianzhimao.com": [
             "unknown"
           ],
           "jiaodong.net": [
@@ -83687,6 +84110,9 @@
             "unknown"
           ],
           "kajicam.com": [
+            "unknown"
+          ],
+          "kakamobi.com": [
             "unknown"
           ],
           "kakaxing.com": [
@@ -85672,6 +86098,9 @@
           "luojilab.com": [
             "unknown"
           ],
+          "luyong.com": [
+            "unknown"
+          ],
           "luyouqi.com": [
             "unknown"
           ],
@@ -85759,6 +86188,15 @@
           "lync.cn": [
             "unknown"
           ],
+          "lynkco-test.com": [
+            "unknown"
+          ],
+          "lynkco.com": [
+            "unknown"
+          ],
+          "lynkco.com.cn": [
+            "unknown"
+          ],
           "lz310.com": [
             "unknown"
           ],
@@ -85787,6 +86225,9 @@
             "unknown"
           ],
           "m1.run": [
+            "unknown"
+          ],
+          "m12333.cn": [
             "unknown"
           ],
           "m1905.cn": [
@@ -85841,6 +86282,9 @@
             "unknown"
           ],
           "mahjongcup.net": [
+            "unknown"
+          ],
+          "maiche.com": [
             "unknown"
           ],
           "mail.me.com": [
@@ -86017,6 +86461,9 @@
           "mblyun.com": [
             "unknown"
           ],
+          "mc-cdn.cn": [
+            "unknown"
+          ],
           "mcadn.cn": [
             "unknown"
           ],
@@ -86048,6 +86495,9 @@
             "unknown"
           ],
           "mcmod.cn": [
+            "unknown"
+          ],
+          "mcndata.cn": [
             "unknown"
           ],
           "mcprev.cn": [
@@ -86129,6 +86579,9 @@
             "unknown"
           ],
           "megawords.cc": [
+            "unknown"
+          ],
+          "megvii.com": [
             "unknown"
           ],
           "mei.com": [
@@ -86618,6 +87071,9 @@
             "unknown"
           ],
           "mjia.cc": [
+            "unknown"
+          ],
+          "mkt.supercell.com": [
             "unknown"
           ],
           "mlb.did.ijinshan.com": [
@@ -87118,6 +87574,12 @@
           "mubu.com": [
             "unknown"
           ],
+          "mucang.cn": [
+            "unknown"
+          ],
+          "mugeda.com": [
+            "unknown"
+          ],
           "muji.com.cn": [
             "unknown"
           ],
@@ -87544,6 +88006,9 @@
           "news.yxrb.net": [
             "unknown"
           ],
+          "newscdn.cn": [
+            "unknown"
+          ],
           "newsimg.cn": [
             "unknown"
           ],
@@ -87731,6 +88196,9 @@
             "unknown"
           ],
           "nnthink.com": [
+            "unknown"
+          ],
+          "nocode.com": [
             "unknown"
           ],
           "noi.cn": [
@@ -88189,6 +88657,9 @@
           "oppowork.com": [
             "unknown"
           ],
+          "opsai.cn": [
+            "unknown"
+          ],
           "opstatics.com": [
             "unknown"
           ],
@@ -88489,6 +88960,9 @@
           "pcpop.com": [
             "unknown"
           ],
+          "pcsoft.com.cn": [
+            "unknown"
+          ],
           "pcwatch.com": [
             "unknown"
           ],
@@ -88607,6 +89081,9 @@
             "unknown"
           ],
           "phira.cn": [
+            "unknown"
+          ],
+          "phirda.com": [
             "unknown"
           ],
           "phoenixcenter.cn": [
@@ -89000,6 +89477,9 @@
             "unknown"
           ],
           "prugskh.net": [
+            "unknown"
+          ],
+          "przwt.com": [
             "unknown"
           ],
           "psbc.com": [
@@ -89656,6 +90136,9 @@
           "quklive.com": [
             "unknown"
           ],
+          "qunaer.com": [
+            "unknown"
+          ],
           "qunar.com": [
             "unknown"
           ],
@@ -89789,6 +90272,9 @@
             "unknown"
           ],
           "reactorms.com.cn": [
+            "unknown"
+          ],
+          "readhub.cn": [
             "unknown"
           ],
           "readnovel.com": [
@@ -90352,6 +90838,9 @@
           "scoregg.com": [
             "unknown"
           ],
+          "scpublic.cn": [
+            "unknown"
+          ],
           "scratch5.com": [
             "unknown"
           ],
@@ -90595,6 +91084,24 @@
           "senmuse.com": [
             "unknown"
           ],
+          "senseaudio.cn": [
+            "unknown"
+          ],
+          "senseavatar.com": [
+            "unknown"
+          ],
+          "sensecore.cn": [
+            "unknown"
+          ],
+          "sensefoundry.cn": [
+            "unknown"
+          ],
+          "sensenova.cn": [
+            "unknown"
+          ],
+          "sensetime.com": [
+            "unknown"
+          ],
           "sensor.aqhg.online": [
             "unknown"
           ],
@@ -90626,6 +91133,9 @@
             "unknown"
           ],
           "sentry.music.163.com": [
+            "unknown"
+          ],
+          "seres.cn": [
             "unknown"
           ],
           "serverlesscloud.cn": [
@@ -90791,6 +91301,9 @@
             "unknown"
           ],
           "shengdaosoft.com": [
+            "unknown"
+          ],
+          "shengpay.com": [
             "unknown"
           ],
           "shengqugames.com": [
@@ -90976,6 +91489,9 @@
           "shutcm.com": [
             "unknown"
           ],
+          "shuwen.com": [
+            "unknown"
+          ],
           "shuxinyc.com": [
             "unknown"
           ],
@@ -90989,6 +91505,9 @@
             "unknown"
           ],
           "shzq.com": [
+            "unknown"
+          ],
+          "si12333.cn": [
             "unknown"
           ],
           "sia.internet.apps.samsung.com": [
@@ -91469,6 +91988,9 @@
             "unknown"
           ],
           "sseinfo.com": [
+            "unknown"
+          ],
+          "ssetech.com.cn": [
             "unknown"
           ],
           "ssimg.cn": [
@@ -91988,6 +92510,9 @@
             "unknown"
           ],
           "szse.cn": [
+            "unknown"
+          ],
+          "szsi.cn": [
             "unknown"
           ],
           "szu.app": [
@@ -92935,6 +93460,9 @@
           "tiancitycdn.com": [
             "unknown"
           ],
+          "tianditao.com": [
+            "unknown"
+          ],
           "tiangong.cn": [
             "unknown"
           ],
@@ -93002,6 +93530,9 @@
             "unknown"
           ],
           "tidenews.com.cn": [
+            "unknown"
+          ],
+          "tidesight.com": [
             "unknown"
           ],
           "tieba.com": [
@@ -93712,6 +94243,9 @@
           "trafficmanager.cn": [
             "unknown"
           ],
+          "traveldaily.cn": [
+            "unknown"
+          ],
           "travelsky.com.cn": [
             "unknown"
           ],
@@ -93839,6 +94373,12 @@
             "unknown"
           ],
           "tuer123.com": [
+            "unknown"
+          ],
+          "tuhu.cn": [
+            "unknown"
+          ],
+          "tuhu.org": [
             "unknown"
           ],
           "tuicool.com": [
@@ -94466,6 +95006,9 @@
             "unknown"
           ],
           "ups.ksmobile.net": [
+            "unknown"
+          ],
+          "upsort.com": [
             "unknown"
           ],
           "upyun.com": [
@@ -96481,6 +97024,9 @@
           "xiaohongshu.com": [
             "unknown"
           ],
+          "xiaohuanxiong.com": [
+            "unknown"
+          ],
           "xiaojukeji.com": [
             "unknown"
           ],
@@ -96689,6 +97235,12 @@
             "unknown"
           ],
           "xinhuaxmt.com": [
+            "unknown"
+          ],
+          "xinhuazhiyun.com": [
+            "unknown"
+          ],
+          "xinli001.com": [
             "unknown"
           ],
           "xinlingshou.cn": [
@@ -97102,6 +97654,9 @@
           "ydsc.com.cn": [
             "unknown"
           ],
+          "ydshengxue.com": [
+            "unknown"
+          ],
           "ydstatic.com": [
             "unknown"
           ],
@@ -97390,6 +97945,12 @@
           "yoma.cn": [
             "unknown"
           ],
+          "yonyou.com": [
+            "unknown"
+          ],
+          "yonyoucloud.com": [
+            "unknown"
+          ],
           "yooc.me": [
             "unknown"
           ],
@@ -97517,6 +98078,9 @@
             "unknown"
           ],
           "ys7.com": [
+            "unknown"
+          ],
+          "ysepay.com": [
             "unknown"
           ],
           "ysjf.com": [
@@ -97705,6 +98269,9 @@
           "yundasys.com": [
             "unknown"
           ],
+          "yundouxueyuan.com": [
+            "unknown"
+          ],
           "yundun.com": [
             "unknown"
           ],
@@ -97825,7 +98392,13 @@
           "yy.com": [
             "unknown"
           ],
+          "yybip.com": [
+            "unknown"
+          ],
           "yyds.co": [
+            "unknown"
+          ],
+          "yyeshop.cn": [
             "unknown"
           ],
           "yyshub.top": [
@@ -98110,6 +98683,9 @@
           "zhichanli.com": [
             "unknown"
           ],
+          "zhichi.com": [
+            "unknown"
+          ],
           "zhidemai.com": [
             "unknown"
           ],
@@ -98126,6 +98702,9 @@
             "unknown"
           ],
           "zhifang.com": [
+            "unknown"
+          ],
+          "zhiguf.com": [
             "unknown"
           ],
           "zhihang100.com": [
@@ -98567,6 +99146,9 @@
             "unknown"
           ],
           "zway.top": [
+            "unknown"
+          ],
+          "zww.com.cn": [
             "unknown"
           ],
           "zx.com": [
@@ -99155,10 +99737,10 @@
   "published_inventory": [
     {
       "ruleset": "adguard-blocker@mobile",
-      "entries": 2074,
+      "entries": 2076,
       "entries_by_field": {
         "domain_regex": 129,
-        "domain_suffix": 1945
+        "domain_suffix": 1947
       }
     },
     {
