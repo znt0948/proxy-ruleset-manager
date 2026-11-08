@@ -58,6 +58,7 @@ payload:
   - DOMAIN,gtm.oasisfeng.com
   - DOMAIN,heads-ak-spotify-com.akamaized.net
   - DOMAIN,heads4-ak-spotify-com.akamaized.net
+  - DOMAIN,http-intake.logs.us5.datadoghq.com
   - DOMAIN,images-eu.ssl-images-amazon.com
   - DOMAIN,images-fe.ssl-images-amazon.com
   - DOMAIN,images-na.ssl-images-amazon.com
@@ -138,6 +139,7 @@ payload:
   - DOMAIN,myip.telespex.com
   - DOMAIN,myip.valkos.by
   - DOMAIN,news-client-search.apple.com
+  - DOMAIN,o1158394.ingest.us.sentry.io
   - DOMAIN,o33249.ingest.sentry.io
   - DOMAIN,o33249.ingest.us.sentry.io
   - DOMAIN,openai.qualtrics.com
@@ -151,6 +153,7 @@ payload:
   - DOMAIN,ping0.co
   - DOMAIN,ppl-ai-file-upload.s3.amazonaws.com
   - DOMAIN,pplx-res.cloudinary.com
+  - DOMAIN,production-copilot-host-westus.webpubsub.azure.com
   - DOMAIN,production-openaicom-storage.azureedge.net
   - DOMAIN,qiao-cn.com
   - DOMAIN,qpx.googleflights.net
@@ -3510,6 +3513,7 @@ payload:
   - DOMAIN-SUFFIX,greip.io
   - DOMAIN-SUFFIX,gridaware.app
   - DOMAIN-SUFFIX,grok.com
+  - DOMAIN-SUFFIX,grokbot.com
   - DOMAIN-SUFFIX,grokipedia.com
   - DOMAIN-SUFFIX,grooby.com
   - DOMAIN-SUFFIX,groq.com
