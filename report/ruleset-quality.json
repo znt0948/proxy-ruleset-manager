@@ -9,8 +9,8 @@
       "sources": [
         {
           "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt",
-          "raw_entries": 1391,
-          "normalized_entries": 1246
+          "raw_entries": 1393,
+          "normalized_entries": 1248
         },
         {
           "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt",
@@ -21,16 +21,16 @@
       "merge_deduplication": {},
       "output_entries_by_field": {
         "domain_regex": 129,
-        "domain_suffix": 1947
+        "domain_suffix": 1949
       },
       "provenance": {
-        "tracked_normalized_entries": 2090,
-        "published_entries": 2076,
+        "tracked_normalized_entries": 2092,
+        "published_entries": 2078,
         "published_entries_with_multiple_exact_sources": 69,
         "published_entries_without_exact_source": 0,
         "normalized_entries_shared_by_sources": 69,
         "source_output_contribution": {
-          "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt": 1239,
+          "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt": 1241,
           "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt": 906
         },
         "source_pair_overlaps": [
@@ -446,8 +446,8 @@
         ]
       },
       "final_optimization": {
-        "input_entries": 2076,
-        "output_entries": 2076,
+        "input_entries": 2078,
+        "output_entries": 2078,
         "removed_entries": 0,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 0,
@@ -3891,6 +3891,9 @@
           "lw-c-log.lastwarapp.com": [
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
           ],
+          "lw-c-log.lastwarapp.net": [
+            "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
+          ],
           "m-adnet.hiaiabc.com": [
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
@@ -4588,6 +4591,9 @@
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
           ],
           "pp3-sdkdata-v2-ut.profilepassport.jp": [
+            "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
+          ],
+          "pp3-sdkdata-v2.profilepassport.jp": [
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
           ],
           "pps-log.op-mobile.opera.com": [
@@ -32112,13 +32118,13 @@
         },
         {
           "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json",
-          "raw_entries": 106,
-          "normalized_entries": 106,
+          "raw_entries": 101,
+          "normalized_entries": 101,
           "unsupported_rules": 0,
           "invalid_rules_or_values": 0,
           "deduplication": {
-            "input_entries": 106,
-            "output_entries": 106,
+            "input_entries": 101,
+            "output_entries": 101,
             "removed_entries": 0,
             "exact_duplicates": 0,
             "domain_covered_by_suffix": 0,
@@ -32128,8 +32134,8 @@
         }
       ],
       "merge_deduplication": {
-        "input_entries": 9857,
-        "output_entries": 9857,
+        "input_entries": 9852,
+        "output_entries": 9852,
         "removed_entries": 0,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 0,
@@ -32137,13 +32143,13 @@
         "cidr_collapsed": 0
       },
       "output_entries_by_field": {
-        "domain": 645,
+        "domain": 640,
         "domain_regex": 10,
         "domain_suffix": 8658
       },
       "provenance": {
-        "tracked_normalized_entries": 9857,
-        "published_entries": 9857,
+        "tracked_normalized_entries": 9852,
+        "published_entries": 9852,
         "published_entries_with_multiple_exact_sources": 9,
         "published_entries_without_exact_source": 0,
         "normalized_entries_shared_by_sources": 9,
@@ -32154,7 +32160,7 @@
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-springer.srs": 5,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-elsevier.srs": 14,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-ieee.srs": 54,
-          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json": 106
+          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json": 101
         },
         "source_pair_overlaps": [
           {
@@ -32248,8 +32254,8 @@
         ]
       },
       "final_optimization": {
-        "input_entries": 9837,
-        "output_entries": 9313,
+        "input_entries": 9832,
+        "output_entries": 9308,
         "removed_entries": 524,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 74,
@@ -32398,9 +32404,6 @@
           ],
           "apptrailers.itunes.apple.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
-          ],
-          "archive.torrentonline.cc": [
-            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "asusrouter.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-private.srs"
@@ -33124,6 +33127,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "ipv4announce.sktorrent.eu": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
+          "ipv6.govt.hu": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "ipv6test.wcode.net": [
@@ -33911,9 +33917,6 @@
           "tr.nyacat.pw": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
-          "tr3.ysagin.top": [
-            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-          ],
           "tr4ck3r.duckdns.org": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
@@ -33929,13 +33932,7 @@
           "tracker.aruku.ovh": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
-          "tracker.bittor.pw": [
-            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-          ],
-          "tracker.breizh.pm": [
-            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-          ],
-          "tracker.bt4g.com": [
+          "tracker.cangku.moe": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.cn.nyaa.net": [
@@ -33975,9 +33972,6 @@
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.gmi.gd": [
-            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-          ],
-          "tracker.ilibr.org": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.internetwarriors.net": [
@@ -34038,9 +34032,6 @@
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.skyts.net": [
-            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-          ],
-          "tracker.theoks.net": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.torrent.eu.org": [
@@ -52505,6 +52496,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "lw-c-log.lastwarapp.com": [
+            "unknown"
+          ],
+          "lw-c-log.lastwarapp.net": [
             "unknown"
           ],
           "lwurl.to": [
@@ -86122,6 +86116,9 @@
           "lw-c-log.lastwarapp.com": [
             "unknown"
           ],
+          "lw-c-log.lastwarapp.net": [
+            "unknown"
+          ],
           "lwurl.to": [
             "unknown"
           ],
@@ -89354,6 +89351,9 @@
             "unknown"
           ],
           "pp3-sdkdata-v2-ut.profilepassport.jp": [
+            "unknown"
+          ],
+          "pp3-sdkdata-v2.profilepassport.jp": [
             "unknown"
           ],
           "ppkankan01.com": [
@@ -99737,10 +99737,10 @@
   "published_inventory": [
     {
       "ruleset": "adguard-blocker@mobile",
-      "entries": 2076,
+      "entries": 2078,
       "entries_by_field": {
         "domain_regex": 129,
-        "domain_suffix": 1947
+        "domain_suffix": 1949
       }
     },
     {

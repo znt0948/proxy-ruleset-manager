@@ -7901,7 +7901,7 @@
       },
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
       "entries_of": "adguard-blocker@mobile.json",
-      "carved_entries": 1940
+      "carved_entries": 1942
     },
     {
       "pattern": {
@@ -7957,7 +7957,7 @@
       },
       "carved_from": "geosite-category-direct@light.json",
       "entries_of": "adguard-blocker@mobile.json",
-      "carved_entries": 921
+      "carved_entries": 922
     },
     {
       "pattern": {
@@ -11229,7 +11229,7 @@
     },
     "geosite-category-direct@light.json": {
       "removed": 44,
-      "carved": 1930
+      "carved": 1931
     },
     "geosite-category-download@!cn.json": {
       "removed": 3,
@@ -11237,7 +11237,7 @@
     },
     "geosite-filter-downloadKeywords@!cn.json": {
       "removed": 0,
-      "carved": 10803
+      "carved": 10805
     }
   },
   "remaining": [],
@@ -46376,6 +46376,12 @@
       "reason": "correction"
     },
     {
+      "name": "archive-lw-c-log.lastwarapp.net",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
       "name": "archive-lwurl.to",
       "before": "download",
       "after": null,
@@ -52293,6 +52299,12 @@
     },
     {
       "name": "archive-pp3-sdkdata-v2-ut.profilepassport.jp",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-pp3-sdkdata-v2.profilepassport.jp",
       "before": "download",
       "after": null,
       "reason": "correction"
