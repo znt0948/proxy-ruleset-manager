@@ -7941,7 +7941,7 @@
       },
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
       "entries_of": "geosite-category-direct@light.json",
-      "carved_entries": 8623
+      "carved_entries": 8624
     },
     {
       "pattern": {
@@ -11237,7 +11237,7 @@
     },
     "geosite-filter-downloadKeywords@!cn.json": {
       "removed": 0,
-      "carved": 10805
+      "carved": 10806
     }
   },
   "remaining": [],
@@ -49989,6 +49989,12 @@
     },
     {
       "name": "archive-ngacn.cc",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-nia-teams.com",
       "before": "download",
       "after": null,
       "reason": "correction"

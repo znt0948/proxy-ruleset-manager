@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generated_at": "2026-11-09T22:45:17Z",
-  "base_commit": "162df546bb7785febeea37304b3b75cfbe609c18",
-  "summary": "adguard-blocker@mobile +2/-0, direct@light +3/-7, filter-downloadKeywords@!cn +2/-0",
+  "generated_at": "2026-11-10T20:09:31Z",
+  "base_commit": "51bf60cc489f3b9941b6471bfe82a0b11575d7e0",
+  "summary": "direct@light +6/-4, filter-downloadKeywords@!cn +1/-0",
   "rule_sets": [
     {
       "ruleset": "adguard-blocker@mobile",
-      "status": "changed",
-      "added_count": 2,
+      "status": "unchanged",
+      "added_count": 0,
       "removed_count": 0,
       "fields": {
         "domain": {
@@ -19,22 +19,9 @@
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [
-            {
-              "value": "lw-c-log.lastwarapp.net",
-              "sources": [
-                "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
-              ]
-            },
-            {
-              "value": "pp3-sdkdata-v2.profilepassport.jp",
-              "sources": [
-                "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
-              ]
-            }
-          ],
+          "added": [],
           "removed": [],
-          "added_count": 2,
+          "added_count": 0,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
@@ -372,25 +359,11 @@
     {
       "ruleset": "geosite-category-direct@light",
       "status": "changed",
-      "added_count": 3,
-      "removed_count": 7,
+      "added_count": 6,
+      "removed_count": 4,
       "fields": {
         "domain": {
           "added": [
-            {
-              "value": "ipv6.govt.hu",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.cangku.moe",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            }
-          ],
-          "removed": [
             {
               "value": "archive.torrentonline.cc",
               "sources": [
@@ -404,19 +377,13 @@
               ]
             },
             {
+              "value": "tracker.alt.cx",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
               "value": "tracker.bittor.pw",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.breizh.pm",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.bt4g.com",
               "sources": [
                 "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
               ]
@@ -426,25 +393,45 @@
               "sources": [
                 "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
               ]
+            }
+          ],
+          "removed": [
+            {
+              "value": "anime-tracker.aruku.kro.kr",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
             },
             {
-              "value": "tracker.theoks.net",
+              "value": "tracker.midnightprogrammer.net",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.tryhackx.org",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "whybother.torrentonline.cc",
               "sources": [
                 "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
               ]
             }
           ],
-          "added_count": 2,
-          "removed_count": 7,
+          "added_count": 5,
+          "removed_count": 4,
           "added_truncated": false,
           "removed_truncated": false
         },
         "domain_suffix": {
           "added": [
             {
-              "value": "lw-c-log.lastwarapp.net",
+              "value": "nia-teams.com",
               "sources": [
-                "unknown"
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
               ]
             }
           ],
@@ -547,7 +534,7 @@
     {
       "ruleset": "geosite-filter-downloadKeywords@!cn",
       "status": "changed",
-      "added_count": 2,
+      "added_count": 1,
       "removed_count": 0,
       "fields": {
         "domain": {
@@ -561,20 +548,14 @@
         "domain_suffix": {
           "added": [
             {
-              "value": "lw-c-log.lastwarapp.net",
-              "sources": [
-                "unknown"
-              ]
-            },
-            {
-              "value": "pp3-sdkdata-v2.profilepassport.jp",
+              "value": "nia-teams.com",
               "sources": [
                 "unknown"
               ]
             }
           ],
           "removed": [],
-          "added_count": 2,
+          "added_count": 1,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
