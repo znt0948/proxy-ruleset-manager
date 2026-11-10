@@ -27,7 +27,6 @@ payload:
   - DOMAIN,amp-api.media.apple.com
   - DOMAIN,amp-api.music.apple.com
   - DOMAIN,amp-api.podcasts.apple.com
-  - DOMAIN,anime-tracker.aruku.kro.kr
   - DOMAIN,aod-ssl.itunes.apple.com
   - DOMAIN,aod.itunes.apple.com
   - DOMAIN,api-edge.apps.apple.com
@@ -44,6 +43,7 @@ payload:
   - DOMAIN,apps.mzstatic.com
   - DOMAIN,apps5.oingo.com
   - DOMAIN,apptrailers.itunes.apple.com
+  - DOMAIN,archive.torrentonline.cc
   - DOMAIN,asusrouter.com
   - DOMAIN,avail.googleflights.net
   - DOMAIN,bag-cdn.itunes-apple.com.akadns.net
@@ -431,11 +431,14 @@ payload:
   - DOMAIN,tr.burnabyhighstar.com
   - DOMAIN,tr.highstar.shop
   - DOMAIN,tr.nyacat.pw
+  - DOMAIN,tr3.ysagin.top
   - DOMAIN,tr4ck3r.duckdns.org
   - DOMAIN,tracker-udp.gbitt.info
   - DOMAIN,tracker.004430.xyz
   - DOMAIN,tracker.7471.top
+  - DOMAIN,tracker.alt.cx
   - DOMAIN,tracker.aruku.ovh
+  - DOMAIN,tracker.bittor.pw
   - DOMAIN,tracker.cangku.moe
   - DOMAIN,tracker.cn.nyaa.net
   - DOMAIN,tracker.corpscorp.online
@@ -450,10 +453,10 @@ payload:
   - DOMAIN,tracker.fnix.net
   - DOMAIN,tracker.foreverpirates.co
   - DOMAIN,tracker.gmi.gd
+  - DOMAIN,tracker.ilibr.org
   - DOMAIN,tracker.internetwarriors.net
   - DOMAIN,tracker.k.vu
   - DOMAIN,tracker.kuroy.me
-  - DOMAIN,tracker.midnightprogrammer.net
   - DOMAIN,tracker.mywaifu.best
   - DOMAIN,tracker.nyaa.net
   - DOMAIN,tracker.nyaa.vc
@@ -471,7 +474,6 @@ payload:
   - DOMAIN,tracker.torrent.eu.org
   - DOMAIN,tracker.torrents.observer
   - DOMAIN,tracker.transfur.org
-  - DOMAIN,tracker.tryhackx.org
   - DOMAIN,tracker.waaa.moe
   - DOMAIN,tracker.wildkat.net
   - DOMAIN,tracker.willy.pro
@@ -494,7 +496,6 @@ payload:
   - DOMAIN,weather-map.apple.com
   - DOMAIN,weather-map2.apple.com
   - DOMAIN,weatherkit.apple.com
-  - DOMAIN,whybother.torrentonline.cc
   - DOMAIN,wmsjsteam.com
   - DOMAIN,www-google-analytics.l.google.com
   - DOMAIN,www-googletagmanager.l.google.com
@@ -78460,6 +78461,7 @@ payload:
   - DOMAIN-SUFFIX,nhzs.com
   - DOMAIN-SUFFIX,ni8.com
   - DOMAIN-SUFFIX,ni93.com
+  - DOMAIN-SUFFIX,nia-teams.com
   - DOMAIN-SUFFIX,nianchu.net
   - DOMAIN-SUFFIX,nianhuawan.com
   - DOMAIN-SUFFIX,niankawang.com
