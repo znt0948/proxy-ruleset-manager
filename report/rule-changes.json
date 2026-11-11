@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generated_at": "2026-11-11T02:38:04Z",
-  "base_commit": "87dc077fe69c1ddebf4a901310525056ce8b0ea9",
-  "summary": "direct@light +7/-3, filter-downloadKeywords@!cn +3/-2",
+  "generated_at": "2026-11-11T19:56:33Z",
+  "base_commit": "94810c022074b09a59b2e6bf0940eb080ac85354",
+  "summary": "no changes",
   "rule_sets": [
     {
       "ruleset": "adguard-blocker@mobile",
@@ -358,87 +358,23 @@
     },
     {
       "ruleset": "geosite-category-direct@light",
-      "status": "changed",
-      "added_count": 7,
-      "removed_count": 3,
+      "status": "unchanged",
+      "added_count": 0,
+      "removed_count": 0,
       "fields": {
         "domain": {
-          "added": [
-            {
-              "value": "tracker.23794.top",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.theoks.net",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.tryhackx.org",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "whybother.torrentonline.cc",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            }
-          ],
-          "removed": [
-            {
-              "value": "tr.highstar.shop",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            }
-          ],
-          "added_count": 4,
-          "removed_count": 1,
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [
-            {
-              "value": "bing.net",
-              "sources": [
-                "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json"
-              ]
-            },
-            {
-              "value": "dittocdn.com",
-              "sources": [
-                "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json"
-              ]
-            },
-            {
-              "value": "marginnote.cn",
-              "sources": [
-                "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json"
-              ]
-            }
-          ],
-          "removed": [
-            {
-              "value": "cn.bing.net",
-              "sources": [
-                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
-              ]
-            },
-            {
-              "value": "cn.mm.bing.net",
-              "sources": [
-                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
-              ]
-            }
-          ],
-          "added_count": 3,
-          "removed_count": 2,
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
         },
@@ -534,9 +470,9 @@
     },
     {
       "ruleset": "geosite-filter-downloadKeywords@!cn",
-      "status": "changed",
-      "added_count": 3,
-      "removed_count": 2,
+      "status": "unchanged",
+      "added_count": 0,
+      "removed_count": 0,
       "fields": {
         "domain": {
           "added": [],
@@ -547,42 +483,10 @@
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [
-            {
-              "value": "bing.net",
-              "sources": [
-                "unknown"
-              ]
-            },
-            {
-              "value": "dittocdn.com",
-              "sources": [
-                "unknown"
-              ]
-            },
-            {
-              "value": "marginnote.cn",
-              "sources": [
-                "unknown"
-              ]
-            }
-          ],
-          "removed": [
-            {
-              "value": "cn.bing.net",
-              "sources": [
-                "unknown"
-              ]
-            },
-            {
-              "value": "cn.mm.bing.net",
-              "sources": [
-                "unknown"
-              ]
-            }
-          ],
-          "added_count": 3,
-          "removed_count": 2,
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
         },
