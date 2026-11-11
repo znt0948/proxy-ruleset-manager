@@ -1,7 +1,7 @@
-2026-11-10 20:05:36,136 - INFO - adguard-blocker@mobile 跳过 84 条 sing-box DNS 规则不支持的 AdGuard 条目
-2026-11-10 20:05:36,136 - INFO - adguard-blocker@mobile AdGuard DNS 优化: 2380 -> 2078，完全重复 73，后缀覆盖精确规则 0，后缀覆盖后缀规则 82
-2026-11-10 20:05:36,501 - INFO - blocker-httpdns 规则整理完成:
-2026-11-10 20:05:36,501 - INFO - 类型: geosite
+2026-11-11 02:34:12,459 - INFO - adguard-blocker@mobile 跳过 84 条 sing-box DNS 规则不支持的 AdGuard 条目
+2026-11-11 02:34:12,459 - INFO - adguard-blocker@mobile AdGuard DNS 优化: 2380 -> 2078，完全重复 73，后缀覆盖精确规则 0，后缀覆盖后缀规则 82
+2026-11-11 02:34:12,792 - INFO - blocker-httpdns 规则整理完成:
+2026-11-11 02:34:12,792 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 34
 规则分析:
@@ -14,7 +14,7 @@ domain 被过滤掉的条目数量: 0
   无效规则/值数量: 0
   失败的必需上游数: 0
 --------------------------------------------------
-2026-11-10 20:05:36,502 - INFO - 类型: geoip
+2026-11-11 02:34:12,793 - INFO - 类型: geoip
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 41
 规则分析:
@@ -27,8 +27,8 @@ domain 被过滤掉的条目数量: 0
   无效规则/值数量: 0
   失败的必需上游数: 0
 --------------------------------------------------
-2026-11-10 20:05:36,627 - INFO - blocker-trash@mobile 规则整理完成:
-2026-11-10 20:05:36,627 - INFO - 类型: geosite
+2026-11-11 02:34:12,891 - INFO - blocker-trash@mobile 规则整理完成:
+2026-11-11 02:34:12,891 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 30
 规则分析:
@@ -41,8 +41,8 @@ domain 被过滤掉的条目数量: 0
   无效规则/值数量: 0
   失败的必需上游数: 0
 --------------------------------------------------
-2026-11-10 20:05:36,628 - INFO - category-continuous 规则整理完成:
-2026-11-10 20:05:36,628 - INFO - 类型: geosite
+2026-11-11 02:34:12,892 - INFO - category-continuous 规则整理完成:
+2026-11-11 02:34:12,892 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 19
 规则分析:
@@ -55,13 +55,13 @@ domain 被过滤掉的条目数量: 0
   无效规则/值数量: 0
   失败的必需上游数: 0
 --------------------------------------------------
-2026-11-10 20:05:37,936 - INFO - category-direct@light 规则整理完成:
-2026-11-10 20:05:37,936 - INFO - 类型: geosite
+2026-11-11 02:34:13,893 - INFO - category-direct@light 规则整理完成:
+2026-11-11 02:34:13,893 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
-剩余规则总数: 9854
+剩余规则总数: 9860
 规则分析:
-  domain 条目数: 735
-  domain_suffix 条目数: 9109
+  domain 条目数: 738
+  domain_suffix 条目数: 9112
   ip_cidr 条目数: 0
   process_name 条目数: 0
   domain_regex 条目数: 10
@@ -69,7 +69,7 @@ domain 被过滤掉的条目数量: 0
   无效规则/值数量: 0
   失败的必需上游数: 0
 --------------------------------------------------
-2026-11-10 20:05:37,936 - INFO - 类型: geoip
+2026-11-11 02:34:13,893 - INFO - 类型: geoip
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 8113
 规则分析:
@@ -82,8 +82,8 @@ domain 被过滤掉的条目数量: 0
   无效规则/值数量: 0
   失败的必需上游数: 0
 --------------------------------------------------
-2026-11-10 20:05:40,063 - INFO - category-download@!cn 规则整理完成:
-2026-11-10 20:05:40,063 - INFO - 类型: geosite
+2026-11-11 02:34:15,442 - INFO - category-download@!cn 规则整理完成:
+2026-11-11 02:34:15,442 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 297
 规则分析:
@@ -96,7 +96,7 @@ domain 被过滤掉的条目数量: 0
   无效规则/值数量: 0
   失败的必需上游数: 0
 --------------------------------------------------
-2026-11-10 20:05:40,063 - INFO - 类型: geoip
+2026-11-11 02:34:15,442 - INFO - 类型: geoip
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 1
 规则分析:
@@ -109,8 +109,8 @@ domain 被过滤掉的条目数量: 0
   无效规则/值数量: 0
   失败的必需上游数: 0
 --------------------------------------------------
-2026-11-10 20:05:40,212 - INFO - filter-downloadKeywords@!cn 规则整理完成:
-2026-11-10 20:05:40,213 - INFO - 类型: geosite
+2026-11-11 02:34:15,540 - INFO - filter-downloadKeywords@!cn 规则整理完成:
+2026-11-11 02:34:15,540 - INFO - 类型: geosite
 domain 被过滤掉的条目数量: 0
 剩余规则总数: 19
 规则分析:
@@ -123,18 +123,18 @@ domain 被过滤掉的条目数量: 0
   无效规则/值数量: 0
   失败的必需上游数: 0
 --------------------------------------------------
-2026-11-10 20:05:40,213 - INFO - 处理类别：geosite-category-continuous
-2026-11-10 20:05:40,213 - INFO - 跳过处理 geosite-category-continuous，因为没有 @cn 或 @!cn 文件
-2026-11-10 20:05:40,213 - INFO - 处理类别：geosite-category-download
-2026-11-10 20:05:40,213 - INFO - 跳过处理 geosite-category-download，因为没有全体文件
-2026-11-10 20:05:40,213 - INFO - 处理类别：geosite-category-direct
-2026-11-10 20:05:40,213 - INFO - 跳过处理 geosite-category-direct，因为没有全体文件
-2026-11-10 20:05:40,213 - INFO - 处理类别：geoip-category-direct
-2026-11-10 20:05:40,213 - INFO - 跳过处理 geoip-category-direct，因为没有全体文件
-2026-11-10 20:05:40,213 - INFO - 处理类别：geoip-category-download
-2026-11-10 20:05:40,213 - INFO - 跳过处理 geoip-category-download，因为没有全体文件
-2026-11-10 20:05:40,264 - INFO - [classification correction] geosite-category-download@!cn.json: domain 删除 2 条，domain_suffix 删除 10 条
-2026-11-10 20:05:40,310 - INFO - [classification correction] geosite-category-direct@light.json: domain 删除 20 条，domain_suffix 删除 0 条
-2026-11-10 20:05:40,311 - INFO - [classification correction] geosite-filter-downloadKeywords@!cn.json: domain 删除 3 条，domain_suffix 删除 0 条
-2026-11-10 20:07:01,915 - INFO - [classification correction] geosite-category-download@!cn.json: final exact-domain exclusions applied
-2026-11-10 20:09:31,420 - INFO - 规则变更报告已生成: direct@light +6/-4, filter-downloadKeywords@!cn +1/-0
+2026-11-11 02:34:15,540 - INFO - 处理类别：geosite-category-continuous
+2026-11-11 02:34:15,540 - INFO - 跳过处理 geosite-category-continuous，因为没有 @cn 或 @!cn 文件
+2026-11-11 02:34:15,540 - INFO - 处理类别：geosite-category-download
+2026-11-11 02:34:15,540 - INFO - 跳过处理 geosite-category-download，因为没有全体文件
+2026-11-11 02:34:15,540 - INFO - 处理类别：geosite-category-direct
+2026-11-11 02:34:15,540 - INFO - 跳过处理 geosite-category-direct，因为没有全体文件
+2026-11-11 02:34:15,540 - INFO - 处理类别：geoip-category-direct
+2026-11-11 02:34:15,540 - INFO - 跳过处理 geoip-category-direct，因为没有全体文件
+2026-11-11 02:34:15,540 - INFO - 处理类别：geoip-category-download
+2026-11-11 02:34:15,540 - INFO - 跳过处理 geoip-category-download，因为没有全体文件
+2026-11-11 02:34:15,591 - INFO - [classification correction] geosite-category-download@!cn.json: domain 删除 2 条，domain_suffix 删除 10 条
+2026-11-11 02:34:15,636 - INFO - [classification correction] geosite-category-direct@light.json: domain 删除 20 条，domain_suffix 删除 0 条
+2026-11-11 02:34:15,637 - INFO - [classification correction] geosite-filter-downloadKeywords@!cn.json: domain 删除 3 条，domain_suffix 删除 0 条
+2026-11-11 02:35:36,597 - INFO - [classification correction] geosite-category-download@!cn.json: final exact-domain exclusions applied
+2026-11-11 02:38:04,886 - INFO - 规则变更报告已生成: direct@light +7/-3, filter-downloadKeywords@!cn +3/-2

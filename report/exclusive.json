@@ -7941,7 +7941,7 @@
       },
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
       "entries_of": "geosite-category-direct@light.json",
-      "carved_entries": 8624
+      "carved_entries": 8625
     },
     {
       "pattern": {
@@ -11237,7 +11237,7 @@
     },
     "geosite-filter-downloadKeywords@!cn.json": {
       "removed": 0,
-      "carved": 10806
+      "carved": 10807
     }
   },
   "remaining": [],
@@ -21140,6 +21140,12 @@
       "reason": "correction"
     },
     {
+      "name": "archive-bing.net",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
       "name": "archive-bingads.microsoft.com",
       "before": "download",
       "after": null,
@@ -26582,19 +26588,7 @@
       "reason": "correction"
     },
     {
-      "name": "archive-cn.bing.net",
-      "before": "download",
-      "after": null,
-      "reason": "correction"
-    },
-    {
       "name": "archive-cn.eset.com",
-      "before": "download",
-      "after": null,
-      "reason": "correction"
-    },
-    {
-      "name": "archive-cn.mm.bing.net",
       "before": "download",
       "after": null,
       "reason": "correction"
@@ -29643,6 +29637,12 @@
     },
     {
       "name": "archive-dit.whatsapp.net",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-dittocdn.com",
       "before": "download",
       "after": null,
       "reason": "correction"
@@ -46875,6 +46875,12 @@
     },
     {
       "name": "archive-mappcloud.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-marginnote.cn",
       "before": "download",
       "after": null,
       "reason": "correction"

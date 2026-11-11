@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generated_at": "2026-11-10T20:09:31Z",
-  "base_commit": "51bf60cc489f3b9941b6471bfe82a0b11575d7e0",
-  "summary": "direct@light +6/-4, filter-downloadKeywords@!cn +1/-0",
+  "generated_at": "2026-11-11T02:38:04Z",
+  "base_commit": "87dc077fe69c1ddebf4a901310525056ce8b0ea9",
+  "summary": "direct@light +7/-3, filter-downloadKeywords@!cn +3/-2",
   "rule_sets": [
     {
       "ruleset": "adguard-blocker@mobile",
@@ -359,51 +359,19 @@
     {
       "ruleset": "geosite-category-direct@light",
       "status": "changed",
-      "added_count": 6,
-      "removed_count": 4,
+      "added_count": 7,
+      "removed_count": 3,
       "fields": {
         "domain": {
           "added": [
             {
-              "value": "archive.torrentonline.cc",
+              "value": "tracker.23794.top",
               "sources": [
                 "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
               ]
             },
             {
-              "value": "tr3.ysagin.top",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.alt.cx",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.bittor.pw",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.ilibr.org",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            }
-          ],
-          "removed": [
-            {
-              "value": "anime-tracker.aruku.kro.kr",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.midnightprogrammer.net",
+              "value": "tracker.theoks.net",
               "sources": [
                 "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
               ]
@@ -421,23 +389,56 @@
               ]
             }
           ],
-          "added_count": 5,
-          "removed_count": 4,
+          "removed": [
+            {
+              "value": "tr.highstar.shop",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            }
+          ],
+          "added_count": 4,
+          "removed_count": 1,
           "added_truncated": false,
           "removed_truncated": false
         },
         "domain_suffix": {
           "added": [
             {
-              "value": "nia-teams.com",
+              "value": "bing.net",
+              "sources": [
+                "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json"
+              ]
+            },
+            {
+              "value": "dittocdn.com",
+              "sources": [
+                "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json"
+              ]
+            },
+            {
+              "value": "marginnote.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json"
+              ]
+            }
+          ],
+          "removed": [
+            {
+              "value": "cn.bing.net",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "cn.mm.bing.net",
               "sources": [
                 "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
               ]
             }
           ],
-          "removed": [],
-          "added_count": 1,
-          "removed_count": 0,
+          "added_count": 3,
+          "removed_count": 2,
           "added_truncated": false,
           "removed_truncated": false
         },
@@ -534,8 +535,8 @@
     {
       "ruleset": "geosite-filter-downloadKeywords@!cn",
       "status": "changed",
-      "added_count": 1,
-      "removed_count": 0,
+      "added_count": 3,
+      "removed_count": 2,
       "fields": {
         "domain": {
           "added": [],
@@ -548,15 +549,40 @@
         "domain_suffix": {
           "added": [
             {
-              "value": "nia-teams.com",
+              "value": "bing.net",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "dittocdn.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "marginnote.cn",
               "sources": [
                 "unknown"
               ]
             }
           ],
-          "removed": [],
-          "added_count": 1,
-          "removed_count": 0,
+          "removed": [
+            {
+              "value": "cn.bing.net",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "cn.mm.bing.net",
+              "sources": [
+                "unknown"
+              ]
+            }
+          ],
+          "added_count": 3,
+          "removed_count": 2,
           "added_truncated": false,
           "removed_truncated": false
         },

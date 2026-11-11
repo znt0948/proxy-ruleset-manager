@@ -32022,13 +32022,13 @@
       "sources": [
         {
           "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json",
-          "raw_entries": 46,
-          "normalized_entries": 45,
+          "raw_entries": 49,
+          "normalized_entries": 48,
           "unsupported_rules": 0,
           "invalid_rules_or_values": 0,
           "deduplication": {
-            "input_entries": 45,
-            "output_entries": 45,
+            "input_entries": 48,
+            "output_entries": 48,
             "removed_entries": 0,
             "exact_duplicates": 0,
             "domain_covered_by_suffix": 0,
@@ -32118,13 +32118,13 @@
         },
         {
           "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json",
-          "raw_entries": 102,
-          "normalized_entries": 102,
+          "raw_entries": 105,
+          "normalized_entries": 105,
           "unsupported_rules": 0,
           "invalid_rules_or_values": 0,
           "deduplication": {
-            "input_entries": 102,
-            "output_entries": 102,
+            "input_entries": 105,
+            "output_entries": 105,
             "removed_entries": 0,
             "exact_duplicates": 0,
             "domain_covered_by_suffix": 0,
@@ -32134,8 +32134,8 @@
         }
       ],
       "merge_deduplication": {
-        "input_entries": 9854,
-        "output_entries": 9854,
+        "input_entries": 9860,
+        "output_entries": 9860,
         "removed_entries": 0,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 0,
@@ -32143,24 +32143,24 @@
         "cidr_collapsed": 0
       },
       "output_entries_by_field": {
-        "domain": 641,
+        "domain": 644,
         "domain_regex": 10,
-        "domain_suffix": 8659
+        "domain_suffix": 8660
       },
       "provenance": {
-        "tracked_normalized_entries": 9854,
-        "published_entries": 9854,
+        "tracked_normalized_entries": 9860,
+        "published_entries": 9860,
         "published_entries_with_multiple_exact_sources": 9,
         "published_entries_without_exact_source": 0,
         "normalized_entries_shared_by_sources": 9,
         "source_output_contribution": {
-          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json": 45,
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json": 48,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-private.srs": 133,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs": 9510,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-springer.srs": 5,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-elsevier.srs": 14,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-ieee.srs": 54,
-          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json": 102
+          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json": 105
         },
         "source_pair_overlaps": [
           {
@@ -32254,12 +32254,12 @@
         ]
       },
       "final_optimization": {
-        "input_entries": 9834,
-        "output_entries": 9310,
-        "removed_entries": 524,
+        "input_entries": 9840,
+        "output_entries": 9314,
+        "removed_entries": 526,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 74,
-        "suffix_covered_by_suffix": 450,
+        "suffix_covered_by_suffix": 452,
         "cidr_collapsed": 0
       },
       "source_entries": {
@@ -33911,9 +33911,6 @@
           "tr.burnabyhighstar.com": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
-          "tr.highstar.shop": [
-            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-          ],
           "tr.nyacat.pw": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
@@ -33927,6 +33924,9 @@
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.004430.xyz": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
+          "tracker.23794.top": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.7471.top": [
@@ -34043,6 +34043,9 @@
           "tracker.skyts.net": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
+          "tracker.theoks.net": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
           "tracker.torrent.eu.org": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
@@ -34050,6 +34053,9 @@
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.transfur.org": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
+          "tracker.tryhackx.org": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.waaa.moe": [
@@ -34168,6 +34174,9 @@
           ],
           "weatherkit.apple.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "whybother.torrentonline.cc": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "windbg.download.prss.microsoft.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
@@ -39436,6 +39445,9 @@
           "bing.com.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "bing.net": [
+            "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json"
+          ],
           "bingads.microsoft.com": [
             "unknown"
           ],
@@ -42235,13 +42247,7 @@
           "cn.bing.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
-          "cn.bing.net": [
-            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
-          ],
           "cn.eset.com": [
-            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
-          ],
-          "cn.mm.bing.net": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "cn.pool.ntp.org": [
@@ -43797,6 +43803,9 @@
           ],
           "dit.whatsapp.net": [
             "unknown"
+          ],
+          "dittocdn.com": [
+            "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json"
           ],
           "ditu.live.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
@@ -52767,6 +52776,9 @@
           ],
           "mappcloud.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "marginnote.cn": [
+            "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json"
           ],
           "mariokart.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
@@ -72775,6 +72787,9 @@
           "bing.com.cn": [
             "unknown"
           ],
+          "bing.net": [
+            "unknown"
+          ],
           "bingads.microsoft.com": [
             "unknown"
           ],
@@ -75604,13 +75619,7 @@
           "cn.bing.com": [
             "unknown"
           ],
-          "cn.bing.net": [
-            "unknown"
-          ],
           "cn.eset.com": [
-            "unknown"
-          ],
-          "cn.mm.bing.net": [
             "unknown"
           ],
           "cn.pool.ntp.org": [
@@ -77210,6 +77219,9 @@
             "unknown"
           ],
           "dit.whatsapp.net": [
+            "unknown"
+          ],
+          "dittocdn.com": [
             "unknown"
           ],
           "ditu.live.com": [
@@ -86387,6 +86399,9 @@
             "unknown"
           ],
           "mappcloud.com": [
+            "unknown"
+          ],
+          "marginnote.cn": [
             "unknown"
           ],
           "mariokart.cn": [
