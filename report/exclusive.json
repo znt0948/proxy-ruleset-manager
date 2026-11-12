@@ -68,6 +68,12 @@
     },
     {
       "field": "domain_suffix",
+      "value": "fxltsbl.com",
+      "kept_in": "adguard-blocker@mobile.json",
+      "removed_from": "geosite-category-direct@light.json"
+    },
+    {
+      "field": "domain_suffix",
       "value": "getui.cn",
       "kept_in": "adguard-blocker@mobile.json",
       "removed_from": "geosite-category-direct@light.json"
@@ -7901,7 +7907,7 @@
       },
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
       "entries_of": "adguard-blocker@mobile.json",
-      "carved_entries": 1942
+      "carved_entries": 1943
     },
     {
       "pattern": {
@@ -7941,7 +7947,7 @@
       },
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
       "entries_of": "geosite-category-direct@light.json",
-      "carved_entries": 8625
+      "carved_entries": 8624
     },
     {
       "pattern": {
@@ -7957,7 +7963,7 @@
       },
       "carved_from": "geosite-category-direct@light.json",
       "entries_of": "adguard-blocker@mobile.json",
-      "carved_entries": 922
+      "carved_entries": 923
     },
     {
       "pattern": {
@@ -11228,8 +11234,8 @@
       "carved": 43
     },
     "geosite-category-direct@light.json": {
-      "removed": 44,
-      "carved": 1931
+      "removed": 45,
+      "carved": 1932
     },
     "geosite-category-download@!cn.json": {
       "removed": 3,
