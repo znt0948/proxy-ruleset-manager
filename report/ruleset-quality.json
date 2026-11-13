@@ -32085,13 +32085,13 @@
         },
         {
           "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json",
-          "raw_entries": 106,
-          "normalized_entries": 106,
+          "raw_entries": 109,
+          "normalized_entries": 109,
           "unsupported_rules": 0,
           "invalid_rules_or_values": 0,
           "deduplication": {
-            "input_entries": 106,
-            "output_entries": 106,
+            "input_entries": 109,
+            "output_entries": 109,
             "removed_entries": 0,
             "exact_duplicates": 0,
             "domain_covered_by_suffix": 0,
@@ -32101,8 +32101,8 @@
         }
       ],
       "merge_deduplication": {
-        "input_entries": 9861,
-        "output_entries": 9861,
+        "input_entries": 9864,
+        "output_entries": 9864,
         "removed_entries": 0,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 0,
@@ -32110,13 +32110,13 @@
         "cidr_collapsed": 0
       },
       "output_entries_by_field": {
-        "domain": 645,
+        "domain": 648,
         "domain_regex": 10,
         "domain_suffix": 8660
       },
       "provenance": {
-        "tracked_normalized_entries": 9861,
-        "published_entries": 9861,
+        "tracked_normalized_entries": 9864,
+        "published_entries": 9864,
         "published_entries_with_multiple_exact_sources": 9,
         "published_entries_without_exact_source": 0,
         "normalized_entries_shared_by_sources": 9,
@@ -32127,7 +32127,7 @@
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-springer.srs": 5,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-elsevier.srs": 14,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-ieee.srs": 54,
-          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json": 106
+          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json": 109
         },
         "source_pair_overlaps": [
           {
@@ -32221,8 +32221,8 @@
         ]
       },
       "final_optimization": {
-        "input_entries": 9841,
-        "output_entries": 9315,
+        "input_entries": 9844,
+        "output_entries": 9318,
         "removed_entries": 526,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 74,
@@ -32317,6 +32317,9 @@
           ],
           "amp-api.podcasts.apple.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "announce.augrains.com": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "aod-ssl.itunes.apple.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
@@ -33917,6 +33920,9 @@
           "tracker.bittor.pw": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
+          "tracker.bluefrog.pw": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
           "tracker.cn.nyaa.net": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
@@ -34014,6 +34020,9 @@
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.skyts.net": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
+          "tracker.theoks.net": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.torrent.eu.org": [
