@@ -14,24 +14,24 @@
         },
         {
           "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt",
-          "raw_entries": 987,
-          "normalized_entries": 913
+          "raw_entries": 982,
+          "normalized_entries": 908
         }
       ],
       "merge_deduplication": {},
       "output_entries_by_field": {
         "domain_regex": 129,
-        "domain_suffix": 1950
+        "domain_suffix": 1940
       },
       "provenance": {
-        "tracked_normalized_entries": 2093,
-        "published_entries": 2079,
-        "published_entries_with_multiple_exact_sources": 69,
+        "tracked_normalized_entries": 2085,
+        "published_entries": 2069,
+        "published_entries_with_multiple_exact_sources": 72,
         "published_entries_without_exact_source": 0,
-        "normalized_entries_shared_by_sources": 69,
+        "normalized_entries_shared_by_sources": 72,
         "source_output_contribution": {
           "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt": 1242,
-          "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt": 906
+          "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt": 899
         },
         "source_pair_overlaps": [
           {
@@ -39,7 +39,7 @@
               "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt",
               "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
             ],
-            "entry_count": 69
+            "entry_count": 72
           }
         ],
         "multi_source_samples": [
@@ -70,6 +70,14 @@
           {
             "field": "domain_suffix",
             "value": "ads-img-al.xhscdn.com",
+            "sources": [
+              "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt",
+              "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+            ]
+          },
+          {
+            "field": "domain_suffix",
+            "value": "ads-img-bak.xhscdn.com",
             "sources": [
               "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt",
               "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
@@ -269,6 +277,14 @@
           },
           {
             "field": "domain_suffix",
+            "value": "fp-it.fengkongcloud.com",
+            "sources": [
+              "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt",
+              "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+            ]
+          },
+          {
+            "field": "domain_suffix",
             "value": "globalapi.ad.xiaomi.com",
             "sources": [
               "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt",
@@ -426,28 +442,12 @@
               "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt",
               "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
             ]
-          },
-          {
-            "field": "domain_suffix",
-            "value": "notes-analytics-events.apple.com",
-            "sources": [
-              "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt",
-              "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
-            ]
-          },
-          {
-            "field": "domain_suffix",
-            "value": "o2o.api.xiaomi.com",
-            "sources": [
-              "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt",
-              "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
-            ]
           }
         ]
       },
       "final_optimization": {
-        "input_entries": 2079,
-        "output_entries": 2079,
+        "input_entries": 2069,
+        "output_entries": 2069,
         "removed_entries": 0,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 0,
@@ -764,9 +764,6 @@
           "ads-api-o.api.leiniao.com": [
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
-          "ads-api.tiktok.com": [
-            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
-          ],
           "ads-api.twitter.com": [
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt",
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
@@ -782,12 +779,10 @@
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
           "ads-img-bak.xhscdn.com": [
-            "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
-          ],
-          "ads-img-qc.xhscdn.com": [
+            "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt",
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
-          "ads-jp.tiktok.com": [
+          "ads-img-qc.xhscdn.com": [
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
           "ads-marketing-vivofs.vivo.com.cn": [
@@ -799,9 +794,6 @@
           "ads-sdk-api.ranfenghd.com": [
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
-          "ads-sg.tiktok.com": [
-            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
-          ],
           "ads-shopping.shouqianba.com": [
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
@@ -809,6 +801,9 @@
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
           "ads-video-qc.xhscdn.com": [
+            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+          ],
+          "ads-vp5.xhscdn.com": [
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
           "ads.95516.com": [
@@ -860,9 +855,6 @@
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
           "ads.service.kugou.com": [
-            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
-          ],
-          "ads.tiktok.com": [
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
           "ads.v3mh.com": [
@@ -973,9 +965,6 @@
           "adsp.xunlei.com": [
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
-          "adspecs.yahoo.com": [
-            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
-          ],
           "adstat.izuiyou.com": [
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
@@ -995,16 +984,10 @@
           "adstudio-assets.scdn.co": [
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
-          "adstudio.spotify.com": [
-            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
-          ],
           "adsunflower.com": [
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
           ],
           "adtago.s3.amazonaws.com": [
-            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
-          ],
-          "adtech.yahooinc.com": [
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
           "adtima-static.zadn.vn": [
@@ -1042,24 +1025,6 @@
           ],
           "adv.sec.miui.com": [
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt",
-            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
-          ],
-          "advertising-api-eu.amazon.com": [
-            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
-          ],
-          "advertising-api-fe.amazon.com": [
-            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
-          ],
-          "advertising-api.amazon.com": [
-            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
-          ],
-          "advertising.apple.com": [
-            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
-          ],
-          "advertising.yahoo.com": [
-            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
-          ],
-          "advertising.yandex.ru": [
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
           "advice-ads.s3.amazonaws.com": [
@@ -1678,6 +1643,9 @@
           "apm-track.xiaohongshu.com": [
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
           ],
+          "apmplus.volces.com": [
+            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+          ],
           "app-analytics-ru.huami.com": [
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
           ],
@@ -1910,9 +1878,6 @@
           ],
           "bidder.mdspinc.com": [
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
-          ],
-          "bingads.microsoft.com": [
-            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
           "bisrtb.vidazoo.com": [
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
@@ -2287,9 +2252,6 @@
           "crs-hometab-event.line.me": [
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
           ],
-          "csjplatform.com": [
-            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
-          ],
           "csplog.kwai-pro.com": [
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
           ],
@@ -2572,6 +2534,9 @@
           "entry.baidu.com": [
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
+          "errnewlog.umeng.com": [
+            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+          ],
           "esa-reg-eup.myoppo.com": [
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
           ],
@@ -2792,7 +2757,8 @@
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
           ],
           "fp-it.fengkongcloud.com": [
-            "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
+            "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt",
+            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
           "fp-sa-it.fengkongcloud.com": [
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
@@ -3386,6 +3352,9 @@
           "lepodownload.mediatek.com": [
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
           ],
+          "lf-event-manager.oceanengine.com": [
+            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+          ],
           "lg-release-tracking-8080.gcld-line.com": [
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
           ],
@@ -3441,6 +3410,9 @@
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
           "log-api.huxiu.com": [
+            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+          ],
+          "log-auth.zztfly.com": [
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
           "log-mediation.easemobi.net": [
@@ -5095,6 +5067,12 @@
           "sg01.rayjump.com": [
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
           ],
+          "shihuo-new.log.shihuocdn.cn": [
+            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+          ],
+          "shihuo.log.shihuocdn.cn": [
+            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+          ],
           "shouji.sogou.com": [
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
@@ -5966,12 +5944,6 @@
           "union-record.oss-cn-zhangjiakou.aliyuncs.com": [
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
-          "union.baidu.cn": [
-            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
-          ],
-          "union.baidu.com": [
-            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
-          ],
           "unisdk.proxima.nie.easebar.com": [
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
           ],
@@ -5982,7 +5954,8 @@
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
           ],
           "upc.zztfly.com": [
-            "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
+            "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt",
+            "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
           "update.avlyun.sec.miui.com": [
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
@@ -32085,13 +32058,13 @@
         },
         {
           "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json",
-          "raw_entries": 109,
-          "normalized_entries": 109,
+          "raw_entries": 108,
+          "normalized_entries": 108,
           "unsupported_rules": 0,
           "invalid_rules_or_values": 0,
           "deduplication": {
-            "input_entries": 109,
-            "output_entries": 109,
+            "input_entries": 108,
+            "output_entries": 108,
             "removed_entries": 0,
             "exact_duplicates": 0,
             "domain_covered_by_suffix": 0,
@@ -32101,8 +32074,8 @@
         }
       ],
       "merge_deduplication": {
-        "input_entries": 9864,
-        "output_entries": 9864,
+        "input_entries": 9863,
+        "output_entries": 9863,
         "removed_entries": 0,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 0,
@@ -32110,13 +32083,13 @@
         "cidr_collapsed": 0
       },
       "output_entries_by_field": {
-        "domain": 648,
+        "domain": 647,
         "domain_regex": 10,
         "domain_suffix": 8660
       },
       "provenance": {
-        "tracked_normalized_entries": 9864,
-        "published_entries": 9864,
+        "tracked_normalized_entries": 9863,
+        "published_entries": 9863,
         "published_entries_with_multiple_exact_sources": 9,
         "published_entries_without_exact_source": 0,
         "normalized_entries_shared_by_sources": 9,
@@ -32127,7 +32100,7 @@
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-springer.srs": 5,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-elsevier.srs": 14,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-ieee.srs": 54,
-          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json": 109
+          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json": 108
         },
         "source_pair_overlaps": [
           {
@@ -32221,8 +32194,8 @@
         ]
       },
       "final_optimization": {
-        "input_entries": 9844,
-        "output_entries": 9318,
+        "input_entries": 9843,
+        "output_entries": 9317,
         "removed_entries": 526,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 74,
@@ -33953,9 +33926,6 @@
           "tracker.flatuslifir.is": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
-          "tracker.fnix.net": [
-            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-          ],
           "tracker.foreverpirates.co": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
@@ -33963,9 +33933,6 @@
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.ilibr.org": [
-            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-          ],
-          "tracker.internetwarriors.net": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.k.vu": [
@@ -34014,6 +33981,9 @@
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.renfei.net": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
+          "tracker.run.place": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.sela.st": [
@@ -36424,9 +36394,6 @@
           "ads-api-o.api.leiniao.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
-          "ads-api.tiktok.com": [
-            "unknown"
-          ],
           "ads-api.twitter.com": [
             "unknown"
           ],
@@ -36442,9 +36409,6 @@
           "ads-img-qc.xhscdn.com": [
             "unknown"
           ],
-          "ads-jp.tiktok.com": [
-            "unknown"
-          ],
           "ads-marketing-vivofs.vivo.com.cn": [
             "unknown"
           ],
@@ -36454,9 +36418,6 @@
           "ads-sdk-api.ranfenghd.com": [
             "unknown"
           ],
-          "ads-sg.tiktok.com": [
-            "unknown"
-          ],
           "ads-shopping.shouqianba.com": [
             "unknown"
           ],
@@ -36464,6 +36425,9 @@
             "unknown"
           ],
           "ads-video-qc.xhscdn.com": [
+            "unknown"
+          ],
+          "ads-vp5.xhscdn.com": [
             "unknown"
           ],
           "ads.95516.com": [
@@ -36513,9 +36477,6 @@
           ],
           "ads.service.kugou.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
-          ],
-          "ads.tiktok.com": [
-            "unknown"
           ],
           "ads.unitychina.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
@@ -36628,9 +36589,6 @@
           "adsp.xunlei.com": [
             "unknown"
           ],
-          "adspecs.yahoo.com": [
-            "unknown"
-          ],
           "adstat.izuiyou.com": [
             "unknown"
           ],
@@ -36646,16 +36604,10 @@
           "adstore-index-1252524079.file.myqcloud.com": [
             "unknown"
           ],
-          "adstudio.spotify.com": [
-            "unknown"
-          ],
           "adsunflower.com": [
             "unknown"
           ],
           "adtago.s3.amazonaws.com": [
-            "unknown"
-          ],
-          "adtech.yahooinc.com": [
             "unknown"
           ],
           "adtrack-intl.ucweb.com": [
@@ -36693,21 +36645,6 @@
           ],
           "adv.sec.miui.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
-          ],
-          "advertising-api-eu.amazon.com": [
-            "unknown"
-          ],
-          "advertising-api-fe.amazon.com": [
-            "unknown"
-          ],
-          "advertising-api.amazon.com": [
-            "unknown"
-          ],
-          "advertising.apple.com": [
-            "unknown"
-          ],
-          "advertising.yahoo.com": [
-            "unknown"
           ],
           "advice-ads.s3.amazonaws.com": [
             "unknown"
@@ -38054,6 +37991,9 @@
             "unknown"
           ],
           "apm-track.xiaohongshu.com": [
+            "unknown"
+          ],
+          "apmplus.volces.com": [
             "unknown"
           ],
           "apollo.auto": [
@@ -39426,9 +39366,6 @@
           ],
           "bing.net": [
             "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json"
-          ],
-          "bingads.microsoft.com": [
-            "unknown"
           ],
           "binglianhuajianzhan.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
@@ -44931,6 +44868,9 @@
           ],
           "erp321.net": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "errnewlog.umeng.com": [
+            "unknown"
           ],
           "ersjk.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
@@ -51682,6 +51622,9 @@
           "leyuansu.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "lf-event-manager.oceanengine.com": [
+            "unknown"
+          ],
           "lf126.net": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -51989,6 +51932,9 @@
             "unknown"
           ],
           "log-api.huxiu.com": [
+            "unknown"
+          ],
+          "log-auth.zztfly.com": [
             "unknown"
           ],
           "log-mediation.easemobi.net": [
@@ -57628,8 +57574,14 @@
           "shifen.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "shihuo-new.log.shihuocdn.cn": [
+            "unknown"
+          ],
           "shihuo.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "shihuo.log.shihuocdn.cn": [
+            "unknown"
           ],
           "shijiexia.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
@@ -61101,12 +61053,6 @@
           ],
           "union-record.oss-cn-zhangjiakou.aliyuncs.com": [
             "unknown"
-          ],
-          "union.baidu.cn": [
-            "unknown"
-          ],
-          "union.baidu.com": [
-            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "unionpay.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
@@ -69631,9 +69577,6 @@
           "ads-api-o.api.leiniao.com": [
             "unknown"
           ],
-          "ads-api.tiktok.com": [
-            "unknown"
-          ],
           "ads-api.twitter.com": [
             "unknown"
           ],
@@ -69652,9 +69595,6 @@
           "ads-img-qc.xhscdn.com": [
             "unknown"
           ],
-          "ads-jp.tiktok.com": [
-            "unknown"
-          ],
           "ads-marketing-vivofs.vivo.com.cn": [
             "unknown"
           ],
@@ -69664,9 +69604,6 @@
           "ads-sdk-api.ranfenghd.com": [
             "unknown"
           ],
-          "ads-sg.tiktok.com": [
-            "unknown"
-          ],
           "ads-shopping.shouqianba.com": [
             "unknown"
           ],
@@ -69674,6 +69611,9 @@
             "unknown"
           ],
           "ads-video-qc.xhscdn.com": [
+            "unknown"
+          ],
+          "ads-vp5.xhscdn.com": [
             "unknown"
           ],
           "ads.95516.com": [
@@ -69725,9 +69665,6 @@
             "unknown"
           ],
           "ads.service.kugou.com": [
-            "unknown"
-          ],
-          "ads.tiktok.com": [
             "unknown"
           ],
           "ads.unitychina.cn": [
@@ -69841,9 +69778,6 @@
           "adsp.xunlei.com": [
             "unknown"
           ],
-          "adspecs.yahoo.com": [
-            "unknown"
-          ],
           "adstat.izuiyou.com": [
             "unknown"
           ],
@@ -69862,16 +69796,10 @@
           "adstudio-assets.scdn.co": [
             "unknown"
           ],
-          "adstudio.spotify.com": [
-            "unknown"
-          ],
           "adsunflower.com": [
             "unknown"
           ],
           "adtago.s3.amazonaws.com": [
-            "unknown"
-          ],
-          "adtech.yahooinc.com": [
             "unknown"
           ],
           "adtima-static.zadn.vn": [
@@ -69911,24 +69839,6 @@
             "unknown"
           ],
           "adv.sec.miui.com": [
-            "unknown"
-          ],
-          "advertising-api-eu.amazon.com": [
-            "unknown"
-          ],
-          "advertising-api-fe.amazon.com": [
-            "unknown"
-          ],
-          "advertising-api.amazon.com": [
-            "unknown"
-          ],
-          "advertising.apple.com": [
-            "unknown"
-          ],
-          "advertising.yahoo.com": [
-            "unknown"
-          ],
-          "advertising.yandex.ru": [
             "unknown"
           ],
           "advice-ads.s3.amazonaws.com": [
@@ -71368,6 +71278,9 @@
           "apm-track.xiaohongshu.com": [
             "unknown"
           ],
+          "apmplus.volces.com": [
+            "unknown"
+          ],
           "apollo.auto": [
             "unknown"
           ],
@@ -72767,9 +72680,6 @@
             "unknown"
           ],
           "bing.net": [
-            "unknown"
-          ],
-          "bingads.microsoft.com": [
             "unknown"
           ],
           "binglianhuajianzhan.com": [
@@ -78353,6 +78263,9 @@
             "unknown"
           ],
           "erp321.net": [
+            "unknown"
+          ],
+          "errnewlog.umeng.com": [
             "unknown"
           ],
           "ersjk.com": [
@@ -85216,6 +85129,9 @@
           "leyuansu.com": [
             "unknown"
           ],
+          "lf-event-manager.oceanengine.com": [
+            "unknown"
+          ],
           "lf126.net": [
             "unknown"
           ],
@@ -85526,6 +85442,9 @@
             "unknown"
           ],
           "log-api.huxiu.com": [
+            "unknown"
+          ],
+          "log-auth.zztfly.com": [
             "unknown"
           ],
           "log-mediation.easemobi.net": [
@@ -91354,7 +91273,13 @@
           "shifen.com": [
             "unknown"
           ],
+          "shihuo-new.log.shihuocdn.cn": [
+            "unknown"
+          ],
           "shihuo.cn": [
+            "unknown"
+          ],
+          "shihuo.log.shihuocdn.cn": [
             "unknown"
           ],
           "shijiexia.com": [
@@ -94883,12 +94808,6 @@
             "unknown"
           ],
           "union-record.oss-cn-zhangjiakou.aliyuncs.com": [
-            "unknown"
-          ],
-          "union.baidu.cn": [
-            "unknown"
-          ],
-          "union.baidu.com": [
             "unknown"
           ],
           "unionpay.com": [
@@ -99740,10 +99659,10 @@
   "published_inventory": [
     {
       "ruleset": "adguard-blocker@mobile",
-      "entries": 2079,
+      "entries": 2069,
       "entries_by_field": {
         "domain_regex": 129,
-        "domain_suffix": 1950
+        "domain_suffix": 1940
       }
     },
     {

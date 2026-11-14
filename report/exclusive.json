@@ -32,12 +32,6 @@
     },
     {
       "field": "domain_suffix",
-      "value": "csjplatform.com",
-      "kept_in": "adguard-blocker@mobile.json",
-      "removed_from": "geosite-category-direct@light.json"
-    },
-    {
-      "field": "domain_suffix",
       "value": "data.mistat.india.xiaomi.com",
       "kept_in": "adguard-blocker@mobile.json",
       "removed_from": "geosite-category-direct@light.json"
@@ -1375,15 +1369,6 @@
     },
     {
       "field": "domain_suffix",
-      "value": "union.baidu.cn",
-      "kept_in": "adguard-blocker@mobile.json",
-      "carved_from": "geosite-category-direct@light.json",
-      "covering": {
-        "domain_suffix": "baidu.cn"
-      }
-    },
-    {
-      "field": "domain_suffix",
       "value": "ad.player.baidu.com",
       "kept_in": "adguard-blocker@mobile.json",
       "carved_from": "geosite-category-direct@light.json",
@@ -1583,15 +1568,6 @@
     {
       "field": "domain_suffix",
       "value": "pos.baidu.com",
-      "kept_in": "adguard-blocker@mobile.json",
-      "carved_from": "geosite-category-direct@light.json",
-      "covering": {
-        "domain_suffix": "baidu.com"
-      }
-    },
-    {
-      "field": "domain_suffix",
-      "value": "union.baidu.com",
       "kept_in": "adguard-blocker@mobile.json",
       "carved_from": "geosite-category-direct@light.json",
       "covering": {
@@ -4075,6 +4051,15 @@
     },
     {
       "field": "domain_suffix",
+      "value": "lf-event-manager.oceanengine.com",
+      "kept_in": "adguard-blocker@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "oceanengine.com"
+      }
+    },
+    {
+      "field": "domain_suffix",
       "value": "click.oneplus.cn",
       "kept_in": "adguard-blocker@mobile.json",
       "carved_from": "geosite-category-direct@light.json",
@@ -6019,6 +6004,15 @@
     },
     {
       "field": "domain_suffix",
+      "value": "errnewlog.umeng.com",
+      "kept_in": "adguard-blocker@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "umeng.com"
+      }
+    },
+    {
+      "field": "domain_suffix",
       "value": "plbslog.umeng.com",
       "kept_in": "adguard-blocker@mobile.json",
       "carved_from": "geosite-category-direct@light.json",
@@ -6253,6 +6247,15 @@
     },
     {
       "field": "domain_suffix",
+      "value": "apmplus.volces.com",
+      "kept_in": "adguard-blocker@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "volces.com"
+      }
+    },
+    {
+      "field": "domain_suffix",
       "value": "mssdk.volces.com",
       "kept_in": "adguard-blocker@mobile.json",
       "carved_from": "geosite-category-direct@light.json",
@@ -6416,6 +6419,15 @@
     {
       "field": "domain_suffix",
       "value": "ads-video-qc.xhscdn.com",
+      "kept_in": "adguard-blocker@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "xhscdn.com"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "ads-vp5.xhscdn.com",
       "kept_in": "adguard-blocker@mobile.json",
       "carved_from": "geosite-category-direct@light.json",
       "covering": {
@@ -7077,6 +7089,15 @@
       "carved_from": "geosite-category-direct@light.json",
       "covering": {
         "domain_suffix": "zybang.com"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "log-auth.zztfly.com",
+      "kept_in": "adguard-blocker@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "zztfly.com"
       }
     },
     {
@@ -7907,7 +7928,7 @@
       },
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
       "entries_of": "adguard-blocker@mobile.json",
-      "carved_entries": 1943
+      "carved_entries": 1933
     },
     {
       "pattern": {
@@ -7931,7 +7952,7 @@
       },
       "carved_from": "geosite-category-direct@light.json",
       "entries_of": "adguard-blocker@mobile.json",
-      "carved_entries": 70
+      "carved_entries": 72
     },
     {
       "pattern": {
@@ -7947,7 +7968,7 @@
       },
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
       "entries_of": "geosite-category-direct@light.json",
-      "carved_entries": 8624
+      "carved_entries": 8625
     },
     {
       "pattern": {
@@ -7963,7 +7984,7 @@
       },
       "carved_from": "geosite-category-direct@light.json",
       "entries_of": "adguard-blocker@mobile.json",
-      "carved_entries": 923
+      "carved_entries": 909
     },
     {
       "pattern": {
@@ -11234,8 +11255,8 @@
       "carved": 43
     },
     "geosite-category-direct@light.json": {
-      "removed": 45,
-      "carved": 1932
+      "removed": 44,
+      "carved": 1923
     },
     "geosite-category-download@!cn.json": {
       "removed": 3,
@@ -11243,7 +11264,7 @@
     },
     "geosite-filter-downloadKeywords@!cn.json": {
       "removed": 0,
-      "carved": 10807
+      "carved": 10798
     }
   },
   "remaining": [],
@@ -15752,12 +15773,6 @@
       "reason": "correction"
     },
     {
-      "name": "archive-ads-api.tiktok.com",
-      "before": "download",
-      "after": null,
-      "reason": "correction"
-    },
-    {
       "name": "archive-ads-api.twitter.com",
       "before": "download",
       "after": null,
@@ -15776,12 +15791,6 @@
       "reason": "correction"
     },
     {
-      "name": "archive-ads-jp.tiktok.com",
-      "before": "download",
-      "after": null,
-      "reason": "correction"
-    },
-    {
       "name": "archive-ads-privacy-api.prd.mz.internal.unity3d.com",
       "before": "download",
       "after": null,
@@ -15789,12 +15798,6 @@
     },
     {
       "name": "archive-ads-sdk-api.ranfenghd.com",
-      "before": "download",
-      "after": null,
-      "reason": "correction"
-    },
-    {
-      "name": "archive-ads-sg.tiktok.com",
       "before": "download",
       "after": null,
       "reason": "correction"
@@ -15872,12 +15875,6 @@
       "reason": "correction"
     },
     {
-      "name": "archive-ads.tiktok.com",
-      "before": "download",
-      "after": null,
-      "reason": "correction"
-    },
-    {
       "name": "archive-ads.youtube.com",
       "before": "download",
       "after": null,
@@ -15926,19 +15923,7 @@
       "reason": "correction"
     },
     {
-      "name": "archive-adspecs.yahoo.com",
-      "before": "download",
-      "after": null,
-      "reason": "correction"
-    },
-    {
       "name": "archive-adstudio-assets.scdn.co",
-      "before": "download",
-      "after": null,
-      "reason": "correction"
-    },
-    {
-      "name": "archive-adstudio.spotify.com",
       "before": "download",
       "after": null,
       "reason": "correction"
@@ -15951,12 +15936,6 @@
     },
     {
       "name": "archive-adtago.s3.amazonaws.com",
-      "before": "download",
-      "after": null,
-      "reason": "correction"
-    },
-    {
-      "name": "archive-adtech.yahooinc.com",
       "before": "download",
       "after": null,
       "reason": "correction"
@@ -15999,42 +15978,6 @@
     },
     {
       "name": "archive-adv-api.shenshiads.com",
-      "before": "download",
-      "after": null,
-      "reason": "correction"
-    },
-    {
-      "name": "archive-advertising-api-eu.amazon.com",
-      "before": "download",
-      "after": null,
-      "reason": "correction"
-    },
-    {
-      "name": "archive-advertising-api-fe.amazon.com",
-      "before": "download",
-      "after": null,
-      "reason": "correction"
-    },
-    {
-      "name": "archive-advertising-api.amazon.com",
-      "before": "download",
-      "after": null,
-      "reason": "correction"
-    },
-    {
-      "name": "archive-advertising.apple.com",
-      "before": "download",
-      "after": null,
-      "reason": "correction"
-    },
-    {
-      "name": "archive-advertising.yahoo.com",
-      "before": "download",
-      "after": null,
-      "reason": "correction"
-    },
-    {
-      "name": "archive-advertising.yandex.ru",
       "before": "download",
       "after": null,
       "reason": "correction"
@@ -21147,12 +21090,6 @@
     },
     {
       "name": "archive-bing.net",
-      "before": "download",
-      "after": null,
-      "reason": "correction"
-    },
-    {
-      "name": "archive-bingads.microsoft.com",
       "before": "download",
       "after": null,
       "reason": "correction"
@@ -56024,7 +55961,19 @@
       "reason": "correction"
     },
     {
+      "name": "archive-shihuo-new.log.shihuocdn.cn",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
       "name": "archive-shihuo.cn",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-shihuo.log.shihuocdn.cn",
       "before": "download",
       "after": null,
       "reason": "correction"

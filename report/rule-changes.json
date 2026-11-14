@@ -1,14 +1,14 @@
 {
   "version": 1,
-  "generated_at": "2026-11-13T20:10:47Z",
-  "base_commit": "5a1a50389e8cf214055843997986ede51b28c157",
-  "summary": "direct@light +3/-0",
+  "generated_at": "2026-11-14T18:31:07Z",
+  "base_commit": "be22c752570e63343383ae593f77dd660398e8cb",
+  "summary": "adguard-blocker@mobile +7/-17, direct@light +8/-17, filter-downloadKeywords@!cn +7/-16",
   "rule_sets": [
     {
       "ruleset": "adguard-blocker@mobile",
-      "status": "unchanged",
-      "added_count": 0,
-      "removed_count": 0,
+      "status": "changed",
+      "added_count": 7,
+      "removed_count": 17,
       "fields": {
         "domain": {
           "added": [],
@@ -19,10 +19,156 @@
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [],
-          "removed": [],
-          "added_count": 0,
-          "removed_count": 0,
+          "added": [
+            {
+              "value": "ads-vp5.xhscdn.com",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            },
+            {
+              "value": "apmplus.volces.com",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            },
+            {
+              "value": "errnewlog.umeng.com",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            },
+            {
+              "value": "lf-event-manager.oceanengine.com",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            },
+            {
+              "value": "log-auth.zztfly.com",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            },
+            {
+              "value": "shihuo-new.log.shihuocdn.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            },
+            {
+              "value": "shihuo.log.shihuocdn.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            }
+          ],
+          "removed": [
+            {
+              "value": "ads-api.tiktok.com",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            },
+            {
+              "value": "ads-jp.tiktok.com",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            },
+            {
+              "value": "ads-sg.tiktok.com",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            },
+            {
+              "value": "ads.tiktok.com",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            },
+            {
+              "value": "adspecs.yahoo.com",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            },
+            {
+              "value": "adstudio.spotify.com",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            },
+            {
+              "value": "adtech.yahooinc.com",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            },
+            {
+              "value": "advertising-api-eu.amazon.com",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            },
+            {
+              "value": "advertising-api-fe.amazon.com",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            },
+            {
+              "value": "advertising-api.amazon.com",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            },
+            {
+              "value": "advertising.apple.com",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            },
+            {
+              "value": "advertising.yahoo.com",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            },
+            {
+              "value": "advertising.yandex.ru",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            },
+            {
+              "value": "bingads.microsoft.com",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            },
+            {
+              "value": "csjplatform.com",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            },
+            {
+              "value": "union.baidu.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            },
+            {
+              "value": "union.baidu.com",
+              "sources": [
+                "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
+              ]
+            }
+          ],
+          "added_count": 7,
+          "removed_count": 17,
           "added_truncated": false,
           "removed_truncated": false
         },
@@ -359,41 +505,176 @@
     {
       "ruleset": "geosite-category-direct@light",
       "status": "changed",
-      "added_count": 3,
-      "removed_count": 0,
+      "added_count": 8,
+      "removed_count": 17,
       "fields": {
         "domain": {
           "added": [
             {
-              "value": "announce.augrains.com",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.bluefrog.pw",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.theoks.net",
+              "value": "tracker.run.place",
               "sources": [
                 "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
               ]
             }
           ],
-          "removed": [],
-          "added_count": 3,
-          "removed_count": 0,
+          "removed": [
+            {
+              "value": "tracker.fnix.net",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.internetwarriors.net",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            }
+          ],
+          "added_count": 1,
+          "removed_count": 2,
           "added_truncated": false,
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [],
-          "removed": [],
-          "added_count": 0,
-          "removed_count": 0,
+          "added": [
+            {
+              "value": "ads-vp5.xhscdn.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "apmplus.volces.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "errnewlog.umeng.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "lf-event-manager.oceanengine.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "log-auth.zztfly.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "shihuo-new.log.shihuocdn.cn",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "shihuo.log.shihuocdn.cn",
+              "sources": [
+                "unknown"
+              ]
+            }
+          ],
+          "removed": [
+            {
+              "value": "ads-api.tiktok.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "ads-jp.tiktok.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "ads-sg.tiktok.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "ads.tiktok.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "adspecs.yahoo.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "adstudio.spotify.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "adtech.yahooinc.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "advertising-api-eu.amazon.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "advertising-api-fe.amazon.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "advertising-api.amazon.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "advertising.apple.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "advertising.yahoo.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "bingads.microsoft.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "union.baidu.cn",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "union.baidu.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            }
+          ],
+          "added_count": 7,
+          "removed_count": 15,
           "added_truncated": false,
           "removed_truncated": false
         },
@@ -489,9 +770,9 @@
     },
     {
       "ruleset": "geosite-filter-downloadKeywords@!cn",
-      "status": "unchanged",
-      "added_count": 0,
-      "removed_count": 0,
+      "status": "changed",
+      "added_count": 7,
+      "removed_count": 16,
       "fields": {
         "domain": {
           "added": [],
@@ -502,10 +783,150 @@
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [],
-          "removed": [],
-          "added_count": 0,
-          "removed_count": 0,
+          "added": [
+            {
+              "value": "ads-vp5.xhscdn.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "apmplus.volces.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "errnewlog.umeng.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "lf-event-manager.oceanengine.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "log-auth.zztfly.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "shihuo-new.log.shihuocdn.cn",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "shihuo.log.shihuocdn.cn",
+              "sources": [
+                "unknown"
+              ]
+            }
+          ],
+          "removed": [
+            {
+              "value": "ads-api.tiktok.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "ads-jp.tiktok.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "ads-sg.tiktok.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "ads.tiktok.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "adspecs.yahoo.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "adstudio.spotify.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "adtech.yahooinc.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "advertising-api-eu.amazon.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "advertising-api-fe.amazon.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "advertising-api.amazon.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "advertising.apple.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "advertising.yahoo.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "advertising.yandex.ru",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "bingads.microsoft.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "union.baidu.cn",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "union.baidu.com",
+              "sources": [
+                "unknown"
+              ]
+            }
+          ],
+          "added_count": 7,
+          "removed_count": 16,
           "added_truncated": false,
           "removed_truncated": false
         },
