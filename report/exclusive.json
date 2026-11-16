@@ -5959,6 +5959,15 @@
     },
     {
       "field": "domain_suffix",
+      "value": "alogsus.umeng.com",
+      "kept_in": "adguard-blocker@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "umeng.com"
+      }
+    },
+    {
+      "field": "domain_suffix",
       "value": "alogus.umeng.com",
       "kept_in": "adguard-blocker@mobile.json",
       "carved_from": "geosite-category-direct@light.json",
@@ -6004,7 +6013,34 @@
     },
     {
       "field": "domain_suffix",
+      "value": "errlog.umeng.com",
+      "kept_in": "adguard-blocker@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "umeng.com"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "errlogos.umeng.com",
+      "kept_in": "adguard-blocker@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "umeng.com"
+      }
+    },
+    {
+      "field": "domain_suffix",
       "value": "errnewlog.umeng.com",
+      "kept_in": "adguard-blocker@mobile.json",
+      "carved_from": "geosite-category-direct@light.json",
+      "covering": {
+        "domain_suffix": "umeng.com"
+      }
+    },
+    {
+      "field": "domain_suffix",
+      "value": "errnewlogos.umeng.com",
       "kept_in": "adguard-blocker@mobile.json",
       "carved_from": "geosite-category-direct@light.json",
       "covering": {
@@ -7928,7 +7964,7 @@
       },
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
       "entries_of": "adguard-blocker@mobile.json",
-      "carved_entries": 1933
+      "carved_entries": 1945
     },
     {
       "pattern": {
@@ -7952,7 +7988,7 @@
       },
       "carved_from": "geosite-category-direct@light.json",
       "entries_of": "adguard-blocker@mobile.json",
-      "carved_entries": 72
+      "carved_entries": 73
     },
     {
       "pattern": {
@@ -7968,7 +8004,7 @@
       },
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
       "entries_of": "geosite-category-direct@light.json",
-      "carved_entries": 8625
+      "carved_entries": 8638
     },
     {
       "pattern": {
@@ -7984,7 +8020,7 @@
       },
       "carved_from": "geosite-category-direct@light.json",
       "entries_of": "adguard-blocker@mobile.json",
-      "carved_entries": 909
+      "carved_entries": 916
     },
     {
       "pattern": {
@@ -11256,7 +11292,7 @@
     },
     "geosite-category-direct@light.json": {
       "removed": 44,
-      "carved": 1923
+      "carved": 1935
     },
     "geosite-category-download@!cn.json": {
       "removed": 3,
@@ -11264,7 +11300,7 @@
     },
     "geosite-filter-downloadKeywords@!cn.json": {
       "removed": 0,
-      "carved": 10798
+      "carved": 10823
     }
   },
   "remaining": [],
@@ -16067,6 +16103,12 @@
       "reason": "correction"
     },
     {
+      "name": "archive-adx.anythinktech.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
       "name": "archive-adx.appsdk.com.cn",
       "before": "download",
       "after": null,
@@ -18887,6 +18929,18 @@
       "reason": "correction"
     },
     {
+      "name": "archive-arknights.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-arknights.com.cn",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
       "name": "archive-arpun.com",
       "before": "download",
       "after": null,
@@ -20838,6 +20892,12 @@
     },
     {
       "name": "archive-bid.ctv.house",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-bid.shanghailingye.cn",
       "before": "download",
       "after": null,
       "reason": "correction"
@@ -22896,6 +22956,12 @@
     },
     {
       "name": "archive-capitalonline.net",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-captive.apple.com",
       "before": "download",
       "after": null,
       "reason": "correction"
@@ -26513,6 +26579,12 @@
       "reason": "correction"
     },
     {
+      "name": "archive-cn-api-sec.anythinktech.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
       "name": "archive-cn-api.anythinktech.com",
       "before": "download",
       "after": null,
@@ -26520,6 +26592,18 @@
     },
     {
       "name": "archive-cn-cdn1.skymansion.net",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-cn-da.anythinktech.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-cn-tk.anythinktech.com",
       "before": "download",
       "after": null,
       "reason": "correction"
@@ -28326,6 +28410,12 @@
     },
     {
       "name": "archive-da.anythinktech.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-da.statisticslinks.com",
       "before": "download",
       "after": null,
       "reason": "correction"
@@ -36695,6 +36785,12 @@
       "reason": "correction"
     },
     {
+      "name": "archive-hgto.cc",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
       "name": "archive-hhtravel.com",
       "before": "download",
       "after": null,
@@ -38249,6 +38345,18 @@
       "reason": "correction"
     },
     {
+      "name": "archive-hycdn.cn",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-hycdn.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
       "name": "archive-hydun.com",
       "before": "download",
       "after": null,
@@ -38262,6 +38370,30 @@
     },
     {
       "name": "archive-hypercachenode.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-hypergryph.cn",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-hypergryph.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-hypergryph.com.cn",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-hypergryph.net",
       "before": "download",
       "after": null,
       "reason": "correction"
@@ -50549,6 +50681,12 @@
       "reason": "correction"
     },
     {
+      "name": "archive-octavedge.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
       "name": "archive-ocwms.com",
       "before": "download",
       "after": null,
@@ -56477,6 +56615,18 @@
       "reason": "correction"
     },
     {
+      "name": "archive-skland.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-skland.net",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
       "name": "archive-sksight.com",
       "before": "download",
       "after": null,
@@ -57150,6 +57300,12 @@
     },
     {
       "name": "archive-ssajax.cn",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-ssapi.anythinktech.com",
       "before": "download",
       "after": null,
       "reason": "correction"
@@ -60204,6 +60360,12 @@
     },
     {
       "name": "archive-tk.anythinktech.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-tk.statisticslinks.com",
       "before": "download",
       "after": null,
       "reason": "correction"
