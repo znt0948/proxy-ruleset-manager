@@ -44,6 +44,7 @@ payload:
   - DOMAIN,apps.mzstatic.com
   - DOMAIN,apps5.oingo.com
   - DOMAIN,apptrailers.itunes.apple.com
+  - DOMAIN,archive.torrentonline.cc
   - DOMAIN,asusrouter.com
   - DOMAIN,avail.googleflights.net
   - DOMAIN,bag-cdn.itunes-apple.com.akadns.net
@@ -110,6 +111,7 @@ payload:
   - DOMAIN,communities.apple.com
   - DOMAIN,configuration.apple.com
   - DOMAIN,configuration.apple.com.akadns.net
+  - DOMAIN,configuration.ls.apple.com
   - DOMAIN,cp.okshk.com
   - DOMAIN,crl-lb.apple.com.akadns.net
   - DOMAIN,crl.apple.com
@@ -230,7 +232,6 @@ payload:
   - DOMAIN,iphone-ld.apple.com
   - DOMAIN,iphone-ld.origin-apple.com.akadns.net
   - DOMAIN,ipv4announce.sktorrent.eu
-  - DOMAIN,ipv6.govt.hu
   - DOMAIN,is-ssl.mzstatic.com-cn-lb.itunes-apple.com.akadns.net
   - DOMAIN,is1-ssl.mzstatic.com
   - DOMAIN,is1.mzstatic.com
@@ -288,9 +289,11 @@ payload:
   - DOMAIN,miwifi.com
   - DOMAIN,ml.cdn-apple.com
   - DOMAIN,music.apple.com
+  - DOMAIN,musicstatus.itunes.apple.com
   - DOMAIN,musicstatus.music.apple.com
   - DOMAIN,mvod.itunes.apple.com
   - DOMAIN,myapp.itunes.apple.com
+  - DOMAIN,mzstorekit.itunes.apple.com
   - DOMAIN,np-edge.itunes.apple.com
   - DOMAIN,ns575949.ip-51-222-82.net
   - DOMAIN,ntp.aliyun.com
@@ -388,6 +391,7 @@ payload:
   - DOMAIN,staging-controlbe.floonet.goog
   - DOMAIN,staging-databe.floonet.goog
   - DOMAIN,staging.databe.floonet.goog
+  - DOMAIN,stairs.lat
   - DOMAIN,static.gc.apple.com
   - DOMAIN,statics.teams.cdn.office.net
   - DOMAIN,status.alibabacloud.com
@@ -448,13 +452,12 @@ payload:
   - DOMAIN,tracker.dler.org
   - DOMAIN,tracker.ducks.party
   - DOMAIN,tracker.evergarden.uk
-  - DOMAIN,tracker.farted.net
   - DOMAIN,tracker.filemail.com
-  - DOMAIN,tracker.flatuslifir.is
+  - DOMAIN,tracker.fnix.net
   - DOMAIN,tracker.foreverpirates.co
   - DOMAIN,tracker.gmi.gd
   - DOMAIN,tracker.ilibr.org
-  - DOMAIN,tracker.k.vu
+  - DOMAIN,tracker.internetwarriors.net
   - DOMAIN,tracker.kuroy.me
   - DOMAIN,tracker.mywaifu.best
   - DOMAIN,tracker.nyaa.net
@@ -473,7 +476,6 @@ payload:
   - DOMAIN,tracker.torrent.eu.org
   - DOMAIN,tracker.torrents.observer
   - DOMAIN,tracker.transfur.org
-  - DOMAIN,tracker.tryhackx.org
   - DOMAIN,tracker.waaa.moe
   - DOMAIN,tracker.wildkat.net
   - DOMAIN,tracker.willy.pro
@@ -21236,6 +21238,7 @@ payload:
   - DOMAIN-SUFFIX,capsuleshanghai.com
   - DOMAIN-SUFFIX,captain-cro.com
   - DOMAIN-SUFFIX,captainbi.com
+  - DOMAIN-SUFFIX,captive.apple.com
   - DOMAIN-SUFFIX,capturetheflag.fun
   - DOMAIN-SUFFIX,capvision.com
   - DOMAIN-SUFFIX,capwhale.com
@@ -80510,6 +80513,7 @@ payload:
   - DOMAIN-SUFFIX,ocssaas.com
   - DOMAIN-SUFFIX,oct-asia.com
   - DOMAIN-SUFFIX,oct-cts.com
+  - DOMAIN-SUFFIX,octavedge.com
   - DOMAIN-SUFFIX,octbay.com
   - DOMAIN-SUFFIX,octcommercial.com
   - DOMAIN-SUFFIX,octeshow.com
@@ -95663,6 +95667,7 @@ payload:
   - DOMAIN-SUFFIX,skktec.com
   - DOMAIN-SUFFIX,skl.net
   - DOMAIN-SUFFIX,skland.com
+  - DOMAIN-SUFFIX,skland.net
   - DOMAIN-SUFFIX,sklccc.com
   - DOMAIN-SUFFIX,sklccc.net
   - DOMAIN-SUFFIX,skldoor.com
