@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generated_at": "2026-11-18T21:01:16Z",
-  "base_commit": "122ce931f1f67a4c1c90dd0c7f0a967500354db1",
-  "summary": "direct@light +4/-5",
+  "generated_at": "2026-11-19T21:04:48Z",
+  "base_commit": "ebc6f7d70b53b2ed69db4b2a854478bcd985b242",
+  "summary": "direct@light +32/-1, filter-downloadKeywords@!cn +27/-0",
   "rule_sets": [
     {
       "ruleset": "adguard-blocker@mobile",
@@ -359,31 +359,37 @@
     {
       "ruleset": "geosite-category-direct@light",
       "status": "changed",
-      "added_count": 4,
-      "removed_count": 5,
+      "added_count": 32,
+      "removed_count": 1,
       "fields": {
         "domain": {
           "added": [
             {
-              "value": "tr3.ysagin.top",
+              "value": "t1.itrus.su",
               "sources": [
                 "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
               ]
             },
             {
-              "value": "tracker.cangku.moe",
+              "value": "t2.itrus.su",
               "sources": [
                 "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
               ]
             },
             {
-              "value": "tracker.tryhackx.org",
+              "value": "tracker.farted.net",
               "sources": [
                 "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
               ]
             },
             {
-              "value": "www.all4nothin.net",
+              "value": "tracker.fnix.net",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.k.vu",
               "sources": [
                 "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
               ]
@@ -391,45 +397,184 @@
           ],
           "removed": [
             {
-              "value": "tr.burnabyhighstar.com",
+              "value": "trts.baishancdnx.cn",
               "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.aruku.ovh",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.flatuslifir.is",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.sela.st",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.vectahosting.eu",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
               ]
             }
           ],
-          "added_count": 4,
-          "removed_count": 5,
+          "added_count": 5,
+          "removed_count": 1,
           "added_truncated": false,
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [],
+          "added": [
+            {
+              "value": "172.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "1qianbao.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "1y.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "1ycdn.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "4008000000.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "58wos.com.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "ajkimg.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "baishan.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "baishancdnx.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "baishancloud.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "lefile.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "lenovofoundation.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "lenovofuturecenter.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "lujincaifu.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "mingyuanfund.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "pacfc.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "pafoundation.org.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "ph.com.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "pingan.cn",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "qpmcn.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "tencentads.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "trpcdn.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "yiqianbao.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "yqbimg.net",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "yqbmall.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "zhaoliangji.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            },
+            {
+              "value": "zhaoliangjipc.com",
+              "sources": [
+                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+              ]
+            }
+          ],
           "removed": [],
-          "added_count": 0,
+          "added_count": 27,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
@@ -526,8 +671,8 @@
     },
     {
       "ruleset": "geosite-filter-downloadKeywords@!cn",
-      "status": "unchanged",
-      "added_count": 0,
+      "status": "changed",
+      "added_count": 27,
       "removed_count": 0,
       "fields": {
         "domain": {
@@ -539,9 +684,172 @@
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [],
+          "added": [
+            {
+              "value": "172.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "1qianbao.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "1y.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "1ycdn.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "4008000000.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "58wos.com.cn",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "ajkimg.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "baishan.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "baishancdnx.cn",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "baishancloud.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "lefile.cn",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "lenovofoundation.cn",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "lenovofuturecenter.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "lujincaifu.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "mingyuanfund.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "pacfc.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "pafoundation.org.cn",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "ph.com.cn",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "pingan.cn",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "qpmcn.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "tencentads.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "trpcdn.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "yiqianbao.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "yqbimg.net",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "yqbmall.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "zhaoliangji.com",
+              "sources": [
+                "unknown"
+              ]
+            },
+            {
+              "value": "zhaoliangjipc.com",
+              "sources": [
+                "unknown"
+              ]
+            }
+          ],
           "removed": [],
-          "added_count": 0,
+          "added_count": 27,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
