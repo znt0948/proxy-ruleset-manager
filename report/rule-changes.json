@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generated_at": "2026-11-20T20:46:07Z",
-  "base_commit": "1f017b0ca4a37b5ee70271656c8f505752033bf5",
-  "summary": "direct@light +7/-5",
+  "generated_at": "2026-11-21T19:44:04Z",
+  "base_commit": "6e79595d00062a0ce6d4c203a5058a1c18644462",
+  "summary": "direct@light +4/-7",
   "rule_sets": [
     {
       "ruleset": "adguard-blocker@mobile",
@@ -359,55 +359,11 @@
     {
       "ruleset": "geosite-category-direct@light",
       "status": "changed",
-      "added_count": 7,
-      "removed_count": 5,
+      "added_count": 4,
+      "removed_count": 7,
       "fields": {
         "domain": {
           "added": [
-            {
-              "value": "ipv6.govt.hu",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tr.abir.ga",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tr.burnabyhighstar.com",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.bt4g.com",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.cyberia.is",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.flatuslifir.is",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.skynetcloud.site",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            }
-          ],
-          "removed": [
             {
               "value": "opentracker.lain.moscow",
               "sources": [
@@ -421,26 +377,64 @@
               ]
             },
             {
-              "value": "tracker.cangku.moe",
+              "value": "tracker.theoks.net",
               "sources": [
                 "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
               ]
             },
             {
-              "value": "tracker.fnix.net",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "www.all4nothin.net",
+              "value": "tracker.vectahosting.eu",
               "sources": [
                 "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
               ]
             }
           ],
-          "added_count": 7,
-          "removed_count": 5,
+          "removed": [
+            {
+              "value": "ht.therarbg.to",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tr.abir.ga",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tr3.ysagin.top",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.bt4g.com",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.flatuslifir.is",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.pmman.tech",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.tryhackx.org",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            }
+          ],
+          "added_count": 4,
+          "removed_count": 7,
           "added_truncated": false,
           "removed_truncated": false
         },
