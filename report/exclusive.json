@@ -8004,7 +8004,7 @@
       },
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
       "entries_of": "geosite-category-direct@light.json",
-      "carved_entries": 8670
+      "carved_entries": 8674
     },
     {
       "pattern": {
@@ -11300,7 +11300,7 @@
     },
     "geosite-filter-downloadKeywords@!cn.json": {
       "removed": 0,
-      "carved": 10855
+      "carved": 10859
     }
   },
   "remaining": [],
@@ -25470,6 +25470,12 @@
     },
     {
       "name": "archive-chujingapp.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-chunithm.wahlap.com",
       "before": "download",
       "after": null,
       "reason": "correction"
@@ -46889,6 +46895,12 @@
       "reason": "correction"
     },
     {
+      "name": "archive-maimai.wahlap.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
       "name": "archive-maimemo.com",
       "before": "download",
       "after": null,
@@ -59993,6 +60005,12 @@
       "reason": "correction"
     },
     {
+      "name": "archive-tgk-wcaime.wahlap.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
       "name": "archive-tgovcloud.com",
       "before": "download",
       "after": null,
@@ -64680,6 +64698,12 @@
     },
     {
       "name": "archive-wahaha.com.cn",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-wahlap.net",
       "before": "download",
       "after": null,
       "reason": "correction"

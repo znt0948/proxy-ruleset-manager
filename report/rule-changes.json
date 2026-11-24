@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generated_at": "2026-11-24T00:19:50Z",
-  "base_commit": "d37ccc8e83a5cba89b1216c8320819d37d48f451",
-  "summary": "direct@light +16/-0, filter-downloadKeywords@!cn +5/-0",
+  "generated_at": "2026-11-24T22:54:53Z",
+  "base_commit": "6442038672727076fa641365c890279738d86923",
+  "summary": "direct@light +6/-1, filter-downloadKeywords@!cn +4/-0",
   "rule_sets": [
     {
       "ruleset": "adguard-blocker@mobile",
@@ -359,119 +359,66 @@
     {
       "ruleset": "geosite-category-direct@light",
       "status": "changed",
-      "added_count": 16,
-      "removed_count": 0,
+      "added_count": 6,
+      "removed_count": 1,
       "fields": {
         "domain": {
           "added": [
             {
-              "value": "t1.hloli.org",
+              "value": "ht.therarbg.to",
               "sources": [
                 "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
               ]
             },
             {
-              "value": "tr.abir.ga",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tr3.ysagin.top",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "track3r.site",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.aburaya.live",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.edkj.club",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.flatuslifir.is",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.ixuexi.click",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.sela.st",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.t-rb.org",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.tryhackx.org",
+              "value": "tracker.pmman.tech",
               "sources": [
                 "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
               ]
             }
           ],
-          "removed": [],
-          "added_count": 11,
-          "removed_count": 0,
+          "removed": [
+            {
+              "value": "tracker.sela.st",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            }
+          ],
+          "added_count": 2,
+          "removed_count": 1,
           "added_truncated": false,
           "removed_truncated": false
         },
         "domain_suffix": {
           "added": [
             {
-              "value": "echooai.com",
+              "value": "chunithm.wahlap.com",
               "sources": [
                 "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
               ]
             },
             {
-              "value": "faw-vw.com",
+              "value": "maimai.wahlap.com",
               "sources": [
                 "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
               ]
             },
             {
-              "value": "fazhipro.com",
+              "value": "tgk-wcaime.wahlap.com",
               "sources": [
                 "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
               ]
             },
             {
-              "value": "icc.link",
-              "sources": [
-                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
-              ]
-            },
-            {
-              "value": "saasfz.com",
+              "value": "wahlap.net",
               "sources": [
                 "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
               ]
             }
           ],
           "removed": [],
-          "added_count": 5,
+          "added_count": 4,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
@@ -569,7 +516,7 @@
     {
       "ruleset": "geosite-filter-downloadKeywords@!cn",
       "status": "changed",
-      "added_count": 5,
+      "added_count": 4,
       "removed_count": 0,
       "fields": {
         "domain": {
@@ -583,38 +530,32 @@
         "domain_suffix": {
           "added": [
             {
-              "value": "echooai.com",
+              "value": "chunithm.wahlap.com",
               "sources": [
                 "unknown"
               ]
             },
             {
-              "value": "faw-vw.com",
+              "value": "maimai.wahlap.com",
               "sources": [
                 "unknown"
               ]
             },
             {
-              "value": "fazhipro.com",
+              "value": "tgk-wcaime.wahlap.com",
               "sources": [
                 "unknown"
               ]
             },
             {
-              "value": "icc.link",
-              "sources": [
-                "unknown"
-              ]
-            },
-            {
-              "value": "saasfz.com",
+              "value": "wahlap.net",
               "sources": [
                 "unknown"
               ]
             }
           ],
           "removed": [],
-          "added_count": 5,
+          "added_count": 4,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
