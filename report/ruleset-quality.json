@@ -32032,13 +32032,13 @@
         },
         {
           "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
-          "raw_entries": 9554,
-          "normalized_entries": 9554,
+          "raw_entries": 9559,
+          "normalized_entries": 9559,
           "unsupported_rules": 0,
           "invalid_rules_or_values": 0,
           "deduplication": {
-            "input_entries": 9554,
-            "output_entries": 9554,
+            "input_entries": 9559,
+            "output_entries": 9559,
             "removed_entries": 0,
             "exact_duplicates": 0,
             "domain_covered_by_suffix": 0,
@@ -32096,13 +32096,13 @@
         },
         {
           "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json",
-          "raw_entries": 105,
-          "normalized_entries": 105,
+          "raw_entries": 116,
+          "normalized_entries": 116,
           "unsupported_rules": 0,
           "invalid_rules_or_values": 0,
           "deduplication": {
-            "input_entries": 105,
-            "output_entries": 105,
+            "input_entries": 116,
+            "output_entries": 116,
             "removed_entries": 0,
             "exact_duplicates": 0,
             "domain_covered_by_suffix": 0,
@@ -32112,8 +32112,8 @@
         }
       ],
       "merge_deduplication": {
-        "input_entries": 9904,
-        "output_entries": 9904,
+        "input_entries": 9920,
+        "output_entries": 9920,
         "removed_entries": 0,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 0,
@@ -32121,24 +32121,24 @@
         "cidr_collapsed": 0
       },
       "output_entries_by_field": {
-        "domain": 646,
+        "domain": 657,
         "domain_regex": 10,
-        "domain_suffix": 8700
+        "domain_suffix": 8705
       },
       "provenance": {
-        "tracked_normalized_entries": 9904,
-        "published_entries": 9904,
+        "tracked_normalized_entries": 9920,
+        "published_entries": 9920,
         "published_entries_with_multiple_exact_sources": 9,
         "published_entries_without_exact_source": 0,
         "normalized_entries_shared_by_sources": 9,
         "source_output_contribution": {
           "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json": 48,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-private.srs": 133,
-          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs": 9554,
+          "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs": 9559,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-springer.srs": 5,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-elsevier.srs": 14,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-ieee.srs": 54,
-          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json": 105
+          "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json": 116
         },
         "source_pair_overlaps": [
           {
@@ -32232,8 +32232,8 @@
         ]
       },
       "final_optimization": {
-        "input_entries": 9884,
-        "output_entries": 9356,
+        "input_entries": 9900,
+        "output_entries": 9372,
         "removed_entries": 528,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 75,
@@ -33865,6 +33865,9 @@
           "t.overflow.biz": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
+          "t1.hloli.org": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
           "t1.itrus.su": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
@@ -33901,6 +33904,9 @@
           "tr.abiir.top": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
+          "tr.abir.ga": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
           "tr.burnabyhighstar.com": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
@@ -33910,7 +33916,13 @@
           "tr.nyacat.pw": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
+          "tr3.ysagin.top": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
           "tr4ck3r.duckdns.org": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
+          "track3r.site": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker-udp.gbitt.info": [
@@ -33923,6 +33935,9 @@
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.7471.top": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
+          "tracker.aburaya.live": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.alt.cx": [
@@ -33958,6 +33973,9 @@
           "tracker.ducks.party": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
+          "tracker.edkj.club": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
           "tracker.evergarden.uk": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
@@ -33965,6 +33983,9 @@
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.filemail.com": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
+          "tracker.flatuslifir.is": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.foreverpirates.co": [
@@ -33977,6 +33998,9 @@
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.internetwarriors.net": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
+          "tracker.ixuexi.click": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.k.vu": [
@@ -34024,10 +34048,16 @@
           "tracker.renfei.net": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
+          "tracker.sela.st": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
           "tracker.skynetcloud.site": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.skyts.net": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
+          "tracker.t-rb.org": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.theoks.net": [
@@ -34040,6 +34070,9 @@
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.transfur.org": [
+            "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+          ],
+          "tracker.tryhackx.org": [
             "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
           ],
           "tracker.vectahosting.eu": [
@@ -44709,6 +44742,9 @@
           "echargenet.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "echooai.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "ecitic.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -45345,10 +45381,16 @@
           "favonis.space": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "faw-vw.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
           "faw.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "faxingbao.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "fazhipro.com": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "fbank.com": [
@@ -48543,6 +48585,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "icbcstandardsecurities.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+          ],
+          "icc.link": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "iccvlog.com": [
@@ -57065,6 +57110,9 @@
           ],
           "saas.hpplay.cn": [
             "unknown"
+          ],
+          "saasfz.com": [
+            "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
           "saasops.tech": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
@@ -78258,6 +78306,9 @@
           "echargenet.com": [
             "unknown"
           ],
+          "echooai.com": [
+            "unknown"
+          ],
           "ecitic.com": [
             "unknown"
           ],
@@ -78945,10 +78996,16 @@
           "favonis.space": [
             "unknown"
           ],
+          "faw-vw.com": [
+            "unknown"
+          ],
           "faw.cn": [
             "unknown"
           ],
           "faxingbao.com": [
+            "unknown"
+          ],
+          "fazhipro.com": [
             "unknown"
           ],
           "fbank.com": [
@@ -82153,6 +82210,9 @@
             "unknown"
           ],
           "icbcstandardsecurities.com": [
+            "unknown"
+          ],
+          "icc.link": [
             "unknown"
           ],
           "iccvlog.com": [
@@ -90904,6 +90964,9 @@
             "unknown"
           ],
           "saas.hpplay.cn": [
+            "unknown"
+          ],
+          "saasfz.com": [
             "unknown"
           ],
           "saasops.tech": [
