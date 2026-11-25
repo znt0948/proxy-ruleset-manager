@@ -58107,6 +58107,9 @@
           "sleeplesshorizon.cn": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
+          "slicedrive.com": [
+            "unknown"
+          ],
           "slk1.net": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
           ],
@@ -66319,13 +66322,13 @@
         },
         {
           "url": "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json",
-          "raw_entries": 81,
-          "normalized_entries": 81,
+          "raw_entries": 84,
+          "normalized_entries": 84,
           "unsupported_rules": 0,
           "invalid_rules_or_values": 0,
           "deduplication": {
-            "input_entries": 81,
-            "output_entries": 81,
+            "input_entries": 84,
+            "output_entries": 84,
             "removed_entries": 0,
             "exact_duplicates": 0,
             "domain_covered_by_suffix": 0,
@@ -66335,8 +66338,8 @@
         }
       ],
       "merge_deduplication": {
-        "input_entries": 297,
-        "output_entries": 297,
+        "input_entries": 300,
+        "output_entries": 300,
         "removed_entries": 0,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 0,
@@ -66344,12 +66347,12 @@
         "cidr_collapsed": 0
       },
       "output_entries_by_field": {
-        "domain": 105,
-        "domain_suffix": 173
+        "domain": 107,
+        "domain_suffix": 174
       },
       "provenance": {
-        "tracked_normalized_entries": 297,
-        "published_entries": 297,
+        "tracked_normalized_entries": 300,
+        "published_entries": 300,
         "published_entries_with_multiple_exact_sources": 3,
         "published_entries_without_exact_source": 0,
         "normalized_entries_shared_by_sources": 3,
@@ -66369,7 +66372,7 @@
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-mega.srs": 7,
           "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-tmdb.srs": 4,
           "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/GoogleDrive.yaml": 4,
-          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json": 81
+          "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json": 84
         },
         "source_pair_overlaps": [
           {
@@ -66408,8 +66411,8 @@
         ]
       },
       "final_optimization": {
-        "input_entries": 285,
-        "output_entries": 278,
+        "input_entries": 288,
+        "output_entries": 281,
         "removed_entries": 7,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 7,
@@ -66418,6 +66421,9 @@
       },
       "source_entries": {
         "domain": {
+          "aem.dropbox.com": [
+            "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json"
+          ],
           "agahk.odysseyplus.site": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-emby.srs"
           ],
@@ -66464,6 +66470,9 @@
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-emby.srs"
           ],
           "cdn.discordapp.com": [
+            "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json"
+          ],
+          "cdn.ego.app": [
             "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json"
           ],
           "cdn.winget.microsoft.com": [
@@ -67214,6 +67223,9 @@
           ],
           "singularity.deja-vu.beauty": [
             "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-emby.srs"
+          ],
+          "slicedrive.com": [
+            "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json"
           ],
           "snapcraftcontent.com": [
             "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json"

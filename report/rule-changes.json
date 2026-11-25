@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generated_at": "2026-11-24T22:54:53Z",
-  "base_commit": "6442038672727076fa641365c890279738d86923",
-  "summary": "direct@light +6/-1, filter-downloadKeywords@!cn +4/-0",
+  "generated_at": "2026-11-25T03:00:39Z",
+  "base_commit": "5759ef7ea6b76528ed18faacc35f1325205c7cd6",
+  "summary": "direct@light +1/-0, download@!cn +3/-0",
   "rule_sets": [
     {
       "ruleset": "adguard-blocker@mobile",
@@ -359,66 +359,28 @@
     {
       "ruleset": "geosite-category-direct@light",
       "status": "changed",
-      "added_count": 6,
-      "removed_count": 1,
+      "added_count": 1,
+      "removed_count": 0,
       "fields": {
         "domain": {
-          "added": [
-            {
-              "value": "ht.therarbg.to",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.pmman.tech",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            }
-          ],
-          "removed": [
-            {
-              "value": "tracker.sela.st",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            }
-          ],
-          "added_count": 2,
-          "removed_count": 1,
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
         },
         "domain_suffix": {
           "added": [
             {
-              "value": "chunithm.wahlap.com",
+              "value": "slicedrive.com",
               "sources": [
-                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
-              ]
-            },
-            {
-              "value": "maimai.wahlap.com",
-              "sources": [
-                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
-              ]
-            },
-            {
-              "value": "tgk-wcaime.wahlap.com",
-              "sources": [
-                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
-              ]
-            },
-            {
-              "value": "wahlap.net",
-              "sources": [
-                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+                "unknown"
               ]
             }
           ],
           "removed": [],
-          "added_count": 4,
+          "added_count": 1,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
@@ -459,22 +421,42 @@
     },
     {
       "ruleset": "geosite-category-download@!cn",
-      "status": "unchanged",
-      "added_count": 0,
+      "status": "changed",
+      "added_count": 3,
       "removed_count": 0,
       "fields": {
         "domain": {
-          "added": [],
+          "added": [
+            {
+              "value": "aem.dropbox.com",
+              "sources": [
+                "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json"
+              ]
+            },
+            {
+              "value": "cdn.ego.app",
+              "sources": [
+                "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json"
+              ]
+            }
+          ],
           "removed": [],
-          "added_count": 0,
+          "added_count": 2,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [],
+          "added": [
+            {
+              "value": "slicedrive.com",
+              "sources": [
+                "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json"
+              ]
+            }
+          ],
           "removed": [],
-          "added_count": 0,
+          "added_count": 1,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
@@ -515,8 +497,8 @@
     },
     {
       "ruleset": "geosite-filter-downloadKeywords@!cn",
-      "status": "changed",
-      "added_count": 4,
+      "status": "unchanged",
+      "added_count": 0,
       "removed_count": 0,
       "fields": {
         "domain": {
@@ -528,34 +510,9 @@
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [
-            {
-              "value": "chunithm.wahlap.com",
-              "sources": [
-                "unknown"
-              ]
-            },
-            {
-              "value": "maimai.wahlap.com",
-              "sources": [
-                "unknown"
-              ]
-            },
-            {
-              "value": "tgk-wcaime.wahlap.com",
-              "sources": [
-                "unknown"
-              ]
-            },
-            {
-              "value": "wahlap.net",
-              "sources": [
-                "unknown"
-              ]
-            }
-          ],
+          "added": [],
           "removed": [],
-          "added_count": 4,
+          "added_count": 0,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
