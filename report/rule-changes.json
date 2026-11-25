@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "generated_at": "2026-11-25T03:00:39Z",
-  "base_commit": "5759ef7ea6b76528ed18faacc35f1325205c7cd6",
-  "summary": "direct@light +1/-0, download@!cn +3/-0",
+  "generated_at": "2026-11-25T22:04:10Z",
+  "base_commit": "c01555d5bbd8c565d3976ed885180d39ebac3b14",
+  "summary": "direct@light +0/-5",
   "rule_sets": [
     {
       "ruleset": "adguard-blocker@mobile",
@@ -359,28 +359,52 @@
     {
       "ruleset": "geosite-category-direct@light",
       "status": "changed",
-      "added_count": 1,
-      "removed_count": 0,
+      "added_count": 0,
+      "removed_count": 5,
       "fields": {
         "domain": {
           "added": [],
-          "removed": [],
+          "removed": [
+            {
+              "value": "ipv6.govt.hu",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tr3.ysagin.top",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.farted.net",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.k.vu",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "yuptracker-eu.gaijinent.com",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            }
+          ],
           "added_count": 0,
-          "removed_count": 0,
+          "removed_count": 5,
           "added_truncated": false,
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [
-            {
-              "value": "slicedrive.com",
-              "sources": [
-                "unknown"
-              ]
-            }
-          ],
+          "added": [],
           "removed": [],
-          "added_count": 1,
+          "added_count": 0,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
@@ -421,42 +445,22 @@
     },
     {
       "ruleset": "geosite-category-download@!cn",
-      "status": "changed",
-      "added_count": 3,
+      "status": "unchanged",
+      "added_count": 0,
       "removed_count": 0,
       "fields": {
         "domain": {
-          "added": [
-            {
-              "value": "aem.dropbox.com",
-              "sources": [
-                "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json"
-              ]
-            },
-            {
-              "value": "cdn.ego.app",
-              "sources": [
-                "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json"
-              ]
-            }
-          ],
+          "added": [],
           "removed": [],
-          "added_count": 2,
+          "added_count": 0,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [
-            {
-              "value": "slicedrive.com",
-              "sources": [
-                "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json"
-              ]
-            }
-          ],
+          "added": [],
           "removed": [],
-          "added_count": 1,
+          "added_count": 0,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
