@@ -9,8 +9,8 @@
       "sources": [
         {
           "url": "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt",
-          "raw_entries": 1394,
-          "normalized_entries": 1249
+          "raw_entries": 1395,
+          "normalized_entries": 1250
         },
         {
           "url": "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt",
@@ -21,16 +21,16 @@
       "merge_deduplication": {},
       "output_entries_by_field": {
         "domain_regex": 129,
-        "domain_suffix": 1952
+        "domain_suffix": 1953
       },
       "provenance": {
-        "tracked_normalized_entries": 2097,
-        "published_entries": 2081,
+        "tracked_normalized_entries": 2098,
+        "published_entries": 2082,
         "published_entries_with_multiple_exact_sources": 74,
         "published_entries_without_exact_source": 0,
         "normalized_entries_shared_by_sources": 74,
         "source_output_contribution": {
-          "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt": 1242,
+          "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt": 1243,
           "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt": 913
         },
         "source_pair_overlaps": [
@@ -446,8 +446,8 @@
         ]
       },
       "final_optimization": {
-        "input_entries": 2081,
-        "output_entries": 2081,
+        "input_entries": 2082,
+        "output_entries": 2082,
         "removed_entries": 0,
         "exact_duplicates": 0,
         "domain_covered_by_suffix": 0,
@@ -1710,6 +1710,9 @@
             "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt"
           ],
           "appmetr.com": [
+            "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
+          ],
+          "appmetrica.sovcombank.ru": [
             "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
           ],
           "appmetrica.yandex.com": [
@@ -71742,6 +71745,9 @@
           "appmetr.com": [
             "unknown"
           ],
+          "appmetrica.sovcombank.ru": [
+            "unknown"
+          ],
           "appmetrica.yandex.com": [
             "unknown"
           ],
@@ -100114,10 +100120,10 @@
   "published_inventory": [
     {
       "ruleset": "adguard-blocker@mobile",
-      "entries": 2081,
+      "entries": 2082,
       "entries_by_field": {
         "domain_regex": 129,
-        "domain_suffix": 1952
+        "domain_suffix": 1953
       }
     },
     {

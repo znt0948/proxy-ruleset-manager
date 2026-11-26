@@ -7964,7 +7964,7 @@
       },
       "carved_from": "geosite-filter-downloadKeywords@!cn.json",
       "entries_of": "adguard-blocker@mobile.json",
-      "carved_entries": 1945
+      "carved_entries": 1946
     },
     {
       "pattern": {
@@ -11300,7 +11300,7 @@
     },
     "geosite-filter-downloadKeywords@!cn.json": {
       "removed": 0,
-      "carved": 10860
+      "carved": 10861
     }
   },
   "remaining": [],
@@ -18864,6 +18864,12 @@
     },
     {
       "name": "archive-appmetr.com",
+      "before": "download",
+      "after": null,
+      "reason": "correction"
+    },
+    {
+      "name": "archive-appmetrica.sovcombank.ru",
       "before": "download",
       "after": null,
       "reason": "correction"

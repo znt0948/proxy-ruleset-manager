@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generated_at": "2026-11-26T04:34:47Z",
-  "base_commit": "34d688d30f82f5f3ff2752ab4b243ff5e0b49eb2",
-  "summary": "direct@light +7/-3, download@!cn +2/-0, filter-downloadKeywords@!cn +2/-1",
+  "generated_at": "2026-11-26T22:02:30Z",
+  "base_commit": "82519be526697b94effc547baf74698cd1f4e186",
+  "summary": "adguard-blocker@mobile +1/-0, filter-downloadKeywords@!cn +1/-0",
   "rule_sets": [
     {
       "ruleset": "adguard-blocker@mobile",
-      "status": "unchanged",
-      "added_count": 0,
+      "status": "changed",
+      "added_count": 1,
       "removed_count": 0,
       "fields": {
         "domain": {
@@ -19,9 +19,16 @@
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [],
+          "added": [
+            {
+              "value": "appmetrica.sovcombank.ru",
+              "sources": [
+                "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
+              ]
+            }
+          ],
           "removed": [],
-          "added_count": 0,
+          "added_count": 1,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
@@ -358,87 +365,23 @@
     },
     {
       "ruleset": "geosite-category-direct@light",
-      "status": "changed",
-      "added_count": 7,
-      "removed_count": 3,
+      "status": "unchanged",
+      "added_count": 0,
+      "removed_count": 0,
       "fields": {
         "domain": {
-          "added": [
-            {
-              "value": "lattice.peerrelay.workers.dev",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tr3.ysagin.top",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tracker.bunk.im",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            }
-          ],
-          "removed": [
-            {
-              "value": "opentracker2.lain.moscow",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            },
-            {
-              "value": "tr.abir.ga",
-              "sources": [
-                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
-              ]
-            }
-          ],
-          "added_count": 3,
-          "removed_count": 2,
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [
-            {
-              "value": "discordapp.net",
-              "sources": [
-                "unknown"
-              ]
-            },
-            {
-              "value": "eccdnx.com",
-              "sources": [
-                "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json"
-              ]
-            },
-            {
-              "value": "gdtstream.com",
-              "sources": [
-                "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-direct@selfhost.json"
-              ]
-            },
-            {
-              "value": "sacdnssedge.com",
-              "sources": [
-                "unknown"
-              ]
-            }
-          ],
-          "removed": [
-            {
-              "value": "st.dl.eccdnx.com",
-              "sources": [
-                "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
-              ]
-            }
-          ],
-          "added_count": 4,
-          "removed_count": 1,
+          "added": [],
+          "removed": [],
+          "added_count": 0,
+          "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
         },
@@ -478,8 +421,8 @@
     },
     {
       "ruleset": "geosite-category-download@!cn",
-      "status": "changed",
-      "added_count": 2,
+      "status": "unchanged",
+      "added_count": 0,
       "removed_count": 0,
       "fields": {
         "domain": {
@@ -491,22 +434,9 @@
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [
-            {
-              "value": "discordapp.net",
-              "sources": [
-                "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json"
-              ]
-            },
-            {
-              "value": "sacdnssedge.com",
-              "sources": [
-                "https://raw.githubusercontent.com/znt0948/proxy-ruleset-manager/refs/heads/lite/self-host/geosite-download@selfhost.json"
-              ]
-            }
-          ],
+          "added": [],
           "removed": [],
-          "added_count": 2,
+          "added_count": 0,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
@@ -548,8 +478,8 @@
     {
       "ruleset": "geosite-filter-downloadKeywords@!cn",
       "status": "changed",
-      "added_count": 2,
-      "removed_count": 1,
+      "added_count": 1,
+      "removed_count": 0,
       "fields": {
         "domain": {
           "added": [],
@@ -562,28 +492,15 @@
         "domain_suffix": {
           "added": [
             {
-              "value": "eccdnx.com",
-              "sources": [
-                "unknown"
-              ]
-            },
-            {
-              "value": "gdtstream.com",
+              "value": "appmetrica.sovcombank.ru",
               "sources": [
                 "unknown"
               ]
             }
           ],
-          "removed": [
-            {
-              "value": "st.dl.eccdnx.com",
-              "sources": [
-                "unknown"
-              ]
-            }
-          ],
-          "added_count": 2,
-          "removed_count": 1,
+          "removed": [],
+          "added_count": 1,
+          "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
         },
