@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generated_at": "2026-11-26T22:02:30Z",
-  "base_commit": "82519be526697b94effc547baf74698cd1f4e186",
-  "summary": "adguard-blocker@mobile +1/-0, filter-downloadKeywords@!cn +1/-0",
+  "generated_at": "2026-11-27T21:45:35Z",
+  "base_commit": "92264a33e9a78c2a9a62f38ae81d565a90b1b3d3",
+  "summary": "direct@light +4/-3",
   "rule_sets": [
     {
       "ruleset": "adguard-blocker@mobile",
-      "status": "changed",
-      "added_count": 1,
+      "status": "unchanged",
+      "added_count": 0,
       "removed_count": 0,
       "fields": {
         "domain": {
@@ -19,16 +19,9 @@
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [
-            {
-              "value": "appmetrica.sovcombank.ru",
-              "sources": [
-                "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/mobile.txt"
-              ]
-            }
-          ],
+          "added": [],
           "removed": [],
-          "added_count": 1,
+          "added_count": 0,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
@@ -365,15 +358,59 @@
     },
     {
       "ruleset": "geosite-category-direct@light",
-      "status": "unchanged",
-      "added_count": 0,
-      "removed_count": 0,
+      "status": "changed",
+      "added_count": 4,
+      "removed_count": 3,
       "fields": {
         "domain": {
-          "added": [],
-          "removed": [],
-          "added_count": 0,
-          "removed_count": 0,
+          "added": [
+            {
+              "value": "hidden.torrentonline.cc",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "opentracker2.lain.moscow",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "su-data.com",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tr.abir.ga",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            }
+          ],
+          "removed": [
+            {
+              "value": "lattice.peerrelay.workers.dev",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tr3.ysagin.top",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            },
+            {
+              "value": "tracker.bluefrog.pw",
+              "sources": [
+                "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset-compatible/trackerslist.json"
+              ]
+            }
+          ],
+          "added_count": 4,
+          "removed_count": 3,
           "added_truncated": false,
           "removed_truncated": false
         },
@@ -477,8 +514,8 @@
     },
     {
       "ruleset": "geosite-filter-downloadKeywords@!cn",
-      "status": "changed",
-      "added_count": 1,
+      "status": "unchanged",
+      "added_count": 0,
       "removed_count": 0,
       "fields": {
         "domain": {
@@ -490,16 +527,9 @@
           "removed_truncated": false
         },
         "domain_suffix": {
-          "added": [
-            {
-              "value": "appmetrica.sovcombank.ru",
-              "sources": [
-                "unknown"
-              ]
-            }
-          ],
+          "added": [],
           "removed": [],
-          "added_count": 1,
+          "added_count": 0,
           "removed_count": 0,
           "added_truncated": false,
           "removed_truncated": false
